@@ -1,10 +1,538 @@
 [
   {
+    "name": "سجاول جونیجو",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 27.8415743,
+    "longitude": 68.1164332,
+    "id": 10595435211
+  },
+  {
+    "name": "Shah Nawaz Bhutto",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8399174,
+    "longitude": 68.1012514,
+    "id": 10600312201
+  },
+  {
+    "name": "عرضی بھٹو",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8301909,
+    "longitude": 68.1513909,
+    "id": 10600312202
+  },
+  {
+    "name": "Nihal Khan Siyal",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8422719,
+    "longitude": 68.1468501,
+    "id": 10600337028
+  },
+  {
+    "name": "جیٸند لک",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8512553,
+    "longitude": 68.1456486,
+    "id": 10600337029
+  },
+  {
+    "name": "Wallan Khan Jamali",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.836524,
+    "longitude": 68.1492802,
+    "id": 11230753780
+  },
+  {
+    "name": "Allah Wadayo Abro",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8038029,
+    "longitude": 68.1011547,
+    "id": 11230753815
+  },
+  {
+    "name": "Goth Rahimabad",
+    "category": "place",
+    "subcategory": "hamlet",
+    "latitude": 27.8119377,
+    "longitude": 68.1180037,
+    "id": 11230753816
+  },
+  {
+    "name": "Goth Punjabi",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8515847,
+    "longitude": 68.086094,
+    "id": 11230780155
+  },
+  {
+    "name": "Goth Phunal Khan Bhatti",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8628535,
+    "longitude": 68.0828753,
+    "id": 11230780156
+  },
+  {
+    "name": "Goth Suharo Bhatti",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8572477,
+    "longitude": 68.1029919,
+    "id": 11230780157
+  },
+  {
+    "name": "Mahmudabad",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8474582,
+    "longitude": 68.1266811,
+    "id": 11230780158
+  },
+  {
+    "name": "Muhammad Tanwari",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8513286,
+    "longitude": 68.12475,
+    "id": 11230780159
+  },
+  {
+    "name": "Muhammadi",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8506171,
+    "longitude": 68.121821,
+    "id": 11230780160
+  },
+  {
+    "name": "Sher Khan Israr",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8481982,
+    "longitude": 68.1129375,
+    "id": 11230780161
+  },
+  {
+    "name": "Goth Phulri",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8664673,
+    "longitude": 68.114579,
+    "id": 11230780164
+  },
+  {
+    "name": "Dhingano Mahesar",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.880921,
+    "longitude": 68.1484714,
+    "id": 11230780178
+  },
+  {
+    "name": "Goth Balocha",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 27.8752592,
+    "longitude": 68.1525269,
+    "id": 11230780179
+  },
+  {
     "name": "Plus Arzi Bhutto",
     "category": "amenity",
     "subcategory": "hospital",
     "latitude": 27.8317774,
     "longitude": 68.1518783,
     "id": 11896686192
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 27.814027182608697,
+    "longitude": 68.10581985217392,
+    "id": 292243802
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 27.810425666666664,
+    "longitude": 68.1306669031746,
+    "id": 295936184
+  },
+  {
+    "name": "Sujawal-Garhi Khairo Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 27.95251658596491,
+    "longitude": 68.05714200877192,
+    "id": 776315195
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 27.830187525,
+    "longitude": 68.154204375,
+    "id": 1040557291
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.820191840909093,
+    "longitude": 68.16462651818182,
+    "id": 1040557292
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.8315775,
+    "longitude": 68.1539494,
+    "id": 1040557293
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 27.8341451,
+    "longitude": 68.15048431111111,
+    "id": 1040557294
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.84402385,
+    "longitude": 68.14642745625,
+    "id": 1040557295
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.872112483333336,
+    "longitude": 68.11269866666667,
+    "id": 1040557296
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 27.86163524,
+    "longitude": 68.07334779333333,
+    "id": 1040557305
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 27.86221665,
+    "longitude": 68.0808292,
+    "id": 1040557309
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 27.847519692000002,
+    "longitude": 68.11236696,
+    "id": 1040557310
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.871656568749998,
+    "longitude": 68.15811485625,
+    "id": 1060578280
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.88863163846154,
+    "longitude": 68.11215057307692,
+    "id": 1060670210
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.881300799999998,
+    "longitude": 68.1347146125,
+    "id": 1060670952
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.87689405,
+    "longitude": 68.120010525,
+    "id": 1060670953
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 27.8792392125,
+    "longitude": 68.1032785125,
+    "id": 1061007085
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 27.8822311,
+    "longitude": 68.11375547777777,
+    "id": 1061007086
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.887792137837838,
+    "longitude": 68.10437834324325,
+    "id": 1061007087
+  },
+  {
+    "name": "Sujawal-Garhi Khairo Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 27.854188250000004,
+    "longitude": 68.1205317,
+    "id": 1061958637
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 27.8654456,
+    "longitude": 68.11379364999999,
+    "id": 1061958638
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.841327375,
+    "longitude": 68.077191075,
+    "id": 1064506798
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.810308921311474,
+    "longitude": 68.09001496557377,
+    "id": 1064506807
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.803458940000002,
+    "longitude": 68.07826945000001,
+    "id": 1064506808
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.814188983333334,
+    "longitude": 68.1196703,
+    "id": 1064509560
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 27.80801758125,
+    "longitude": 68.1175630625,
+    "id": 1064509561
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 27.827401000000002,
+    "longitude": 68.1347781,
+    "id": 1093189964
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 27.82189331,
+    "longitude": 68.13670426,
+    "id": 1093189965
+  },
+  {
+    "name": "رتوڈیرو - گوادر موٹروے",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 27.8377256,
+    "longitude": 68.1470681,
+    "id": 1093190004
+  },
+  {
+    "name": "رتوڈیرو - گوادر موٹروے",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 27.82438322962963,
+    "longitude": 68.20515564074074,
+    "id": 1093190005
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 27.81205795,
+    "longitude": 68.14014475,
+    "id": 1093190007
+  },
+  {
+    "name": "Sijawal Junejo Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 27.796339224999997,
+    "longitude": 68.14569435833333,
+    "id": 1093190008
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.808504520000003,
+    "longitude": 68.1332177,
+    "id": 1093190009
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.807795,
+    "longitude": 68.13563625,
+    "id": 1093190010
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 27.807029116666666,
+    "longitude": 68.13747845,
+    "id": 1093190011
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 27.830868844444446,
+    "longitude": 68.14954324444444,
+    "id": 1137133270
+  },
+  {
+    "name": "Sijawal Junejo Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 27.8343616625,
+    "longitude": 68.1319912375,
+    "id": 1139115670
+  },
+  {
+    "name": "رتوڈیرو - گوادر موٹروے",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 27.838959666666668,
+    "longitude": 68.14077673333334,
+    "id": 1139115671
+  },
+  {
+    "name": "رتوڈیرو - گوادر موٹروے",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 27.843244466666665,
+    "longitude": 68.08693966666667,
+    "id": 1146129344
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 27.85988195588235,
+    "longitude": 68.09308612941176,
+    "id": 1146129346
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 27.858069,
+    "longitude": 68.1009981,
+    "id": 1146129347
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 27.855377984615384,
+    "longitude": 68.10378206923077,
+    "id": 1146129353
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 27.851848349999997,
+    "longitude": 68.10817285,
+    "id": 1146129354
+  },
+  {
+    "name": "رتوڈیرو - گوادر موٹروے",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 27.842261783333335,
+    "longitude": 68.11946413333334,
+    "id": 1146129355
+  },
+  {
+    "name": "رتوڈیرو - گوادر موٹروے",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 27.8422663,
+    "longitude": 68.10925175,
+    "id": 1146129356
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 27.840238633333332,
+    "longitude": 68.11567787272728,
+    "id": 1212577158
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 27.830813796296297,
+    "longitude": 68.14953812962962,
+    "id": 1137133270
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 27.840238633333332,
+    "longitude": 68.11567787272728,
+    "id": 1212577158
   }
 ]

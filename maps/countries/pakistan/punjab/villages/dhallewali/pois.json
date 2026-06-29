@@ -1,10 +1,226 @@
 [
   {
+    "name": "ڈھیلیوالی",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.6566582,
+    "longitude": 74.4891438,
+    "id": 2450214115
+  },
+  {
     "name": "Duke's",
     "category": "amenity",
     "subcategory": "fast_food",
     "latitude": 32.6508513,
     "longitude": 74.4877377,
     "id": 12978359363
+  },
+  {
+    "name": "Head Marala Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.59619826486487,
+    "longitude": 74.49266676486486,
+    "id": 27781164
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.65308385,
+    "longitude": 74.48414765,
+    "id": 195437405
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.652152599999994,
+    "longitude": 74.48230925,
+    "id": 195437414
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 32.66176883934426,
+    "longitude": 74.4751166885246,
+    "id": 237068048
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.652621966666665,
+    "longitude": 74.48198546666667,
+    "id": 237072142
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.6525554,
+    "longitude": 74.4823821,
+    "id": 237072143
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.65344006666667,
+    "longitude": 74.48499666666667,
+    "id": 237072144
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.654092757142855,
+    "longitude": 74.48069637142858,
+    "id": 237072145
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.65376286666667,
+    "longitude": 74.4859733,
+    "id": 305354896
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.625374124742265,
+    "longitude": 74.44321511855671,
+    "id": 305354897
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.658037211111115,
+    "longitude": 74.48764887777777,
+    "id": 568424879
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.66343716,
+    "longitude": 74.50116872999999,
+    "id": 568424881
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.66029727837838,
+    "longitude": 74.49476427297297,
+    "id": 568424882
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.652722049999994,
+    "longitude": 74.48310745,
+    "id": 1045534307
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.65521736153846,
+    "longitude": 74.47978823076923,
+    "id": 1045534308
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.65114295,
+    "longitude": 74.4876991,
+    "id": 1045534414
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.65967394285714,
+    "longitude": 74.49830787142857,
+    "id": 1045534787
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.65672145,
+    "longitude": 74.48533895,
+    "id": 1229160311
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.66104373,
+    "longitude": 74.48598415000001,
+    "id": 1264991170
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.660376559999996,
+    "longitude": 74.49089046,
+    "id": 1264991171
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.6582965,
+    "longitude": 74.4881412846154,
+    "id": 1264991172
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.64823336,
+    "longitude": 74.48168796,
+    "id": 1327139826
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 32.66176846885246,
+    "longitude": 74.4751160737705,
+    "id": 237068048
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.658037211111115,
+    "longitude": 74.48764887777777,
+    "id": 568424879
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.66343716,
+    "longitude": 74.50116872999999,
+    "id": 568424881
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.64819617,
+    "longitude": 74.481613675,
+    "id": 1327139826
   }
 ]

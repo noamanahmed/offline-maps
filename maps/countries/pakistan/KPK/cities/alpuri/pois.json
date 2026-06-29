@@ -1,10 +1,834 @@
 [
   {
+    "name": "Shāh Tūt",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.8981327,
+    "longitude": 72.6477337,
+    "id": 881192027
+  },
+  {
+    "name": "Manāgai",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.9174969,
+    "longitude": 72.5949986,
+    "id": 881330487
+  },
+  {
+    "name": "Jamra",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.9492426,
+    "longitude": 72.6136631,
+    "id": 895256576
+  },
+  {
+    "name": "الپوری",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 34.9204318,
+    "longitude": 72.6325567,
+    "id": 2533180037
+  },
+  {
+    "name": "شانگلہ",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.8882647,
+    "longitude": 72.5995097,
+    "id": 2825208858
+  },
+  {
+    "name": "Kotkai Khwār",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.909963,
+    "longitude": 72.6310138,
+    "id": 2830356960
+  },
+  {
+    "name": "Kuz Alpūrai",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.903952,
+    "longitude": 72.6440162,
+    "id": 2830356961
+  },
+  {
+    "name": "Shain Khwār",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.909963,
+    "longitude": 72.636334,
+    "id": 2830356970
+  },
+  {
+    "name": "Sumanu Kas",
+    "category": "place",
+    "subcategory": "hamlet",
+    "latitude": 34.9011632,
+    "longitude": 72.652535,
+    "id": 2830356972
+  },
+  {
+    "name": "Bar Māchār",
+    "category": "place",
+    "subcategory": "hamlet",
+    "latitude": 34.9003595,
+    "longitude": 72.6200998,
+    "id": 2860885540
+  },
+  {
+    "name": "Besharam",
+    "category": "place",
+    "subcategory": "hamlet",
+    "latitude": 34.9491424,
+    "longitude": 72.6435766,
+    "id": 2860885541
+  },
+  {
+    "name": "Kotkay",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.8836241,
+    "longitude": 72.6182363,
+    "id": 2860885544
+  },
+  {
+    "name": "Kūz Māchār",
+    "category": "place",
+    "subcategory": "hamlet",
+    "latitude": 34.9114123,
+    "longitude": 72.6243788,
+    "id": 2860885545
+  },
+  {
+    "name": "لیلونئ‎",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 34.954605,
+    "longitude": 72.6435803,
+    "id": 2860885546
+  },
+  {
+    "name": "Mānosar",
+    "category": "place",
+    "subcategory": "hamlet",
+    "latitude": 34.8828159,
+    "longitude": 72.6334923,
+    "id": 2860885547
+  },
+  {
+    "name": "Zaregai",
+    "category": "place",
+    "subcategory": "hamlet",
+    "latitude": 34.9053954,
+    "longitude": 72.6249194,
+    "id": 2860885552
+  },
+  {
     "name": "Lilownai Jama'ai Masjid",
     "category": "amenity",
     "subcategory": "place_of_worship",
     "latitude": 34.9567002,
     "longitude": 72.6441411,
     "id": 8088893704
+  },
+  {
+    "name": "کوزہ ڈھیرئی",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.9528372,
+    "longitude": 72.6315079,
+    "id": 12014287781
+  },
+  {
+    "name": "Khwazakhela - Besham Road",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 34.904155520783135,
+    "longitude": 72.62519619759036,
+    "id": 27245002
+  },
+  {
+    "name": "Khwazakhela - Besham Road",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 34.887016180973454,
+    "longitude": 72.61185861106195,
+    "id": 27245007
+  },
+  {
+    "name": "Khwazakhela - Besham Road",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 34.905572400000004,
+    "longitude": 72.64515151276596,
+    "id": 27245009
+  },
+  {
+    "name": "Khwazakhela - Besham Road",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 34.88600325496183,
+    "longitude": 72.59526009999999,
+    "id": 60195212
+  },
+  {
+    "name": "Khwazakhela - Besham Road",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 34.91982135,
+    "longitude": 72.63160865,
+    "id": 274864643
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.9222711,
+    "longitude": 72.63313314999999,
+    "id": 277832303
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.91628445,
+    "longitude": 72.6321803,
+    "id": 277832307
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.9163396,
+    "longitude": 72.63237365,
+    "id": 277832308
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 34.921634850000004,
+    "longitude": 72.63359915000001,
+    "id": 277832316
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.922062819999994,
+    "longitude": 72.63352684,
+    "id": 277832317
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 34.942572025000004,
+    "longitude": 72.637942275,
+    "id": 277832324
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 34.9213177375,
+    "longitude": 72.633115625,
+    "id": 277832328
+  },
+  {
+    "name": "Lilownai Road",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 34.934138484677426,
+    "longitude": 72.63778637419355,
+    "id": 277832329
+  },
+  {
+    "name": "کالج روڈ",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.92613587222222,
+    "longitude": 72.63169029722222,
+    "id": 277891412
+  },
+  {
+    "name": "Lilownai Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.96791043068783,
+    "longitude": 72.64182633809524,
+    "id": 277891416
+  },
+  {
+    "name": "Lilownai Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.9517031,
+    "longitude": 72.6425979,
+    "id": 277891432
+  },
+  {
+    "name": "Shangla Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.877708656060605,
+    "longitude": 72.61746259318183,
+    "id": 277891454
+  },
+  {
+    "name": "Shangla Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.885116999999994,
+    "longitude": 72.61624574999999,
+    "id": 277891464
+  },
+  {
+    "name": "Shangla Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.88684626,
+    "longitude": 72.62065174571428,
+    "id": 277891468
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 34.957764456250004,
+    "longitude": 72.64193336875,
+    "id": 277891472
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 34.96396706875,
+    "longitude": 72.63406818636363,
+    "id": 277891477
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 34.9578111,
+    "longitude": 72.64123015,
+    "id": 277891484
+  },
+  {
+    "name": "Khan’s Road",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 34.95511903070175,
+    "longitude": 72.64821865175439,
+    "id": 696994252
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.93016016,
+    "longitude": 72.63894819999999,
+    "id": 886692023
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.930192240000004,
+    "longitude": 72.6389594,
+    "id": 886692024
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.93022554,
+    "longitude": 72.63897562,
+    "id": 886692025
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.9302606,
+    "longitude": 72.63898742,
+    "id": 886692026
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.89945041904762,
+    "longitude": 72.65031205714286,
+    "id": 886694600
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.898852500000004,
+    "longitude": 72.651189,
+    "id": 886694601
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.89839221111111,
+    "longitude": 72.65062357037037,
+    "id": 886694602
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.89625987888889,
+    "longitude": 72.65093162111111,
+    "id": 886696163
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.90031052340426,
+    "longitude": 72.59690122021276,
+    "id": 969673094
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.918463833962264,
+    "longitude": 72.59463520566038,
+    "id": 969673095
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.926202262825285,
+    "longitude": 72.61155162416357,
+    "id": 969709909
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.91496988918919,
+    "longitude": 72.60915762162162,
+    "id": 969709910
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.91142630045454,
+    "longitude": 72.59871565045455,
+    "id": 969709911
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.92250899710145,
+    "longitude": 72.58775718405798,
+    "id": 969719901
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.937854592307694,
+    "longitude": 72.61768747692307,
+    "id": 969724665
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.93817524210527,
+    "longitude": 72.61656348289473,
+    "id": 969724666
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.931306040273036,
+    "longitude": 72.60794313890786,
+    "id": 969724667
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.87818661188525,
+    "longitude": 72.6045719032787,
+    "id": 969804626
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.880584990370366,
+    "longitude": 72.59949703333334,
+    "id": 969805862
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.891503471111115,
+    "longitude": 72.59646821333334,
+    "id": 969806144
+  },
+  {
+    "name": "Orhan Khan Ghazi Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.95936449324324,
+    "longitude": 72.6454955054054,
+    "id": 1125569676
+  },
+  {
+    "name": "Manzoor Ahmad Yousufzai",
+    "category": "tourism",
+    "subcategory": "guest_house",
+    "latitude": 34.9572723,
+    "longitude": 72.6464625,
+    "id": 1125570319
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.954006942105266,
+    "longitude": 72.6443847122807,
+    "id": 1125573940
+  },
+  {
+    "name": "Mahboob Ahmad Khan Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.95803289047619,
+    "longitude": 72.64895407142856,
+    "id": 1125579001
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.959971315000004,
+    "longitude": 72.653157565,
+    "id": 1125579002
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.959355,
+    "longitude": 72.65199055,
+    "id": 1125579003
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.921722943137254,
+    "longitude": 72.63431307254902,
+    "id": 1214198764
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 34.88366300925926,
+    "longitude": 72.66403418518519,
+    "id": 1240679395
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.88071916034483,
+    "longitude": 72.65785797586207,
+    "id": 1240679397
+  },
+  {
+    "name": "Khwazakhela - Besham Road",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 34.89940518947369,
+    "longitude": 72.66965622631578,
+    "id": 1242725576
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.89522117291667,
+    "longitude": 72.590693375,
+    "id": 1296558569
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.883070031578946,
+    "longitude": 72.61752816842105,
+    "id": 1296558570
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.959130175,
+    "longitude": 72.643926375,
+    "id": 1378769331
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.9595032,
+    "longitude": 72.64370313076924,
+    "id": 1378769332
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.912029998715596,
+    "longitude": 72.67396058403669,
+    "id": 1379400397
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.91685286170213,
+    "longitude": 72.66843171170213,
+    "id": 1379413680
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.92994278141264,
+    "longitude": 72.67810644758364,
+    "id": 1379413681
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.934446115584414,
+    "longitude": 72.66314459642857,
+    "id": 1379416589
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.94288112368421,
+    "longitude": 72.66836647105262,
+    "id": 1379416590
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.9414877820598,
+    "longitude": 72.67694746345515,
+    "id": 1379416591
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.90709136354167,
+    "longitude": 72.65810843385417,
+    "id": 1379424278
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.914136167032964,
+    "longitude": 72.65637469890109,
+    "id": 1379424279
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.913858127551016,
+    "longitude": 72.66309920408163,
+    "id": 1379424280
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.905885597468355,
+    "longitude": 72.66652532721518,
+    "id": 1379424281
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.92223997932961,
+    "longitude": 72.65925803798883,
+    "id": 1379424282
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.92774206666667,
+    "longitude": 72.66435724946237,
+    "id": 1379424283
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.922482345695364,
+    "longitude": 72.6626570307947,
+    "id": 1379424284
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.93727749130435,
+    "longitude": 72.66333316956522,
+    "id": 1379424285
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.936653096,
+    "longitude": 72.658179862,
+    "id": 1379424286
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.93223882195122,
+    "longitude": 72.65760590182927,
+    "id": 1379424287
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.93015536,
+    "longitude": 72.63894647999999,
+    "id": 886692023
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.930187419999996,
+    "longitude": 72.63895768,
+    "id": 886692024
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.93022072,
+    "longitude": 72.63897392,
+    "id": 886692025
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.9302558,
+    "longitude": 72.63898572000001,
+    "id": 886692026
+  },
+  {
+    "name": "Manzoor Ahmad Yousufzai",
+    "category": "tourism",
+    "subcategory": "guest_house",
+    "latitude": 34.9572723,
+    "longitude": 72.6464625,
+    "id": 1125570319
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.953995089473686,
+    "longitude": 72.6443709491228,
+    "id": 1125573940
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.92174191764706,
+    "longitude": 72.63430381764705,
+    "id": 1214198764
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.98009261826087,
+    "longitude": 72.59677041695653,
+    "id": 17019852
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 34.88363154074074,
+    "longitude": 72.66402510925926,
+    "id": 1240679395
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.88071916034483,
+    "longitude": 72.65785797586207,
+    "id": 1240679397
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.88309915263158,
+    "longitude": 72.6174996631579,
+    "id": 1296558570
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.93436764732272,
+    "longitude": 72.59639857713458,
+    "id": 17776455
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.93122665915493,
+    "longitude": 72.64698555580986,
+    "id": 17776467
   }
 ]

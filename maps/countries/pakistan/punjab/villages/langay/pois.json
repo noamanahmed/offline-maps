@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "name": "Langay",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.4435193,
+    "longitude": 73.9113335,
+    "id": 2832239455
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.44784187971014,
+    "longitude": 73.91618379202899,
+    "id": 212827306
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.44950646428571,
+    "longitude": 73.91076115,
+    "id": 1012176593
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.447134437931034,
+    "longitude": 73.91037127931034,
+    "id": 1206940825
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.43716385,
+    "longitude": 73.91128103333334,
+    "id": 1430067503
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.434889150000004,
+    "longitude": 73.90505780000001,
+    "id": 1430067504
+  }
+]

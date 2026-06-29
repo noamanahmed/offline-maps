@@ -1,1 +1,634 @@
-[]
+[
+  {
+    "name": "رزمک",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 32.6873366,
+    "longitude": 69.8339608,
+    "id": 3388677947
+  },
+  {
+    "name": "Shora Kas",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.6931819,
+    "longitude": 69.8234942,
+    "id": 13608902460
+  },
+  {
+    "name": "Sharkai Sar",
+    "category": "natural",
+    "subcategory": "peak",
+    "latitude": 32.6576474,
+    "longitude": 69.8555906,
+    "id": 13608902461
+  },
+  {
+    "name": "Kama Nazhmerai",
+    "category": "place",
+    "subcategory": "hamlet",
+    "latitude": 32.6514622,
+    "longitude": 69.8484021,
+    "id": 13608902462
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.696526765232356,
+    "longitude": 69.79779742444062,
+    "id": 290641868
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.6662235,
+    "longitude": 69.83115957999999,
+    "id": 290641877
+  },
+  {
+    "name": "primary",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.658358492156864,
+    "longitude": 69.8341599,
+    "id": 290641880
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.68540795625,
+    "longitude": 69.83567771875,
+    "id": 290642796
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.690629,
+    "longitude": 69.8367238,
+    "id": 290642799
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.690534850000006,
+    "longitude": 69.83325535,
+    "id": 290642800
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.68699772083333,
+    "longitude": 69.83354472500001,
+    "id": 290642801
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.68804239642857,
+    "longitude": 69.83276712857143,
+    "id": 290642802
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.689444200000004,
+    "longitude": 69.83334462,
+    "id": 290642804
+  },
+  {
+    "name": "primary",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.75757867438795,
+    "longitude": 69.87127444369115,
+    "id": 290642805
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.689152542857144,
+    "longitude": 69.83517584285714,
+    "id": 290642807
+  },
+  {
+    "name": "primary",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.67180374,
+    "longitude": 69.8309749,
+    "id": 290642809
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.682977539285716,
+    "longitude": 69.8226173625,
+    "id": 968060945
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.677156238636364,
+    "longitude": 69.81789420681818,
+    "id": 968060946
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.69276592,
+    "longitude": 69.82939168,
+    "id": 968060947
+  },
+  {
+    "name": "primary",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.70707505,
+    "longitude": 69.84183834999999,
+    "id": 968061093
+  },
+  {
+    "name": "primary",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.69085985609756,
+    "longitude": 69.8392592300813,
+    "id": 968061094
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.708088462162166,
+    "longitude": 69.82091337027028,
+    "id": 968061230
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.719164406849316,
+    "longitude": 69.82691360547945,
+    "id": 968089902
+  },
+  {
+    "name": "primary",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.647796775,
+    "longitude": 69.838532525,
+    "id": 968386690
+  },
+  {
+    "name": "primary",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.64732945,
+    "longitude": 69.8397823,
+    "id": 968386691
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.69148301538461,
+    "longitude": 69.8229205076923,
+    "id": 971644689
+  },
+  {
+    "name": "Garium to Razmak",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.71732760082051,
+    "longitude": 69.88901351384615,
+    "id": 972209093
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.695601614285714,
+    "longitude": 69.84084002857144,
+    "id": 972209094
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.69829252631579,
+    "longitude": 69.82579830526315,
+    "id": 972209095
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.70349528888889,
+    "longitude": 69.82212791111111,
+    "id": 972209096
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.715130403125,
+    "longitude": 69.82252856875,
+    "id": 972209097
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6703401,
+    "longitude": 69.8263042,
+    "id": 1244091002
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.668794825,
+    "longitude": 69.82653655,
+    "id": 1244091003
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.669747433333335,
+    "longitude": 69.82963550000001,
+    "id": 1244091004
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6691832,
+    "longitude": 69.830045825,
+    "id": 1244091005
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.65286454285714,
+    "longitude": 69.8377861,
+    "id": 1244165023
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.65142326666666,
+    "longitude": 69.83182547407408,
+    "id": 1244165024
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.64315681702127,
+    "longitude": 69.83234552234042,
+    "id": 1244165038
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.722643854285714,
+    "longitude": 69.87221218571428,
+    "id": 1259326278
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.71405789310345,
+    "longitude": 69.86336655862068,
+    "id": 1259326279
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.70505184411765,
+    "longitude": 69.85068540294117,
+    "id": 1259326280
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.67669210769231,
+    "longitude": 69.82854235384615,
+    "id": 1347918996
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.679887361111106,
+    "longitude": 69.82305535,
+    "id": 1347918997
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.6841090631579,
+    "longitude": 69.82070315789474,
+    "id": 1347918998
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.69287966666666,
+    "longitude": 69.83716278333334,
+    "id": 1347918999
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.68025424230769,
+    "longitude": 69.83393688846154,
+    "id": 1347919000
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.674383436206895,
+    "longitude": 69.84061656896552,
+    "id": 1347919001
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.723880071428574,
+    "longitude": 69.81890364285714,
+    "id": 1347919002
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.72038961578947,
+    "longitude": 69.81875058421053,
+    "id": 1347919003
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.717535500000004,
+    "longitude": 69.82122949285714,
+    "id": 1347919004
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.714747970588235,
+    "longitude": 69.82034334117647,
+    "id": 1347919005
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.71066285,
+    "longitude": 69.825548753125,
+    "id": 1347919006
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.70923340697674,
+    "longitude": 69.83146940697674,
+    "id": 1347919007
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.703416744,
+    "longitude": 69.83885306,
+    "id": 1347919008
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.665889025,
+    "longitude": 69.831267825,
+    "id": 1393175490
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.74817886308725,
+    "longitude": 69.82623445167785,
+    "id": 17323836
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.722391605714286,
+    "longitude": 69.87199907714286,
+    "id": 1259326278
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.71394726896552,
+    "longitude": 69.86326372068966,
+    "id": 1259326279
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.70488880882353,
+    "longitude": 69.85060601470589,
+    "id": 1259326280
+  },
+  {
+    "name": "scrub",
+    "category": "natural",
+    "subcategory": "scrub",
+    "latitude": 32.680832707079645,
+    "longitude": 69.88138549115044,
+    "id": 17833928
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.67027187727273,
+    "longitude": 69.81588229090909,
+    "id": 18491966
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.72358089638554,
+    "longitude": 69.79780641485944,
+    "id": 18491979
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.67650906923077,
+    "longitude": 69.8284928923077,
+    "id": 1347918996
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.679893622222224,
+    "longitude": 69.82288462222222,
+    "id": 1347918997
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.68407177894737,
+    "longitude": 69.82065821578948,
+    "id": 1347918998
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.69287966666666,
+    "longitude": 69.83716278333334,
+    "id": 1347918999
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.68025424230769,
+    "longitude": 69.83393688846154,
+    "id": 1347919000
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.674383436206895,
+    "longitude": 69.84061656896552,
+    "id": 1347919001
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 32.72380115714286,
+    "longitude": 69.81879614285715,
+    "id": 1347919002
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.720244515789474,
+    "longitude": 69.81859015789473,
+    "id": 1347919003
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.71744265,
+    "longitude": 69.82122694285714,
+    "id": 1347919004
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.714595882352945,
+    "longitude": 69.82026864705882,
+    "id": 1347919005
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.7105852375,
+    "longitude": 69.82554408125,
+    "id": 1347919006
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.709213123255815,
+    "longitude": 69.8314611255814,
+    "id": 1347919007
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.70339554,
+    "longitude": 69.838745956,
+    "id": 1347919008
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.65978930874404,
+    "longitude": 69.78236877027027,
+    "id": 20274413
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.6617865272,
+    "longitude": 69.81164515680001,
+    "id": 20274442
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.66233354285714,
+    "longitude": 69.82809609047618,
+    "id": 20274443
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 32.684904955300354,
+    "longitude": 69.79285487261485,
+    "id": 20274444
+  }
+]

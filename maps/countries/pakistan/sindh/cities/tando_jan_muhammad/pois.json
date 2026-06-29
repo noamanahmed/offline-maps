@@ -1,10 +1,354 @@
 [
   {
+    "name": "ٹنڈو جان محمد",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 25.0724729,
+    "longitude": 69.214868,
+    "id": 7881152085
+  },
+  {
+    "name": "GOTH MIR MOHD JAKHRO (گوٹھ میر محمد جاکرو)",
+    "category": "highway",
+    "subcategory": "bus_stop",
+    "latitude": 25.1075478,
+    "longitude": 69.2353135,
+    "id": 7887386785
+  },
+  {
+    "name": "خداداد",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 25.1063988,
+    "longitude": 69.2330749,
+    "id": 11220736824
+  },
+  {
     "name": "AL-NAFAY Petrolium Service - Tando jan muhmmad",
     "category": "amenity",
     "subcategory": "fuel",
     "latitude": 25.0879551,
     "longitude": 69.1980885,
     "id": 12965992482
+  },
+  {
+    "name": "Mirwah-Digri-Mithi Provincial Highway",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 25.06414526407767,
+    "longitude": 69.21706731553398,
+    "id": 265894125
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 25.166112443243243,
+    "longitude": 69.20970690405406,
+    "id": 271023554
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.117062507894737,
+    "longitude": 69.2543075368421,
+    "id": 713786790
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 25.100237204545454,
+    "longitude": 69.27116778636363,
+    "id": 713786791
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 25.036415249999997,
+    "longitude": 69.18862787,
+    "id": 713803619
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 25.0609437,
+    "longitude": 69.21581499999999,
+    "id": 713803620
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 25.079322700000002,
+    "longitude": 69.21428324285714,
+    "id": 713803621
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.07109183142857,
+    "longitude": 69.21333353714286,
+    "id": 713803622
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 25.072097775,
+    "longitude": 69.15807181666666,
+    "id": 713803623
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 25.071016714285715,
+    "longitude": 69.205028,
+    "id": 713803624
+  },
+  {
+    "name": "Tando Jan Muhammad Bypass",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 25.071894604347825,
+    "longitude": 69.20205277826086,
+    "id": 713803625
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 25.103308600000002,
+    "longitude": 69.24732540000001,
+    "id": 713803626
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 25.09298874166667,
+    "longitude": 69.23852920833333,
+    "id": 713803627
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 25.08149634,
+    "longitude": 69.22300822,
+    "id": 820271052
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 25.08838425,
+    "longitude": 69.22877030000001,
+    "id": 820271053
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.031278033333333,
+    "longitude": 69.20848094666667,
+    "id": 1061644700
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.042586557142858,
+    "longitude": 69.22092936428571,
+    "id": 1061644701
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.03933200909091,
+    "longitude": 69.22454640909092,
+    "id": 1061644702
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.038828866666666,
+    "longitude": 69.22039746666667,
+    "id": 1061644703
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.047953443478264,
+    "longitude": 69.17443239565218,
+    "id": 1064625776
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.0254651125,
+    "longitude": 69.2380746375,
+    "id": 1064914379
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.034053274999998,
+    "longitude": 69.2403473625,
+    "id": 1064914383
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.033775133333332,
+    "longitude": 69.22922255714286,
+    "id": 1064914388
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.10226684,
+    "longitude": 69.1800253,
+    "id": 1064914389
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.107022333333333,
+    "longitude": 69.18001906666667,
+    "id": 1064914390
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.118902166666665,
+    "longitude": 69.17996099333332,
+    "id": 1064914391
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.118948036363637,
+    "longitude": 69.24751769999999,
+    "id": 1065287945
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 25.07116443404255,
+    "longitude": 69.21482815106383,
+    "id": 1086552330
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 25.076980566666666,
+    "longitude": 69.22189879166666,
+    "id": 1086552331
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 25.067157434374998,
+    "longitude": 69.222275996875,
+    "id": 1086552332
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.101436685714283,
+    "longitude": 69.18246541428572,
+    "id": 1437004872
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.10229215,
+    "longitude": 69.18629755,
+    "id": 1437004873
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 25.10138982,
+    "longitude": 69.18487164000001,
+    "id": 1437004874
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.06960645,
+    "longitude": 69.2161026,
+    "id": 1469218003
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.06938103125,
+    "longitude": 69.2154126625,
+    "id": 1469218004
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.072772116666666,
+    "longitude": 69.21457386666667,
+    "id": 1469218005
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 25.072247254166665,
+    "longitude": 69.21459521666667,
+    "id": 1469218006
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 25.07116443404255,
+    "longitude": 69.21482815106383,
+    "id": 1086552330
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 25.07662965277778,
+    "longitude": 69.22162674444445,
+    "id": 1086552331
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 25.067157434374998,
+    "longitude": 69.222275996875,
+    "id": 1086552332
   }
 ]

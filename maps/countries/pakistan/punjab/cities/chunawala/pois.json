@@ -1,1 +1,706 @@
-[]
+[
+  {
+    "name": "crossing",
+    "category": "highway",
+    "subcategory": "crossing",
+    "latitude": 29.4950551,
+    "longitude": 72.6539259,
+    "id": 5510366589
+  },
+  {
+    "name": "چھوناوالہ",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 29.494052,
+    "longitude": 72.6545157,
+    "id": 8073906699
+  },
+  {
+    "name": "Chak 188/M",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 29.48438322,
+    "longitude": 72.66725378000001,
+    "id": 371359905
+  },
+  {
+    "name": "Chak 160/M",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 29.514757133333333,
+    "longitude": 72.6361938,
+    "id": 371361634
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 29.526274765853657,
+    "longitude": 72.6802485292683,
+    "id": 372012942
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.514797484615386,
+    "longitude": 72.6379174,
+    "id": 372013916
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.514673900000002,
+    "longitude": 72.63586501666667,
+    "id": 372013917
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 29.506842765,
+    "longitude": 72.62393349499999,
+    "id": 372013918
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 29.4619222625,
+    "longitude": 72.62790915,
+    "id": 372013924
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 29.489121156,
+    "longitude": 72.645298112,
+    "id": 372013925
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49390155,
+    "longitude": 72.64656022142857,
+    "id": 372013926
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49299815625,
+    "longitude": 72.64383157500001,
+    "id": 372013927
+  },
+  {
+    "name": "Chak 185 Murad Road",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 29.485527055555558,
+    "longitude": 72.66220806666666,
+    "id": 372013928
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 29.478342744444447,
+    "longitude": 72.67083998888889,
+    "id": 372013929
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 29.473054375,
+    "longitude": 72.67562162499999,
+    "id": 372014715
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 29.47399705,
+    "longitude": 72.6741316,
+    "id": 372014716
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.4849356,
+    "longitude": 72.66805207499999,
+    "id": 372014717
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.4842546,
+    "longitude": 72.66849515000001,
+    "id": 372014718
+  },
+  {
+    "name": "Faqir Wali Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 29.496420553333333,
+    "longitude": 72.67309003666666,
+    "id": 372014720
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.520265628571426,
+    "longitude": 72.67551452857143,
+    "id": 372015629
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.5196036,
+    "longitude": 72.67576898,
+    "id": 372015630
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.519776125,
+    "longitude": 72.675689975,
+    "id": 372015631
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.51977275,
+    "longitude": 72.676472825,
+    "id": 372015632
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.520413066666666,
+    "longitude": 72.67555348333333,
+    "id": 372015633
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.517309125,
+    "longitude": 72.660708625,
+    "id": 372015634
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.516772214285712,
+    "longitude": 72.6588581,
+    "id": 372015635
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.51698566,
+    "longitude": 72.65861774,
+    "id": 372015637
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.517913540000002,
+    "longitude": 72.65864825999999,
+    "id": 372015638
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.516668275,
+    "longitude": 72.65744365,
+    "id": 372015639
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.5169828,
+    "longitude": 72.65864096,
+    "id": 372015640
+  },
+  {
+    "name": "Fort Abbas-Chunawala Raod",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 29.39380960506329,
+    "longitude": 72.69614512278481,
+    "id": 570624996
+  },
+  {
+    "name": "RHC Hospital",
+    "category": "amenity",
+    "subcategory": "hospital",
+    "latitude": 29.493482,
+    "longitude": 72.65573503333333,
+    "id": 570627355
+  },
+  {
+    "name": "Government Higher Secondry School Chunawala",
+    "category": "amenity",
+    "subcategory": "school",
+    "latitude": 29.497618699999997,
+    "longitude": 72.65575674,
+    "id": 570635695
+  },
+  {
+    "name": "Government veterinary hospital",
+    "category": "amenity",
+    "subcategory": "hospital",
+    "latitude": 29.495422628571426,
+    "longitude": 72.65552267142857,
+    "id": 573878636
+  },
+  {
+    "name": "Union council",
+    "category": "landuse",
+    "subcategory": "institutional",
+    "latitude": 29.494699559999997,
+    "longitude": 72.65519694,
+    "id": 573880494
+  },
+  {
+    "name": "street 1",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.495214599999997,
+    "longitude": 72.65445735,
+    "id": 573884816
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.4960005,
+    "longitude": 72.65411072500001,
+    "id": 573886445
+  },
+  {
+    "name": "street 1",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.4951141,
+    "longitude": 72.65412075,
+    "id": 573886446
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.497070425,
+    "longitude": 72.6536450625,
+    "id": 573888453
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49712866666667,
+    "longitude": 72.65340033333332,
+    "id": 573888454
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49665595,
+    "longitude": 72.65388204999999,
+    "id": 573888455
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49696505,
+    "longitude": 72.65336984999999,
+    "id": 573888456
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.496050750000002,
+    "longitude": 72.65421365,
+    "id": 573888457
+  },
+  {
+    "name": "Canal side way",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 29.496610479999998,
+    "longitude": 72.65402252,
+    "id": 573892039
+  },
+  {
+    "name": "Chunawala Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 29.53034498,
+    "longitude": 72.62991846,
+    "id": 678741249
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.4963937,
+    "longitude": 72.65339474999999,
+    "id": 974072025
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.515673420000002,
+    "longitude": 72.63754476,
+    "id": 976053788
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.514424622222222,
+    "longitude": 72.63753256666666,
+    "id": 976053789
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.51387354,
+    "longitude": 72.63743832,
+    "id": 976053790
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.51543195,
+    "longitude": 72.63752872500001,
+    "id": 976053791
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.515316459999998,
+    "longitude": 72.63754334000001,
+    "id": 976053792
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.514375719999997,
+    "longitude": 72.63839262,
+    "id": 976053793
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.513443539999997,
+    "longitude": 72.63752417999999,
+    "id": 976053794
+  },
+  {
+    "name": "Chak 185 Murad Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 29.48407912,
+    "longitude": 72.66928894,
+    "id": 1159112858
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 29.4736652,
+    "longitude": 72.67563935714286,
+    "id": 1159112859
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 29.479232211111114,
+    "longitude": 72.64691675555555,
+    "id": 1159112860
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 29.480165,
+    "longitude": 72.6506332,
+    "id": 1159112861
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 29.4742539125,
+    "longitude": 72.626011,
+    "id": 1159112862
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 29.47180575,
+    "longitude": 72.62862515,
+    "id": 1159112863
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.492346599999998,
+    "longitude": 72.6481475,
+    "id": 1359657709
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49229544285714,
+    "longitude": 72.64853014285714,
+    "id": 1359657710
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.4929831,
+    "longitude": 72.64816445,
+    "id": 1359657711
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.492622666666666,
+    "longitude": 72.64791496666668,
+    "id": 1359657712
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49227865,
+    "longitude": 72.64758425,
+    "id": 1359657713
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49196003333333,
+    "longitude": 72.64790210000001,
+    "id": 1359657714
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49164895,
+    "longitude": 72.64803955,
+    "id": 1359657715
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.4913,
+    "longitude": 72.648099225,
+    "id": 1359657716
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.492324766666666,
+    "longitude": 72.64777571111112,
+    "id": 1359657717
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49413895,
+    "longitude": 72.64396055,
+    "id": 1359657718
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49414575,
+    "longitude": 72.64358974999999,
+    "id": 1359657719
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49427225,
+    "longitude": 72.6432169,
+    "id": 1359657720
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.4941658,
+    "longitude": 72.64282735,
+    "id": 1359657721
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49322234,
+    "longitude": 72.64377474,
+    "id": 1359657722
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49256505,
+    "longitude": 72.64351886666667,
+    "id": 1359657723
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49151718,
+    "longitude": 72.64445314,
+    "id": 1359657724
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.492040479999996,
+    "longitude": 72.6444585,
+    "id": 1359657725
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.492683957142855,
+    "longitude": 72.64434705714287,
+    "id": 1359657726
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.49239812857143,
+    "longitude": 72.64365781428572,
+    "id": 1359657727
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.4924546,
+    "longitude": 72.64294077142857,
+    "id": 1359657728
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 29.4888922,
+    "longitude": 72.64256351666667,
+    "id": 1359657729
+  },
+  {
+    "name": "Chak 188/M",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 29.482959899999997,
+    "longitude": 72.6672366,
+    "id": 371359905
+  },
+  {
+    "name": "Chak 160/M",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 29.51390438333333,
+    "longitude": 72.63591128333333,
+    "id": 371361634
+  },
+  {
+    "name": "RHC Hospital",
+    "category": "amenity",
+    "subcategory": "hospital",
+    "latitude": 29.493485266666667,
+    "longitude": 72.65551308333333,
+    "id": 570627355
+  },
+  {
+    "name": "Government Higher Secondry School Chunawala",
+    "category": "amenity",
+    "subcategory": "school",
+    "latitude": 29.497447920000003,
+    "longitude": 72.65544059999999,
+    "id": 570635695
+  },
+  {
+    "name": "Government veterinary hospital",
+    "category": "amenity",
+    "subcategory": "hospital",
+    "latitude": 29.495422628571426,
+    "longitude": 72.65552267142857,
+    "id": 573878636
+  },
+  {
+    "name": "Union council",
+    "category": "landuse",
+    "subcategory": "institutional",
+    "latitude": 29.494605259999997,
+    "longitude": 72.65519508,
+    "id": 573880494
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 29.4736652,
+    "longitude": 72.67563935714286,
+    "id": 1159112859
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 29.479232211111114,
+    "longitude": 72.64691675555555,
+    "id": 1159112860
+  }
+]

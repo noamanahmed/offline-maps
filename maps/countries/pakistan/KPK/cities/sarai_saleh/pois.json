@@ -1,11 +1,107 @@
 [
   {
+    "name": "Mankarai",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.0019405,
+    "longitude": 72.9674546,
+    "id": 296349014
+  },
+  {
     "name": "نیشنل بینک آف پاکستان",
     "category": "amenity",
     "subcategory": "bank",
     "latitude": 33.9953414,
     "longitude": 72.9447072,
     "id": 296404186
+  },
+  {
+    "name": "سرائے صالح",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 33.9868329,
+    "longitude": 72.983359,
+    "id": 297460837
+  },
+  {
+    "name": "چک شاہ محمد",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 33.9914486,
+    "longitude": 72.9598677,
+    "id": 300040192
+  },
+  {
+    "name": "Ali Khan",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 33.9826647,
+    "longitude": 72.9593653,
+    "id": 301579573
+  },
+  {
+    "name": "Geher Khan",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 33.9877864,
+    "longitude": 72.9510631,
+    "id": 301579788
+  },
+  {
+    "name": "Rehana",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 33.98108,
+    "longitude": 72.9874523,
+    "id": 309340559
+  },
+  {
+    "name": "Mohrra Muhammad",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.0056311,
+    "longitude": 72.9664495,
+    "id": 309340795
+  },
+  {
+    "name": "Abbottābād District",
+    "category": "place",
+    "subcategory": "county",
+    "latitude": 34.0,
+    "longitude": 73.0,
+    "id": 316440966
+  },
+  {
+    "name": "village",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 33.9960103,
+    "longitude": 72.9438715,
+    "id": 413907763
+  },
+  {
+    "name": "fuel",
+    "category": "amenity",
+    "subcategory": "fuel",
+    "latitude": 34.01823,
+    "longitude": 72.9467549,
+    "id": 2633743598
+  },
+  {
+    "name": "Mohra Muhammad",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.0113828,
+    "longitude": 72.9617961,
+    "id": 2633971137
+  },
+  {
+    "name": "cafe",
+    "category": "amenity",
+    "subcategory": "cafe",
+    "latitude": 33.9857856,
+    "longitude": 72.9851025,
+    "id": 4140017394
   },
   {
     "name": "shell petrol pump",
@@ -22,5 +118,2221 @@
     "latitude": 33.9937233,
     "longitude": 72.9490153,
     "id": 5168897921
+  },
+  {
+    "name": "Regional Passport Office Haripur",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 33.9931664,
+    "longitude": 72.9521568,
+    "id": 5168897922
+  },
+  {
+    "name": "علی خان",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 33.988787,
+    "longitude": 72.9684057,
+    "id": 8887549243
+  },
+  {
+    "name": "crossing",
+    "category": "highway",
+    "subcategory": "crossing",
+    "latitude": 33.9862779,
+    "longitude": 73.0333202,
+    "id": 13653464479
+  },
+  {
+    "name": "Mankerai Road",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 34.00010063777778,
+    "longitude": 72.94628537111112,
+    "id": 27037263
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.992751794444445,
+    "longitude": 72.94149771111111,
+    "id": 27041333
+  },
+  {
+    "name": "Rangeela Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.998281116,
+    "longitude": 72.94394878,
+    "id": 27113394
+  },
+  {
+    "name": "Kalan Mir Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.94468025454546,
+    "longitude": 72.97251301818181,
+    "id": 27133726
+  },
+  {
+    "name": "Kalan Mir Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.95057969444444,
+    "longitude": 72.97572951666668,
+    "id": 27133740
+  },
+  {
+    "name": "Kalan Mir Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.95597444,
+    "longitude": 72.97277242999999,
+    "id": 27133758
+  },
+  {
+    "name": "Kalan Mir Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.96131004285714,
+    "longitude": 72.96713425,
+    "id": 27133788
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.97174468387097,
+    "longitude": 72.96050834193548,
+    "id": 27133836
+  },
+  {
+    "name": "Gul Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.96470737878788,
+    "longitude": 72.94118494393939,
+    "id": 27133891
+  },
+  {
+    "name": "Mankerai",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99983415,
+    "longitude": 72.96611091999999,
+    "id": 27134219
+  },
+  {
+    "name": "Mankerai",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.00082709666667,
+    "longitude": 72.97164257666667,
+    "id": 27134224
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.001128075,
+    "longitude": 72.967868275,
+    "id": 27134227
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.0017082125,
+    "longitude": 72.97041074375,
+    "id": 27134235
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.002331005555554,
+    "longitude": 72.97510057777778,
+    "id": 27134252
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.00150199285714,
+    "longitude": 72.97461733571429,
+    "id": 27134255
+  },
+  {
+    "name": "Takiya Afazal Khan Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.9905518,
+    "longitude": 72.95547515,
+    "id": 27167104
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99287012692308,
+    "longitude": 72.94212403076924,
+    "id": 27167468
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99273083333333,
+    "longitude": 72.94793874,
+    "id": 27188431
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99275314166667,
+    "longitude": 72.94523551666667,
+    "id": 27188438
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99079475,
+    "longitude": 72.94208508333334,
+    "id": 27188462
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99150754285714,
+    "longitude": 72.95023191428571,
+    "id": 27188486
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99673695652174,
+    "longitude": 72.94619823913044,
+    "id": 27188492
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99369192727273,
+    "longitude": 72.94441569090908,
+    "id": 27188494
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.00171630909091,
+    "longitude": 72.94438677727273,
+    "id": 27262503
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99062738,
+    "longitude": 72.94561041333333,
+    "id": 27266539
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.00232014545455,
+    "longitude": 72.94625399090909,
+    "id": 27266864
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 34.006785264,
+    "longitude": 72.964476484,
+    "id": 27266918
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.986430983333335,
+    "longitude": 72.96030751666667,
+    "id": 27279580
+  },
+  {
+    "name": "Rehana Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 33.97667298064516,
+    "longitude": 72.99458445806451,
+    "id": 27280199
+  },
+  {
+    "name": "orchard",
+    "category": "landuse",
+    "subcategory": "orchard",
+    "latitude": 33.986302763157894,
+    "longitude": 72.98690382105264,
+    "id": 27280284
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.989391384375,
+    "longitude": 72.9684121875,
+    "id": 27332275
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98822731724138,
+    "longitude": 72.97915216206897,
+    "id": 27332335
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.986511758333336,
+    "longitude": 72.98418759583333,
+    "id": 27332381
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98774130588235,
+    "longitude": 72.98635355294118,
+    "id": 27332422
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98755225,
+    "longitude": 72.9863551,
+    "id": 27332423
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.9915553,
+    "longitude": 72.943046,
+    "id": 27417278
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.9913169,
+    "longitude": 72.94281000000001,
+    "id": 27417284
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99117330000001,
+    "longitude": 72.94275766666667,
+    "id": 27417291
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.003394799999995,
+    "longitude": 72.94452919999999,
+    "id": 27417628
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.00059372631579,
+    "longitude": 72.96561619473684,
+    "id": 27417688
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.00494919423077,
+    "longitude": 72.98082942307693,
+    "id": 27417768
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99833998043478,
+    "longitude": 72.94684392173913,
+    "id": 27448774
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.999423542857144,
+    "longitude": 72.94444850000001,
+    "id": 27448778
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.000144855555554,
+    "longitude": 72.94466144444444,
+    "id": 27448783
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.000138899999996,
+    "longitude": 72.94394410000001,
+    "id": 27448785
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.00012413333334,
+    "longitude": 72.94372693333334,
+    "id": 27448789
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.00004813333333,
+    "longitude": 72.943548,
+    "id": 27448791
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99979548,
+    "longitude": 72.94398332,
+    "id": 27448793
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.999455,
+    "longitude": 72.94423905,
+    "id": 27448796
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99910729,
+    "longitude": 72.94343087,
+    "id": 27448803
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.97786547333333,
+    "longitude": 72.95878171333334,
+    "id": 27465831
+  },
+  {
+    "name": "Ali Khan Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98580763333333,
+    "longitude": 72.9645069625,
+    "id": 27465987
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.986251026666665,
+    "longitude": 72.95710282666667,
+    "id": 27465991
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98445798461539,
+    "longitude": 72.95189621153847,
+    "id": 27465993
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.984210233333336,
+    "longitude": 72.95611228333333,
+    "id": 27465995
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98303178333334,
+    "longitude": 72.95581831666667,
+    "id": 27466009
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.98216445384615,
+    "longitude": 72.9581841076923,
+    "id": 27466068
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98216912083333,
+    "longitude": 72.96069099583333,
+    "id": 27466074
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98305654285714,
+    "longitude": 72.95524803809523,
+    "id": 27466077
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98505488461539,
+    "longitude": 72.95800783076923,
+    "id": 27466089
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.986254951020406,
+    "longitude": 72.96931257959184,
+    "id": 27466098
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.96990835614035,
+    "longitude": 72.96380479122807,
+    "id": 27466132
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99278155,
+    "longitude": 72.94351935,
+    "id": 27470939
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.999167990625,
+    "longitude": 72.950487521875,
+    "id": 27530628
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.0004414125,
+    "longitude": 72.9448122,
+    "id": 27530630
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99661194285714,
+    "longitude": 72.94845356190476,
+    "id": 27530759
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99662789,
+    "longitude": 72.94715731,
+    "id": 27530766
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99707155,
+    "longitude": 72.94708995,
+    "id": 27530772
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99703385,
+    "longitude": 72.94728775,
+    "id": 27530776
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.997694921052634,
+    "longitude": 72.94446761578946,
+    "id": 27530787
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99656211764706,
+    "longitude": 72.97227672745099,
+    "id": 27581940
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98756014,
+    "longitude": 72.9756815,
+    "id": 27602039
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.9872798,
+    "longitude": 72.97632577499999,
+    "id": 27602047
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98770562222222,
+    "longitude": 72.97441154444444,
+    "id": 27602057
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98781695,
+    "longitude": 72.97504878333334,
+    "id": 27602061
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98783596,
+    "longitude": 72.97906945999999,
+    "id": 27602154
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98729805,
+    "longitude": 72.9750297,
+    "id": 27602167
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.9860300375,
+    "longitude": 72.97611375,
+    "id": 27602192
+  },
+  {
+    "name": "شاہراہ قراقرم",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 33.989844497916664,
+    "longitude": 72.96450007916667,
+    "id": 28187728
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.008165972368424,
+    "longitude": 72.97141648421052,
+    "id": 28682177
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.0074684725,
+    "longitude": 72.9806582825,
+    "id": 28682184
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.00995110344827,
+    "longitude": 72.97837384827587,
+    "id": 28682215
+  },
+  {
+    "name": "Pind Jamal Khan Road",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 33.97598504888889,
+    "longitude": 72.98870968888889,
+    "id": 28682288
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.9851999,
+    "longitude": 72.94209506363637,
+    "id": 72350145
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.98238082857143,
+    "longitude": 72.96081954285715,
+    "id": 72350146
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.983704288888894,
+    "longitude": 72.95585224444444,
+    "id": 72350147
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.98796252857143,
+    "longitude": 72.95088157142857,
+    "id": 72350148
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.000817845161286,
+    "longitude": 72.93497366451614,
+    "id": 72350150
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.00137735,
+    "longitude": 72.94898285,
+    "id": 80671420
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 34.0026273,
+    "longitude": 72.94936770000001,
+    "id": 80671421
+  },
+  {
+    "name": "reservoir",
+    "category": "landuse",
+    "subcategory": "reservoir",
+    "latitude": 34.00118428333334,
+    "longitude": 72.94839791666666,
+    "id": 80671424
+  },
+  {
+    "name": "Dhor",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.009843689374996,
+    "longitude": 73.052820836875,
+    "id": 80789171
+  },
+  {
+    "name": "Chappar Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.01631551,
+    "longitude": 72.944243905,
+    "id": 257931686
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.022163012698414,
+    "longitude": 72.96353442063493,
+    "id": 257955887
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.02024986666667,
+    "longitude": 72.9647695,
+    "id": 257955890
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 34.014355697058825,
+    "longitude": 72.96293835588234,
+    "id": 257955892
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.01237207142857,
+    "longitude": 72.96192772857144,
+    "id": 257957374
+  },
+  {
+    "name": "greenfield",
+    "category": "landuse",
+    "subcategory": "greenfield",
+    "latitude": 33.990815534090906,
+    "longitude": 72.94771163409091,
+    "id": 304963909
+  },
+  {
+    "name": "Chappar Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.01884205,
+    "longitude": 72.95189585,
+    "id": 352118523
+  },
+  {
+    "name": "شاہراہ قراقرم",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 33.98647846956522,
+    "longitude": 73.02168656956522,
+    "id": 352154246
+  },
+  {
+    "name": "شاہراہ قراقرم",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 33.98574535,
+    "longitude": 72.98845175,
+    "id": 352154252
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 33.98007822638888,
+    "longitude": 73.01560563888889,
+    "id": 368821310
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.98945538888889,
+    "longitude": 72.94269249444444,
+    "id": 493879143
+  },
+  {
+    "name": "ہزارہ موٹروے",
+    "category": "highway",
+    "subcategory": "motorway",
+    "latitude": 33.96304939411765,
+    "longitude": 72.97906163235294,
+    "id": 563079937
+  },
+  {
+    "name": "ہزارہ موٹروے",
+    "category": "highway",
+    "subcategory": "motorway",
+    "latitude": 33.9733552,
+    "longitude": 73.02496540000001,
+    "id": 666737722
+  },
+  {
+    "name": "ہزارہ موٹروے",
+    "category": "highway",
+    "subcategory": "motorway",
+    "latitude": 33.97183105,
+    "longitude": 73.02135655000001,
+    "id": 666737725
+  },
+  {
+    "name": "ہزارہ موٹروے",
+    "category": "highway",
+    "subcategory": "motorway",
+    "latitude": 33.9719554,
+    "longitude": 73.02129945,
+    "id": 666737727
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98789931666666,
+    "longitude": 72.9806607,
+    "id": 680451639
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.003042625,
+    "longitude": 72.966187825,
+    "id": 680454314
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 33.95967511836735,
+    "longitude": 73.02019086632653,
+    "id": 686973379
+  },
+  {
+    "name": "ہزارہ موٹروے",
+    "category": "highway",
+    "subcategory": "motorway",
+    "latitude": 33.97321895,
+    "longitude": 73.0250384,
+    "id": 691294864
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.034636533552636,
+    "longitude": 72.99905276907896,
+    "id": 702876452
+  },
+  {
+    "name": "Mankerai Road",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 34.00215418571428,
+    "longitude": 72.96259770714285,
+    "id": 702878980
+  },
+  {
+    "name": "Mankerai Road",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 34.0012478,
+    "longitude": 72.95401580000001,
+    "id": 702878981
+  },
+  {
+    "name": "Haripur Bypass",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 33.993233634545454,
+    "longitude": 73.00698379090909,
+    "id": 702878982
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 33.987550544444446,
+    "longitude": 72.98728704444444,
+    "id": 702878983
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.974193639999996,
+    "longitude": 72.98840231,
+    "id": 702878984
+  },
+  {
+    "name": "Rehana Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.975442316666665,
+    "longitude": 72.98727260833333,
+    "id": 702878985
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.00236546,
+    "longitude": 72.9650395,
+    "id": 702879512
+  },
+  {
+    "name": "Haripur Bypass",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.01991795,
+    "longitude": 72.9515878,
+    "id": 702881049
+  },
+  {
+    "name": "Haripur Bypass",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.01990515,
+    "longitude": 72.94686407500001,
+    "id": 702881050
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.010822984444445,
+    "longitude": 72.94252173111111,
+    "id": 702881795
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.988556022580646,
+    "longitude": 72.95041584516129,
+    "id": 702888076
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.009342627450984,
+    "longitude": 72.95700056078432,
+    "id": 702891246
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.954293488059704,
+    "longitude": 73.02490996716418,
+    "id": 707441594
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99615193333333,
+    "longitude": 72.94883876666667,
+    "id": 713699453
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99808026,
+    "longitude": 72.94846146,
+    "id": 713699454
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99611935,
+    "longitude": 72.94850608333333,
+    "id": 713699455
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.996830800000005,
+    "longitude": 72.9449448,
+    "id": 713699456
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99600469999999,
+    "longitude": 72.94465606666667,
+    "id": 713699458
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99661585,
+    "longitude": 72.944451,
+    "id": 713699459
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99665861111111,
+    "longitude": 72.94390651111111,
+    "id": 713699460
+  },
+  {
+    "name": "ہزارہ موٹروے",
+    "category": "highway",
+    "subcategory": "motorway",
+    "latitude": 33.96306947428572,
+    "longitude": 72.9800075542857,
+    "id": 821252466
+  },
+  {
+    "name": "Kalan Mir Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.96769864473684,
+    "longitude": 72.96005801578947,
+    "id": 821252472
+  },
+  {
+    "name": "Kalan Mir Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.9635865,
+    "longitude": 72.96503285,
+    "id": 821252473
+  },
+  {
+    "name": "Rehana Road",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 33.951892562295086,
+    "longitude": 72.99833801311475,
+    "id": 821252474
+  },
+  {
+    "name": "Rehana Road",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 33.9656249,
+    "longitude": 72.99207545,
+    "id": 821252475
+  },
+  {
+    "name": "Chattri Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 33.95380555,
+    "longitude": 73.01854172058823,
+    "id": 821252476
+  },
+  {
+    "name": "Chattri Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 33.96575115,
+    "longitude": 73.007609,
+    "id": 821252477
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.994102075,
+    "longitude": 72.945577025,
+    "id": 867929455
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99384995,
+    "longitude": 72.9453121,
+    "id": 867929456
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.98680035555556,
+    "longitude": 72.98957767777777,
+    "id": 889348435
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.98668415,
+    "longitude": 72.9878581,
+    "id": 889348436
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.9866833,
+    "longitude": 72.988069,
+    "id": 889348437
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.99314735625,
+    "longitude": 72.98539048125,
+    "id": 889348964
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 33.989625700000005,
+    "longitude": 72.9864505,
+    "id": 889348965
+  },
+  {
+    "name": "Chappar Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.03390672068965,
+    "longitude": 72.95633412413794,
+    "id": 943159961
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98852114117647,
+    "longitude": 73.01858323529413,
+    "id": 943936332
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98902340909091,
+    "longitude": 73.0180871909091,
+    "id": 943936333
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98903995833333,
+    "longitude": 73.01787855833334,
+    "id": 943936334
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98894529285714,
+    "longitude": 73.01759767857142,
+    "id": 943936335
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98998867837838,
+    "longitude": 73.01698701351351,
+    "id": 943936336
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98826658275862,
+    "longitude": 73.01614235172414,
+    "id": 943936337
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.988710284210526,
+    "longitude": 73.01893661578947,
+    "id": 943936338
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.987732092857144,
+    "longitude": 73.0168865,
+    "id": 943936339
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.986767675,
+    "longitude": 73.017659625,
+    "id": 943936340
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98635876363637,
+    "longitude": 73.0161020909091,
+    "id": 943936341
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98732179583333,
+    "longitude": 73.01817805833333,
+    "id": 943936342
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98761292,
+    "longitude": 73.01881284,
+    "id": 943936343
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98768372272727,
+    "longitude": 73.01843571818182,
+    "id": 943936344
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.9873828,
+    "longitude": 73.01774925000001,
+    "id": 943936345
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98615402,
+    "longitude": 73.01657458,
+    "id": 943936346
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.986234511111114,
+    "longitude": 73.01876238888889,
+    "id": 943936347
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98616655,
+    "longitude": 73.018851,
+    "id": 943936348
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98231067014925,
+    "longitude": 73.0199053477612,
+    "id": 943936349
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.9836907,
+    "longitude": 73.01903514285713,
+    "id": 943936351
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.984924666666664,
+    "longitude": 73.01776374666666,
+    "id": 943936352
+  },
+  {
+    "name": "parking",
+    "category": "amenity",
+    "subcategory": "parking",
+    "latitude": 33.985769033333334,
+    "longitude": 73.01621043333333,
+    "id": 943936353
+  },
+  {
+    "name": "Kamelpur Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 33.98395498888889,
+    "longitude": 72.98340134444445,
+    "id": 943950503
+  },
+  {
+    "name": "Nehr Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98790794090909,
+    "longitude": 72.9761588159091,
+    "id": 943950504
+  },
+  {
+    "name": "park",
+    "category": "leisure",
+    "subcategory": "park",
+    "latitude": 33.98816663529412,
+    "longitude": 72.97408774705883,
+    "id": 943950505
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98042368125,
+    "longitude": 72.9822000125,
+    "id": 943950507
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.00487124,
+    "longitude": 72.96741779999999,
+    "id": 952056413
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.004910530000004,
+    "longitude": 72.967119695,
+    "id": 952056414
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.00106102857143,
+    "longitude": 72.95080805714285,
+    "id": 952057421
+  },
+  {
+    "name": "ٹیکنیکل کالج سرائے صالح",
+    "category": "amenity",
+    "subcategory": "college",
+    "latitude": 33.97773331333334,
+    "longitude": 72.99463512666667,
+    "id": 960725702
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.01551213333334,
+    "longitude": 72.94378266666666,
+    "id": 984484491
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.01536851111111,
+    "longitude": 72.94390153333333,
+    "id": 984484493
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.013726659999996,
+    "longitude": 72.94306306,
+    "id": 984484494
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.01984653333333,
+    "longitude": 72.95367646666666,
+    "id": 1044795395
+  },
+  {
+    "name": "Haripur Bypass",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.01943877222222,
+    "longitude": 72.95363686111111,
+    "id": 1044795396
+  },
+  {
+    "name": "Haripur Bypass",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.01981788333333,
+    "longitude": 72.95312768333334,
+    "id": 1044795397
+  },
+  {
+    "name": "Chappar Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.0189737,
+    "longitude": 72.95322207142857,
+    "id": 1044795399
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.0295413381579,
+    "longitude": 72.94201652828947,
+    "id": 1044795400
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.026603699999995,
+    "longitude": 72.95384825,
+    "id": 1044797588
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.027315900000005,
+    "longitude": 72.95420807692308,
+    "id": 1044797589
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.0254056625,
+    "longitude": 72.9521037875,
+    "id": 1044797590
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.02534165,
+    "longitude": 72.94639035,
+    "id": 1044797591
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.0248042,
+    "longitude": 72.94755175,
+    "id": 1044797592
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.024429925,
+    "longitude": 72.94802415,
+    "id": 1044797593
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.0263498625,
+    "longitude": 72.94411207499999,
+    "id": 1044797594
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.02344501,
+    "longitude": 72.9620545425,
+    "id": 1044799615
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.0223998,
+    "longitude": 72.95636811428571,
+    "id": 1044799616
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.0233870875,
+    "longitude": 72.9570823,
+    "id": 1044799617
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.02035594666667,
+    "longitude": 72.95552556,
+    "id": 1044799618
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.02243465,
+    "longitude": 72.95897503333333,
+    "id": 1044800092
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.0225136625,
+    "longitude": 72.959783475,
+    "id": 1044800093
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.02517053636363,
+    "longitude": 72.95962935454546,
+    "id": 1044800094
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.98464902,
+    "longitude": 72.97257205999999,
+    "id": 1185620643
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.9838142,
+    "longitude": 72.97364619999999,
+    "id": 1185620644
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.97815940740741,
+    "longitude": 72.97486124074074,
+    "id": 1185620645
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.97050702,
+    "longitude": 72.973551945,
+    "id": 1185620646
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.966496,
+    "longitude": 72.97416215,
+    "id": 1185620647
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.96013837837838,
+    "longitude": 72.97565530810812,
+    "id": 1185620648
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 33.99143058666667,
+    "longitude": 72.98591153333334,
+    "id": 1198314826
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.99155953076923,
+    "longitude": 72.98733561538462,
+    "id": 1198314827
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.99372632,
+    "longitude": 72.98749988,
+    "id": 1198314828
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.997127533333334,
+    "longitude": 73.00771187777778,
+    "id": 1198314829
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.99537291428572,
+    "longitude": 73.00154568571429,
+    "id": 1198314830
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.99405231304348,
+    "longitude": 72.98677653043478,
+    "id": 1198314831
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.993266358620694,
+    "longitude": 72.98153785172414,
+    "id": 1198314832
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.99418431666667,
+    "longitude": 72.985448925,
+    "id": 1198314833
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.99271793333333,
+    "longitude": 72.9863862,
+    "id": 1198314834
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.99329601,
+    "longitude": 72.98765035,
+    "id": 1198314835
+  },
+  {
+    "name": "Haripur Bypass",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 33.9924558,
+    "longitude": 72.9855884,
+    "id": 1198314836
+  },
+  {
+    "name": "Haripur Bypass",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.001667913333335,
+    "longitude": 72.96443784888889,
+    "id": 1198314837
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.97312595555556,
+    "longitude": 72.95775360317461,
+    "id": 1236821815
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 33.9944946,
+    "longitude": 72.94765025,
+    "id": 1239245697
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.9849399,
+    "longitude": 72.98582196666666,
+    "id": 1262235723
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.997939725,
+    "longitude": 72.953202175,
+    "id": 1262966853
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99774974615384,
+    "longitude": 72.96529546153846,
+    "id": 1263943759
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.99765792,
+    "longitude": 72.96428194,
+    "id": 1263943760
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.01724531,
+    "longitude": 72.94628373,
+    "id": 1366091608
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.01713084285714,
+    "longitude": 72.94526288571429,
+    "id": 1366091609
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.0171634625,
+    "longitude": 72.94383685,
+    "id": 1366091610
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.015802007272725,
+    "longitude": 72.95070673090909,
+    "id": 1367188643
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 34.01963270689655,
+    "longitude": 72.95143005172413,
+    "id": 1367188644
+  },
+  {
+    "name": "secondary_link",
+    "category": "highway",
+    "subcategory": "secondary_link",
+    "latitude": 34.01934177142857,
+    "longitude": 72.95080680714285,
+    "id": 1367188645
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98580785,
+    "longitude": 72.97598339999999,
+    "id": 1375977181
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98619789999999,
+    "longitude": 72.97443305,
+    "id": 1375977182
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98389053333333,
+    "longitude": 72.9748713,
+    "id": 1375977183
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.98919705,
+    "longitude": 72.9690123,
+    "id": 1469313994
+  },
+  {
+    "name": "secondary_link",
+    "category": "highway",
+    "subcategory": "secondary_link",
+    "latitude": 33.992222271428574,
+    "longitude": 72.9846294,
+    "id": 1509605624
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 33.99477197142857,
+    "longitude": 72.9442003857143,
+    "id": 27266676
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.983473204166664,
+    "longitude": 72.980177075,
+    "id": 27280277
+  },
+  {
+    "name": "orchard",
+    "category": "landuse",
+    "subcategory": "orchard",
+    "latitude": 33.986241336842106,
+    "longitude": 72.98688033157894,
+    "id": 27280284
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 34.00105119393939,
+    "longitude": 72.94296309090909,
+    "id": 27280306
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 33.99530446521739,
+    "longitude": 72.9482943826087,
+    "id": 27332232
+  },
+  {
+    "name": "Qabristan Srai Saleh",
+    "category": "amenity",
+    "subcategory": "grave_yard",
+    "latitude": 33.98668190555556,
+    "longitude": 72.97892390555555,
+    "id": 27332354
+  },
+  {
+    "name": "grave_yard",
+    "category": "amenity",
+    "subcategory": "grave_yard",
+    "latitude": 33.98047725352113,
+    "longitude": 72.94158481267606,
+    "id": 27406862
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.993937957142855,
+    "longitude": 72.94718097142858,
+    "id": 27406929
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 33.993784840000004,
+    "longitude": 72.94826052,
+    "id": 27406948
+  },
+  {
+    "name": "supermarket",
+    "category": "shop",
+    "subcategory": "supermarket",
+    "latitude": 33.99518446666667,
+    "longitude": 72.94607032592593,
+    "id": 27406969
+  },
+  {
+    "name": "supermarket",
+    "category": "shop",
+    "subcategory": "supermarket",
+    "latitude": 33.98605916,
+    "longitude": 72.98146666,
+    "id": 27406984
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.99181654444445,
+    "longitude": 72.94744081111111,
+    "id": 27417376
+  },
+  {
+    "name": "grave_yard",
+    "category": "amenity",
+    "subcategory": "grave_yard",
+    "latitude": 33.99904086888889,
+    "longitude": 72.97169431555555,
+    "id": 27417728
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 33.99556228591549,
+    "longitude": 72.95631514929578,
+    "id": 27448942
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 34.00474164210526,
+    "longitude": 72.94229470526317,
+    "id": 27448948
+  },
+  {
+    "name": "grave_yard",
+    "category": "amenity",
+    "subcategory": "grave_yard",
+    "latitude": 33.98830456666666,
+    "longitude": 72.97217092333334,
+    "id": 27466018
+  },
+  {
+    "name": "forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 33.981446804444445,
+    "longitude": 72.9506612688889,
+    "id": 27466119
+  },
+  {
+    "name": "supermarket",
+    "category": "shop",
+    "subcategory": "supermarket",
+    "latitude": 33.99506382,
+    "longitude": 72.94397198,
+    "id": 27470705
+  },
+  {
+    "name": "supermarket",
+    "category": "shop",
+    "subcategory": "supermarket",
+    "latitude": 33.99484133333333,
+    "longitude": 72.94507935555556,
+    "id": 27470774
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.994142025,
+    "longitude": 72.989552155,
+    "id": 27581902
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.99477759642857,
+    "longitude": 72.98571356428572,
+    "id": 27581903
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.993851337037036,
+    "longitude": 72.97930855185186,
+    "id": 27581927
+  },
+  {
+    "name": "Shah Muhammad",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 33.991773237931035,
+    "longitude": 72.95990201724138,
+    "id": 27602017
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.98505109090909,
+    "longitude": 72.94175564545455,
+    "id": 72350145
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.98239098571428,
+    "longitude": 72.96026164285715,
+    "id": 72350146
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.9836687,
+    "longitude": 72.95544693333333,
+    "id": 72350147
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.98784561428572,
+    "longitude": 72.95040337142858,
+    "id": 72350148
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.00066147741935,
+    "longitude": 72.93480477096774,
+    "id": 72350150
+  },
+  {
+    "name": "buildings",
+    "category": "landuse",
+    "subcategory": "buildings",
+    "latitude": 34.002286670000004,
+    "longitude": 72.95039455999999,
+    "id": 80671261
+  },
+  {
+    "name": "buildings",
+    "category": "landuse",
+    "subcategory": "buildings",
+    "latitude": 34.0046853625,
+    "longitude": 72.95117772500001,
+    "id": 80671262
+  },
+  {
+    "name": "buildings",
+    "category": "landuse",
+    "subcategory": "buildings",
+    "latitude": 34.00198278571428,
+    "longitude": 72.94939932857143,
+    "id": 80671422
+  },
+  {
+    "name": "buildings",
+    "category": "landuse",
+    "subcategory": "buildings",
+    "latitude": 34.0014251,
+    "longitude": 72.95067748,
+    "id": 80671423
+  },
+  {
+    "name": "reservoir",
+    "category": "landuse",
+    "subcategory": "reservoir",
+    "latitude": 34.00101153333333,
+    "longitude": 72.94833658333333,
+    "id": 80671424
+  },
+  {
+    "name": "Dhor",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.009860868124996,
+    "longitude": 73.0527742990625,
+    "id": 80789171
+  },
+  {
+    "name": "Dhor",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.01165523444445,
+    "longitude": 72.94804622333334,
+    "id": 1209402
+  },
+  {
+    "name": "greenfield",
+    "category": "landuse",
+    "subcategory": "greenfield",
+    "latitude": 33.99074241136364,
+    "longitude": 72.947664125,
+    "id": 304963909
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.989353155555555,
+    "longitude": 72.94259772222222,
+    "id": 493879143
+  },
+  {
+    "name": "parking",
+    "category": "amenity",
+    "subcategory": "parking",
+    "latitude": 33.98572381666667,
+    "longitude": 73.01620014999999,
+    "id": 943936353
+  },
+  {
+    "name": "park",
+    "category": "leisure",
+    "subcategory": "park",
+    "latitude": 33.98816663529412,
+    "longitude": 72.97408774705883,
+    "id": 943950505
+  },
+  {
+    "name": "ٹیکنیکل کالج سرائے صالح",
+    "category": "amenity",
+    "subcategory": "college",
+    "latitude": 33.97773331333334,
+    "longitude": 72.99463512666667,
+    "id": 960725702
+  },
+  {
+    "name": "Haripur Bypass",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.01944821111111,
+    "longitude": 72.95360898888889,
+    "id": 1044795396
   }
 ]

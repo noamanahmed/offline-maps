@@ -1,1 +1,858 @@
-[]
+[
+  {
+    "name": "نڑالى",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 33.1154527,
+    "longitude": 73.1613834,
+    "id": 11694905372
+  },
+  {
+    "name": "ڈھوک گوندل",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 33.1150263,
+    "longitude": 73.1573534,
+    "id": 11695025582
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 33.1147195,
+    "longitude": 73.161716,
+    "id": 13069996645
+  },
+  {
+    "name": "محلہ لوہاراں",
+    "category": "place",
+    "subcategory": "neighbourhood",
+    "latitude": 33.1146597,
+    "longitude": 73.1642447,
+    "id": 13069996646
+  },
+  {
+    "name": "محلہ راجگاں",
+    "category": "place",
+    "subcategory": "neighbourhood",
+    "latitude": 33.114079,
+    "longitude": 73.1617082,
+    "id": 13069996647
+  },
+  {
+    "name": "خانقاہِ سہروردیہ",
+    "category": "historic",
+    "subcategory": "monument",
+    "latitude": 33.110788,
+    "longitude": 73.1592903,
+    "id": 13069996648
+  },
+  {
+    "name": "Old Radhe Sham Temple",
+    "category": "historic",
+    "subcategory": "yes",
+    "latitude": 33.1150632,
+    "longitude": 73.1622113,
+    "id": 13069996649
+  },
+  {
+    "name": "NARALI ROAD",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 33.11222491666667,
+    "longitude": 73.15005430526315,
+    "id": 290949366
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 33.119883552272725,
+    "longitude": 73.16366671931819,
+    "id": 290950773
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 33.118791221343876,
+    "longitude": 73.15158148063242,
+    "id": 622914997
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 33.118839191666666,
+    "longitude": 73.15749808333332,
+    "id": 768381674
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.12707615428572,
+    "longitude": 73.14943647,
+    "id": 1047469892
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.11612268,
+    "longitude": 73.156173148,
+    "id": 1047469907
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.10233818958333,
+    "longitude": 73.16243152916667,
+    "id": 1047469911
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.120547505000005,
+    "longitude": 73.1685955775,
+    "id": 1047472989
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11982566296296,
+    "longitude": 73.17086806296295,
+    "id": 1241926818
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.121101550000006,
+    "longitude": 73.1687276,
+    "id": 1241926823
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.12014088275862,
+    "longitude": 73.17024330689655,
+    "id": 1241926827
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.1204259,
+    "longitude": 73.16874235,
+    "id": 1241926828
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.120266980000004,
+    "longitude": 73.16874686,
+    "id": 1241926829
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.11568916071429,
+    "longitude": 73.1613806,
+    "id": 1242973809
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11712262,
+    "longitude": 73.16091191333334,
+    "id": 1242973813
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11778291666666,
+    "longitude": 73.16047636666667,
+    "id": 1242973814
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.118121675,
+    "longitude": 73.16006809999999,
+    "id": 1242973815
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.11795205,
+    "longitude": 73.1601652625,
+    "id": 1242973816
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.116328527777775,
+    "longitude": 73.16067050555556,
+    "id": 1242973817
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.11787420952381,
+    "longitude": 73.1627646595238,
+    "id": 1242973820
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.1177439,
+    "longitude": 73.16612165,
+    "id": 1242973821
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 33.11221391147541,
+    "longitude": 73.15993383278689,
+    "id": 1242982059
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11472350909091,
+    "longitude": 73.16086952727272,
+    "id": 1242983498
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.115065666666666,
+    "longitude": 73.16056795555556,
+    "id": 1242983499
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11587852857143,
+    "longitude": 73.15950204285716,
+    "id": 1242983500
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.1158509,
+    "longitude": 73.15728956666666,
+    "id": 1242983501
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11534669,
+    "longitude": 73.15998221666668,
+    "id": 1242983502
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.1156871,
+    "longitude": 73.1584497,
+    "id": 1242983503
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11528095,
+    "longitude": 73.15803235,
+    "id": 1242983504
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11534853333333,
+    "longitude": 73.15792166666667,
+    "id": 1242983505
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11475926666667,
+    "longitude": 73.15684331666667,
+    "id": 1242983506
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.115332820000006,
+    "longitude": 73.15709501,
+    "id": 1242983507
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.1157443125,
+    "longitude": 73.1576730875,
+    "id": 1242983508
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.115488150000004,
+    "longitude": 73.15683775,
+    "id": 1242983509
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.116254033333334,
+    "longitude": 73.15648420000001,
+    "id": 1242983510
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11583928333334,
+    "longitude": 73.15608801666667,
+    "id": 1242983511
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11637903333334,
+    "longitude": 73.15522636666667,
+    "id": 1242983512
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.10859772,
+    "longitude": 73.16131654,
+    "id": 1242983514
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.112379475000004,
+    "longitude": 73.16104263333334,
+    "id": 1242987981
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11281445,
+    "longitude": 73.1610417,
+    "id": 1242987982
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.1136471,
+    "longitude": 73.16104555,
+    "id": 1242987983
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11390262727273,
+    "longitude": 73.16243466363636,
+    "id": 1242987984
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.113819825,
+    "longitude": 73.162157325,
+    "id": 1242987985
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.113792520000004,
+    "longitude": 73.16201448,
+    "id": 1242987986
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11334344545455,
+    "longitude": 73.16202704545454,
+    "id": 1242987987
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.1138689,
+    "longitude": 73.16140563939393,
+    "id": 1242987988
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.1152509,
+    "longitude": 73.1628766,
+    "id": 1242987989
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.115389945454545,
+    "longitude": 73.16283783636364,
+    "id": 1242987990
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.114890571428575,
+    "longitude": 73.16305325714286,
+    "id": 1242987991
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.115562913333335,
+    "longitude": 73.16367356666666,
+    "id": 1242987992
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.1163037,
+    "longitude": 73.16241679999999,
+    "id": 1242987993
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.116620857142856,
+    "longitude": 73.1625377,
+    "id": 1242987994
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11632085555556,
+    "longitude": 73.16287293333333,
+    "id": 1242987995
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11670335,
+    "longitude": 73.1633073,
+    "id": 1242987996
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11713615,
+    "longitude": 73.16308305,
+    "id": 1242987997
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.1160766925,
+    "longitude": 73.1630237775,
+    "id": 1242987998
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.115371719047616,
+    "longitude": 73.16253408571428,
+    "id": 1242987999
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.114902653125,
+    "longitude": 73.16194401875,
+    "id": 1242988000
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11548185,
+    "longitude": 73.161798875,
+    "id": 1242988001
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.1158108,
+    "longitude": 73.16086849999999,
+    "id": 1242988002
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11564745,
+    "longitude": 73.16058515,
+    "id": 1242988003
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.115461159999995,
+    "longitude": 73.1611278,
+    "id": 1242988004
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.1151419,
+    "longitude": 73.1593249,
+    "id": 1242988005
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11467751111111,
+    "longitude": 73.15897471111111,
+    "id": 1242988006
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.115574466666665,
+    "longitude": 73.15843593333334,
+    "id": 1242988007
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.111277799999996,
+    "longitude": 73.16210525,
+    "id": 1243265351
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.111461425,
+    "longitude": 73.161528725,
+    "id": 1243265352
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.115435633333334,
+    "longitude": 73.16397876666667,
+    "id": 1243265353
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.1153988,
+    "longitude": 73.1637126,
+    "id": 1243265354
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.115006550000004,
+    "longitude": 73.1642716,
+    "id": 1243265355
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11464973333333,
+    "longitude": 73.16362156666666,
+    "id": 1243265356
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.1147538,
+    "longitude": 73.1636359,
+    "id": 1243265357
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11456165,
+    "longitude": 73.164351325,
+    "id": 1243265358
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11505463181818,
+    "longitude": 73.16443347727272,
+    "id": 1243265359
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11479626086957,
+    "longitude": 73.16488776956523,
+    "id": 1243265360
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11489064,
+    "longitude": 73.16387178,
+    "id": 1243265361
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11566091428571,
+    "longitude": 73.16388361428572,
+    "id": 1243265362
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11307565,
+    "longitude": 73.16145465,
+    "id": 1243265363
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11225745,
+    "longitude": 73.16094525,
+    "id": 1243265364
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 33.11132325,
+    "longitude": 73.159626825,
+    "id": 1243265365
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11061385,
+    "longitude": 73.16225084999999,
+    "id": 1243266846
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.1110121,
+    "longitude": 73.16218735000001,
+    "id": 1243266847
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11620585,
+    "longitude": 73.1610871,
+    "id": 1243266850
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.116022459999996,
+    "longitude": 73.16125284,
+    "id": 1243266855
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.115138900000005,
+    "longitude": 73.16263615,
+    "id": 1243266856
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11560245,
+    "longitude": 73.1624849,
+    "id": 1243266857
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11548219,
+    "longitude": 73.16238496999999,
+    "id": 1243266858
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11468675,
+    "longitude": 73.16409189166667,
+    "id": 1243266859
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.11010315,
+    "longitude": 73.1623154,
+    "id": 1243269970
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 33.12151448,
+    "longitude": 73.15596896,
+    "id": 1249986818
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 33.12053355,
+    "longitude": 73.15637509285715,
+    "id": 1249986877
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 33.12234396363636,
+    "longitude": 73.15498835454545,
+    "id": 1249986878
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.1225198,
+    "longitude": 73.15853453870969,
+    "id": 1249990495
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.12289371923077,
+    "longitude": 73.160576,
+    "id": 1249990496
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 33.1130626,
+    "longitude": 73.16151835660378,
+    "id": 1257943755
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.11504690210526,
+    "longitude": 73.16134438631579,
+    "id": 1422193049
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.11573298148148,
+    "longitude": 73.15632405185185,
+    "id": 1422193818
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 33.119901829545455,
+    "longitude": 73.16362758295455,
+    "id": 290950773
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.115070738947374,
+    "longitude": 73.16133553368421,
+    "id": 1422193049
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 33.11573023333334,
+    "longitude": 73.15630971481481,
+    "id": 1422193818
+  }
+]

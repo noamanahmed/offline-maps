@@ -1,5 +1,53 @@
 [
   {
+    "name": "گولڑہ ہاشم",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.8376043,
+    "longitude": 73.9483857,
+    "id": 9408508261
+  },
+  {
+    "name": "کوٹلہ حاجی شاہ",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.8432729,
+    "longitude": 73.9499288,
+    "id": 9408508262
+  },
+  {
+    "name": "grave_yard",
+    "category": "amenity",
+    "subcategory": "grave_yard",
+    "latitude": 32.8379625,
+    "longitude": 73.9507991,
+    "id": 11443006588
+  },
+  {
+    "name": "بوھڑ گولڑہ ہاشم",
+    "category": "natural",
+    "subcategory": "tree",
+    "latitude": 32.8386904,
+    "longitude": 73.948062,
+    "id": 11629832872
+  },
+  {
+    "name": "مرکز انوار بابا جی حاجی شاہ صاحب",
+    "category": "historic",
+    "subcategory": "tomb",
+    "latitude": 32.8426842,
+    "longitude": 73.9502847,
+    "id": 11629834169
+  },
+  {
+    "name": "بس سٹاپ",
+    "category": "highway",
+    "subcategory": "bus_stop",
+    "latitude": 32.8404514,
+    "longitude": 73.9489003,
+    "id": 12118529600
+  },
+  {
     "name": "مسجد ابو خادم گولڑہ ہاشم",
     "category": "amenity",
     "subcategory": "place_of_worship",
@@ -22,5 +70,213 @@
     "latitude": 32.8382544,
     "longitude": 73.9552345,
     "id": 13258166478
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.840181975,
+    "longitude": 73.95009125,
+    "id": 229848870
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.83878493636364,
+    "longitude": 73.94807319090908,
+    "id": 229848882
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.83162327402598,
+    "longitude": 73.93177302207792,
+    "id": 229848897
+  },
+  {
+    "name": "Bhagwal - Guliana Link Road",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.83350567592593,
+    "longitude": 73.96193174629629,
+    "id": 229848899
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.84344157142857,
+    "longitude": 73.9497522857143,
+    "id": 454459329
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.83948436,
+    "longitude": 73.94336382,
+    "id": 732727190
+  },
+  {
+    "name": "Bhagwal - Golra Hashim Rd",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.833922361111114,
+    "longitude": 73.94913306666666,
+    "id": 732727193
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.85153084862385,
+    "longitude": 73.94028166055045,
+    "id": 769447688
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.8389342,
+    "longitude": 73.95122993999999,
+    "id": 769449450
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.84129365,
+    "longitude": 73.94992865,
+    "id": 769449451
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.842257044444445,
+    "longitude": 73.94939183333332,
+    "id": 769449452
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.83927182222222,
+    "longitude": 73.94715064444443,
+    "id": 769449453
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.833725566666665,
+    "longitude": 73.94206525,
+    "id": 1044787589
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.8353597,
+    "longitude": 73.94148628333333,
+    "id": 1044787590
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.8335286,
+    "longitude": 73.94171654285715,
+    "id": 1044787591
+  },
+  {
+    "name": "Bhagwal - Shorian Link Road",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.82798082,
+    "longitude": 73.94559077,
+    "id": 1221788251
+  },
+  {
+    "name": "مسجد سیدنا حضرت علی المرتضٰی گولڑہ ہاشم",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.838503125,
+    "longitude": 73.9550014375,
+    "id": 1234601073
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.8445966125,
+    "longitude": 73.9396155375,
+    "id": 1251521999
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.838213354054055,
+    "longitude": 73.94737061621622,
+    "id": 1412959015
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.83125115,
+    "longitude": 73.9412349,
+    "id": 1472493877
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.8304762,
+    "longitude": 73.9408148,
+    "id": 1472493878
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.831297414285714,
+    "longitude": 73.93997967142857,
+    "id": 1472493879
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.84315312857143,
+    "longitude": 73.94974002857144,
+    "id": 454459329
+  },
+  {
+    "name": "مسجد سیدنا حضرت علی المرتضٰی گولڑہ ہاشم",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.83849295,
+    "longitude": 73.95496845,
+    "id": 1234601073
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.84451075,
+    "longitude": 73.93944400000001,
+    "id": 1251521999
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.838162962162166,
+    "longitude": 73.94736497837837,
+    "id": 1412959015
   }
 ]

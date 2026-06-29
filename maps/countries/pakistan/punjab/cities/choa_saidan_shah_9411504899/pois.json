@@ -1,5 +1,29 @@
 [
   {
+    "name": "Mohalla Samsot",
+    "category": "place",
+    "subcategory": "neighbourhood",
+    "latitude": 32.7205596,
+    "longitude": 72.986641,
+    "id": 1357417206
+  },
+  {
+    "name": "Mohella Dheri",
+    "category": "place",
+    "subcategory": "hamlet",
+    "latitude": 32.7182941,
+    "longitude": 72.9836314,
+    "id": 1363417022
+  },
+  {
+    "name": "Mohalla Sherazi",
+    "category": "place",
+    "subcategory": "neighbourhood",
+    "latitude": 32.7162393,
+    "longitude": 72.9842338,
+    "id": 1363433783
+  },
+  {
     "name": "Katas mosque",
     "category": "amenity",
     "subcategory": "place_of_worship",
@@ -14,6 +38,14 @@
     "latitude": 32.7230251,
     "longitude": 72.9517407,
     "id": 2444618229
+  },
+  {
+    "name": "چوآسیدن شاہ",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 32.7193967,
+    "longitude": 72.9878142,
+    "id": 3391896665
   },
   {
     "name": "Katasraj Temple",
@@ -56,6 +88,30 @@
     "id": 4736481222
   },
   {
+    "name": "Ratuchah",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.7054902,
+    "longitude": 72.9904574,
+    "id": 5054364819
+  },
+  {
+    "name": "Katas Raj",
+    "category": "place",
+    "subcategory": "locality",
+    "latitude": 32.7246189,
+    "longitude": 72.9525403,
+    "id": 6793875326
+  },
+  {
+    "name": "Coal mine",
+    "category": "natural",
+    "subcategory": "cliff",
+    "latitude": 32.7330469,
+    "longitude": 73.0068261,
+    "id": 8570298230
+  },
+  {
     "name": "Gulzar-e-Madina",
     "category": "amenity",
     "subcategory": "place_of_worship",
@@ -72,11 +128,1059 @@
     "id": 8870454114
   },
   {
+    "name": "کٹاس",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.7276232,
+    "longitude": 72.9469774,
+    "id": 9411504896
+  },
+  {
+    "name": "مصطفی آباد",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.7168884,
+    "longitude": 72.9507057,
+    "id": 9411504897
+  },
+  {
+    "name": "چوآ سیدن شاہ",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 32.7207337,
+    "longitude": 72.9856213,
+    "id": 9411504899
+  },
+  {
+    "name": "رتوچھہ",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.7012895,
+    "longitude": 72.9917893,
+    "id": 9411504900
+  },
+  {
+    "name": "کھجورلا",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.7550412,
+    "longitude": 72.9868629,
+    "id": 9411504901
+  },
+  {
+    "name": "parking",
+    "category": "amenity",
+    "subcategory": "parking",
+    "latitude": 32.7228205,
+    "longitude": 72.9527963,
+    "id": 11789280641
+  },
+  {
     "name": "Al Jannat Sweets and Bakers",
     "category": "shop",
     "subcategory": "bakery",
     "latitude": 32.727367,
     "longitude": 72.9893806,
     "id": 12061678878
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.71693015333333,
+    "longitude": 72.98413775333333,
+    "id": 121897703
+  },
+  {
+    "name": "Graveyard",
+    "category": "amenity",
+    "subcategory": "grave_yard",
+    "latitude": 32.723392870588235,
+    "longitude": 72.98581538235294,
+    "id": 121897820
+  },
+  {
+    "name": "Mines Labor Welfare Hospital",
+    "category": "amenity",
+    "subcategory": "hospital",
+    "latitude": 32.71637655789473,
+    "longitude": 72.98781177894736,
+    "id": 121898795
+  },
+  {
+    "name": "Okaf Market",
+    "category": "amenity",
+    "subcategory": "marketplace",
+    "latitude": 32.7183959,
+    "longitude": 72.98481038,
+    "id": 121899046
+  },
+  {
+    "name": "Choa Saidan Shah-Khewra Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.66788783891129,
+    "longitude": 72.99047939455646,
+    "id": 122107814
+  },
+  {
+    "name": "GHS Mosque",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.7176652,
+    "longitude": 72.98661558,
+    "id": 122107815
+  },
+  {
+    "name": "Govt High School for Boys",
+    "category": "amenity",
+    "subcategory": "school",
+    "latitude": 32.71797804,
+    "longitude": 72.98696547,
+    "id": 122107816
+  },
+  {
+    "name": "Okaf Mosque",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.7190587,
+    "longitude": 72.9847613,
+    "id": 122107817
+  },
+  {
+    "name": "pedestrian",
+    "category": "highway",
+    "subcategory": "pedestrian",
+    "latitude": 32.71779105,
+    "longitude": 72.9871286,
+    "id": 122107820
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.71773565,
+    "longitude": 72.98509150000001,
+    "id": 122107822
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.721819419999996,
+    "longitude": 72.98689284,
+    "id": 122258783
+  },
+  {
+    "name": "Choa-Chakwal Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.78007535905172,
+    "longitude": 72.98274523491379,
+    "id": 199005475
+  },
+  {
+    "name": "Choa Saidan Shah- Kallar Kahar Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.720250300000004,
+    "longitude": 72.98423968333333,
+    "id": 199174584
+  },
+  {
+    "name": "Dandot Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.670111233734936,
+    "longitude": 72.96099457951807,
+    "id": 200336674
+  },
+  {
+    "name": "Ara Basharat Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.777614747213114,
+    "longitude": 73.10350121114755,
+    "id": 223045762
+  },
+  {
+    "name": "Ram tear Lake",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 32.724121716666666,
+    "longitude": 72.95207380000001,
+    "id": 232500005
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.723984575,
+    "longitude": 72.95265565,
+    "id": 232500007
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.72374586666667,
+    "longitude": 72.95253956666666,
+    "id": 232500008
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.72380271428572,
+    "longitude": 72.95214448571429,
+    "id": 232500009
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.723983733333334,
+    "longitude": 72.95240840000001,
+    "id": 232500010
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.723631,
+    "longitude": 72.9520248,
+    "id": 232500011
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.72318297142857,
+    "longitude": 72.95254192857143,
+    "id": 232500012
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.72327372857143,
+    "longitude": 72.95141871428572,
+    "id": 232500013
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.72345175,
+    "longitude": 72.95195795000001,
+    "id": 232500014
+  },
+  {
+    "name": "village",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.724669633333335,
+    "longitude": 72.95166136666667,
+    "id": 232500015
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.723359699999996,
+    "longitude": 72.95258050000001,
+    "id": 236426675
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.72374691111111,
+    "longitude": 72.95144623333334,
+    "id": 236426676
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72350852,
+    "longitude": 72.95153902,
+    "id": 236426678
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.723406645454546,
+    "longitude": 72.95082503636364,
+    "id": 236426679
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72312798461538,
+    "longitude": 72.95034068461538,
+    "id": 236426680
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.723931289999996,
+    "longitude": 72.95165043,
+    "id": 236426681
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.72393385714286,
+    "longitude": 72.95224751428572,
+    "id": 236426682
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72431648333333,
+    "longitude": 72.95184571666667,
+    "id": 236426684
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72412716,
+    "longitude": 72.95233169999999,
+    "id": 236426685
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72433962666666,
+    "longitude": 72.95215186666665,
+    "id": 236426686
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72421216,
+    "longitude": 72.95268264,
+    "id": 236426687
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.724037949999996,
+    "longitude": 72.95266775,
+    "id": 236426688
+  },
+  {
+    "name": "Choa Saidan Shah- Kallar Kahar Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.71947937625,
+    "longitude": 72.9645872875,
+    "id": 289502258
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.72086808181818,
+    "longitude": 72.97963482121212,
+    "id": 332076541
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72470926,
+    "longitude": 72.9531039,
+    "id": 332077116
+  },
+  {
+    "name": "کیڈٹ کالج چوآ سیدن شاہ چکوال",
+    "category": "amenity",
+    "subcategory": "college",
+    "latitude": 32.72449232307692,
+    "longitude": 72.96615114615385,
+    "id": 332077117
+  },
+  {
+    "name": "Choa Bypass",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.73292127826087,
+    "longitude": 72.98018659782609,
+    "id": 332077125
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.714892146153844,
+    "longitude": 72.98270200769231,
+    "id": 489613644
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.72264247333333,
+    "longitude": 72.98617254833333,
+    "id": 489613645
+  },
+  {
+    "name": "Katas Raj Temples",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72386618,
+    "longitude": 72.95149565,
+    "id": 489613646
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.702880816666664,
+    "longitude": 72.98934654444444,
+    "id": 518059148
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.68163453333333,
+    "longitude": 72.97238175555555,
+    "id": 518103228
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.73446786375,
+    "longitude": 72.93117454,
+    "id": 539639179
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.719689886666664,
+    "longitude": 72.98755109333334,
+    "id": 562701881
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.718669741666666,
+    "longitude": 72.989036275,
+    "id": 562715165
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.718258866666666,
+    "longitude": 72.98786093333332,
+    "id": 562715882
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.72075888888889,
+    "longitude": 72.98810943333334,
+    "id": 562716038
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.72238507307692,
+    "longitude": 72.99338946153846,
+    "id": 562716268
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.719261275,
+    "longitude": 72.9827170625,
+    "id": 562716901
+  },
+  {
+    "name": "Choa Saidan Shah- Kallar Kahar Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.726897885,
+    "longitude": 72.93204368,
+    "id": 575547218
+  },
+  {
+    "name": "Choa Bypass",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.72291216131387,
+    "longitude": 72.99699252627737,
+    "id": 754125243
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.71777535,
+    "longitude": 72.98491035,
+    "id": 813957380
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.71809823333333,
+    "longitude": 72.97123893333334,
+    "id": 813957381
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.725796917857146,
+    "longitude": 72.99107624285715,
+    "id": 813957382
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.71557159428572,
+    "longitude": 72.98094827142857,
+    "id": 813957383
+  },
+  {
+    "name": "Punjab School of Mines",
+    "category": "amenity",
+    "subcategory": "school",
+    "latitude": 32.72651552,
+    "longitude": 72.95471055333334,
+    "id": 813962008
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.72207455,
+    "longitude": 72.9852352,
+    "id": 865757621
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.7220564,
+    "longitude": 72.98439834999999,
+    "id": 865757622
+  },
+  {
+    "name": "Choa Saidan Shah- Kallar Kahar Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.720430949999994,
+    "longitude": 72.98605244999999,
+    "id": 865757623
+  },
+  {
+    "name": "ridge",
+    "category": "natural",
+    "subcategory": "ridge",
+    "latitude": 32.72228305689655,
+    "longitude": 72.98900644655173,
+    "id": 865759190
+  },
+  {
+    "name": "ridge",
+    "category": "natural",
+    "subcategory": "ridge",
+    "latitude": 32.72422101875,
+    "longitude": 72.99225186875,
+    "id": 865759191
+  },
+  {
+    "name": "ridge",
+    "category": "natural",
+    "subcategory": "ridge",
+    "latitude": 32.72650426,
+    "longitude": 72.99683763333333,
+    "id": 865759481
+  },
+  {
+    "name": "ridge",
+    "category": "natural",
+    "subcategory": "ridge",
+    "latitude": 32.72838862,
+    "longitude": 72.99938655999999,
+    "id": 865759482
+  },
+  {
+    "name": "ridge",
+    "category": "natural",
+    "subcategory": "ridge",
+    "latitude": 32.730297158333336,
+    "longitude": 73.00140079166667,
+    "id": 865759483
+  },
+  {
+    "name": "ridge",
+    "category": "natural",
+    "subcategory": "ridge",
+    "latitude": 32.73294620588235,
+    "longitude": 73.00410461764706,
+    "id": 865759484
+  },
+  {
+    "name": "Old Fort Ruins",
+    "category": "historic",
+    "subcategory": "castle",
+    "latitude": 32.71900273888889,
+    "longitude": 72.99555633888889,
+    "id": 923222338
+  },
+  {
+    "name": "Minhala",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.717500979310344,
+    "longitude": 73.01564861034483,
+    "id": 923223521
+  },
+  {
+    "name": "Minhala Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.718599777586206,
+    "longitude": 73.0066304275862,
+    "id": 923223522
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.721393688235295,
+    "longitude": 73.0267309382353,
+    "id": 923223523
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.75690217167449,
+    "longitude": 72.97152773208137,
+    "id": 1054671728
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.754642869767444,
+    "longitude": 72.9888641,
+    "id": 1054671729
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.754214780000005,
+    "longitude": 72.98742453199999,
+    "id": 1054671730
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.75414468,
+    "longitude": 72.98875618,
+    "id": 1054671731
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.755514579999996,
+    "longitude": 72.98325557,
+    "id": 1054671732
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.75550136666667,
+    "longitude": 72.98225895,
+    "id": 1054671733
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.75453795471698,
+    "longitude": 72.98248693396226,
+    "id": 1054671734
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.753805676190474,
+    "longitude": 72.98357774285715,
+    "id": 1054671735
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.75430435,
+    "longitude": 72.98490795000001,
+    "id": 1054671736
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.755379266666665,
+    "longitude": 72.9848154,
+    "id": 1054671737
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.755045357142855,
+    "longitude": 72.98533242857143,
+    "id": 1054671738
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.69736344012739,
+    "longitude": 73.01077309426752,
+    "id": 1054790384
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.70414277741936,
+    "longitude": 72.99197503548388,
+    "id": 1054790385
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.70116714444444,
+    "longitude": 72.98784531111112,
+    "id": 1054790386
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.72982506666667,
+    "longitude": 72.99165186666666,
+    "id": 1163496617
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.72989604,
+    "longitude": 72.98760641999999,
+    "id": 1163496618
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.72962215,
+    "longitude": 72.9870482,
+    "id": 1163496619
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.7285598,
+    "longitude": 72.98853105,
+    "id": 1163496620
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.72887298571428,
+    "longitude": 72.98840277142857,
+    "id": 1163496621
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.719812918181816,
+    "longitude": 72.97478034545453,
+    "id": 1243254411
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.7171351,
+    "longitude": 73.01007712222223,
+    "id": 1425694905
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.71656413703703,
+    "longitude": 73.00698354814814,
+    "id": 1425694906
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.71619283333333,
+    "longitude": 73.00769000000001,
+    "id": 1425694907
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.71622476,
+    "longitude": 73.00880447,
+    "id": 1425694908
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.717313175,
+    "longitude": 73.00919861999999,
+    "id": 1425694909
+  },
+  {
+    "name": "Graveyard",
+    "category": "amenity",
+    "subcategory": "grave_yard",
+    "latitude": 32.72342282352941,
+    "longitude": 72.98575395294118,
+    "id": 121897820
+  },
+  {
+    "name": "Mines Labor Welfare Hospital",
+    "category": "amenity",
+    "subcategory": "hospital",
+    "latitude": 32.716359352631585,
+    "longitude": 72.98780998421053,
+    "id": 121898795
+  },
+  {
+    "name": "Okaf Market",
+    "category": "amenity",
+    "subcategory": "marketplace",
+    "latitude": 32.71839536,
+    "longitude": 72.9847444,
+    "id": 121899046
+  },
+  {
+    "name": "GHS Mosque",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.7176652,
+    "longitude": 72.98661558,
+    "id": 122107815
+  },
+  {
+    "name": "Govt High School for Boys",
+    "category": "amenity",
+    "subcategory": "school",
+    "latitude": 32.71802329,
+    "longitude": 72.98696115,
+    "id": 122107816
+  },
+  {
+    "name": "Okaf Mosque",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.719057428571425,
+    "longitude": 72.98469778571429,
+    "id": 122107817
+  },
+  {
+    "name": "Ram tear Lake",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 32.724124511111114,
+    "longitude": 72.95205308333334,
+    "id": 232500005
+  },
+  {
+    "name": "village",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.72504928,
+    "longitude": 72.95094722666666,
+    "id": 232500015
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.723498660000004,
+    "longitude": 72.95149586,
+    "id": 236426678
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.723406645454546,
+    "longitude": 72.95082503636364,
+    "id": 236426679
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.7231265,
+    "longitude": 72.95033896153846,
+    "id": 236426680
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72394751,
+    "longitude": 72.95164145,
+    "id": 236426681
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72431648333333,
+    "longitude": 72.95184571666667,
+    "id": 236426684
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72412174,
+    "longitude": 72.95231708,
+    "id": 236426685
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72433962666666,
+    "longitude": 72.95215186666665,
+    "id": 236426686
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72424934,
+    "longitude": 72.95267412000001,
+    "id": 236426687
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72470926,
+    "longitude": 72.9531039,
+    "id": 332077116
+  },
+  {
+    "name": "کیڈٹ کالج چوآ سیدن شاہ چکوال",
+    "category": "amenity",
+    "subcategory": "college",
+    "latitude": 32.72449232307692,
+    "longitude": 72.96615114615385,
+    "id": 332077117
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.714814261538464,
+    "longitude": 72.9826719846154,
+    "id": 489613644
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.72263266833333,
+    "longitude": 72.98617119333333,
+    "id": 489613645
+  },
+  {
+    "name": "Katas Raj Temples",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.72386618,
+    "longitude": 72.95149565,
+    "id": 489613646
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.70173088333333,
+    "longitude": 72.98834287222222,
+    "id": 518059148
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.681043933333335,
+    "longitude": 72.97177895555555,
+    "id": 518103228
+  },
+  {
+    "name": "Punjab School of Mines",
+    "category": "amenity",
+    "subcategory": "school",
+    "latitude": 32.72633812,
+    "longitude": 72.95465242666666,
+    "id": 813962008
+  },
+  {
+    "name": "Old Fort Ruins",
+    "category": "historic",
+    "subcategory": "castle",
+    "latitude": 32.71900273888889,
+    "longitude": 72.99555633888889,
+    "id": 923222338
+  },
+  {
+    "name": "Minhala",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.717707037931035,
+    "longitude": 73.01553170344827,
+    "id": 923223521
   }
 ]

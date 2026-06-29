@@ -1,10 +1,834 @@
 [
   {
+    "name": "چوک سیٹھار",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 30.3224225,
+    "longitude": 70.9736849,
+    "id": 2921834800
+  },
+  {
+    "name": "Fatima Protein Farms",
+    "category": "place",
+    "subcategory": "farm",
+    "latitude": 30.3536579,
+    "longitude": 71.0048522,
+    "id": 5149922261
+  },
+  {
+    "name": "bus_stop",
+    "category": "highway",
+    "subcategory": "bus_stop",
+    "latitude": 30.3204307,
+    "longitude": 71.0031507,
+    "id": 11441608836
+  },
+  {
+    "name": "Awais house",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.3193687,
+    "longitude": 71.0032819,
+    "id": 11463210020
+  },
+  {
     "name": "Ayesha masjid Chowk sethar",
     "category": "amenity",
     "subcategory": "place_of_worship",
     "latitude": 30.3207252,
     "longitude": 71.002556,
     "id": 11527372635
+  },
+  {
+    "name": "sehikho sugar mill bus stop",
+    "category": "highway",
+    "subcategory": "bus_stop",
+    "latitude": 30.3205742,
+    "longitude": 71.0028144,
+    "id": 11528468113
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.380358895918366,
+    "longitude": 71.0404403632653,
+    "id": 73037343
+  },
+  {
+    "name": "Kot Addu Rd",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.32280535882353,
+    "longitude": 70.97374465882353,
+    "id": 73037387
+  },
+  {
+    "name": "Kot Addu Rd",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.348254584615383,
+    "longitude": 70.97110616153847,
+    "id": 73037453
+  },
+  {
+    "name": "Karim Dad Qurashi-Kot Addu Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.297417247368422,
+    "longitude": 70.97091773684211,
+    "id": 75801626
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.326518933333332,
+    "longitude": 70.97369306666667,
+    "id": 288632822
+  },
+  {
+    "name": "Muzaffargrah-kot Addu Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.265444336,
+    "longitude": 70.990908788,
+    "id": 288633047
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.410753916666668,
+    "longitude": 70.98650010357143,
+    "id": 484824878
+  },
+  {
+    "name": "Fatima Sugar Mill",
+    "category": "landuse",
+    "subcategory": "industrial",
+    "latitude": 30.29608428181818,
+    "longitude": 70.96796371818182,
+    "id": 561833029
+  },
+  {
+    "name": "Fatima Energy",
+    "category": "landuse",
+    "subcategory": "industrial",
+    "latitude": 30.295311975,
+    "longitude": 70.96759478749999,
+    "id": 945312725
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.2984919,
+    "longitude": 70.97497264,
+    "id": 1020975884
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.297693663636366,
+    "longitude": 70.90764655454545,
+    "id": 1020975885
+  },
+  {
+    "name": "Muzaffargrah-kot Addu Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.29060405,
+    "longitude": 70.9832113,
+    "id": 1041483825
+  },
+  {
+    "name": "Muzaffargrah-kot Addu Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.306351927272726,
+    "longitude": 70.9783982,
+    "id": 1041483826
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.29833455,
+    "longitude": 70.96543675000001,
+    "id": 1041483827
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.298361240000002,
+    "longitude": 70.96773864,
+    "id": 1041483828
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 30.294442580000002,
+    "longitude": 70.96761606666668,
+    "id": 1041483829
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 30.293273529411763,
+    "longitude": 70.96961082352942,
+    "id": 1041483830
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.287866247826088,
+    "longitude": 70.96681257826087,
+    "id": 1041483831
+  },
+  {
+    "name": "Sanawan-Sultan Rd",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 30.323376233333335,
+    "longitude": 70.98233846666666,
+    "id": 1041487136
+  },
+  {
+    "name": "Sanawan-Sultan Rd",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 30.325500440000003,
+    "longitude": 70.97677908,
+    "id": 1041487137
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.33114835,
+    "longitude": 70.97227885000001,
+    "id": 1041487138
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.3344031,
+    "longitude": 70.97136714999999,
+    "id": 1041487139
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.333955525,
+    "longitude": 70.97040427499999,
+    "id": 1041487140
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.333632,
+    "longitude": 70.97093935,
+    "id": 1041487141
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.332686119999998,
+    "longitude": 70.97099088,
+    "id": 1041487142
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.324180541666664,
+    "longitude": 70.97650578333334,
+    "id": 1041487143
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.32322792333333,
+    "longitude": 70.97751407666667,
+    "id": 1041487144
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.321804555555552,
+    "longitude": 70.9719907,
+    "id": 1041487145
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.3198337,
+    "longitude": 70.97257346666667,
+    "id": 1041487146
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.3236535,
+    "longitude": 70.9728559,
+    "id": 1041487147
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.323048099999998,
+    "longitude": 70.9729913,
+    "id": 1041487148
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.3224381,
+    "longitude": 70.9729169,
+    "id": 1041487149
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.320939471428574,
+    "longitude": 70.97251384285714,
+    "id": 1041487150
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.319882442857143,
+    "longitude": 70.97226442857144,
+    "id": 1041487151
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.329913632258062,
+    "longitude": 70.94275295806452,
+    "id": 1041487152
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.32709655,
+    "longitude": 70.95593175,
+    "id": 1041487153
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.325393631034483,
+    "longitude": 70.96607805517242,
+    "id": 1041487154
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.31621345,
+    "longitude": 70.9628445,
+    "id": 1041487155
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.309151821875002,
+    "longitude": 70.948504796875,
+    "id": 1041487156
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.318012208695652,
+    "longitude": 70.9694507173913,
+    "id": 1041487157
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.34026085,
+    "longitude": 70.9547657,
+    "id": 1041489488
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.34030945,
+    "longitude": 70.9539449,
+    "id": 1041489489
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.34020125,
+    "longitude": 70.9548656,
+    "id": 1041489490
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.340201800000003,
+    "longitude": 70.955707125,
+    "id": 1041489491
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.3191157,
+    "longitude": 70.96097999607844,
+    "id": 1041489492
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.301890888888888,
+    "longitude": 70.93679128888888,
+    "id": 1041489493
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.300757166666667,
+    "longitude": 70.93490836666668,
+    "id": 1041489494
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.298329972727274,
+    "longitude": 70.95185323636363,
+    "id": 1041489495
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.334167100000002,
+    "longitude": 71.00244330000001,
+    "id": 1041494603
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.32874517,
+    "longitude": 70.99386466,
+    "id": 1041494604
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.3540753,
+    "longitude": 70.9744799,
+    "id": 1041501599
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.352829480000004,
+    "longitude": 70.97737348000001,
+    "id": 1041501600
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.357213528571428,
+    "longitude": 70.97612525714285,
+    "id": 1041501601
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.355611557142858,
+    "longitude": 70.97319598571428,
+    "id": 1041501602
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.34468558,
+    "longitude": 70.97914695333334,
+    "id": 1041501603
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.342542178260867,
+    "longitude": 70.97517117826087,
+    "id": 1041501604
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.344634533333334,
+    "longitude": 70.97508745,
+    "id": 1041501605
+  },
+  {
+    "name": "Chowk Sethar Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.311554203448278,
+    "longitude": 71.00542792068964,
+    "id": 1179917064
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.30074517142857,
+    "longitude": 71.0155529,
+    "id": 1179917065
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.302998645000002,
+    "longitude": 71.01079215,
+    "id": 1179917067
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.31373335479452,
+    "longitude": 70.93581425068493,
+    "id": 1199232569
+  },
+  {
+    "name": "Chowk sethar Rd",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 30.32111501875,
+    "longitude": 70.9979473875,
+    "id": 1212172120
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.28620401904762,
+    "longitude": 71.00965372142858,
+    "id": 1212172125
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 30.317548870000003,
+    "longitude": 71.01419981000001,
+    "id": 1229054937
+  },
+  {
+    "name": "BASTI SETHAR Rd",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.327178930357142,
+    "longitude": 70.99947866071429,
+    "id": 1229059799
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.321238185714286,
+    "longitude": 70.98082531428572,
+    "id": 1229776740
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.322427557142856,
+    "longitude": 70.9816661,
+    "id": 1229776741
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.31766195,
+    "longitude": 70.99069898846155,
+    "id": 1229776742
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.312752422222225,
+    "longitude": 70.99657431111112,
+    "id": 1229776743
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.31567739090909,
+    "longitude": 70.99539050454545,
+    "id": 1229776744
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.313766425,
+    "longitude": 71.01005458750001,
+    "id": 1229776745
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.31219035,
+    "longitude": 71.0081443,
+    "id": 1229776746
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.3264478875,
+    "longitude": 71.00289186875,
+    "id": 1229776747
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.3270157,
+    "longitude": 71.0016534,
+    "id": 1229776748
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.311669891666668,
+    "longitude": 71.00711996666666,
+    "id": 1229776749
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.315619541666667,
+    "longitude": 71.007370875,
+    "id": 1229776750
+  },
+  {
+    "name": "Sanawan-Sultan Rd",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 30.327074500000002,
+    "longitude": 70.97334674999999,
+    "id": 1230348147
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.3263742,
+    "longitude": 70.97342094999999,
+    "id": 1230348148
+  },
+  {
+    "name": "primary",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.319782,
+    "longitude": 70.97398179999999,
+    "id": 1230348149
+  },
+  {
+    "name": "Kot Addu Rd",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.32789662857143,
+    "longitude": 70.97322287142858,
+    "id": 1230348150
+  },
+  {
+    "name": "Kot Addu Rd",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.31754492,
+    "longitude": 70.97364418,
+    "id": 1230348151
+  },
+  {
+    "name": "Kot Addu Rd",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.31780872727273,
+    "longitude": 70.97375438181818,
+    "id": 1230348152
+  },
+  {
+    "name": "Kot Addu Rd",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.32284955,
+    "longitude": 70.973832765,
+    "id": 1230348153
+  },
+  {
+    "name": "Kot Addu Rd",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.3267274,
+    "longitude": 70.9734266,
+    "id": 1230348154
+  },
+  {
+    "name": "Kot Addu Rd",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.32805132857143,
+    "longitude": 70.97326784285714,
+    "id": 1230348155
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.3582366474359,
+    "longitude": 70.95200563205128,
+    "id": 1230737687
+  },
+  {
+    "name": "CHOWK SETHAR",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 30.31993365,
+    "longitude": 71.00460475,
+    "id": 1233935770
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.32785566,
+    "longitude": 71.00136104,
+    "id": 1315500688
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 30.29253725,
+    "longitude": 70.96998675,
+    "id": 1386298470
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 30.29388385,
+    "longitude": 70.96720605,
+    "id": 1386298489
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 30.293892345454548,
+    "longitude": 70.9663198090909,
+    "id": 1386298490
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.326731414285714,
+    "longitude": 70.97673654285714,
+    "id": 1421061214
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.329670366666665,
+    "longitude": 70.97591223333333,
+    "id": 1421061215
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 30.319318975,
+    "longitude": 71.00806145,
+    "id": 1467831318
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 30.3191062,
+    "longitude": 71.0089529,
+    "id": 1467831319
+  },
+  {
+    "name": "Fatima Sugar Mill",
+    "category": "landuse",
+    "subcategory": "industrial",
+    "latitude": 30.296461136363636,
+    "longitude": 70.96792227272728,
+    "id": 561833029
+  },
+  {
+    "name": "Fatima Energy",
+    "category": "landuse",
+    "subcategory": "industrial",
+    "latitude": 30.295311975,
+    "longitude": 70.96759478749999,
+    "id": 945312725
+  },
+  {
+    "name": "CHOWK SETHAR",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 30.31990775,
+    "longitude": 71.00385572500001,
+    "id": 1233935770
   }
 ]

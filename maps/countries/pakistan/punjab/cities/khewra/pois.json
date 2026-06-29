@@ -1,5 +1,13 @@
 [
   {
+    "name": "کھیوڑہ",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 32.6307377,
+    "longitude": 73.0147091,
+    "id": 115972447
+  },
+  {
     "name": "Khewra Salt Mines",
     "category": "tourism",
     "subcategory": "attraction",
@@ -40,12 +48,52 @@
     "id": 3670752063
   },
   {
+    "name": "fuel",
+    "category": "amenity",
+    "subcategory": "fuel",
+    "latitude": 32.5954246,
+    "longitude": 73.0341828,
+    "id": 3670752064
+  },
+  {
+    "name": "Dandot RS",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.6391598,
+    "longitude": 72.9766492,
+    "id": 4404984712
+  },
+  {
     "name": "Patrolling Police Lilla More",
     "category": "amenity",
     "subcategory": "police",
     "latitude": 32.5955546,
     "longitude": 73.0380461,
     "id": 4686191789
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.6455772,
+    "longitude": 73.0078625,
+    "id": 4981647821
+  },
+  {
+    "name": "beverages",
+    "category": "shop",
+    "subcategory": "beverages",
+    "latitude": 32.6469448,
+    "longitude": 73.0070607,
+    "id": 4981647822
+  },
+  {
+    "name": "ڈھوک وینس",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.6051103,
+    "longitude": 72.9864276,
+    "id": 5045445518
   },
   {
     "name": "Cricket Ground",
@@ -62,5 +110,1365 @@
     "latitude": 32.6477211,
     "longitude": 73.0083452,
     "id": 7943638413
+  },
+  {
+    "name": "واڑہ بلند خان",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.6212408,
+    "longitude": 73.0103607,
+    "id": 8870454115
+  },
+  {
+    "name": "parking",
+    "category": "amenity",
+    "subcategory": "parking",
+    "latitude": 32.6464431,
+    "longitude": 73.0062148,
+    "id": 11729859605
+  },
+  {
+    "name": "ticket",
+    "category": "shop",
+    "subcategory": "ticket",
+    "latitude": 32.6465502,
+    "longitude": 73.0060712,
+    "id": 11729894975
+  },
+  {
+    "name": "Choa Saidan Shah-Khewra Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.66788783891129,
+    "longitude": 72.99047939455646,
+    "id": 122107814
+  },
+  {
+    "name": "Pind Dadan Khan Road",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 32.59324995,
+    "longitude": 73.0406864875,
+    "id": 202285285
+  },
+  {
+    "name": "Khewra Road",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.6476662,
+    "longitude": 73.008221775,
+    "id": 232499582
+  },
+  {
+    "name": "Khewra Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.64728065,
+    "longitude": 73.0077634,
+    "id": 232499583
+  },
+  {
+    "name": "Khewra Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.64516811764706,
+    "longitude": 73.00810004117648,
+    "id": 232499584
+  },
+  {
+    "name": "Khewra Salt mines",
+    "category": "amenity",
+    "subcategory": "parking",
+    "latitude": 32.646283295,
+    "longitude": 73.00716951000001,
+    "id": 232499585
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.64687409473684,
+    "longitude": 73.00634119473683,
+    "id": 232500083
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.65133245333333,
+    "longitude": 73.00743546,
+    "id": 232500084
+  },
+  {
+    "name": "کھیوڑہ",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.632522034375,
+    "longitude": 73.0094029,
+    "id": 234389306
+  },
+  {
+    "name": "لِلہ جہلم روڈ",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 32.59131741,
+    "longitude": 73.00350415,
+    "id": 234525873
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.59010495,
+    "longitude": 73.04528424,
+    "id": 236383516
+  },
+  {
+    "name": "آئی سی آئی سوڈا فیکڑی",
+    "category": "landuse",
+    "subcategory": "industrial",
+    "latitude": 32.63400521764706,
+    "longitude": 73.01916646470588,
+    "id": 259308087
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.590814890909094,
+    "longitude": 73.04888319999999,
+    "id": 332074742
+  },
+  {
+    "name": "Dandot RS Cement Factory",
+    "category": "landuse",
+    "subcategory": "industrial",
+    "latitude": 32.64318029166667,
+    "longitude": 72.977033925,
+    "id": 332075447
+  },
+  {
+    "name": "Dandot RS Cement Factory RD",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.63662214318182,
+    "longitude": 72.99140908863636,
+    "id": 332075448
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.637263242857145,
+    "longitude": 73.01074355714286,
+    "id": 332075449
+  },
+  {
+    "name": "Khewra Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.607484888888884,
+    "longitude": 73.02894065000001,
+    "id": 332075450
+  },
+  {
+    "name": "لِلہ جہلم روڈ",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 32.59533269795918,
+    "longitude": 73.0667993,
+    "id": 332077266
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 32.6106340469697,
+    "longitude": 73.05688923030303,
+    "id": 362821491
+  },
+  {
+    "name": "ریلوے روڈ",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.592981433333335,
+    "longitude": 73.04636873333334,
+    "id": 362825075
+  },
+  {
+    "name": "Tehsil Headquarter Hospital",
+    "category": "amenity",
+    "subcategory": "hospital",
+    "latitude": 32.590529422222225,
+    "longitude": 73.04094228888889,
+    "id": 362825077
+  },
+  {
+    "name": "AlBeruni College",
+    "category": "amenity",
+    "subcategory": "college",
+    "latitude": 32.59868053333333,
+    "longitude": 73.03405155,
+    "id": 362825078
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.582952027272725,
+    "longitude": 73.05805529545455,
+    "id": 362825466
+  },
+  {
+    "name": "Dandot RS NCI Man RD",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.641721358536586,
+    "longitude": 72.97528611951219,
+    "id": 442849494
+  },
+  {
+    "name": "Dandot RS",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.639801283870966,
+    "longitude": 72.97627521612904,
+    "id": 442852811
+  },
+  {
+    "name": "NCI Colony Dandot RS RD",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.639335894285715,
+    "longitude": 72.97537181714286,
+    "id": 442855634
+  },
+  {
+    "name": "Dandot RS Officers Colony RD",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.63506827241379,
+    "longitude": 72.97688157241379,
+    "id": 442862916
+  },
+  {
+    "name": "Dandot RS Officers Colony RD 6",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.633252875,
+    "longitude": 72.976296,
+    "id": 442862917
+  },
+  {
+    "name": "Dandot RS Officers Colony RD 5",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.63364827142858,
+    "longitude": 72.97585362857143,
+    "id": 442862918
+  },
+  {
+    "name": "Dandot RS Officers Colony RD 4",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.634476549999995,
+    "longitude": 72.97617509999999,
+    "id": 442862919
+  },
+  {
+    "name": "Dandot RS Officers Colony Man RD",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.63424724615385,
+    "longitude": 72.97474616923077,
+    "id": 442862920
+  },
+  {
+    "name": "Dandot RS Officers Colony Man RD 1",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.63575947692308,
+    "longitude": 72.97569217692308,
+    "id": 442862921
+  },
+  {
+    "name": "Dandot RS Officers Colony School RD",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.63421996,
+    "longitude": 72.97511962,
+    "id": 442862922
+  },
+  {
+    "name": "Dandot RS Officers Colony Mosque RD",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.6341226375,
+    "longitude": 72.97534734999999,
+    "id": 442862923
+  },
+  {
+    "name": "Dandot RS Officers Colony RD 4+5",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.63397871428571,
+    "longitude": 72.9763114,
+    "id": 442862924
+  },
+  {
+    "name": "Dandot RS Officers Colony Shop RD",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.63474774,
+    "longitude": 72.97490774,
+    "id": 442862932
+  },
+  {
+    "name": "Dandot RS Officers Colony Stor RD",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.63447916,
+    "longitude": 72.97498729,
+    "id": 442862933
+  },
+  {
+    "name": "Dandot RS NCI Colony RD 1",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.63756078888889,
+    "longitude": 72.97650854444444,
+    "id": 442864493
+  },
+  {
+    "name": "Dandot RS Boys School RD",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.6387288,
+    "longitude": 72.97734126,
+    "id": 442864494
+  },
+  {
+    "name": "Dandot RS Wapda Man RD",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.637841429999995,
+    "longitude": 72.979238795,
+    "id": 442864495
+  },
+  {
+    "name": "Dandot RS Wapda + Dhok RD",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.63351618266667,
+    "longitude": 72.97914580000001,
+    "id": 442864496
+  },
+  {
+    "name": "Dandot RS Wapda RD 1",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.63535384615385,
+    "longitude": 72.97946026923077,
+    "id": 442864497
+  },
+  {
+    "name": "Dandot RS+ Pont Rd",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.63878977142857,
+    "longitude": 72.98102912857142,
+    "id": 442912415
+  },
+  {
+    "name": "Dhoke Vaince",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.604722155263154,
+    "longitude": 72.98693190789474,
+    "id": 516910434
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.59872283684211,
+    "longitude": 72.99042896842104,
+    "id": 516910764
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.634683975,
+    "longitude": 72.989691775,
+    "id": 526729359
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.634602,
+    "longitude": 72.99117075000001,
+    "id": 526729360
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.632889999999996,
+    "longitude": 73.00516315,
+    "id": 526729361
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.63167971428572,
+    "longitude": 73.0098033,
+    "id": 526729362
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63410932222222,
+    "longitude": 73.00004870000001,
+    "id": 754125967
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6351974,
+    "longitude": 73.0006273,
+    "id": 754125968
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63665775,
+    "longitude": 73.00145805,
+    "id": 754125969
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.62896558333333,
+    "longitude": 73.00789178333333,
+    "id": 754125970
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63871085,
+    "longitude": 73.0143629,
+    "id": 754125971
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.637259766666666,
+    "longitude": 73.01454066666666,
+    "id": 754125972
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63961528461538,
+    "longitude": 73.00649506923077,
+    "id": 754125973
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63372202307692,
+    "longitude": 73.01110270000001,
+    "id": 754125974
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.634552066666664,
+    "longitude": 73.01019153333333,
+    "id": 754125975
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.635563292307694,
+    "longitude": 73.0124364,
+    "id": 754125976
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63519036,
+    "longitude": 73.0079813,
+    "id": 754125977
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63600374347826,
+    "longitude": 73.00920784782609,
+    "id": 754125978
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63547775,
+    "longitude": 73.0069248,
+    "id": 754125979
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63225814285714,
+    "longitude": 73.00932488571428,
+    "id": 754125980
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6323233,
+    "longitude": 73.00865131666667,
+    "id": 754125981
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.632683063636364,
+    "longitude": 73.00824668181818,
+    "id": 754125982
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63369491666666,
+    "longitude": 73.01004640000001,
+    "id": 754125983
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.635820914285716,
+    "longitude": 73.00733463571429,
+    "id": 754125984
+  },
+  {
+    "name": "Dandot RS Cement Factory RD",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.63725782222222,
+    "longitude": 73.00789246666666,
+    "id": 754125985
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63656875,
+    "longitude": 73.00558265,
+    "id": 754126069
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.62987758333333,
+    "longitude": 73.01024326666666,
+    "id": 754126070
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.633847825000004,
+    "longitude": 73.014670025,
+    "id": 754126071
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63868765,
+    "longitude": 73.00885189166667,
+    "id": 754126319
+  },
+  {
+    "name": "quarry",
+    "category": "landuse",
+    "subcategory": "quarry",
+    "latitude": 32.67340491,
+    "longitude": 72.987089275,
+    "id": 775169195
+  },
+  {
+    "name": "quarry",
+    "category": "landuse",
+    "subcategory": "quarry",
+    "latitude": 32.65997860769231,
+    "longitude": 73.01110581538462,
+    "id": 775169196
+  },
+  {
+    "name": "quarry",
+    "category": "landuse",
+    "subcategory": "quarry",
+    "latitude": 32.6544632,
+    "longitude": 73.01259237142857,
+    "id": 775169197
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.59087305,
+    "longitude": 73.0510123375,
+    "id": 794268407
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.589823,
+    "longitude": 73.05004723333333,
+    "id": 794268408
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.632268249999996,
+    "longitude": 73.01351120000001,
+    "id": 828549498
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6319663,
+    "longitude": 73.01506346666667,
+    "id": 828549499
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.629024400000006,
+    "longitude": 73.0153434,
+    "id": 828549500
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63278893333334,
+    "longitude": 73.01530580000001,
+    "id": 828549501
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.632643333333334,
+    "longitude": 73.0133558,
+    "id": 828549502
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.630523249999996,
+    "longitude": 73.01412175,
+    "id": 828549503
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.631686,
+    "longitude": 73.01437285,
+    "id": 828549504
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.652994125,
+    "longitude": 73.00706732500001,
+    "id": 870769123
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.65420340285714,
+    "longitude": 73.01158756714285,
+    "id": 870769124
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.65511402,
+    "longitude": 73.01400865333333,
+    "id": 870769125
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.65594057692307,
+    "longitude": 73.00815916923077,
+    "id": 870769126
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.65431231,
+    "longitude": 73.00550419999999,
+    "id": 870769127
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.6551337,
+    "longitude": 73.00539744,
+    "id": 870769128
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.65468885,
+    "longitude": 73.00541625,
+    "id": 870769129
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.65598295,
+    "longitude": 73.00564980714286,
+    "id": 870769130
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.653442633333334,
+    "longitude": 73.01185608333334,
+    "id": 870769131
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 32.65022992,
+    "longitude": 73.00756401999999,
+    "id": 870769132
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.63408325,
+    "longitude": 73.0177863,
+    "id": 870769133
+  },
+  {
+    "name": "Rajpoot Community",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.636086219999996,
+    "longitude": 73.00930756,
+    "id": 982209215
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.59054356666667,
+    "longitude": 73.04138676666668,
+    "id": 1044818614
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.5910885,
+    "longitude": 73.04234890000001,
+    "id": 1044818617
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.59078325,
+    "longitude": 73.04185215000001,
+    "id": 1044818618
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.639623110526315,
+    "longitude": 73.0225715631579,
+    "id": 1190648256
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.641401418965515,
+    "longitude": 73.01746890517242,
+    "id": 1190648257
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.64194728,
+    "longitude": 73.0127602,
+    "id": 1190648258
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.6404013,
+    "longitude": 73.01534304210527,
+    "id": 1190648259
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.641305655555556,
+    "longitude": 73.01179538888888,
+    "id": 1190648260
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.643316883333334,
+    "longitude": 73.00967216666668,
+    "id": 1190648261
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.645083400000004,
+    "longitude": 73.0115667,
+    "id": 1190648262
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.64472515,
+    "longitude": 73.0114333,
+    "id": 1190648263
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.643885651515156,
+    "longitude": 73.01006473636363,
+    "id": 1190648264
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.64645642222222,
+    "longitude": 73.01003767777777,
+    "id": 1190648265
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.589474466666665,
+    "longitude": 73.03791743333333,
+    "id": 1198091684
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.5884445875,
+    "longitude": 73.037363475,
+    "id": 1198091688
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.59145781666667,
+    "longitude": 73.04360145,
+    "id": 1198098372
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.592247225,
+    "longitude": 73.045344825,
+    "id": 1198098373
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.592639325,
+    "longitude": 73.04418005,
+    "id": 1198098374
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.59051468,
+    "longitude": 73.04584768,
+    "id": 1198098376
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.590503999999996,
+    "longitude": 73.04927845,
+    "id": 1198098383
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.590539719999995,
+    "longitude": 73.04720119999999,
+    "id": 1198098389
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.63083417142857,
+    "longitude": 73.0163251857143,
+    "id": 1244710437
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 32.62694874615385,
+    "longitude": 73.01782109615384,
+    "id": 1244710438
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6353654,
+    "longitude": 73.01085955,
+    "id": 1272060260
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63539493333334,
+    "longitude": 73.01014743333333,
+    "id": 1272060261
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6345863,
+    "longitude": 73.01076306,
+    "id": 1272060262
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6326232,
+    "longitude": 73.01010844,
+    "id": 1272060263
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6338320125,
+    "longitude": 73.0095128375,
+    "id": 1272060264
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63354802857143,
+    "longitude": 73.0089559,
+    "id": 1272060265
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6334435,
+    "longitude": 73.01076474999999,
+    "id": 1272060266
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63306133333333,
+    "longitude": 73.01077289999999,
+    "id": 1272060267
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63345258333333,
+    "longitude": 73.01037855,
+    "id": 1272060268
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6337406,
+    "longitude": 73.00997348571428,
+    "id": 1272060269
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63289581666667,
+    "longitude": 73.00941854166666,
+    "id": 1272060270
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.631949866666666,
+    "longitude": 73.0094395,
+    "id": 1272060271
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6320218,
+    "longitude": 73.00923513333333,
+    "id": 1272060272
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.631910275,
+    "longitude": 73.0064537125,
+    "id": 1272060273
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63473883333333,
+    "longitude": 73.00553773333333,
+    "id": 1272067615
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6326188,
+    "longitude": 73.0078198,
+    "id": 1272067616
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63272995,
+    "longitude": 73.0056712,
+    "id": 1272067617
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6323662,
+    "longitude": 73.00699585000001,
+    "id": 1272067618
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.635631610000004,
+    "longitude": 73.00756091000001,
+    "id": 1272067619
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63419885,
+    "longitude": 73.0077739,
+    "id": 1272067620
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.635359333333334,
+    "longitude": 73.00808673333334,
+    "id": 1272067621
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6352118,
+    "longitude": 73.0089612909091,
+    "id": 1272067622
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63460808,
+    "longitude": 73.0084728,
+    "id": 1272067623
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63448206666667,
+    "longitude": 73.0089396,
+    "id": 1272067624
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.630331516666665,
+    "longitude": 73.0087156,
+    "id": 1272067625
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63417072222222,
+    "longitude": 73.0097689,
+    "id": 1272067626
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.6329481,
+    "longitude": 73.00943225,
+    "id": 1272067627
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.63328882,
+    "longitude": 73.00860376,
+    "id": 1272067628
+  },
+  {
+    "name": "Khewra Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.63120591714286,
+    "longitude": 73.01350829714286,
+    "id": 1396731440
+  },
+  {
+    "name": "Khewra Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.61914915,
+    "longitude": 73.0186617,
+    "id": 1396731441
+  },
+  {
+    "name": "لِلہ جہلم روڈ",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 32.592033825,
+    "longitude": 73.00929280625,
+    "id": 1459133472
+  },
+  {
+    "name": "لِلہ جہلم روڈ",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 32.596201756666666,
+    "longitude": 73.07680396,
+    "id": 1459134495
+  },
+  {
+    "name": "Pind Dadan Khan Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 32.595616899999996,
+    "longitude": 73.0387838,
+    "id": 1459134496
+  },
+  {
+    "name": "trunk_link",
+    "category": "highway",
+    "subcategory": "trunk_link",
+    "latitude": 32.5959305,
+    "longitude": 73.03823184000001,
+    "id": 1483634467
+  },
+  {
+    "name": "Dandot RS Officers Colony School RD",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.6361531,
+    "longitude": 72.975603,
+    "id": 1495324161
+  },
+  {
+    "name": "Khewra Salt mines",
+    "category": "amenity",
+    "subcategory": "parking",
+    "latitude": 32.6463306,
+    "longitude": 73.00709033000001,
+    "id": 232499585
+  },
+  {
+    "name": "کھیوڑہ",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.63305966875,
+    "longitude": 73.00894941875,
+    "id": 234389306
+  },
+  {
+    "name": "آئی سی آئی سوڈا فیکڑی",
+    "category": "landuse",
+    "subcategory": "industrial",
+    "latitude": 32.63400521764706,
+    "longitude": 73.01916646470588,
+    "id": 259308087
+  },
+  {
+    "name": "Dandot RS Cement Factory",
+    "category": "landuse",
+    "subcategory": "industrial",
+    "latitude": 32.642725075,
+    "longitude": 72.97691869166667,
+    "id": 332075447
+  },
+  {
+    "name": "Tehsil Headquarter Hospital",
+    "category": "amenity",
+    "subcategory": "hospital",
+    "latitude": 32.59049357777778,
+    "longitude": 73.04089766666667,
+    "id": 362825077
+  },
+  {
+    "name": "AlBeruni College",
+    "category": "amenity",
+    "subcategory": "college",
+    "latitude": 32.59868053333333,
+    "longitude": 73.03405155,
+    "id": 362825078
+  },
+  {
+    "name": "Dandot RS",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.6394111483871,
+    "longitude": 72.9761343032258,
+    "id": 442852811
+  },
+  {
+    "name": "Dhoke Vaince",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.60472138421053,
+    "longitude": 72.98687720526316,
+    "id": 516910434
+  },
+  {
+    "name": "quarry",
+    "category": "landuse",
+    "subcategory": "quarry",
+    "latitude": 32.673556635,
+    "longitude": 72.986991645,
+    "id": 775169195
+  },
+  {
+    "name": "quarry",
+    "category": "landuse",
+    "subcategory": "quarry",
+    "latitude": 32.65997860769231,
+    "longitude": 73.01110581538462,
+    "id": 775169196
+  },
+  {
+    "name": "quarry",
+    "category": "landuse",
+    "subcategory": "quarry",
+    "latitude": 32.65426705714286,
+    "longitude": 73.01252048571429,
+    "id": 775169197
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.655998921428576,
+    "longitude": 73.00563656428571,
+    "id": 870769130
+  },
+  {
+    "name": "Rajpoot Community",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.63600522,
+    "longitude": 73.00929092,
+    "id": 982209215
   }
 ]

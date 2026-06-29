@@ -1,1 +1,634 @@
-[]
+[
+  {
+    "name": "قلعہ دیوان سنگہ",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 30.8058117,
+    "longitude": 73.8847698,
+    "id": 8828300520
+  },
+  {
+    "name": "راجوال",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 30.8163728,
+    "longitude": 73.9145491,
+    "id": 8828480971
+  },
+  {
+    "name": "Nai Abadi",
+    "category": "place",
+    "subcategory": "neighbourhood",
+    "latitude": 30.8106516,
+    "longitude": 73.9018457,
+    "id": 8828480972
+  },
+  {
+    "name": "کوڑے سیال",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 30.8411094,
+    "longitude": 73.9428894,
+    "id": 9529699226
+  },
+  {
+    "name": "Kharal Kalan",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 30.7772121,
+    "longitude": 73.9367879,
+    "id": 11090575501
+  },
+  {
+    "name": "Jhuggian Azim",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 30.7841928,
+    "longitude": 73.934213,
+    "id": 11090575502
+  },
+  {
+    "name": "Kharral Khurd",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 30.7869211,
+    "longitude": 73.9306367,
+    "id": 11090575503
+  },
+  {
+    "name": "crossing",
+    "category": "highway",
+    "subcategory": "crossing",
+    "latitude": 30.8362263,
+    "longitude": 73.8768947,
+    "id": 12310309393
+  },
+  {
+    "name": "crossing",
+    "category": "highway",
+    "subcategory": "crossing",
+    "latitude": 30.830374,
+    "longitude": 73.8627493,
+    "id": 12310310330
+  },
+  {
+    "name": "crossing",
+    "category": "highway",
+    "subcategory": "crossing",
+    "latitude": 30.8394421,
+    "longitude": 73.8825181,
+    "id": 12312672929
+  },
+  {
+    "name": "crossing",
+    "category": "highway",
+    "subcategory": "crossing",
+    "latitude": 30.8392582,
+    "longitude": 73.8825094,
+    "id": 12312672944
+  },
+  {
+    "name": "Kot Haji ismail",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 30.8389294,
+    "longitude": 73.8825589,
+    "id": 12812502674
+  },
+  {
+    "name": "Dipalpur Road",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 30.901333677173913,
+    "longitude": 74.11030046086957,
+    "id": 288810842
+  },
+  {
+    "name": "Chunian-Hujra Shah Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 30.8758047875,
+    "longitude": 73.8912777875,
+    "id": 324844453
+  },
+  {
+    "name": "Jhugian Rahmoon Road - To Chunian Kasur Road",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.8301883,
+    "longitude": 73.89437347555555,
+    "id": 661163709
+  },
+  {
+    "name": "Kot Haji Ismail road",
+    "category": "highway",
+    "subcategory": "escape",
+    "latitude": 30.84003653846154,
+    "longitude": 73.88217065384615,
+    "id": 661164159
+  },
+  {
+    "name": "Jhugian Rahmoon",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 30.842255607692305,
+    "longitude": 73.88672035641025,
+    "id": 661164582
+  },
+  {
+    "name": "Kot Haji Ismail",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.83874376923077,
+    "longitude": 73.88206566410257,
+    "id": 661165538
+  },
+  {
+    "name": "Dipalpur Road",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 30.90270947727273,
+    "longitude": 74.11347256931818,
+    "id": 794473999
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.780177366666667,
+    "longitude": 73.88972848888889,
+    "id": 939123370
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.792740220000002,
+    "longitude": 73.88975128,
+    "id": 939123371
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.7885562,
+    "longitude": 73.90177902857144,
+    "id": 939123372
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.764409699999998,
+    "longitude": 73.8974658,
+    "id": 939123373
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.776199166666668,
+    "longitude": 73.88266116666667,
+    "id": 939123375
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.78680268888889,
+    "longitude": 73.87109056666667,
+    "id": 939123381
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.805860545454546,
+    "longitude": 73.87759966363636,
+    "id": 939123382
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.817215821875,
+    "longitude": 73.87868785,
+    "id": 939123383
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.813470475,
+    "longitude": 73.874362525,
+    "id": 939123385
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.785045376923076,
+    "longitude": 73.89701185384615,
+    "id": 939123387
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.806779060000004,
+    "longitude": 73.91111194,
+    "id": 939123388
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.81531838181818,
+    "longitude": 73.91617046363636,
+    "id": 939123389
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.81353246666667,
+    "longitude": 73.91417185,
+    "id": 939123390
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.81544884,
+    "longitude": 73.91456036,
+    "id": 939123391
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.810830346153846,
+    "longitude": 73.9168783076923,
+    "id": 939123392
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.796969375,
+    "longitude": 73.9124443,
+    "id": 939123393
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.773540266666668,
+    "longitude": 73.9141605,
+    "id": 939123394
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.795413454545454,
+    "longitude": 73.94254029393939,
+    "id": 953567965
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.79772719090909,
+    "longitude": 73.92351628181818,
+    "id": 953567966
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 30.857270342105263,
+    "longitude": 73.9008506385965,
+    "id": 966362661
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 30.772511673775213,
+    "longitude": 73.92759658011528,
+    "id": 970538417
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 30.76303214852941,
+    "longitude": 73.92879972818628,
+    "id": 970538418
+  },
+  {
+    "name": "Dipalpur Road",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 30.8204916,
+    "longitude": 73.9230618,
+    "id": 970539966
+  },
+  {
+    "name": "Dipalpur Road",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 30.7743992025641,
+    "longitude": 73.83080565128205,
+    "id": 970539967
+  },
+  {
+    "name": "Dipalpur Road",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 30.77724608409091,
+    "longitude": 73.83697842272727,
+    "id": 970539968
+  },
+  {
+    "name": "Dipalpur Road",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 30.82038915,
+    "longitude": 73.92305640000001,
+    "id": 970539969
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.814442800000002,
+    "longitude": 73.91252816,
+    "id": 1041149329
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.8143799,
+    "longitude": 73.91542615,
+    "id": 1041149330
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.801935846666666,
+    "longitude": 73.89682624666666,
+    "id": 1238978370
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 30.824579526666664,
+    "longitude": 73.94897418666666,
+    "id": 1242333291
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.853899108333334,
+    "longitude": 73.87452511666667,
+    "id": 1302817177
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.857935757142858,
+    "longitude": 73.87626715714285,
+    "id": 1302817178
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.833573833333332,
+    "longitude": 73.89874341111111,
+    "id": 1302819074
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.81580610566038,
+    "longitude": 73.91280665471697,
+    "id": 1302819075
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.80856412,
+    "longitude": 73.91912252,
+    "id": 1302819076
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.815829846666666,
+    "longitude": 73.90372474666667,
+    "id": 1302819077
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.810710946938773,
+    "longitude": 73.90234188367347,
+    "id": 1302819078
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.805940720000002,
+    "longitude": 73.88381874,
+    "id": 1302819079
+  },
+  {
+    "name": "Kot Haji Ismail Road",
+    "category": "highway",
+    "subcategory": "escape",
+    "latitude": 30.831120507692304,
+    "longitude": 73.87048287179488,
+    "id": 1330475992
+  },
+  {
+    "name": "escape",
+    "category": "highway",
+    "subcategory": "escape",
+    "latitude": 30.8362507,
+    "longitude": 73.87691477999999,
+    "id": 1330475993
+  },
+  {
+    "name": "Kot Haji Ismail Street",
+    "category": "highway",
+    "subcategory": "pedestrian",
+    "latitude": 30.838896034999998,
+    "longitude": 73.882749035,
+    "id": 1330733588
+  },
+  {
+    "name": "pedestrian",
+    "category": "highway",
+    "subcategory": "pedestrian",
+    "latitude": 30.83795602142857,
+    "longitude": 73.88294747857142,
+    "id": 1330733589
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.834980375,
+    "longitude": 73.95214815,
+    "id": 1436259474
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 30.83502701666667,
+    "longitude": 73.95106758333334,
+    "id": 1436259475
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 30.836015495652177,
+    "longitude": 73.95195592608695,
+    "id": 1436259476
+  },
+  {
+    "name": "Jhugian Rahmoon",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 30.842254130769227,
+    "longitude": 73.88667217179487,
+    "id": 661164582
+  },
+  {
+    "name": "Kot Haji Ismail",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.83877182820513,
+    "longitude": 73.88200673076923,
+    "id": 661165538
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 30.85727015877193,
+    "longitude": 73.90085061842105,
+    "id": 966362661
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 30.772921972622477,
+    "longitude": 73.927559459366,
+    "id": 970538417
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 30.763394742892157,
+    "longitude": 73.92876830441178,
+    "id": 970538418
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.853794108333332,
+    "longitude": 73.87427761666667,
+    "id": 1302817177
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.857925685714285,
+    "longitude": 73.87596435714285,
+    "id": 1302817178
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.8333803,
+    "longitude": 73.89873945555556,
+    "id": 1302819074
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.81582752264151,
+    "longitude": 73.91276810754717,
+    "id": 1302819075
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.80856412,
+    "longitude": 73.91912252,
+    "id": 1302819076
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.8157715,
+    "longitude": 73.90357784666666,
+    "id": 1302819077
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.810637534693875,
+    "longitude": 73.90229277142858,
+    "id": 1302819078
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 30.805893853333334,
+    "longitude": 73.88378789333333,
+    "id": 1302819079
+  },
+  {
+    "name": "escape",
+    "category": "highway",
+    "subcategory": "escape",
+    "latitude": 30.8362507,
+    "longitude": 73.87691477999999,
+    "id": 1330475993
+  },
+  {
+    "name": "Kot Haji Ismail Street",
+    "category": "highway",
+    "subcategory": "pedestrian",
+    "latitude": 30.83887555,
+    "longitude": 73.88274828,
+    "id": 1330733588
+  }
+]

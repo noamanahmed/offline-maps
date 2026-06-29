@@ -1,5 +1,61 @@
 [
   {
+    "name": "Zalu",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 35.2938703,
+    "longitude": 73.1947322,
+    "id": 740162445
+  },
+  {
+    "name": "داسو",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 35.2686424,
+    "longitude": 73.2240114,
+    "id": 740162446
+  },
+  {
+    "name": "کومیلا",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 35.2604201,
+    "longitude": 73.2172304,
+    "id": 740162448
+  },
+  {
+    "name": "جلکوٹ",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 35.2526786,
+    "longitude": 73.2170937,
+    "id": 740162449
+  },
+  {
+    "name": "Chuchung",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 35.2999978,
+    "longitude": 73.2031561,
+    "id": 740162450
+  },
+  {
+    "name": "turning_circle",
+    "category": "highway",
+    "subcategory": "turning_circle",
+    "latitude": 35.2614021,
+    "longitude": 73.2240242,
+    "id": 2565587168
+  },
+  {
+    "name": "restaurant",
+    "category": "amenity",
+    "subcategory": "restaurant",
+    "latitude": 35.2780318,
+    "longitude": 73.2240421,
+    "id": 2572026097
+  },
+  {
     "name": "Police checkpoint",
     "category": "amenity",
     "subcategory": "police",
@@ -8,11 +64,4347 @@
     "id": 5758298223
   },
   {
+    "name": "Excise and Taxation office Kohistan",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.2638802,
+    "longitude": 73.2229432,
+    "id": 7893411827
+  },
+  {
     "name": "Indus View Guest House",
     "category": "tourism",
     "subcategory": "hotel",
     "latitude": 35.2593755,
     "longitude": 73.2183293,
     "id": 10796037432
+  },
+  {
+    "name": "viewpoint",
+    "category": "tourism",
+    "subcategory": "viewpoint",
+    "latitude": 35.2828098,
+    "longitude": 73.2247489,
+    "id": 10806543907
+  },
+  {
+    "name": "سیو",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 35.3054358,
+    "longitude": 73.1898414,
+    "id": 11275805200
+  },
+  {
+    "name": "شاہراہ قراقرم",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 35.290164471428575,
+    "longitude": 73.22387894285714,
+    "id": 27245714
+  },
+  {
+    "name": "شاہراہ قراقرم",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 35.30037335847457,
+    "longitude": 73.20172359491526,
+    "id": 27245715
+  },
+  {
+    "name": "شاہراہ قراقرم",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 35.289502549999995,
+    "longitude": 73.22414625,
+    "id": 250035678
+  },
+  {
+    "name": "شاہراہ قراقرم",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 35.26230325,
+    "longitude": 73.2210339,
+    "id": 250035679
+  },
+  {
+    "name": "شاہراہ قراقرم",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 35.27617537241379,
+    "longitude": 73.22377438793104,
+    "id": 250035681
+  },
+  {
+    "name": "شاہراہ قراقرم",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 35.25014137723577,
+    "longitude": 73.20541404471545,
+    "id": 250035683
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.25960126,
+    "longitude": 73.2169981,
+    "id": 250035684
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.27323089090909,
+    "longitude": 73.22490770909091,
+    "id": 250035685
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.30450999099099,
+    "longitude": 73.19064692072071,
+    "id": 250035686
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.25873840476191,
+    "longitude": 73.21577027619048,
+    "id": 250035688
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.2969943,
+    "longitude": 73.1932466,
+    "id": 250035692
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.26134365555556,
+    "longitude": 73.21888310740741,
+    "id": 250035696
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.27373033333333,
+    "longitude": 73.22472633333334,
+    "id": 250035697
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.25877441111111,
+    "longitude": 73.22297935833333,
+    "id": 250035698
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 35.26172135,
+    "longitude": 73.22430955,
+    "id": 250035699
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 35.278424540476195,
+    "longitude": 73.22143987619047,
+    "id": 250035701
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.29878953404255,
+    "longitude": 73.19372360425533,
+    "id": 250035702
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 35.27692707916667,
+    "longitude": 73.22073456666666,
+    "id": 250035704
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.273689340816325,
+    "longitude": 73.22430853469388,
+    "id": 250035705
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 35.25907594,
+    "longitude": 73.22327428,
+    "id": 250035706
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.26320270483871,
+    "longitude": 73.2242570967742,
+    "id": 250035708
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.305081828156865,
+    "longitude": 73.1547161922353,
+    "id": 250230689
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 35.30047310392157,
+    "longitude": 73.19214792647058,
+    "id": 250230691
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.30525652142857,
+    "longitude": 73.1873434857143,
+    "id": 250230702
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 35.300795,
+    "longitude": 73.19079148947368,
+    "id": 250230706
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 35.30164786910995,
+    "longitude": 73.19037096596858,
+    "id": 250230707
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 35.304623649999996,
+    "longitude": 73.18592225,
+    "id": 250230709
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 35.300622668181816,
+    "longitude": 73.19048557272727,
+    "id": 250230714
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 35.30770583125,
+    "longitude": 73.184014509375,
+    "id": 250230716
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 35.305443374285716,
+    "longitude": 73.18535217428571,
+    "id": 250230717
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 35.249454820588234,
+    "longitude": 73.2142721125,
+    "id": 250466912
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 35.247082606250004,
+    "longitude": 73.2132306875,
+    "id": 250466914
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 35.275194400000004,
+    "longitude": 73.24882844999999,
+    "id": 250466915
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 35.267608949999996,
+    "longitude": 73.23821595,
+    "id": 250466921
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 35.26305035,
+    "longitude": 73.23243205,
+    "id": 250466922
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 35.27562915,
+    "longitude": 73.2507225,
+    "id": 250466925
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 35.26459355,
+    "longitude": 73.23859375,
+    "id": 250466926
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 35.2562364,
+    "longitude": 73.2196584,
+    "id": 250466928
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 35.257174500000005,
+    "longitude": 73.2228566,
+    "id": 250466931
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.2579808,
+    "longitude": 73.22513205,
+    "id": 250466935
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.27252271984733,
+    "longitude": 73.22817733053435,
+    "id": 250466938
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.260247275333334,
+    "longitude": 73.232814193,
+    "id": 250466939
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.271930266666665,
+    "longitude": 73.22612873636365,
+    "id": 250466940
+  },
+  {
+    "name": "Jalkot Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.24263588758315,
+    "longitude": 73.21029053436806,
+    "id": 250466942
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 35.26995355214593,
+    "longitude": 73.23734026952789,
+    "id": 250466943
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 35.257028133333336,
+    "longitude": 73.22435832222222,
+    "id": 250466944
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.258823815789476,
+    "longitude": 73.22174720736842,
+    "id": 250466945
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 35.243802036690646,
+    "longitude": 73.18256686618705,
+    "id": 250542244
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.267759999999996,
+    "longitude": 73.22304882,
+    "id": 255808550
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26900216,
+    "longitude": 73.22276232,
+    "id": 255808556
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.269493260000004,
+    "longitude": 73.22297042,
+    "id": 255808557
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2698187375,
+    "longitude": 73.22228187500001,
+    "id": 255808559
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.269721600000004,
+    "longitude": 73.22242028,
+    "id": 255808560
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2697045,
+    "longitude": 73.222631,
+    "id": 255808561
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2699067,
+    "longitude": 73.22270637142857,
+    "id": 255808562
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.270002420000004,
+    "longitude": 73.22227338,
+    "id": 255808563
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26996319999999,
+    "longitude": 73.22247366,
+    "id": 255808564
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27015144,
+    "longitude": 73.22210122,
+    "id": 255808567
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27042354,
+    "longitude": 73.22190472,
+    "id": 255808568
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.270357919999995,
+    "longitude": 73.2220849,
+    "id": 255808570
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27050034,
+    "longitude": 73.22249070000001,
+    "id": 255808572
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27024633846154,
+    "longitude": 73.22242275384616,
+    "id": 255808573
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27022196,
+    "longitude": 73.22288241999999,
+    "id": 255808574
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.270416499999996,
+    "longitude": 73.22294276,
+    "id": 255808576
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.270602839999995,
+    "longitude": 73.22289771999999,
+    "id": 255808577
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27052412,
+    "longitude": 73.22311664,
+    "id": 255808578
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27064236,
+    "longitude": 73.22272183999999,
+    "id": 255808579
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.271133320000004,
+    "longitude": 73.2224942,
+    "id": 255808580
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27104684,
+    "longitude": 73.222506,
+    "id": 255808581
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27107570909091,
+    "longitude": 73.22279750909091,
+    "id": 255808583
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27081441428572,
+    "longitude": 73.22297335714286,
+    "id": 255808584
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27083038888889,
+    "longitude": 73.2227213,
+    "id": 255808586
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.270681079999996,
+    "longitude": 73.22244542,
+    "id": 255916672
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27082798,
+    "longitude": 73.2224552,
+    "id": 255916673
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27132121428571,
+    "longitude": 73.22228898571429,
+    "id": 255916675
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27131272857143,
+    "longitude": 73.22244042857143,
+    "id": 255916676
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27165726,
+    "longitude": 73.22245816,
+    "id": 255916678
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27169252,
+    "longitude": 73.2229397,
+    "id": 255916679
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27156854,
+    "longitude": 73.22275862000001,
+    "id": 255916680
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27152704,
+    "longitude": 73.22285016,
+    "id": 255916681
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27205904,
+    "longitude": 73.22277578,
+    "id": 255916682
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.271904171428574,
+    "longitude": 73.22279427142858,
+    "id": 255916683
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26676792,
+    "longitude": 73.22335872,
+    "id": 255916686
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26661655714286,
+    "longitude": 73.2232970142857,
+    "id": 255916687
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.266521420000004,
+    "longitude": 73.2237606,
+    "id": 255916688
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26661566,
+    "longitude": 73.22350514,
+    "id": 255916689
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26672524,
+    "longitude": 73.22353124000001,
+    "id": 255916690
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.266503766666666,
+    "longitude": 73.2231056,
+    "id": 255916691
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26637156666666,
+    "longitude": 73.22327417777778,
+    "id": 255916692
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26612368,
+    "longitude": 73.22298158,
+    "id": 255916693
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.265917438461535,
+    "longitude": 73.22344529230769,
+    "id": 255916694
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.266084976923075,
+    "longitude": 73.2235331076923,
+    "id": 255916695
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26330636666667,
+    "longitude": 73.22262710000001,
+    "id": 255916744
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26355246,
+    "longitude": 73.22302531999999,
+    "id": 255916745
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26348284,
+    "longitude": 73.22336948,
+    "id": 255916746
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.262341968421055,
+    "longitude": 73.22302891578947,
+    "id": 255917456
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.263023014285714,
+    "longitude": 73.22175082857143,
+    "id": 255917457
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26286342,
+    "longitude": 73.22191034,
+    "id": 255917458
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26259566363637,
+    "longitude": 73.2217773,
+    "id": 255917459
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.262489540000004,
+    "longitude": 73.22218382,
+    "id": 255917462
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.262608063636364,
+    "longitude": 73.2238764090909,
+    "id": 255917463
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.263849379999996,
+    "longitude": 73.22467911999999,
+    "id": 255923683
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26331089333333,
+    "longitude": 73.22443718,
+    "id": 255923684
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2630343,
+    "longitude": 73.22419768,
+    "id": 255923685
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26181062,
+    "longitude": 73.22292264000001,
+    "id": 255923686
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26148614,
+    "longitude": 73.2226845,
+    "id": 255923687
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26169215714286,
+    "longitude": 73.22326507142857,
+    "id": 255923688
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.2618973,
+    "longitude": 73.22377967999999,
+    "id": 255923689
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.261846500000004,
+    "longitude": 73.22403806,
+    "id": 255923690
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26169624285714,
+    "longitude": 73.22383532857144,
+    "id": 255923691
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.2616233,
+    "longitude": 73.22411198,
+    "id": 255923692
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26146878,
+    "longitude": 73.2237564,
+    "id": 255923693
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26121813636364,
+    "longitude": 73.22350577272726,
+    "id": 255923694
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.2611335,
+    "longitude": 73.22329114,
+    "id": 255923695
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26105356000001,
+    "longitude": 73.22306426,
+    "id": 255923696
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26127138571429,
+    "longitude": 73.22296967142857,
+    "id": 255923697
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.262250519999995,
+    "longitude": 73.22233612,
+    "id": 255923698
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26316106,
+    "longitude": 73.22221306,
+    "id": 255923699
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26262928,
+    "longitude": 73.22219478,
+    "id": 255923700
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2627517,
+    "longitude": 73.22250276,
+    "id": 255923701
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.262746660000005,
+    "longitude": 73.22229224,
+    "id": 255923702
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26343386,
+    "longitude": 73.22202888000001,
+    "id": 255923703
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26343338461538,
+    "longitude": 73.22233026923077,
+    "id": 255923704
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26392346,
+    "longitude": 73.22263096,
+    "id": 255923705
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26392724,
+    "longitude": 73.2224314,
+    "id": 255923706
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26383130000001,
+    "longitude": 73.22303128,
+    "id": 255923707
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26415592,
+    "longitude": 73.22323796,
+    "id": 255923708
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26360386,
+    "longitude": 73.22277496000001,
+    "id": 255923709
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26377217777778,
+    "longitude": 73.22192487777778,
+    "id": 255923710
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2637789,
+    "longitude": 73.22409056000001,
+    "id": 255923711
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26437924,
+    "longitude": 73.22407524,
+    "id": 255923712
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26430028,
+    "longitude": 73.22429958000001,
+    "id": 255923713
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26409258571429,
+    "longitude": 73.2241898,
+    "id": 255923714
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26442564285714,
+    "longitude": 73.22379558571429,
+    "id": 255923715
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.264278360000006,
+    "longitude": 73.22384546,
+    "id": 255923716
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26438076,
+    "longitude": 73.22349396,
+    "id": 255923717
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.265036953846156,
+    "longitude": 73.2226853923077,
+    "id": 255923719
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2650822,
+    "longitude": 73.22285706,
+    "id": 255923720
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26499555714285,
+    "longitude": 73.22311292857144,
+    "id": 255923721
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2651427,
+    "longitude": 73.2237747,
+    "id": 255923722
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26511848,
+    "longitude": 73.22426906000001,
+    "id": 255923723
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26486902941176,
+    "longitude": 73.22416191176471,
+    "id": 255923724
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26487652,
+    "longitude": 73.22446192,
+    "id": 255923725
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26543052,
+    "longitude": 73.223815,
+    "id": 255923726
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26544414,
+    "longitude": 73.2241872,
+    "id": 255923727
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.265236800000004,
+    "longitude": 73.22514754,
+    "id": 255923728
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26498782857143,
+    "longitude": 73.22508844285714,
+    "id": 255923729
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26508964,
+    "longitude": 73.22447458,
+    "id": 255923730
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26575262,
+    "longitude": 73.22343235999999,
+    "id": 255923731
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26567482,
+    "longitude": 73.22291164,
+    "id": 255923732
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.265397740000004,
+    "longitude": 73.22284832,
+    "id": 255923733
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26604532,
+    "longitude": 73.22309916,
+    "id": 255923734
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2664433,
+    "longitude": 73.22373718,
+    "id": 255923735
+  },
+  {
+    "name": "agricultureland_land_Tial",
+    "category": "landuse",
+    "subcategory": "farmyard",
+    "latitude": 35.27803357368421,
+    "longitude": 73.23215874736842,
+    "id": 255923737
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.273543000000004,
+    "longitude": 73.22461958,
+    "id": 255925079
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.273288179999994,
+    "longitude": 73.22455099999999,
+    "id": 255925080
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27299372,
+    "longitude": 73.2245117,
+    "id": 255925081
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27338074,
+    "longitude": 73.2252049,
+    "id": 255925082
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27405476,
+    "longitude": 73.22533084,
+    "id": 255925083
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.274153639999994,
+    "longitude": 73.2248836,
+    "id": 255925084
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.273886219999994,
+    "longitude": 73.22482362000001,
+    "id": 255925085
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27394162857143,
+    "longitude": 73.22436925714285,
+    "id": 255925086
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27407298,
+    "longitude": 73.22405678,
+    "id": 255925087
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.274218919999996,
+    "longitude": 73.22445718,
+    "id": 255925089
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27424054615385,
+    "longitude": 73.22423271538462,
+    "id": 255925090
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27449182,
+    "longitude": 73.22444034,
+    "id": 255925091
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2743951,
+    "longitude": 73.22479487999999,
+    "id": 255925092
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27438074,
+    "longitude": 73.22519609999999,
+    "id": 255925094
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27437388,
+    "longitude": 73.2253559,
+    "id": 255925095
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27459562,
+    "longitude": 73.22496246,
+    "id": 255925096
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27472006666667,
+    "longitude": 73.22524215555556,
+    "id": 255925097
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27459066,
+    "longitude": 73.2257057,
+    "id": 255925098
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27234542,
+    "longitude": 73.2228413,
+    "id": 255945324
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27255106,
+    "longitude": 73.22358851999999,
+    "id": 255945332
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27261546,
+    "longitude": 73.22342318,
+    "id": 255945333
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27386288,
+    "longitude": 73.22251917999999,
+    "id": 255945335
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.273904214285714,
+    "longitude": 73.22308671428571,
+    "id": 255945337
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.273671539999995,
+    "longitude": 73.22312396,
+    "id": 255945338
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.273800944444446,
+    "longitude": 73.22394558888888,
+    "id": 255945340
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27370086,
+    "longitude": 73.22265174,
+    "id": 255945342
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.273673800000005,
+    "longitude": 73.22279467777778,
+    "id": 255945343
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27434695384615,
+    "longitude": 73.22297057692307,
+    "id": 255945345
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27422116,
+    "longitude": 73.22318554,
+    "id": 255945347
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27511538,
+    "longitude": 73.22534040000001,
+    "id": 255945359
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.276075760000005,
+    "longitude": 73.22549544,
+    "id": 255945390
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27680824,
+    "longitude": 73.22557968,
+    "id": 255945395
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.277137800000006,
+    "longitude": 73.22562611999999,
+    "id": 255945396
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27742142,
+    "longitude": 73.22567484,
+    "id": 255945401
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.273221379999995,
+    "longitude": 73.22394002000001,
+    "id": 255951426
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27358876363636,
+    "longitude": 73.2224013,
+    "id": 255951427
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.273006585714285,
+    "longitude": 73.2222692357143,
+    "id": 255951428
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.272898514285714,
+    "longitude": 73.22269105714285,
+    "id": 255951429
+  },
+  {
+    "name": "Kumila Hospital",
+    "category": "amenity",
+    "subcategory": "hospital",
+    "latitude": 35.26294003333334,
+    "longitude": 73.21897283333334,
+    "id": 255951553
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2622448,
+    "longitude": 73.22389541999999,
+    "id": 256086850
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.262382,
+    "longitude": 73.22371344000001,
+    "id": 256086851
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26202144,
+    "longitude": 73.2237901,
+    "id": 256086852
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26185802,
+    "longitude": 73.22423626,
+    "id": 256086853
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.260746812499995,
+    "longitude": 73.2230584625,
+    "id": 256086854
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26079668,
+    "longitude": 73.22332066,
+    "id": 256086855
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26084294375,
+    "longitude": 73.2236687375,
+    "id": 256086856
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26081804166667,
+    "longitude": 73.22303273333334,
+    "id": 256086857
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26057614,
+    "longitude": 73.22369496,
+    "id": 256086858
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26047512857143,
+    "longitude": 73.22344085714285,
+    "id": 256086859
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26019625,
+    "longitude": 73.22340723333333,
+    "id": 256086863
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.260202015384614,
+    "longitude": 73.22381576923077,
+    "id": 256086864
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26028498,
+    "longitude": 73.22413295999999,
+    "id": 256086865
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.260055737500004,
+    "longitude": 73.22408444999999,
+    "id": 256086866
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.259938445454544,
+    "longitude": 73.2238853909091,
+    "id": 256086867
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.259734359999996,
+    "longitude": 73.22355814,
+    "id": 256086868
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.259707320000004,
+    "longitude": 73.22376018,
+    "id": 256086869
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25944206,
+    "longitude": 73.22354442,
+    "id": 256086871
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25942172,
+    "longitude": 73.22369513999999,
+    "id": 256086873
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25919796,
+    "longitude": 73.22347515999999,
+    "id": 256086874
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25915665714286,
+    "longitude": 73.22366444285714,
+    "id": 256086876
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25922764285714,
+    "longitude": 73.22335484285715,
+    "id": 256086877
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25930221428571,
+    "longitude": 73.22313435714285,
+    "id": 256086878
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25922212666667,
+    "longitude": 73.22295826666667,
+    "id": 256086879
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.258837509523815,
+    "longitude": 73.22313148571428,
+    "id": 256086881
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.258956,
+    "longitude": 73.22408378,
+    "id": 256086882
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25884214285714,
+    "longitude": 73.22388535714286,
+    "id": 256086883
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25884448,
+    "longitude": 73.22406384000001,
+    "id": 256086884
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.258692939999996,
+    "longitude": 73.22397595999999,
+    "id": 256086885
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25874352,
+    "longitude": 73.22423992,
+    "id": 256086886
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.2586879,
+    "longitude": 73.2244495,
+    "id": 256086887
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25843513076923,
+    "longitude": 73.22477438461539,
+    "id": 256086889
+  },
+  {
+    "name": "parking",
+    "category": "amenity",
+    "subcategory": "parking",
+    "latitude": 35.25951418888889,
+    "longitude": 73.21695774444444,
+    "id": 256086897
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26375349999999,
+    "longitude": 73.22453918,
+    "id": 273848244
+  },
+  {
+    "name": "kamila bazar",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26091245777778,
+    "longitude": 73.21924908333334,
+    "id": 462184616
+  },
+  {
+    "name": "agreculture_land",
+    "category": "landuse",
+    "subcategory": "farmyard",
+    "latitude": 35.30040307058824,
+    "longitude": 73.20481441764707,
+    "id": 462184618
+  },
+  {
+    "name": "residential_area_seo",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.30759961372549,
+    "longitude": 73.1870578882353,
+    "id": 462185596
+  },
+  {
+    "name": "agriculture_area_seo",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.306102466666665,
+    "longitude": 73.1872702,
+    "id": 462187327
+  },
+  {
+    "name": "agriculture_land_parwan",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29912452307693,
+    "longitude": 73.18026963846154,
+    "id": 462187329
+  },
+  {
+    "name": "agriculture_land_seo",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.30107554423077,
+    "longitude": 73.18760257307693,
+    "id": 462187330
+  },
+  {
+    "name": "zalu_agricultureland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29500803214286,
+    "longitude": 73.19321255714286,
+    "id": 462187331
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.25212928372093,
+    "longitude": 73.21640170465116,
+    "id": 462191390
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.25906366666666,
+    "longitude": 73.23246545128205,
+    "id": 462367278
+  },
+  {
+    "name": "charto_agricultureland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.25860947142857,
+    "longitude": 73.23172868,
+    "id": 462367279
+  },
+  {
+    "name": "agriculture_area",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.24929161,
+    "longitude": 73.233183475,
+    "id": 462367281
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.247162144444445,
+    "longitude": 73.25606635555556,
+    "id": 462367282
+  },
+  {
+    "name": "agriculture_area",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2467394375,
+    "longitude": 73.2560217875,
+    "id": 462367283
+  },
+  {
+    "name": "agriculturearea_khantori",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.25614209411765,
+    "longitude": 73.24077917058824,
+    "id": 462367284
+  },
+  {
+    "name": "residentiaarea_dant",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.25674478888889,
+    "longitude": 73.25044813333334,
+    "id": 462367285
+  },
+  {
+    "name": "agricultureland_dant",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2563291875,
+    "longitude": 73.2497412875,
+    "id": 462367286
+  },
+  {
+    "name": "residential_jalkot",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.253337980000005,
+    "longitude": 73.21904787000001,
+    "id": 462367287
+  },
+  {
+    "name": "residential_jalkot",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.2468191125,
+    "longitude": 73.2170227525,
+    "id": 462367288
+  },
+  {
+    "name": "residential_jalkot",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.24977927826087,
+    "longitude": 73.21843539130435,
+    "id": 462367290
+  },
+  {
+    "name": "agriculture_jalkot",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2506961875,
+    "longitude": 73.217451728125,
+    "id": 462367291
+  },
+  {
+    "name": "kohistan_forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 35.230589357142854,
+    "longitude": 73.18181378571428,
+    "id": 462367292
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.230941675000004,
+    "longitude": 73.20611326666666,
+    "id": 462367294
+  },
+  {
+    "name": "agriculture_area",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.23178453809524,
+    "longitude": 73.20038457619047,
+    "id": 462367297
+  },
+  {
+    "name": "residential_jallu",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.267072625,
+    "longitude": 73.23889597499999,
+    "id": 462371970
+  },
+  {
+    "name": "agriculture_jallu",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.267190110526315,
+    "longitude": 73.23894882105263,
+    "id": 462371971
+  },
+  {
+    "name": "residential_bela",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.27255185,
+    "longitude": 73.2487947625,
+    "id": 462371972
+  },
+  {
+    "name": "agriculture_bela",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.272585529411764,
+    "longitude": 73.24852812941175,
+    "id": 462371973
+  },
+  {
+    "name": "kohistan_forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 35.270152910563375,
+    "longitude": 73.26981184084507,
+    "id": 462371974
+  },
+  {
+    "name": "agricultureland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.26993062727273,
+    "longitude": 73.23023186363636,
+    "id": 462375268
+  },
+  {
+    "name": "residential_kamila",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.26400778125,
+    "longitude": 73.2177891125,
+    "id": 462375269
+  },
+  {
+    "name": "residential_kamila",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.26812867692308,
+    "longitude": 73.21908022307693,
+    "id": 462375270
+  },
+  {
+    "name": "agriculture_kamila",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.268986636363636,
+    "longitude": 73.21956880909092,
+    "id": 462375271
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.277913016666666,
+    "longitude": 73.22182239166666,
+    "id": 462375272
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.28431163636364,
+    "longitude": 73.22794197272728,
+    "id": 462375273
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.289180009090906,
+    "longitude": 73.21845579090909,
+    "id": 462375274
+  },
+  {
+    "name": "retail",
+    "category": "landuse",
+    "subcategory": "retail",
+    "latitude": 35.28590506,
+    "longitude": 73.22048523999999,
+    "id": 462375275
+  },
+  {
+    "name": "residential_area_khashi",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.30190506,
+    "longitude": 73.20540174,
+    "id": 462375276
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.25789240416667,
+    "longitude": 73.22089698333333,
+    "id": 462392437
+  },
+  {
+    "name": "administrative",
+    "category": "office",
+    "subcategory": "administrative",
+    "latitude": 35.258871033333335,
+    "longitude": 73.22129272222222,
+    "id": 462392438
+  },
+  {
+    "name": "adminstrative_offices",
+    "category": "office",
+    "subcategory": "administrative",
+    "latitude": 35.25876181111111,
+    "longitude": 73.22432195555555,
+    "id": 462392439
+  },
+  {
+    "name": "adminstrative_offices",
+    "category": "office",
+    "subcategory": "administrative",
+    "latitude": 35.259975964,
+    "longitude": 73.223125384,
+    "id": 462392440
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26407596875,
+    "longitude": 73.22303955625,
+    "id": 462392441
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.26600283076923,
+    "longitude": 73.22059385897435,
+    "id": 462392442
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.266323166666666,
+    "longitude": 73.21923421333334,
+    "id": 462392443
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.26782429047619,
+    "longitude": 73.22649754761905,
+    "id": 462392444
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.2687861328125,
+    "longitude": 73.224427953125,
+    "id": 462392445
+  },
+  {
+    "name": "restaurant",
+    "category": "amenity",
+    "subcategory": "restaurant",
+    "latitude": 35.2683205625,
+    "longitude": 73.22284145,
+    "id": 462392446
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.26040319655172,
+    "longitude": 73.22830763793102,
+    "id": 462406729
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.26003727333333,
+    "longitude": 73.22886676666667,
+    "id": 462406730
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.28429232,
+    "longitude": 73.22654960571428,
+    "id": 462406731
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.296356075,
+    "longitude": 73.19179869166666,
+    "id": 462406888
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.293744405263155,
+    "longitude": 73.19488915263157,
+    "id": 462406889
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.294742340000006,
+    "longitude": 73.19490462,
+    "id": 462406890
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.25326863333333,
+    "longitude": 73.20994664999999,
+    "id": 462496401
+  },
+  {
+    "name": "adminstrative_area",
+    "category": "office",
+    "subcategory": "administrative",
+    "latitude": 35.255823381249996,
+    "longitude": 73.21741428125,
+    "id": 462506805
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.25715733125,
+    "longitude": 73.2219379,
+    "id": 462506815
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.2917366,
+    "longitude": 73.22104488823528,
+    "id": 889265940
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.29081083333333,
+    "longitude": 73.22115946666668,
+    "id": 889265941
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.290607771794875,
+    "longitude": 73.21797182948717,
+    "id": 889265942
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.28852151916667,
+    "longitude": 73.21258873333333,
+    "id": 889265943
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 35.23041040915179,
+    "longitude": 73.17034395870535,
+    "id": 934172602
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 35.284310287859824,
+    "longitude": 73.21797979236545,
+    "id": 934243600
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.303655089473686,
+    "longitude": 73.2019651368421,
+    "id": 969757857
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.30317470227273,
+    "longitude": 73.20411138863636,
+    "id": 969757858
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.30231539772728,
+    "longitude": 73.20139625454546,
+    "id": 969757859
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.30656759,
+    "longitude": 73.19782005666667,
+    "id": 969757861
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.25919634545455,
+    "longitude": 73.21716508181818,
+    "id": 976305295
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.22966177368421,
+    "longitude": 73.20348925789474,
+    "id": 1158888412
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 35.25723573170732,
+    "longitude": 73.25877397804878,
+    "id": 1184098768
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.28811973125,
+    "longitude": 73.2208143875,
+    "id": 1471770492
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26774954,
+    "longitude": 73.22304076,
+    "id": 255808550
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26900216,
+    "longitude": 73.22276232,
+    "id": 255808556
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.269480699999995,
+    "longitude": 73.22296842,
+    "id": 255808557
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2698187375,
+    "longitude": 73.22228187500001,
+    "id": 255808559
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26970472,
+    "longitude": 73.22241574,
+    "id": 255808560
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26968524,
+    "longitude": 73.2226263,
+    "id": 255808561
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26988894285714,
+    "longitude": 73.22269867142857,
+    "id": 255808562
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26997214,
+    "longitude": 73.22226737999999,
+    "id": 255808563
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.269943139999995,
+    "longitude": 73.22246824,
+    "id": 255808564
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27015144,
+    "longitude": 73.22210122,
+    "id": 255808567
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2704054,
+    "longitude": 73.22190400000001,
+    "id": 255808568
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2703351,
+    "longitude": 73.22208207999999,
+    "id": 255808570
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27048172,
+    "longitude": 73.22248858,
+    "id": 255808572
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.270232407692305,
+    "longitude": 73.22242055384615,
+    "id": 255808573
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27018702,
+    "longitude": 73.22287624,
+    "id": 255808574
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27038252,
+    "longitude": 73.22293966,
+    "id": 255808576
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.270574599999996,
+    "longitude": 73.22289736,
+    "id": 255808577
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.270511039999995,
+    "longitude": 73.22311554000001,
+    "id": 255808578
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27062764,
+    "longitude": 73.22268346,
+    "id": 255808579
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27112048,
+    "longitude": 73.22249294000001,
+    "id": 255808580
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.271029979999994,
+    "longitude": 73.22250424,
+    "id": 255808581
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27106141818182,
+    "longitude": 73.22279628181819,
+    "id": 255808583
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2708043,
+    "longitude": 73.22297192857143,
+    "id": 255808584
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27082082222222,
+    "longitude": 73.22272015555556,
+    "id": 255808586
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.270660379999995,
+    "longitude": 73.22244278000001,
+    "id": 255916672
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2708131,
+    "longitude": 73.2224537,
+    "id": 255916673
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.271303828571426,
+    "longitude": 73.2222844,
+    "id": 255916675
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27129741428571,
+    "longitude": 73.22243697142858,
+    "id": 255916676
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.271609139999995,
+    "longitude": 73.2224526,
+    "id": 255916678
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27169252,
+    "longitude": 73.2229397,
+    "id": 255916679
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27156854,
+    "longitude": 73.22275862000001,
+    "id": 255916680
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27152704,
+    "longitude": 73.22285016,
+    "id": 255916681
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27202654,
+    "longitude": 73.22277216,
+    "id": 255916682
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27188761428572,
+    "longitude": 73.22279354285715,
+    "id": 255916683
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26676084,
+    "longitude": 73.22335782,
+    "id": 255916686
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26660277142857,
+    "longitude": 73.22329458571429,
+    "id": 255916687
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26651144,
+    "longitude": 73.22375794,
+    "id": 255916688
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26661566,
+    "longitude": 73.22350514,
+    "id": 255916689
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26671586,
+    "longitude": 73.22352994,
+    "id": 255916690
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26649262222222,
+    "longitude": 73.2231029888889,
+    "id": 255916691
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26636112222222,
+    "longitude": 73.22327204444444,
+    "id": 255916692
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.266021280000004,
+    "longitude": 73.22295776,
+    "id": 255916693
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.265905784615384,
+    "longitude": 73.22343621538461,
+    "id": 255916694
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26607906923077,
+    "longitude": 73.22353262307692,
+    "id": 255916695
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.263297155555556,
+    "longitude": 73.22261917777777,
+    "id": 255916744
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2635347,
+    "longitude": 73.22301703999999,
+    "id": 255916745
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.263459880000006,
+    "longitude": 73.22335824000001,
+    "id": 255916746
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.262320984210525,
+    "longitude": 73.2230288263158,
+    "id": 255917456
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26298512857143,
+    "longitude": 73.22173105714286,
+    "id": 255917457
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2628545,
+    "longitude": 73.22190716,
+    "id": 255917458
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26258420909091,
+    "longitude": 73.22175638181818,
+    "id": 255917459
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26245498,
+    "longitude": 73.22217902,
+    "id": 255917462
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.262566345454545,
+    "longitude": 73.22383423636364,
+    "id": 255917463
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.263849379999996,
+    "longitude": 73.22467911999999,
+    "id": 255923683
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26329704666667,
+    "longitude": 73.22442862666666,
+    "id": 255923684
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26300478,
+    "longitude": 73.2241942,
+    "id": 255923685
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26181062,
+    "longitude": 73.22292264000001,
+    "id": 255923686
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26146752,
+    "longitude": 73.22268424,
+    "id": 255923687
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26169215714286,
+    "longitude": 73.22326507142857,
+    "id": 255923688
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.2618973,
+    "longitude": 73.22377967999999,
+    "id": 255923689
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.2618368,
+    "longitude": 73.22400554,
+    "id": 255923690
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26166667142857,
+    "longitude": 73.22383407142857,
+    "id": 255923691
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26160324,
+    "longitude": 73.22409206,
+    "id": 255923692
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26145064,
+    "longitude": 73.22375594,
+    "id": 255923693
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26121813636364,
+    "longitude": 73.22350577272726,
+    "id": 255923694
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.2611335,
+    "longitude": 73.22329114,
+    "id": 255923695
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26105356000001,
+    "longitude": 73.22306426,
+    "id": 255923696
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26127138571429,
+    "longitude": 73.22296967142857,
+    "id": 255923697
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.262250519999995,
+    "longitude": 73.22233612,
+    "id": 255923698
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26314266,
+    "longitude": 73.22219992000001,
+    "id": 255923699
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26262928,
+    "longitude": 73.22219478,
+    "id": 255923700
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2627517,
+    "longitude": 73.22250276,
+    "id": 255923701
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26273534,
+    "longitude": 73.2222778,
+    "id": 255923702
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26342196,
+    "longitude": 73.22202888000001,
+    "id": 255923703
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.263409515384616,
+    "longitude": 73.22232109230768,
+    "id": 255923704
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26388711333333,
+    "longitude": 73.22259338666666,
+    "id": 255923705
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.263899200000004,
+    "longitude": 73.22241814,
+    "id": 255923706
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26382034,
+    "longitude": 73.2230266,
+    "id": 255923707
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2641388,
+    "longitude": 73.22323037999999,
+    "id": 255923708
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.263594420000004,
+    "longitude": 73.22277008,
+    "id": 255923709
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2637532,
+    "longitude": 73.22191352222222,
+    "id": 255923710
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26373946,
+    "longitude": 73.2240746,
+    "id": 255923711
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26436024,
+    "longitude": 73.22407524,
+    "id": 255923712
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.264255379999994,
+    "longitude": 73.22429045999999,
+    "id": 255923713
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.264068314285716,
+    "longitude": 73.22418664285715,
+    "id": 255923714
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26441884285715,
+    "longitude": 73.22379507142857,
+    "id": 255923715
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26424546,
+    "longitude": 73.22383701999999,
+    "id": 255923716
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26435358,
+    "longitude": 73.22347992,
+    "id": 255923717
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26502376923077,
+    "longitude": 73.22268016923077,
+    "id": 255923719
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26505914,
+    "longitude": 73.22284904,
+    "id": 255923720
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26499555714285,
+    "longitude": 73.22311292857144,
+    "id": 255923721
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26512644615384,
+    "longitude": 73.2237699923077,
+    "id": 255923722
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2651093,
+    "longitude": 73.22426852000001,
+    "id": 255923723
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26485304117647,
+    "longitude": 73.22415694117647,
+    "id": 255923724
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26484016,
+    "longitude": 73.22446192,
+    "id": 255923725
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26540478,
+    "longitude": 73.22380694,
+    "id": 255923726
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26544414,
+    "longitude": 73.2241872,
+    "id": 255923727
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26519682,
+    "longitude": 73.2251459,
+    "id": 255923728
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26497184285714,
+    "longitude": 73.22508022857143,
+    "id": 255923729
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.265072759999995,
+    "longitude": 73.22447128,
+    "id": 255923730
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26572882,
+    "longitude": 73.22343146,
+    "id": 255923731
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26562962,
+    "longitude": 73.22286812,
+    "id": 255923732
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.265397740000004,
+    "longitude": 73.22284832,
+    "id": 255923733
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26602962,
+    "longitude": 73.22309334,
+    "id": 255923734
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2664433,
+    "longitude": 73.22373718,
+    "id": 255923735
+  },
+  {
+    "name": "agricultureland_land_Tial",
+    "category": "landuse",
+    "subcategory": "farmyard",
+    "latitude": 35.27803357368421,
+    "longitude": 73.23215874736842,
+    "id": 255923737
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.273497320000004,
+    "longitude": 73.22461048,
+    "id": 255925079
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27324408,
+    "longitude": 73.22454368,
+    "id": 255925080
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.272954600000006,
+    "longitude": 73.22450578,
+    "id": 255925081
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27329412,
+    "longitude": 73.22516776,
+    "id": 255925082
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27394126,
+    "longitude": 73.22531094,
+    "id": 255925083
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27412176,
+    "longitude": 73.22487596,
+    "id": 255925084
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.273848599999994,
+    "longitude": 73.22481434,
+    "id": 255925085
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.273925500000004,
+    "longitude": 73.2243337,
+    "id": 255925086
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2740298,
+    "longitude": 73.22404602,
+    "id": 255925087
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.274193100000005,
+    "longitude": 73.22444894,
+    "id": 255925089
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27423806153846,
+    "longitude": 73.22423170769231,
+    "id": 255925090
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27449182,
+    "longitude": 73.22444034,
+    "id": 255925091
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2743768,
+    "longitude": 73.22479419999999,
+    "id": 255925092
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2743596,
+    "longitude": 73.22519452,
+    "id": 255925094
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.274351460000005,
+    "longitude": 73.22535398,
+    "id": 255925095
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27456472,
+    "longitude": 73.22496108,
+    "id": 255925096
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27470212222222,
+    "longitude": 73.22524131111112,
+    "id": 255925097
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27449322,
+    "longitude": 73.22569342,
+    "id": 255925098
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27231302,
+    "longitude": 73.22283934,
+    "id": 255945324
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27252178,
+    "longitude": 73.22358732000001,
+    "id": 255945332
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27258764,
+    "longitude": 73.22342248,
+    "id": 255945333
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27381944,
+    "longitude": 73.22249742,
+    "id": 255945335
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27387474285714,
+    "longitude": 73.223079,
+    "id": 255945337
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27364346,
+    "longitude": 73.22311624,
+    "id": 255945338
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27378203333333,
+    "longitude": 73.22394387777778,
+    "id": 255945340
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2736844,
+    "longitude": 73.22264982,
+    "id": 255945342
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27366253333334,
+    "longitude": 73.22279188888889,
+    "id": 255945343
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.274334284615385,
+    "longitude": 73.22296516923076,
+    "id": 255945345
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27420178,
+    "longitude": 73.22318132000001,
+    "id": 255945347
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27505182,
+    "longitude": 73.2253305,
+    "id": 255945359
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.276047340000005,
+    "longitude": 73.22549268,
+    "id": 255945390
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.2767518,
+    "longitude": 73.2255714,
+    "id": 255945395
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.277078519999996,
+    "longitude": 73.22561632,
+    "id": 255945396
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27738104,
+    "longitude": 73.22566906,
+    "id": 255945401
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.273221379999995,
+    "longitude": 73.22394002000001,
+    "id": 255951426
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27357356363636,
+    "longitude": 73.2223871,
+    "id": 255951427
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.272999285714285,
+    "longitude": 73.2222687,
+    "id": 255951428
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.27287998571428,
+    "longitude": 73.2226861857143,
+    "id": 255951429
+  },
+  {
+    "name": "Kumila Hospital",
+    "category": "amenity",
+    "subcategory": "hospital",
+    "latitude": 35.26290692222222,
+    "longitude": 73.21895567777779,
+    "id": 255951553
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.262241339999996,
+    "longitude": 73.22387556,
+    "id": 256086850
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26237422,
+    "longitude": 73.2237114,
+    "id": 256086851
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26202144,
+    "longitude": 73.2237901,
+    "id": 256086852
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26181754,
+    "longitude": 73.22421118,
+    "id": 256086853
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.260746812499995,
+    "longitude": 73.2230584625,
+    "id": 256086854
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26079668,
+    "longitude": 73.22332066,
+    "id": 256086855
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26084294375,
+    "longitude": 73.2236687375,
+    "id": 256086856
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.260805858333335,
+    "longitude": 73.2230119,
+    "id": 256086857
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26055758,
+    "longitude": 73.2236926,
+    "id": 256086858
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26045012857143,
+    "longitude": 73.22343832857143,
+    "id": 256086859
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26018223333333,
+    "longitude": 73.22340571666668,
+    "id": 256086863
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26018359230769,
+    "longitude": 73.22381099230769,
+    "id": 256086864
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.26027208,
+    "longitude": 73.22409314000001,
+    "id": 256086865
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.260055737500004,
+    "longitude": 73.22408444999999,
+    "id": 256086866
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25992801818182,
+    "longitude": 73.22388310909092,
+    "id": 256086867
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.2596872,
+    "longitude": 73.22354554,
+    "id": 256086868
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25966266,
+    "longitude": 73.22375122,
+    "id": 256086869
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25939694,
+    "longitude": 73.22350448,
+    "id": 256086871
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.259371800000004,
+    "longitude": 73.22368384,
+    "id": 256086873
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25916038,
+    "longitude": 73.22347099999999,
+    "id": 256086874
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25912917142857,
+    "longitude": 73.2236551,
+    "id": 256086876
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25920792857143,
+    "longitude": 73.22335384285715,
+    "id": 256086877
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25929381428572,
+    "longitude": 73.22313218571428,
+    "id": 256086878
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25921104,
+    "longitude": 73.22295513333333,
+    "id": 256086879
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25883157142857,
+    "longitude": 73.22312991428572,
+    "id": 256086881
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.258956340000005,
+    "longitude": 73.2240631,
+    "id": 256086882
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25883094285714,
+    "longitude": 73.22388268571429,
+    "id": 256086883
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25884448,
+    "longitude": 73.22406384000001,
+    "id": 256086884
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25867638,
+    "longitude": 73.22396458,
+    "id": 256086885
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25872792,
+    "longitude": 73.22423334,
+    "id": 256086886
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.25866416,
+    "longitude": 73.22444212,
+    "id": 256086887
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 35.258433315384615,
+    "longitude": 73.22476966153846,
+    "id": 256086889
+  },
+  {
+    "name": "parking",
+    "category": "amenity",
+    "subcategory": "parking",
+    "latitude": 35.25951418888889,
+    "longitude": 73.21695774444444,
+    "id": 256086897
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26373442,
+    "longitude": 73.224504,
+    "id": 273848244
+  },
+  {
+    "name": "kamila bazar",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26090866777778,
+    "longitude": 73.21921956666667,
+    "id": 462184616
+  },
+  {
+    "name": "agreculture_land",
+    "category": "landuse",
+    "subcategory": "farmyard",
+    "latitude": 35.30017932647059,
+    "longitude": 73.20460399411765,
+    "id": 462184618
+  },
+  {
+    "name": "residential_area_seo",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.307612639215684,
+    "longitude": 73.18697833137256,
+    "id": 462185596
+  },
+  {
+    "name": "agriculture_area_seo",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.306090224242425,
+    "longitude": 73.18722406666667,
+    "id": 462187327
+  },
+  {
+    "name": "agriculture_land_parwan",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29904908461538,
+    "longitude": 73.18011447692308,
+    "id": 462187329
+  },
+  {
+    "name": "agriculture_land_seo",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.30105135576923,
+    "longitude": 73.18759125576923,
+    "id": 462187330
+  },
+  {
+    "name": "zalu_agricultureland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.294983685714286,
+    "longitude": 73.19317211071429,
+    "id": 462187331
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.25211898604651,
+    "longitude": 73.21633549767442,
+    "id": 462191390
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.25904075641026,
+    "longitude": 73.23240657948719,
+    "id": 462367278
+  },
+  {
+    "name": "charto_agricultureland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.25856616857143,
+    "longitude": 73.23168790857143,
+    "id": 462367279
+  },
+  {
+    "name": "agriculture_area",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2492687,
+    "longitude": 73.23306192,
+    "id": 462367281
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.247136822222224,
+    "longitude": 73.25606575555555,
+    "id": 462367282
+  },
+  {
+    "name": "agriculture_area",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2466814,
+    "longitude": 73.2560184375,
+    "id": 462367283
+  },
+  {
+    "name": "agriculturearea_khantori",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.25608557058824,
+    "longitude": 73.2406319235294,
+    "id": 462367284
+  },
+  {
+    "name": "residentiaarea_dant",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.256747355555554,
+    "longitude": 73.25040881111111,
+    "id": 462367285
+  },
+  {
+    "name": "agricultureland_dant",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2563291875,
+    "longitude": 73.2497412875,
+    "id": 462367286
+  },
+  {
+    "name": "residential_jalkot",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.25327345,
+    "longitude": 73.21901564,
+    "id": 462367287
+  },
+  {
+    "name": "residential_jalkot",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.2467660225,
+    "longitude": 73.2169934825,
+    "id": 462367288
+  },
+  {
+    "name": "residential_jalkot",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.24972895652174,
+    "longitude": 73.21839359565217,
+    "id": 462367290
+  },
+  {
+    "name": "agriculture_jalkot",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.250545637500004,
+    "longitude": 73.217294846875,
+    "id": 462367291
+  },
+  {
+    "name": "kohistan_forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 35.2294826,
+    "longitude": 73.18017763571427,
+    "id": 462367292
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.2309311875,
+    "longitude": 73.2060922125,
+    "id": 462367294
+  },
+  {
+    "name": "agriculture_area",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.23175322857143,
+    "longitude": 73.20031642857143,
+    "id": 462367297
+  },
+  {
+    "name": "residential_jallu",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.267017025,
+    "longitude": 73.2387984,
+    "id": 462371970
+  },
+  {
+    "name": "agriculture_jallu",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.26704261052632,
+    "longitude": 73.2388528,
+    "id": 462371971
+  },
+  {
+    "name": "residential_bela",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.2725612375,
+    "longitude": 73.248647,
+    "id": 462371972
+  },
+  {
+    "name": "agriculture_bela",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.27252570588235,
+    "longitude": 73.2482828882353,
+    "id": 462371973
+  },
+  {
+    "name": "kohistan_forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 35.27010613732394,
+    "longitude": 73.26974908661973,
+    "id": 462371974
+  },
+  {
+    "name": "agricultureland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.26971018181818,
+    "longitude": 73.23009069999999,
+    "id": 462375268
+  },
+  {
+    "name": "residential_kamila",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.26387911875,
+    "longitude": 73.21770864375,
+    "id": 462375269
+  },
+  {
+    "name": "residential_kamila",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.268052053846155,
+    "longitude": 73.21905273076923,
+    "id": 462375270
+  },
+  {
+    "name": "agriculture_kamila",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.268986636363636,
+    "longitude": 73.21956880909092,
+    "id": 462375271
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.27785825833333,
+    "longitude": 73.22166366666666,
+    "id": 462375272
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.284261550000004,
+    "longitude": 73.2279181,
+    "id": 462375273
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.28910319090909,
+    "longitude": 73.21843226363636,
+    "id": 462375274
+  },
+  {
+    "name": "retail",
+    "category": "landuse",
+    "subcategory": "retail",
+    "latitude": 35.28570386,
+    "longitude": 73.22038912000001,
+    "id": 462375275
+  },
+  {
+    "name": "residential_area_khashi",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.301915109999996,
+    "longitude": 73.2053586,
+    "id": 462375276
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.25789511666667,
+    "longitude": 73.22088885833334,
+    "id": 462392437
+  },
+  {
+    "name": "administrative",
+    "category": "office",
+    "subcategory": "administrative",
+    "latitude": 35.2588614,
+    "longitude": 73.2212821,
+    "id": 462392438
+  },
+  {
+    "name": "adminstrative_offices",
+    "category": "office",
+    "subcategory": "administrative",
+    "latitude": 35.258722633333335,
+    "longitude": 73.22430734444444,
+    "id": 462392439
+  },
+  {
+    "name": "adminstrative_offices",
+    "category": "office",
+    "subcategory": "administrative",
+    "latitude": 35.259951712,
+    "longitude": 73.22310502399999,
+    "id": 462392440
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.26381120625,
+    "longitude": 73.2228911,
+    "id": 462392441
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.26600127435897,
+    "longitude": 73.22058796153847,
+    "id": 462392442
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.26631833333333,
+    "longitude": 73.21921027333333,
+    "id": 462392443
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.26782713809524,
+    "longitude": 73.22644798571429,
+    "id": 462392444
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.2687827796875,
+    "longitude": 73.2244271984375,
+    "id": 462392445
+  },
+  {
+    "name": "restaurant",
+    "category": "amenity",
+    "subcategory": "restaurant",
+    "latitude": 35.2682933125,
+    "longitude": 73.2228247,
+    "id": 462392446
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.26040267241379,
+    "longitude": 73.22828884137931,
+    "id": 462406729
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.26002766,
+    "longitude": 73.22884608,
+    "id": 462406730
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.28431253428572,
+    "longitude": 73.22653415142857,
+    "id": 462406731
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.29633705277777,
+    "longitude": 73.19174629444444,
+    "id": 462406888
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.293744405263155,
+    "longitude": 73.19488915263157,
+    "id": 462406889
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 35.29469214,
+    "longitude": 73.19486922,
+    "id": 462406890
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.25323561333334,
+    "longitude": 73.20991791,
+    "id": 462496401
+  },
+  {
+    "name": "adminstrative_area",
+    "category": "office",
+    "subcategory": "administrative",
+    "latitude": 35.2558035625,
+    "longitude": 73.21732434375,
+    "id": 462506805
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 35.25714519375,
+    "longitude": 73.221836075,
+    "id": 462506815
+  },
+  {
+    "name": "kohistan_forest",
+    "category": "landuse",
+    "subcategory": "forest",
+    "latitude": 35.25661135660377,
+    "longitude": 73.23491089811321,
+    "id": 7100948
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 35.23034645,
+    "longitude": 73.170257696875,
+    "id": 934172602
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 35.284310287859824,
+    "longitude": 73.21797979236545,
+    "id": 934243600
+  },
+  {
+    "name": "سندھ‎",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 35.2516467101227,
+    "longitude": 73.20994365628835,
+    "id": 12622677
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 35.28663142575758,
+    "longitude": 73.17015047878787,
+    "id": 14033538
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.22963363684211,
+    "longitude": 73.20347963157894,
+    "id": 1158888412
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 35.25721973414634,
+    "longitude": 73.25873582926829,
+    "id": 1184098768
   }
 ]

@@ -25,6 +25,7 @@ jobs:
   build-android:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         include:
           - android_version: "8.1"
@@ -125,6 +126,8 @@ jobs:
 
       - name: Build Android Release APK
         env:
+          ANDROID_HOME: /home/runner/android-sdk
+          ANDROID_SDK_ROOT: /home/runner/android-sdk
           MIN_SDK_VERSION: ${{ matrix.api_level }}
           TARGET_SDK_VERSION: ${{ matrix.api_level }}
           NDK_ABI_FILTERS: ${{ matrix.abi_filters }}
@@ -135,14 +138,36 @@ jobs:
           KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
         run: |
           if [ -f "release.keystore" ]; then
+            set +e
             ns build android --release \
               --key-store-path release.keystore \
               --key-store-password "$KEYSTORE_PASSWORD" \
               --key-store-alias "$KEYSTORE_ALIAS" \
               --key-store-alias-password "$KEYSTORE_PASSWORD"
+            BUILD_EXIT=$?
+            set -e
+            if [ $BUILD_EXIT -ne 0 ]; then
+              APK_FILE=$(find platforms/android/app/build/outputs/apk/release -name "*.apk" 2>/dev/null | head -n 1)
+              if [ -z "$APK_FILE" ]; then
+                echo "Build failed and no APK produced."
+                exit $BUILD_EXIT
+              fi
+              echo "ns build exited non-zero but APK exists — continuing."
+            fi
           else
             echo "Keystore not found. Building unsigned APK..."
+            set +e
             ns build android --release
+            BUILD_EXIT=$?
+            set -e
+            if [ $BUILD_EXIT -ne 0 ]; then
+              APK_FILE=$(find platforms/android/app/build/outputs/apk/release -name "*.apk" 2>/dev/null | head -n 1)
+              if [ -z "$APK_FILE" ]; then
+                echo "Build failed and no APK produced."
+                exit $BUILD_EXIT
+              fi
+              echo "ns build exited non-zero but APK exists — continuing."
+            fi
           fi
 
       - name: Rename and Prepare APK

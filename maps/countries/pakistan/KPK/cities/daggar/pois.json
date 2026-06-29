@@ -1,5 +1,21 @@
 [
   {
+    "name": "Qaiser Wali Khan Chowk",
+    "category": "highway",
+    "subcategory": "turning_loop",
+    "latitude": 34.4778679,
+    "longitude": 72.4859102,
+    "id": 4566016153
+  },
+  {
+    "name": "mini_roundabout",
+    "category": "highway",
+    "subcategory": "mini_roundabout",
+    "latitude": 34.5049372,
+    "longitude": 72.4613443,
+    "id": 4989597897
+  },
+  {
     "name": "Daggar Bridge",
     "category": "tourism",
     "subcategory": "attraction",
@@ -8,12 +24,52 @@
     "id": 4989604911
   },
   {
+    "name": "ريگا",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.4718435,
+    "longitude": 72.474352,
+    "id": 4989642979
+  },
+  {
+    "name": "سواڑی",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.4774464,
+    "longitude": 72.4858312,
+    "id": 4989734667
+  },
+  {
+    "name": "سنيگرام",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.487745,
+    "longitude": 72.484359,
+    "id": 4989734668
+  },
+  {
+    "name": "ڈگر",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 34.5105814,
+    "longitude": 72.484907,
+    "id": 4989734669
+  },
+  {
     "name": "District Courts Buner",
     "category": "amenity",
     "subcategory": "courthouse",
     "latitude": 34.5048411,
     "longitude": 72.465077,
     "id": 4991874327
+  },
+  {
+    "name": "Zaga Kalay",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.5102876,
+    "longitude": 72.464093,
+    "id": 4991879778
   },
   {
     "name": "Dr Dil Raj",
@@ -30,5 +86,1221 @@
     "latitude": 34.476201,
     "longitude": 72.4839229,
     "id": 8947220703
+  },
+  {
+    "name": "تختابند",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.4768763,
+    "longitude": 72.5086054,
+    "id": 9552510388
+  },
+  {
+    "name": "کڑپہ",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.4888773,
+    "longitude": 72.4638854,
+    "id": 12074374292
+  },
+  {
+    "name": "Daggar Bridge",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.501681600000005,
+    "longitude": 72.4584947,
+    "id": 444648959
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.50153961081081,
+    "longitude": 72.44492549054054,
+    "id": 471311249
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.493153324770645,
+    "longitude": 72.46718089449541,
+    "id": 471311250
+  },
+  {
+    "name": "Amnawar - Shalbandai Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.50343904206349,
+    "longitude": 72.53970447063493,
+    "id": 471311251
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.50411374565217,
+    "longitude": 72.49694626956521,
+    "id": 484832342
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.519185085454545,
+    "longitude": 72.49853122181818,
+    "id": 484832343
+  },
+  {
+    "name": "Courts Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.50774764315789,
+    "longitude": 72.47175328842106,
+    "id": 509797178
+  },
+  {
+    "name": "نیشنل بینک آف پاکستان",
+    "category": "amenity",
+    "subcategory": "bank",
+    "latitude": 34.505089240000004,
+    "longitude": 72.46150926,
+    "id": 509797179
+  },
+  {
+    "name": "fuel",
+    "category": "amenity",
+    "subcategory": "fuel",
+    "latitude": 34.50054162,
+    "longitude": 72.46899594,
+    "id": 509798561
+  },
+  {
+    "name": "fuel",
+    "category": "amenity",
+    "subcategory": "fuel",
+    "latitude": 34.48149046666666,
+    "longitude": 72.4801974,
+    "id": 509805172
+  },
+  {
+    "name": "Rega Kalay Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.4811442372549,
+    "longitude": 72.47987399411765,
+    "id": 509805173
+  },
+  {
+    "name": "Rega Kalay Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.470358488,
+    "longitude": 72.483535464,
+    "id": 509806250
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.47364786315789,
+    "longitude": 72.48930914736842,
+    "id": 509818506
+  },
+  {
+    "name": "fuel",
+    "category": "amenity",
+    "subcategory": "fuel",
+    "latitude": 34.49919903999999,
+    "longitude": 72.46150938,
+    "id": 509825961
+  },
+  {
+    "name": "Zaga Kalay Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.510692950666666,
+    "longitude": 72.46616159466666,
+    "id": 510104820
+  },
+  {
+    "name": "Government Degree College Daggar",
+    "category": "amenity",
+    "subcategory": "college",
+    "latitude": 34.47844632857143,
+    "longitude": 72.48663374285715,
+    "id": 510105621
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.505030000000005,
+    "longitude": 72.46600585,
+    "id": 660037946
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.504969599999995,
+    "longitude": 72.46541020000001,
+    "id": 660037947
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.5052134,
+    "longitude": 72.46685185,
+    "id": 660037948
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.505534620000006,
+    "longitude": 72.46585806,
+    "id": 660037949
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.505002514285714,
+    "longitude": 72.46410862857144,
+    "id": 660037950
+  },
+  {
+    "name": "Pirbaba Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.51817894438202,
+    "longitude": 72.44821997528089,
+    "id": 691029070
+  },
+  {
+    "name": "Amnawar - Shalbandai Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.51190235,
+    "longitude": 72.48738230000001,
+    "id": 691029073
+  },
+  {
+    "name": "Amnawar - Shalbandai Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.50314237692308,
+    "longitude": 72.47369650961538,
+    "id": 691029074
+  },
+  {
+    "name": "Gokand Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.5396456792683,
+    "longitude": 72.49141070609755,
+    "id": 691029076
+  },
+  {
+    "name": "Sowari - Ambela - Pirbaba Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.47076298125,
+    "longitude": 72.48742015625,
+    "id": 691029677
+  },
+  {
+    "name": "Amnawar - Shalbandai Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.5122752,
+    "longitude": 72.48804546666666,
+    "id": 691314016
+  },
+  {
+    "name": "Sar Malang Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.482198411940296,
+    "longitude": 72.44817477313433,
+    "id": 694027187
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.50300968176471,
+    "longitude": 72.45683398647058,
+    "id": 694049608
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.46715253103448,
+    "longitude": 72.49829769655173,
+    "id": 696101583
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.476666699999996,
+    "longitude": 72.4874916,
+    "id": 696103134
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.47701485,
+    "longitude": 72.487170975,
+    "id": 696103135
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.4767334,
+    "longitude": 72.48698186666667,
+    "id": 696103136
+  },
+  {
+    "name": "Bilal Coach",
+    "category": "amenity",
+    "subcategory": "bus_station",
+    "latitude": 34.4767765,
+    "longitude": 72.49202154,
+    "id": 696103137
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.47754449999999,
+    "longitude": 72.4901503,
+    "id": 696103138
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.477783,
+    "longitude": 72.49005065,
+    "id": 696103139
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.477751999999995,
+    "longitude": 72.49032965,
+    "id": 696103140
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.4864002,
+    "longitude": 72.47996505862069,
+    "id": 696106248
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.493437549999996,
+    "longitude": 72.48711245,
+    "id": 696106249
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.48715784,
+    "longitude": 72.485398554,
+    "id": 696106250
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 34.480099494117646,
+    "longitude": 72.49326886470588,
+    "id": 696106251
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.498013199999995,
+    "longitude": 72.46057183214286,
+    "id": 696106252
+  },
+  {
+    "name": "parking",
+    "category": "amenity",
+    "subcategory": "parking",
+    "latitude": 34.4965214,
+    "longitude": 72.4630612,
+    "id": 696106253
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.49671645,
+    "longitude": 72.46325145,
+    "id": 696106254
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.49626295,
+    "longitude": 72.4634494,
+    "id": 696106255
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.49491176575342,
+    "longitude": 72.47920117945205,
+    "id": 696107901
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.49161121320755,
+    "longitude": 72.48120705660378,
+    "id": 696107902
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.49562342,
+    "longitude": 72.48041836833333,
+    "id": 696107903
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 34.51624273529412,
+    "longitude": 72.44589425294119,
+    "id": 696109447
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.51173062244898,
+    "longitude": 72.44712582653062,
+    "id": 696109450
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.51850757777778,
+    "longitude": 72.45298503703704,
+    "id": 696109451
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.51704049285714,
+    "longitude": 72.4528159,
+    "id": 696109452
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.515246480555554,
+    "longitude": 72.45606912777777,
+    "id": 696109453
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 34.51378106666667,
+    "longitude": 72.45377648333334,
+    "id": 696109454
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.50264737647059,
+    "longitude": 72.4500976235294,
+    "id": 699708471
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.47642546666667,
+    "longitude": 72.50639573333333,
+    "id": 699714841
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 34.475298085714286,
+    "longitude": 72.50413195714286,
+    "id": 699714842
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.548995032608694,
+    "longitude": 72.50830021086956,
+    "id": 959086860
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.54673556410257,
+    "longitude": 72.51352042307693,
+    "id": 959086861
+  },
+  {
+    "name": "Regga Village Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.475646172727274,
+    "longitude": 72.48217685,
+    "id": 967087893
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.47952373333333,
+    "longitude": 72.48464136666666,
+    "id": 1041201688
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 34.48684374545454,
+    "longitude": 72.48841131818182,
+    "id": 1041201689
+  },
+  {
+    "name": "Regga Village Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.477301625,
+    "longitude": 72.4854527625,
+    "id": 1041201690
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.4757343,
+    "longitude": 72.49153836666666,
+    "id": 1041201691
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.47621357,
+    "longitude": 72.49252331,
+    "id": 1041201692
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.48052844,
+    "longitude": 72.49236078,
+    "id": 1041201693
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.48014752857143,
+    "longitude": 72.49186207142857,
+    "id": 1041201694
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.48398733333333,
+    "longitude": 72.49783133725491,
+    "id": 1041201695
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.48642355,
+    "longitude": 72.5069279,
+    "id": 1041207655
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.48580063636364,
+    "longitude": 72.50934537272727,
+    "id": 1041207656
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.49144280952381,
+    "longitude": 72.51365464285715,
+    "id": 1041208782
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.5039407,
+    "longitude": 72.50997026666666,
+    "id": 1041215381
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.50336949,
+    "longitude": 72.508386425,
+    "id": 1041215382
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.50311014,
+    "longitude": 72.512241944,
+    "id": 1041215383
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.505177482758626,
+    "longitude": 72.51484083103449,
+    "id": 1041222616
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.49664383636364,
+    "longitude": 72.51578274545454,
+    "id": 1041226348
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.49853861034483,
+    "longitude": 72.51936520344827,
+    "id": 1041226349
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.50610476774194,
+    "longitude": 72.52166760645162,
+    "id": 1041226355
+  },
+  {
+    "name": "Bara Hujra Street",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.510053666666664,
+    "longitude": 72.48457136666667,
+    "id": 1087069909
+  },
+  {
+    "name": "University of Buner",
+    "category": "amenity",
+    "subcategory": "university",
+    "latitude": 34.4788301125,
+    "longitude": 72.490179275,
+    "id": 1126941533
+  },
+  {
+    "name": "Regga Village Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.47228203333333,
+    "longitude": 72.47742076666667,
+    "id": 1126943780
+  },
+  {
+    "name": "Regga Village Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.47273065,
+    "longitude": 72.47791964999999,
+    "id": 1126943781
+  },
+  {
+    "name": "Rega Kalay",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.472043002702705,
+    "longitude": 72.47524722972973,
+    "id": 1126945061
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 34.47334715757576,
+    "longitude": 72.45479078030303,
+    "id": 1126945776
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.48581024761905,
+    "longitude": 72.4581088857143,
+    "id": 1126945777
+  },
+  {
+    "name": "Sunigram Kalay",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.48743795,
+    "longitude": 72.48439700666667,
+    "id": 1126947011
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.49224358,
+    "longitude": 72.46910292999999,
+    "id": 1126947294
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.49470083653846,
+    "longitude": 72.47011606346153,
+    "id": 1126947295
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.49816572727273,
+    "longitude": 72.4730979,
+    "id": 1126948548
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 34.48388747,
+    "longitude": 72.4740321,
+    "id": 1127425594
+  },
+  {
+    "name": "Buner Medical Complex",
+    "category": "landuse",
+    "subcategory": "healthcare",
+    "latitude": 34.49835756,
+    "longitude": 72.46321746,
+    "id": 1127425723
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 34.50538007777778,
+    "longitude": 72.46768611666667,
+    "id": 1127425818
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.50615148,
+    "longitude": 72.45955922,
+    "id": 1127426553
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.50912554,
+    "longitude": 72.4547041,
+    "id": 1127426554
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.54739592,
+    "longitude": 72.44506,
+    "id": 1127426555
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.4722836,
+    "longitude": 72.47545278333332,
+    "id": 1175456146
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.472078877777776,
+    "longitude": 72.47633716666667,
+    "id": 1175456147
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.4705583,
+    "longitude": 72.4760253,
+    "id": 1175456150
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.470660966666664,
+    "longitude": 72.4758125,
+    "id": 1175456151
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.47055864285714,
+    "longitude": 72.47622381428572,
+    "id": 1175456152
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.479273925,
+    "longitude": 72.48999665,
+    "id": 1230425713
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 34.4856814,
+    "longitude": 72.47465307499999,
+    "id": 1242288056
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.48674299583333,
+    "longitude": 72.47139930416667,
+    "id": 1248692705
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.47694617407407,
+    "longitude": 72.50808975925926,
+    "id": 1303796761
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.4881441,
+    "longitude": 72.46222542727273,
+    "id": 1303796762
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.549899840350875,
+    "longitude": 72.44933897017545,
+    "id": 1303816010
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 34.501987725,
+    "longitude": 72.44772627500001,
+    "id": 1307595341
+  },
+  {
+    "name": "construction",
+    "category": "highway",
+    "subcategory": "construction",
+    "latitude": 34.46618495784314,
+    "longitude": 72.46979941666666,
+    "id": 1318433405
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.5427010375,
+    "longitude": 72.4490916375,
+    "id": 1425241053
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 34.54199105714286,
+    "longitude": 72.44816902857143,
+    "id": 1425241054
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 34.53958975666667,
+    "longitude": 72.44414736666666,
+    "id": 1425269233
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 34.54006846666667,
+    "longitude": 72.44487466666666,
+    "id": 1425269873
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.52230965,
+    "longitude": 72.4848055,
+    "id": 1473953676
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.52495737826087,
+    "longitude": 72.4839613652174,
+    "id": 1473953677
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.52281701818182,
+    "longitude": 72.48575998636365,
+    "id": 1473953678
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.5235543,
+    "longitude": 72.4840471,
+    "id": 1473953679
+  },
+  {
+    "name": "scrub",
+    "category": "natural",
+    "subcategory": "scrub",
+    "latitude": 34.47440697,
+    "longitude": 72.51000761,
+    "id": 1482456038
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.48730229545455,
+    "longitude": 72.49460337272727,
+    "id": 1482456039
+  },
+  {
+    "name": "Nehr Road",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.47144974492753,
+    "longitude": 72.51599135217391,
+    "id": 1483643908
+  },
+  {
+    "name": "Dewana Baba Road",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 34.47286693818182,
+    "longitude": 72.5027165290909,
+    "id": 1483643909
+  },
+  {
+    "name": "نیشنل بینک آف پاکستان",
+    "category": "amenity",
+    "subcategory": "bank",
+    "latitude": 34.505114379999995,
+    "longitude": 72.4614991,
+    "id": 509797179
+  },
+  {
+    "name": "fuel",
+    "category": "amenity",
+    "subcategory": "fuel",
+    "latitude": 34.500564399999995,
+    "longitude": 72.4688634,
+    "id": 509798561
+  },
+  {
+    "name": "fuel",
+    "category": "amenity",
+    "subcategory": "fuel",
+    "latitude": 34.48143183333333,
+    "longitude": 72.48017913333334,
+    "id": 509805172
+  },
+  {
+    "name": "fuel",
+    "category": "amenity",
+    "subcategory": "fuel",
+    "latitude": 34.49919674,
+    "longitude": 72.46136414,
+    "id": 509825961
+  },
+  {
+    "name": "Government Degree College Daggar",
+    "category": "amenity",
+    "subcategory": "college",
+    "latitude": 34.47866025,
+    "longitude": 72.48613385714286,
+    "id": 510105621
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.50301277117647,
+    "longitude": 72.45682978235294,
+    "id": 694049608
+  },
+  {
+    "name": "Bilal Coach",
+    "category": "amenity",
+    "subcategory": "bus_station",
+    "latitude": 34.47667192,
+    "longitude": 72.49201626,
+    "id": 696103137
+  },
+  {
+    "name": "parking",
+    "category": "amenity",
+    "subcategory": "parking",
+    "latitude": 34.49651684,
+    "longitude": 72.4629817,
+    "id": 696106253
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.49492327534247,
+    "longitude": 72.47914735068494,
+    "id": 696107901
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.491541643396225,
+    "longitude": 72.48096825471698,
+    "id": 696107902
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 34.473900144578316,
+    "longitude": 72.4929163060241,
+    "id": 1126940960
+  },
+  {
+    "name": "commercial",
+    "category": "landuse",
+    "subcategory": "commercial",
+    "latitude": 34.472727882022475,
+    "longitude": 72.4853202764045,
+    "id": 1126940961
+  },
+  {
+    "name": "University of Buner",
+    "category": "amenity",
+    "subcategory": "university",
+    "latitude": 34.4784030625,
+    "longitude": 72.490104825,
+    "id": 1126941533
+  },
+  {
+    "name": "Rega Kalay",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.47169925135135,
+    "longitude": 72.47501003783783,
+    "id": 1126945061
+  },
+  {
+    "name": "Sunigram Kalay",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.48731932,
+    "longitude": 72.48404639,
+    "id": 1126947011
+  },
+  {
+    "name": "Buner Medical Complex",
+    "category": "landuse",
+    "subcategory": "healthcare",
+    "latitude": 34.49841474,
+    "longitude": 72.46318136,
+    "id": 1127425723
+  },
+  {
+    "name": "government",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 34.50541223888889,
+    "longitude": 72.46767310555555,
+    "id": 1127425818
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.510988189247314,
+    "longitude": 72.48433940967742,
+    "id": 17870238
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.47682796666667,
+    "longitude": 72.5080145037037,
+    "id": 1303796761
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.48809448787879,
+    "longitude": 72.46217376060605,
+    "id": 1303796762
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.54981917894737,
+    "longitude": 72.4493105982456,
+    "id": 1303816010
+  },
+  {
+    "name": "scrub",
+    "category": "natural",
+    "subcategory": "scrub",
+    "latitude": 34.51691241518988,
+    "longitude": 72.47778226202531,
+    "id": 17875923
+  },
+  {
+    "name": "grassland",
+    "category": "natural",
+    "subcategory": "grassland",
+    "latitude": 34.54547996617647,
+    "longitude": 72.46697465882353,
+    "id": 17875921
+  },
+  {
+    "name": "heath",
+    "category": "natural",
+    "subcategory": "heath",
+    "latitude": 34.52211784619565,
+    "longitude": 72.45932017554347,
+    "id": 17875922
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.5427885,
+    "longitude": 72.4489961375,
+    "id": 1425241053
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 34.54199105714286,
+    "longitude": 72.44816902857143,
+    "id": 1425241054
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.53437480909091,
+    "longitude": 72.48337658181819,
+    "id": 17870236
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.53816348175182,
+    "longitude": 72.51297761824817,
+    "id": 17870237
+  },
+  {
+    "name": "scrub",
+    "category": "natural",
+    "subcategory": "scrub",
+    "latitude": 34.47440085857143,
+    "longitude": 72.50999301857144,
+    "id": 1482456038
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 34.48728615454546,
+    "longitude": 72.4945736409091,
+    "id": 1482456039
   }
 ]

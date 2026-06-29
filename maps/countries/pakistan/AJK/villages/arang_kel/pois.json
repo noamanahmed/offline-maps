@@ -1,5 +1,13 @@
 [
   {
+    "name": "اڑنگ کیل",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 34.8098403,
+    "longitude": 74.3497787,
+    "id": 3562436531
+  },
+  {
     "name": "Titanic Guest House",
     "category": "tourism",
     "subcategory": "guest_house",
@@ -14,5 +22,53 @@
     "latitude": 34.8104354,
     "longitude": 74.3510079,
     "id": 9889968377
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 34.80825419,
+    "longitude": 74.35014562,
+    "id": 1167330565
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 34.810833611538456,
+    "longitude": 74.34869044615385,
+    "id": 1167330566
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.8084639,
+    "longitude": 74.34853272258064,
+    "id": 1167330572
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.80823162777778,
+    "longitude": 74.34841751111111,
+    "id": 1286209786
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 34.80952019230769,
+    "longitude": 74.3607729,
+    "id": 1289753876
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 34.8084639,
+    "longitude": 74.34853272258064,
+    "id": 1167330572
   }
 ]

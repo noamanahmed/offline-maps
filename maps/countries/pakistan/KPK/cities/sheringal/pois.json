@@ -1,5 +1,21 @@
 [
   {
+    "name": "شیرنگل",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 35.2764167,
+    "longitude": 72.0023267,
+    "id": 951543931
+  },
+  {
+    "name": "police",
+    "category": "amenity",
+    "subcategory": "police",
+    "latitude": 35.2765836,
+    "longitude": 72.0052746,
+    "id": 4439844941
+  },
+  {
     "name": "Market",
     "category": "shop",
     "subcategory": "supermarket",
@@ -14,6 +30,14 @@
     "latitude": 35.2759988,
     "longitude": 72.0034493,
     "id": 6534025091
+  },
+  {
+    "name": "Tower",
+    "category": "office",
+    "subcategory": "telecommunication",
+    "latitude": 35.2618134,
+    "longitude": 72.0033,
+    "id": 6534025092
   },
   {
     "name": "Car Wash",
@@ -38,5 +62,1501 @@
     "latitude": 35.2474264,
     "longitude": 72.0061891,
     "id": 6534025485
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 35.3200155372093,
+    "longitude": 71.9915215366279,
+    "id": 304914691
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.276248645454544,
+    "longitude": 72.00473638181819,
+    "id": 446744473
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 35.21733071830065,
+    "longitude": 71.98722288562091,
+    "id": 698744858
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.23781455833333,
+    "longitude": 71.99652070833334,
+    "id": 698751101
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 35.23909705,
+    "longitude": 71.9967379,
+    "id": 698751102
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 35.237759544444444,
+    "longitude": 71.99613398888889,
+    "id": 698751103
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 35.2370318,
+    "longitude": 71.99689505,
+    "id": 698751104
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 35.23643806363636,
+    "longitude": 71.99624260909091,
+    "id": 698751105
+  },
+  {
+    "name": "Samang Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.26788918119469,
+    "longitude": 71.9988134471239,
+    "id": 972187739
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 35.26287243257143,
+    "longitude": 72.00374986857143,
+    "id": 1000343519
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 35.312218143076926,
+    "longitude": 72.03203443846154,
+    "id": 1000346247
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 35.26544629166666,
+    "longitude": 72.04828533166666,
+    "id": 1004582933
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 35.25910669017857,
+    "longitude": 72.02078842321428,
+    "id": 1004582934
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 35.262354326315794,
+    "longitude": 72.00672739473684,
+    "id": 1004582935
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.3165333875,
+    "longitude": 72.04253305,
+    "id": 1159177107
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.3159013862069,
+    "longitude": 72.04083151724139,
+    "id": 1159177108
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.31438568,
+    "longitude": 72.03906053,
+    "id": 1159177111
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.3136744,
+    "longitude": 72.03766391666666,
+    "id": 1159177113
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.31026540181818,
+    "longitude": 72.03865561454545,
+    "id": 1159177114
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.309376136842104,
+    "longitude": 72.0370521263158,
+    "id": 1159177115
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.306805759999996,
+    "longitude": 72.0261941,
+    "id": 1159271387
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.306580327272734,
+    "longitude": 72.02790841818181,
+    "id": 1159271388
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.30521942340425,
+    "longitude": 72.03170696010638,
+    "id": 1159271389
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.3057373,
+    "longitude": 72.02538335,
+    "id": 1159271390
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.30498068333333,
+    "longitude": 72.02529289166667,
+    "id": 1159271391
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.303637800000004,
+    "longitude": 72.02525394,
+    "id": 1159271394
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.30300602222222,
+    "longitude": 72.0249905888889,
+    "id": 1159271395
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.30194387666667,
+    "longitude": 72.02411909666667,
+    "id": 1159271396
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.30150398421053,
+    "longitude": 72.0237927,
+    "id": 1159271404
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.30032638125,
+    "longitude": 72.01968276875,
+    "id": 1159271406
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29858626086956,
+    "longitude": 72.02038067826086,
+    "id": 1159271410
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29814462,
+    "longitude": 72.01919815,
+    "id": 1159271411
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29832471538462,
+    "longitude": 72.01736971538462,
+    "id": 1159271412
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29766507272728,
+    "longitude": 72.01651164545454,
+    "id": 1159271414
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29703703,
+    "longitude": 72.01343783,
+    "id": 1159271438
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29745488571429,
+    "longitude": 72.01457817142857,
+    "id": 1159271439
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.29812416666667,
+    "longitude": 72.01334643333333,
+    "id": 1159271440
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29348330645161,
+    "longitude": 72.01187490645162,
+    "id": 1159271441
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29072284285714,
+    "longitude": 72.01207692142857,
+    "id": 1159271447
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.288295266666665,
+    "longitude": 72.01227232777778,
+    "id": 1159271448
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.28743844,
+    "longitude": 72.01314281500001,
+    "id": 1159271450
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 35.28760965,
+    "longitude": 72.01077775,
+    "id": 1159274357
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.285072325,
+    "longitude": 72.0096177107143,
+    "id": 1159274362
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.2784400803653,
+    "longitude": 72.0109674063927,
+    "id": 1159274363
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.28246670952381,
+    "longitude": 72.00904246666667,
+    "id": 1159274367
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.280914886666665,
+    "longitude": 72.00649934666667,
+    "id": 1159274380
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.279823656666665,
+    "longitude": 72.00647529333334,
+    "id": 1159274394
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.281657728571425,
+    "longitude": 72.00765448571428,
+    "id": 1159274397
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.280804159999995,
+    "longitude": 72.007777312,
+    "id": 1159274398
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.277775113636366,
+    "longitude": 72.00689954090909,
+    "id": 1159274413
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.27931981463415,
+    "longitude": 72.00807707804877,
+    "id": 1159274420
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2792853,
+    "longitude": 72.0073153,
+    "id": 1159274423
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.27903162,
+    "longitude": 72.00651429999999,
+    "id": 1159274424
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2787795,
+    "longitude": 72.00706627142857,
+    "id": 1159274425
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.27815562857143,
+    "longitude": 72.00617002857143,
+    "id": 1159274439
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.27773405,
+    "longitude": 72.00711319166668,
+    "id": 1159274440
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.278292925,
+    "longitude": 72.00726555,
+    "id": 1159274447
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.278419407142856,
+    "longitude": 72.00789835714286,
+    "id": 1159274448
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.27539099642858,
+    "longitude": 72.00830051071429,
+    "id": 1159274480
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.270054192857145,
+    "longitude": 72.01231585150376,
+    "id": 1159277100
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.27577611666667,
+    "longitude": 72.00854880833333,
+    "id": 1159277101
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.277091523076926,
+    "longitude": 72.00785497692308,
+    "id": 1159277102
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.273371299999994,
+    "longitude": 72.00417383999999,
+    "id": 1159277103
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.26934875,
+    "longitude": 72.0057012625,
+    "id": 1159277114
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.26813580769231,
+    "longitude": 72.0053854076923,
+    "id": 1159277115
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.27165097096774,
+    "longitude": 72.00764058064516,
+    "id": 1159277120
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.267222266666664,
+    "longitude": 72.00715059166667,
+    "id": 1159277139
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.265461179999996,
+    "longitude": 72.00723477142857,
+    "id": 1159277148
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.26440449344262,
+    "longitude": 72.00430351967213,
+    "id": 1159277161
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.264924875,
+    "longitude": 72.006417275,
+    "id": 1159277163
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.2624152875,
+    "longitude": 72.00660625892857,
+    "id": 1159277164
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.26130153333334,
+    "longitude": 72.00399026666668,
+    "id": 1159277165
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.261222780000004,
+    "longitude": 72.004883105,
+    "id": 1159277170
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.261179092,
+    "longitude": 72.003262728,
+    "id": 1159277181
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.260522216666665,
+    "longitude": 72.00287494999999,
+    "id": 1159277186
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.26001793666667,
+    "longitude": 72.00517278666666,
+    "id": 1159277200
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2586046825,
+    "longitude": 72.0037080075,
+    "id": 1159277201
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.25769942592593,
+    "longitude": 72.0069723037037,
+    "id": 1159277211
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.25554186428571,
+    "longitude": 72.00616881190476,
+    "id": 1159277213
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.25133036666667,
+    "longitude": 72.00797702222222,
+    "id": 1159277218
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.25484695428572,
+    "longitude": 72.00964179428571,
+    "id": 1159277221
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.25014819069767,
+    "longitude": 72.01052425581395,
+    "id": 1159277245
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.24981360285714,
+    "longitude": 72.00729551714286,
+    "id": 1159277254
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.247601341666666,
+    "longitude": 72.00975427499999,
+    "id": 1159277255
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.247045553125,
+    "longitude": 72.00860339375,
+    "id": 1159277256
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.2477400625,
+    "longitude": 72.01126500625,
+    "id": 1159277263
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.249103416666664,
+    "longitude": 72.01082316666667,
+    "id": 1159277264
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.24943164375,
+    "longitude": 72.01184599375,
+    "id": 1159277265
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.24941106666667,
+    "longitude": 72.00789314761904,
+    "id": 1159277266
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.24496006521739,
+    "longitude": 72.00555391304347,
+    "id": 1159277270
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.245321215789474,
+    "longitude": 72.00360066842104,
+    "id": 1159277277
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.245958807142856,
+    "longitude": 72.00390718571428,
+    "id": 1159277278
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.24238330243902,
+    "longitude": 72.00082380243902,
+    "id": 1159283277
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 35.238552240000004,
+    "longitude": 71.99674382,
+    "id": 1159283285
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.23769749,
+    "longitude": 71.99743432,
+    "id": 1159283290
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.23434979473684,
+    "longitude": 71.99769408947368,
+    "id": 1159283296
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 35.286377875,
+    "longitude": 72.009031,
+    "id": 1163984483
+  },
+  {
+    "name": "secondary",
+    "category": "highway",
+    "subcategory": "secondary",
+    "latitude": 35.287061,
+    "longitude": 72.0098218,
+    "id": 1163984484
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.2977979,
+    "longitude": 72.01397096666666,
+    "id": 1164202945
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 35.29826525,
+    "longitude": 72.01303285,
+    "id": 1164202946
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.3121139,
+    "longitude": 72.03840775,
+    "id": 1176389571
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.312315749999996,
+    "longitude": 72.03794015,
+    "id": 1176389572
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.3029475,
+    "longitude": 72.0241592,
+    "id": 1176389573
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.30272464615385,
+    "longitude": 72.0234301923077,
+    "id": 1176389574
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.26755647883598,
+    "longitude": 72.03584518042328,
+    "id": 1187436331
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.26923335477528,
+    "longitude": 72.02283291264045,
+    "id": 1187436332
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.27458573333333,
+    "longitude": 72.01567796666667,
+    "id": 1187436333
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.2488347,
+    "longitude": 72.00921515,
+    "id": 1188532692
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.249683829411765,
+    "longitude": 72.01022946470589,
+    "id": 1188532693
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.299323435197365,
+    "longitude": 72.03551163519737,
+    "id": 1188533610
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.2734333,
+    "longitude": 72.00479705000001,
+    "id": 1199295644
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.27369113333333,
+    "longitude": 72.00529603333332,
+    "id": 1199295645
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.27050546666666,
+    "longitude": 72.0047741,
+    "id": 1199295646
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.269894525,
+    "longitude": 72.004707,
+    "id": 1199295647
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.27006695,
+    "longitude": 72.0043933,
+    "id": 1199295648
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.271260968181814,
+    "longitude": 72.00465078181819,
+    "id": 1199295649
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.2705238625,
+    "longitude": 72.00358715,
+    "id": 1199295650
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.2700824,
+    "longitude": 72.00406195,
+    "id": 1199295651
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.26918516666667,
+    "longitude": 72.00376011111112,
+    "id": 1199295652
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 35.30600983856209,
+    "longitude": 72.06622636732025,
+    "id": 13459616
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 35.26525854166667,
+    "longitude": 72.04817576,
+    "id": 1004582933
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 35.25910669017857,
+    "longitude": 72.02078842321428,
+    "id": 1004582934
+  },
+  {
+    "name": "wood",
+    "category": "natural",
+    "subcategory": "wood",
+    "latitude": 35.26217655789474,
+    "longitude": 72.00656177368421,
+    "id": 1004582935
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.31648819375,
+    "longitude": 72.04249950625,
+    "id": 1159177107
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.315793786206896,
+    "longitude": 72.04074420344827,
+    "id": 1159177108
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.31432243,
+    "longitude": 72.03903576,
+    "id": 1159177111
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.313659,
+    "longitude": 72.03762174166667,
+    "id": 1159177113
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.30932399473684,
+    "longitude": 72.03704038947369,
+    "id": 1159177115
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.30678872,
+    "longitude": 72.02617924,
+    "id": 1159271387
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.30656351818182,
+    "longitude": 72.02790294545454,
+    "id": 1159271388
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.305683116666664,
+    "longitude": 72.02534201666667,
+    "id": 1159271390
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.30492925833333,
+    "longitude": 72.02528544166667,
+    "id": 1159271391
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.30360529,
+    "longitude": 72.02521857,
+    "id": 1159271394
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.30297321111111,
+    "longitude": 72.02494677777777,
+    "id": 1159271395
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.301891233333336,
+    "longitude": 72.02407207333334,
+    "id": 1159271396
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.30026368125,
+    "longitude": 72.01960975625,
+    "id": 1159271406
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29855510869565,
+    "longitude": 72.02034636521739,
+    "id": 1159271410
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29810841,
+    "longitude": 72.0191692,
+    "id": 1159271411
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.298280446153846,
+    "longitude": 72.01734564615384,
+    "id": 1159271412
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.297657799999996,
+    "longitude": 72.01650272727272,
+    "id": 1159271414
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.297014983333334,
+    "longitude": 72.01342283666666,
+    "id": 1159271438
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29743486666667,
+    "longitude": 72.01456246190476,
+    "id": 1159271439
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29338486451613,
+    "longitude": 72.01184480967741,
+    "id": 1159271441
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.29069477857143,
+    "longitude": 72.01206807142857,
+    "id": 1159271447
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.28821551111111,
+    "longitude": 72.01219620833334,
+    "id": 1159271448
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.287334575,
+    "longitude": 72.01308058,
+    "id": 1159271450
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.28498070357143,
+    "longitude": 72.00949557142857,
+    "id": 1159274362
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.28238574285714,
+    "longitude": 72.00890903809524,
+    "id": 1159274367
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.280861826666666,
+    "longitude": 72.00644977333333,
+    "id": 1159274380
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.27980276666666,
+    "longitude": 72.00645779,
+    "id": 1159274394
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.28163097142857,
+    "longitude": 72.00762798571428,
+    "id": 1159274397
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.280755464,
+    "longitude": 72.007735904,
+    "id": 1159274398
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.27929637560976,
+    "longitude": 72.00806970731706,
+    "id": 1159274420
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.27926115,
+    "longitude": 72.00730751666667,
+    "id": 1159274423
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.27903162,
+    "longitude": 72.00651429999999,
+    "id": 1159274424
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.27875635714285,
+    "longitude": 72.00705977142857,
+    "id": 1159274425
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.277727975,
+    "longitude": 72.00709867083333,
+    "id": 1159274440
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2782865,
+    "longitude": 72.0072264375,
+    "id": 1159274447
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.27841052142857,
+    "longitude": 72.00786723571429,
+    "id": 1159274448
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.275387085714286,
+    "longitude": 72.00829102499999,
+    "id": 1159274480
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.277053238461534,
+    "longitude": 72.00783816153846,
+    "id": 1159277102
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.273334899999995,
+    "longitude": 72.0041696,
+    "id": 1159277103
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2692815375,
+    "longitude": 72.00566975,
+    "id": 1159277114
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.268043630769235,
+    "longitude": 72.00533912307692,
+    "id": 1159277115
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.27162435806452,
+    "longitude": 72.00763233225807,
+    "id": 1159277120
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.26721555833333,
+    "longitude": 72.00713801666667,
+    "id": 1159277139
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.26538570857143,
+    "longitude": 72.00720700857143,
+    "id": 1159277148
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.26434733114754,
+    "longitude": 72.00426954754099,
+    "id": 1159277161
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2648986625,
+    "longitude": 72.00641465,
+    "id": 1159277163
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.26121336,
+    "longitude": 72.00487734,
+    "id": 1159277170
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.26116236,
+    "longitude": 72.003259296,
+    "id": 1159277181
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.260496425,
+    "longitude": 72.00287006666666,
+    "id": 1159277186
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.26001718333334,
+    "longitude": 72.00516652,
+    "id": 1159277200
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2586046825,
+    "longitude": 72.0037080075,
+    "id": 1159277201
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.257686855555555,
+    "longitude": 72.00696088888888,
+    "id": 1159277211
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.25553185952381,
+    "longitude": 72.00614718095238,
+    "id": 1159277213
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.25484695428572,
+    "longitude": 72.00964179428571,
+    "id": 1159277221
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.2501248,
+    "longitude": 72.01051421395348,
+    "id": 1159277245
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.24990573714286,
+    "longitude": 72.00719839714286,
+    "id": 1159277254
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.247599683333334,
+    "longitude": 72.00974546666667,
+    "id": 1159277255
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.24703911875,
+    "longitude": 72.0085237125,
+    "id": 1159277256
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.244883682608695,
+    "longitude": 72.0055016652174,
+    "id": 1159277270
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.24592333571429,
+    "longitude": 72.00387884999999,
+    "id": 1159277278
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.242320041463415,
+    "longitude": 72.00072109512195,
+    "id": 1159283277
+  },
+  {
+    "name": "place_of_worship",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 35.23852288,
+    "longitude": 71.99674168,
+    "id": 1159283285
+  },
+  {
+    "name": "farmland",
+    "category": "landuse",
+    "subcategory": "farmland",
+    "latitude": 35.23434363157895,
+    "longitude": 71.99769166842106,
+    "id": 1159283296
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 35.26989674166666,
+    "longitude": 72.00468710833333,
+    "id": 1199295647
   }
 ]

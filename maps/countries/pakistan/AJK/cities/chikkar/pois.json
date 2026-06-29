@@ -1,10 +1,506 @@
 [
   {
+    "name": "چکار",
+    "category": "place",
+    "subcategory": "town",
+    "latitude": 34.1492438,
+    "longitude": 73.6765,
+    "id": 2509048715
+  },
+  {
     "name": "Whistling Woods Camping Resort",
     "category": "leisure",
     "subcategory": "resort",
     "latitude": 34.131472,
     "longitude": 73.6562598,
     "id": 8511745047
+  },
+  {
+    "name": "viewpoint",
+    "category": "tourism",
+    "subcategory": "viewpoint",
+    "latitude": 34.1253739,
+    "longitude": 73.7083182,
+    "id": 10543187535
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.17906269361111,
+    "longitude": 73.73230191055555,
+    "id": 231823580
+  },
+  {
+    "name": "trunk",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 34.17863083333334,
+    "longitude": 73.70576994147287,
+    "id": 231826331
+  },
+  {
+    "name": "trunk",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 34.1815153,
+    "longitude": 73.68298200000001,
+    "id": 231826333
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.187868496,
+    "longitude": 73.66956426,
+    "id": 231826337
+  },
+  {
+    "name": "trunk",
+    "category": "highway",
+    "subcategory": "trunk",
+    "latitude": 34.225986981122446,
+    "longitude": 73.62172171377551,
+    "id": 231910704
+  },
+  {
+    "name": "ZalZal Lake",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.132915615853655,
+    "longitude": 73.71799133292683,
+    "id": 243510444
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 34.13846628,
+    "longitude": 73.67758566399999,
+    "id": 256279638
+  },
+  {
+    "name": "Sudhan Gali Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 34.098087371968504,
+    "longitude": 73.72502130488189,
+    "id": 350703545
+  },
+  {
+    "name": "tertiary",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 34.16803533964912,
+    "longitude": 73.67647683052633,
+    "id": 406079488
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.17681107097701,
+    "longitude": 73.72600450114942,
+    "id": 966355882
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.18909797717042,
+    "longitude": 73.6837170414791,
+    "id": 966358982
+  },
+  {
+    "name": "Sudhan Gali Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 34.15725180046189,
+    "longitude": 73.68519544133949,
+    "id": 1065850836
+  },
+  {
+    "name": "Sudhan Gali Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 34.1401496,
+    "longitude": 73.68592455000001,
+    "id": 1065850837
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 34.18787852941176,
+    "longitude": 73.66871658823528,
+    "id": 1305971194
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 34.187878260714285,
+    "longitude": 73.66813961785715,
+    "id": 1305971195
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.18580470714286,
+    "longitude": 73.67442835714284,
+    "id": 1305971196
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 34.18057407777778,
+    "longitude": 73.71207097777778,
+    "id": 1305972477
+  },
+  {
+    "name": "track",
+    "category": "highway",
+    "subcategory": "track",
+    "latitude": 34.18109086515152,
+    "longitude": 73.71066024545455,
+    "id": 1305972478
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.18017398055556,
+    "longitude": 73.71711369722223,
+    "id": 1305972479
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.184183920289854,
+    "longitude": 73.71371379710145,
+    "id": 1305972480
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.18673953636364,
+    "longitude": 73.71700521818182,
+    "id": 1305972481
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.18869985,
+    "longitude": 73.64686456666666,
+    "id": 1306327943
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.169457047142856,
+    "longitude": 73.66884011857144,
+    "id": 1306386010
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.17498733777778,
+    "longitude": 73.65802685333334,
+    "id": 1306386011
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.179034317857145,
+    "longitude": 73.65342228214286,
+    "id": 1306386012
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.174785811111114,
+    "longitude": 73.65344586031746,
+    "id": 1306386013
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.18695766779661,
+    "longitude": 73.6587819440678,
+    "id": 1306386278
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.19488227586207,
+    "longitude": 73.67097335862069,
+    "id": 1306391793
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.18766832,
+    "longitude": 73.67368164,
+    "id": 1306393515
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.18786682727273,
+    "longitude": 73.67516932727273,
+    "id": 1306394011
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.18994866875,
+    "longitude": 73.6611504375,
+    "id": 1306395764
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.17400184009009,
+    "longitude": 73.69382635045045,
+    "id": 1306536022
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.18170661190476,
+    "longitude": 73.69245197380953,
+    "id": 1306536023
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.183213949999995,
+    "longitude": 73.69621101730769,
+    "id": 1306538880
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.187255811016946,
+    "longitude": 73.69225917033897,
+    "id": 1306538881
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.170320710344825,
+    "longitude": 73.68570342068965,
+    "id": 1306538882
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 34.16757240888889,
+    "longitude": 73.69575435555556,
+    "id": 1306538883
+  },
+  {
+    "name": "service",
+    "category": "highway",
+    "subcategory": "service",
+    "latitude": 34.16913541818182,
+    "longitude": 73.68329930454546,
+    "id": 1306538884
+  },
+  {
+    "name": "Sudhan Gali Road",
+    "category": "highway",
+    "subcategory": "primary",
+    "latitude": 34.1774560720339,
+    "longitude": 73.68522118050848,
+    "id": 1306538885
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.17610506,
+    "longitude": 73.68023332,
+    "id": 1307453306
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.18280002,
+    "longitude": 73.68724628,
+    "id": 1307453349
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.1824108,
+    "longitude": 73.68860583333334,
+    "id": 1307453350
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.1839744,
+    "longitude": 73.6921334,
+    "id": 1307453351
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.18294563333333,
+    "longitude": 73.69174403333334,
+    "id": 1307453352
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.1831589,
+    "longitude": 73.691880575,
+    "id": 1307453353
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.18558638181818,
+    "longitude": 73.7071037,
+    "id": 1307466525
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.17543495454545,
+    "longitude": 73.71742325454545,
+    "id": 1307466532
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.174187925,
+    "longitude": 73.71495329999999,
+    "id": 1307466533
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.187921700000004,
+    "longitude": 73.7079841,
+    "id": 1307520704
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.187709881818186,
+    "longitude": 73.70779241818182,
+    "id": 1307520705
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.18646969565218,
+    "longitude": 73.71220095217392,
+    "id": 1307520706
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.1848015,
+    "longitude": 73.7126456,
+    "id": 1307520707
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.18516248461538,
+    "longitude": 73.71137415384615,
+    "id": 1307520708
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 34.185246657142855,
+    "longitude": 73.71090114285714,
+    "id": 1307520709
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.183900175,
+    "longitude": 73.708722175,
+    "id": 1307520710
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 34.187366600000004,
+    "longitude": 73.70777175,
+    "id": 1307900923
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.18789192,
+    "longitude": 73.669551392,
+    "id": 231826337
+  },
+  {
+    "name": "ZalZal Lake",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.13292808780488,
+    "longitude": 73.71796208414634,
+    "id": 243510444
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.17680961091954,
+    "longitude": 73.7260044086207,
+    "id": 966355882
+  },
+  {
+    "name": "water",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 34.18909797717042,
+    "longitude": 73.6837170414791,
+    "id": 966358982
   }
 ]

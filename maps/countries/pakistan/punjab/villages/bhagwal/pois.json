@@ -1,5 +1,37 @@
 [
   {
+    "name": "mini_roundabout",
+    "category": "highway",
+    "subcategory": "mini_roundabout",
+    "latitude": 32.8223224,
+    "longitude": 73.95438,
+    "id": 6861214787
+  },
+  {
+    "name": "بھگوال",
+    "category": "place",
+    "subcategory": "village",
+    "latitude": 32.8213713,
+    "longitude": 73.9553799,
+    "id": 9408508272
+  },
+  {
+    "name": "Govt Boys High School Bhagwal",
+    "category": "office",
+    "subcategory": "educational_institution",
+    "latitude": 32.8262567,
+    "longitude": 73.9598813,
+    "id": 11309035818
+  },
+  {
+    "name": "Western Graveyard",
+    "category": "landuse",
+    "subcategory": "cemetery",
+    "latitude": 32.8228298,
+    "longitude": 73.9540455,
+    "id": 11328604469
+  },
+  {
     "name": "مسجد فیضان عشق رسول ﷺ اینڈ مدرستہ المدینہ دعوت اسلامی بھگوال",
     "category": "amenity",
     "subcategory": "place_of_worship",
@@ -16,6 +48,14 @@
     "id": 11329039112
   },
   {
+    "name": "Govt Boys Primary School",
+    "category": "office",
+    "subcategory": "educational_institution",
+    "latitude": 32.8203876,
+    "longitude": 73.9537338,
+    "id": 11343284323
+  },
+  {
     "name": "مسجد محمدیہ غوثیہ دکھن والی",
     "category": "amenity",
     "subcategory": "place_of_worship",
@@ -30,6 +70,14 @@
     "latitude": 32.8180168,
     "longitude": 73.956263,
     "id": 11629705748
+  },
+  {
+    "name": "Union Council office UC-92",
+    "category": "office",
+    "subcategory": "government",
+    "latitude": 32.8215112,
+    "longitude": 73.9565701,
+    "id": 11629718945
   },
   {
     "name": "جامع مسجد سیدنا حضرت بلال رضی اللہ تعالٰی عنہ",
@@ -56,12 +104,36 @@
     "id": 11629778900
   },
   {
+    "name": "الماس اکیڈمی  بھگوال",
+    "category": "office",
+    "subcategory": "educational_institution",
+    "latitude": 32.8229643,
+    "longitude": 73.9510001,
+    "id": 11629800823
+  },
+  {
     "name": "مشرقی قبرستان بھگوال",
     "category": "amenity",
     "subcategory": "grave_yard",
     "latitude": 32.8203042,
     "longitude": 73.9616881,
     "id": 11629809808
+  },
+  {
+    "name": "چھپڑ سٹاپ",
+    "category": "highway",
+    "subcategory": "bus_stop",
+    "latitude": 32.8175163,
+    "longitude": 73.9584045,
+    "id": 11637488694
+  },
+  {
+    "name": "کوٹھی محلہ سٹاپ",
+    "category": "highway",
+    "subcategory": "bus_stop",
+    "latitude": 32.8189606,
+    "longitude": 73.9587042,
+    "id": 11648446192
   },
   {
     "name": "Al Khidmat Block",
@@ -80,11 +152,555 @@
     "id": 12698669827
   },
   {
+    "name": "Darbar Baba Peer Sayed Masoom Shah",
+    "category": "historic",
+    "subcategory": "tomb",
+    "latitude": 32.82237,
+    "longitude": 73.9559481,
+    "id": 12846588705
+  },
+  {
     "name": "نور مسجد",
     "category": "amenity",
     "subcategory": "place_of_worship",
     "latitude": 32.8268494,
     "longitude": 73.9605552,
     "id": 12846735168
+  },
+  {
+    "name": "Chappar",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 32.81734562857143,
+    "longitude": 73.95789244285713,
+    "id": 229848888
+  },
+  {
+    "name": "Bhagwal - Guliana Link Road",
+    "category": "highway",
+    "subcategory": "tertiary",
+    "latitude": 32.83350567592593,
+    "longitude": 73.96193174629629,
+    "id": 229848899
+  },
+  {
+    "name": "Bhagwal - Lammay Link Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.82513283265306,
+    "longitude": 73.94074366122449,
+    "id": 585711929
+  },
+  {
+    "name": "Bhagwal - Guliana Bypass",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.81294984177215,
+    "longitude": 73.94870034177215,
+    "id": 732727191
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.8240772,
+    "longitude": 73.95226533333333,
+    "id": 732727192
+  },
+  {
+    "name": "Bhagwal - Golra Hashim Rd",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.833922361111114,
+    "longitude": 73.94913306666666,
+    "id": 732727193
+  },
+  {
+    "name": "Dhall Gujjar - Golra Hashim Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.817706595833336,
+    "longitude": 73.948821,
+    "id": 999209817
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.81995898333333,
+    "longitude": 73.95806608333334,
+    "id": 999209818
+  },
+  {
+    "name": "Way to Janaza Gah Bhagwal Eastern",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.820167425,
+    "longitude": 73.9601378,
+    "id": 999209819
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.8224412,
+    "longitude": 73.95344237142857,
+    "id": 999209820
+  },
+  {
+    "name": "Main St 4",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.82215173,
+    "longitude": 73.95613947,
+    "id": 999209821
+  },
+  {
+    "name": "Kharian Sambrial  M-12",
+    "category": "highway",
+    "subcategory": "construction",
+    "latitude": 32.79123176551724,
+    "longitude": 73.93372752068966,
+    "id": 1212604849
+  },
+  {
+    "name": "Main St 01",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.81832971428572,
+    "longitude": 73.95452285238096,
+    "id": 1221669294
+  },
+  {
+    "name": "Main St 03",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.82135457857142,
+    "longitude": 73.95712253571428,
+    "id": 1221670619
+  },
+  {
+    "name": "Masjid Nimra Road",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.82367305384616,
+    "longitude": 73.9570443923077,
+    "id": 1221671912
+  },
+  {
+    "name": "Main St 2",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.819448727586206,
+    "longitude": 73.95665872068966,
+    "id": 1221698413
+  },
+  {
+    "name": "Bhagwal - Shorian Link Road",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.82798082,
+    "longitude": 73.94559077,
+    "id": 1221788251
+  },
+  {
+    "name": "Main St",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.820508725,
+    "longitude": 73.9538756,
+    "id": 1221997071
+  },
+  {
+    "name": "Southern St",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.81868074444444,
+    "longitude": 73.95520976666666,
+    "id": 1222913280
+  },
+  {
+    "name": "Madni Masjid St",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.82163441875,
+    "longitude": 73.95418734375,
+    "id": 1222935334
+  },
+  {
+    "name": "Ali Public School",
+    "category": "amenity",
+    "subcategory": "school",
+    "latitude": 32.82396715714286,
+    "longitude": 73.95188101428572,
+    "id": 1234590615
+  },
+  {
+    "name": "مسجد عباس رضی اللہ تعالٰی عنہ",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.824828777777775,
+    "longitude": 73.95413848888889,
+    "id": 1234591972
+  },
+  {
+    "name": "مسجد نمرہ بھگوال",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.82358781111111,
+    "longitude": 73.95964496666666,
+    "id": 1234592177
+  },
+  {
+    "name": "مشرقی جنازہ گاہ بھگوال",
+    "category": "shop",
+    "subcategory": "funeral_directors",
+    "latitude": 32.82033845555556,
+    "longitude": 73.96063665555556,
+    "id": 1234593545
+  },
+  {
+    "name": "مغربی جنازہ گاہ",
+    "category": "shop",
+    "subcategory": "funeral_directors",
+    "latitude": 32.82254961818182,
+    "longitude": 73.95206494545454,
+    "id": 1234594091
+  },
+  {
+    "name": "Bhagwal to Guliana کچا راستہ",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.81478676875,
+    "longitude": 73.95450539375,
+    "id": 1236948777
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.82456658375,
+    "longitude": 73.96405726750001,
+    "id": 1236948780
+  },
+  {
+    "name": "unclassified",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.82155315714286,
+    "longitude": 73.9607358,
+    "id": 1236948781
+  },
+  {
+    "name": "یونین کونسل والی گلی",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.820493985714286,
+    "longitude": 73.95683333571428,
+    "id": 1255920856
+  },
+  {
+    "name": "Dhall Gujjar Road",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.81556312,
+    "longitude": 73.94778306,
+    "id": 1353205943
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.8171094,
+    "longitude": 73.94779016,
+    "id": 1353205969
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.81827883076923,
+    "longitude": 73.94752559230768,
+    "id": 1353205971
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.81870548,
+    "longitude": 73.9482917,
+    "id": 1353205973
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.821983025,
+    "longitude": 73.954243275,
+    "id": 1387757584
+  },
+  {
+    "name": "Way to School",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.8228958,
+    "longitude": 73.95158825,
+    "id": 1387774274
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.8187425,
+    "longitude": 73.95679635714285,
+    "id": 1387774477
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.818770671428574,
+    "longitude": 73.95607708571428,
+    "id": 1387774627
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.81900866666667,
+    "longitude": 73.95463604999999,
+    "id": 1387776162
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.8196997,
+    "longitude": 73.9547161,
+    "id": 1387776220
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.82077498181818,
+    "longitude": 73.95484283636364,
+    "id": 1387776971
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.82292186666667,
+    "longitude": 73.95735198333334,
+    "id": 1387778437
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.820122,
+    "longitude": 73.9538902,
+    "id": 1387779997
+  },
+  {
+    "name": "Way to School",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.820660749999995,
+    "longitude": 73.95366033333333,
+    "id": 1387780570
+  },
+  {
+    "name": "Narrow Street",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.8212933,
+    "longitude": 73.955216125,
+    "id": 1387784095
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.82060647777777,
+    "longitude": 73.95598893333334,
+    "id": 1387784736
+  },
+  {
+    "name": "living_street",
+    "category": "highway",
+    "subcategory": "living_street",
+    "latitude": 32.82016865714286,
+    "longitude": 73.95540314285714,
+    "id": 1387785998
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.829373784615385,
+    "longitude": 73.96475382307692,
+    "id": 1412959016
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.82161859333333,
+    "longitude": 73.96329382666666,
+    "id": 1412959017
+  },
+  {
+    "name": "Bhagwal",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.820318798113206,
+    "longitude": 73.95601966792452,
+    "id": 1412959021
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.81674647142857,
+    "longitude": 73.94566303714286,
+    "id": 1412959022
+  },
+  {
+    "name": "Bhagwal - Golra Hashim Rd",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.82456419230769,
+    "longitude": 73.95424640769231,
+    "id": 1436359260
+  },
+  {
+    "name": "Bhagwal - Golra Hashim Rd",
+    "category": "highway",
+    "subcategory": "unclassified",
+    "latitude": 32.826849100000004,
+    "longitude": 73.95343890000001,
+    "id": 1436359261
+  },
+  {
+    "name": "school",
+    "category": "amenity",
+    "subcategory": "school",
+    "latitude": 32.82297002,
+    "longitude": 73.95105844,
+    "id": 1444838309
+  },
+  {
+    "name": "path",
+    "category": "highway",
+    "subcategory": "path",
+    "latitude": 32.825677400000004,
+    "longitude": 73.9486787,
+    "id": 1444980283
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.82175255,
+    "longitude": 73.94799915,
+    "id": 1472492565
+  },
+  {
+    "name": "residential",
+    "category": "highway",
+    "subcategory": "residential",
+    "latitude": 32.81862285,
+    "longitude": 73.95234694999999,
+    "id": 1472492566
+  },
+  {
+    "name": "Chappar",
+    "category": "natural",
+    "subcategory": "water",
+    "latitude": 32.81727497142857,
+    "longitude": 73.95788129999998,
+    "id": 229848888
+  },
+  {
+    "name": "Ali Public School",
+    "category": "amenity",
+    "subcategory": "school",
+    "latitude": 32.8239483,
+    "longitude": 73.9518235142857,
+    "id": 1234590615
+  },
+  {
+    "name": "مسجد عباس رضی اللہ تعالٰی عنہ",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.824824855555555,
+    "longitude": 73.9541026,
+    "id": 1234591972
+  },
+  {
+    "name": "مسجد نمرہ بھگوال",
+    "category": "amenity",
+    "subcategory": "place_of_worship",
+    "latitude": 32.82358781111111,
+    "longitude": 73.95964496666666,
+    "id": 1234592177
+  },
+  {
+    "name": "مشرقی جنازہ گاہ بھگوال",
+    "category": "shop",
+    "subcategory": "funeral_directors",
+    "latitude": 32.82030058888889,
+    "longitude": 73.9606287,
+    "id": 1234593545
+  },
+  {
+    "name": "مغربی جنازہ گاہ",
+    "category": "shop",
+    "subcategory": "funeral_directors",
+    "latitude": 32.82254657272727,
+    "longitude": 73.95203565454545,
+    "id": 1234594091
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.82931657692308,
+    "longitude": 73.96472464358975,
+    "id": 1412959016
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.82151871333333,
+    "longitude": 73.96318508666667,
+    "id": 1412959017
+  },
+  {
+    "name": "Bhagwal",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.82024013773585,
+    "longitude": 73.95601251698113,
+    "id": 1412959021
+  },
+  {
+    "name": "residential",
+    "category": "landuse",
+    "subcategory": "residential",
+    "latitude": 32.81664799714285,
+    "longitude": 73.94557043714286,
+    "id": 1412959022
+  },
+  {
+    "name": "school",
+    "category": "amenity",
+    "subcategory": "school",
+    "latitude": 32.82291512,
+    "longitude": 73.9509997,
+    "id": 1444838309
   }
 ]
