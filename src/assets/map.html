@@ -571,6 +571,166 @@
 
             poiMarkers.push(marker);
         }
+
+        // --- POI Search (called from NativeScript) ---
+        // Stores loaded POI data for search
+        var loadedPoisData = [];
+
+        window.searchPois = function(query) {
+            if (!query || query.length < 2) return JSON.stringify([]);
+            
+            var q = query.toLowerCase();
+            var results = [];
+            
+            for (var i = 0; i < loadedPoisData.length; i++) {
+                var poi = loadedPoisData[i];
+                if (poi.name && poi.name.toLowerCase().indexOf(q) !== -1) {
+                    results.push({
+                        name: poi.name,
+                        category: poi.category,
+                        subcategory: poi.subcategory,
+                        latitude: poi.latitude,
+                        longitude: poi.longitude,
+                        id: poi.id
+                    });
+                }
+                if (results.length >= 20) break; // Cap results
+            }
+            
+            return JSON.stringify(results);
+        };
+
+        // Also search road/way names from loaded data
+        window.searchRoads = function(query) {
+            if (!query || query.length < 2) return JSON.stringify([]);
+            
+            var q = query.toLowerCase();
+            var results = [];
+            var seen = {};
+            
+            for (var i = 0; i < loadedWays.length; i++) {
+                var way = loadedWays[i];
+                if (way.tags && way.tags.name) {
+                    var name = way.tags.name;
+                    if (name.toLowerCase().indexOf(q) !== -1 && !seen[name]) {
+                        seen[name] = true;
+                        // Find the midpoint of this way for centering
+                        var midIdx = Math.floor(way.nodes.length / 2);
+                        var midNode = loadedNodes[way.nodes[midIdx]];
+                        if (midNode) {
+                            results.push({
+                                name: name,
+                                category: 'road',
+                                subcategory: way.tags.highway || 'road',
+                                latitude: midNode[0],
+                                longitude: midNode[1],
+                                id: 'road-' + i
+                            });
+                        }
+                    }
+                }
+                if (results.length >= 10) break;
+            }
+            
+            return JSON.stringify(results);
+        };
+
+        // --- Route Drawing ---
+        var routeLayer = null;
+        var routeMarkers = [];
+
+        window.drawRoute = function(fromLat, fromLng, toLat, toLng) {
+            clearRoute();
+            
+            // Draw a direct polyline between the two points
+            // (A real routing engine like OSRM would be needed for turn-by-turn)
+            var routePoints = [[fromLat, fromLng], [toLat, toLng]];
+            
+            var isDark = (currentTheme === 'dark');
+            routeLayer = L.polyline(routePoints, {
+                color: '#1a73e8',
+                weight: 5,
+                opacity: 0.8,
+                dashArray: '12, 8',
+                lineCap: 'round',
+                lineJoin: 'round'
+            }).addTo(map);
+            
+            // Start marker (circle)
+            var startIcon = L.divIcon({
+                className: 'route-marker-start',
+                html: '<div style="width:14px;height:14px;border-radius:50%;background:#0f9d58;border:3px solid white;box-shadow:0 2px 5px rgba(0,0,0,0.3);"></div>',
+                iconSize: [14, 14],
+                iconAnchor: [7, 7]
+            });
+            
+            // End marker (pin)
+            var endIcon = L.divIcon({
+                className: 'route-marker-end',
+                html: '<div style="width:14px;height:14px;border-radius:50%;background:#ea4335;border:3px solid white;box-shadow:0 2px 5px rgba(0,0,0,0.3);"></div>',
+                iconSize: [14, 14],
+                iconAnchor: [7, 7]
+            });
+            
+            routeMarkers.push(L.marker([fromLat, fromLng], { icon: startIcon, zIndexOffset: 900 }).addTo(map));
+            routeMarkers.push(L.marker([toLat, toLng], { icon: endIcon, zIndexOffset: 900 }).addTo(map));
+            
+            // Fit map to show both points
+            map.fitBounds(routeLayer.getBounds().pad(0.3));
+            
+            // Calculate straight-line distance
+            var dist = map.distance(L.latLng(fromLat, fromLng), L.latLng(toLat, toLng));
+            var distText = dist > 1000 ? (dist / 1000).toFixed(1) + ' km' : Math.round(dist) + ' m';
+            
+            postMessage('route-drawn', { 
+                distance: distText,
+                fromLat: fromLat,
+                fromLng: fromLng,
+                toLat: toLat,
+                toLng: toLng
+            });
+        };
+
+        window.clearRoute = function() {
+            if (routeLayer) {
+                map.removeLayer(routeLayer);
+                routeLayer = null;
+            }
+            routeMarkers.forEach(function(m) { map.removeLayer(m); });
+            routeMarkers = [];
+        };
+
+        // Center and highlight a specific POI
+        window.focusPoi = function(lat, lng, name) {
+            map.setView([lat, lng], 17);
+            setSelectedPin(lat, lng, name);
+            postMessage('poi-selected', {
+                name: name,
+                latitude: lat,
+                longitude: lng,
+                category: '',
+                subcategory: ''
+            });
+        };
+
+        // Override fetchPoisAndRender to also store POI data for search
+        var originalFetchPois = fetchPoisAndRender;
+        fetchPoisAndRender = function(poisPath) {
+            fetch(poisPath)
+                .then(function(res) { 
+                    if (!res.ok) throw new Error("Status " + res.status);
+                    return res.json(); 
+                })
+                .then(function(pois) {
+                    loadedPoisData = pois; // Store for search
+                    pois.forEach(function(poi) {
+                        renderPoi(poi);
+                    });
+                })
+                .catch(function(err) {
+                    console.error('Error loading POIs:', err);
+                });
+        };
     </script>
 </body>
 </html>

@@ -14,6 +14,13 @@ const currentOrientation = ref<'portrait' | 'landscape'>('portrait');
 const showSettingsDrawer = ref(false);
 const isSearchExpanded = ref(false);
 
+// POI Search state
+const showSearchOverlay = ref(false);
+const searchQuery = ref('');
+const searchResults = ref<any[]>([]);
+const searchSelectedItem = ref<any>(null);
+const routeInfo = ref<any>(null);
+
 // Active loaded place metadata
 const currentPlace = ref<any>({
   id: null,
@@ -285,6 +292,10 @@ function startWebViewPolling() {
                 lat: msg.data.lat,
                 lon: msg.data.lng
               };
+            } else if (msg.type === 'route-drawn') {
+              routeInfo.value = {
+                distance: msg.data.distance
+              };
             }
           });
         }
@@ -491,6 +502,84 @@ function confirmChanger() {
   }
 }
 
+// --- POI Search Controls ---
+function openSearch() {
+  searchQuery.value = '';
+  searchResults.value = [];
+  searchSelectedItem.value = null;
+  routeInfo.value = null;
+  showSearchOverlay.value = true;
+}
+
+function onSearchQueryChange() {
+  const query = searchQuery.value.trim();
+  if (query.length < 2) {
+    searchResults.value = [];
+    return;
+  }
+
+  // Search POIs in the WebView
+  if (!webView || !isWebViewLoaded.value) return;
+
+  webView.executeJavaScript(`searchPois(${JSON.stringify(query)})`)
+    .then((res: any) => {
+      let poiResults: any[] = [];
+      try {
+        let parsed = typeof res === 'string' ? JSON.parse(res) : res;
+        if (typeof parsed === 'string') parsed = JSON.parse(parsed);
+        poiResults = parsed || [];
+      } catch (e) { /* parse error */ }
+
+      // Also search roads
+      return webView.executeJavaScript(`searchRoads(${JSON.stringify(query)})`)
+        .then((roadRes: any) => {
+          let roadResults: any[] = [];
+          try {
+            let parsed = typeof roadRes === 'string' ? JSON.parse(roadRes) : roadRes;
+            if (typeof parsed === 'string') parsed = JSON.parse(parsed);
+            roadResults = parsed || [];
+          } catch (e) { /* parse error */ }
+
+          // Combine: POIs first, then roads
+          searchResults.value = [...poiResults, ...roadResults].slice(0, 25);
+        });
+    })
+    .catch((err: any) => {
+      console.error('Search error:', err);
+    });
+}
+
+function selectSearchResult(item: any) {
+  searchSelectedItem.value = item;
+  // Center map on the selected item
+  callWebView('focusPoi', item.latitude, item.longitude, item.name);
+}
+
+function getDirectionsToResult() {
+  if (!searchSelectedItem.value) return;
+
+  const destLat = searchSelectedItem.value.latitude;
+  const destLon = searchSelectedItem.value.longitude;
+
+  // Use GPS location as start if available, otherwise use current place center
+  const startLat = ApplicationSettings.getNumber('last_lat', currentPlace.value.lat);
+  const startLon = ApplicationSettings.getNumber('last_lon', currentPlace.value.lon);
+
+  callWebView('drawRoute', startLat, startLon, destLat, destLon);
+  showSearchOverlay.value = false;
+}
+
+function clearDirections() {
+  callWebView('clearRoute');
+  routeInfo.value = null;
+}
+
+function closeSearch() {
+  showSearchOverlay.value = false;
+  searchSelectedItem.value = null;
+  searchResults.value = [];
+}
+
 // --- Lifecycle Hooks ---
 onMounted(() => {
   loadPlacesIndex();
@@ -530,7 +619,7 @@ onUnmounted(() => {
             width="48"
             height="48"
             horizontalAlignment="left"
-            @tap="isSearchExpanded = true"
+            @tap="openSearch"
           >
             <Label
               col="0"
@@ -659,7 +748,58 @@ onUnmounted(() => {
         </StackLayout>
       </GridLayout>
 
-      <!-- 5. Google Maps Place Details Bottom Panel -->
+      <!-- 5. My Location FAB (bottom-right, above zoom controls) -->
+      <GridLayout row="0" rows="*, auto" columns="*, auto" isPassThroughParentEnabled="true">
+        <Button
+          row="1"
+          col="1"
+          @tap="reCenterGPS"
+          text="📍"
+          :class="isLocating ? 'w-14 h-14 bg-white text-xl rounded-full shadow-xl border border-gray-100 mb-24 mr-3 animate-pulse' : 'w-14 h-14 bg-white text-xl rounded-full shadow-xl border border-gray-100 mb-24 mr-3'"
+          style="elevation: 6;"
+        />
+      </GridLayout>
+
+      <!-- 6. Route Info Banner (shown when route is active) -->
+      <GridLayout
+        v-if="routeInfo"
+        row="0"
+        rows="auto, *"
+        columns="*"
+        isPassThroughParentEnabled="true"
+      >
+        <GridLayout
+          row="0"
+          columns="auto, *, auto"
+          class="bg-blue-600 m-3 mt-16 p-3 rounded-2xl shadow-lg"
+          style="elevation: 6;"
+        >
+          <Label
+            col="0"
+            text="📡"
+            class="text-lg px-2"
+            verticalAlignment="center"
+          />
+          <StackLayout col="1" class="justify-center">
+            <Label
+              :text="`Distance: ${routeInfo.distance}`"
+              class="text-white font-bold text-sm"
+            />
+            <Label
+              text="Straight-line route"
+              class="text-blue-200 text-xs"
+            />
+          </StackLayout>
+          <Button
+            col="2"
+            text="✕"
+            class="bg-blue-500 border-0 text-white rounded-full w-8 h-8 text-sm font-bold"
+            @tap="clearDirections"
+          />
+        </GridLayout>
+      </GridLayout>
+
+      <!-- 6. Google Maps Place Details Bottom Panel -->
       <StackLayout
         v-if="selectedDetails || showSettingsDrawer"
         row="1"
@@ -939,6 +1079,90 @@ onUnmounted(() => {
           :class="changerSelectedPlace !== null ? 'bg-blue-600 text-white font-bold rounded-full py-4 mt-4 border-0 shadow-lg' : 'bg-gray-300 text-gray-500 font-bold rounded-full py-4 mt-4 border-0'"
           @tap="confirmChanger"
         />
+      </GridLayout>
+      <!-- 9. POI Search Overlay -->
+      <GridLayout
+        v-if="showSearchOverlay"
+        row="0"
+        rowSpan="2"
+        rows="auto, auto, *, auto"
+        class="bg-[#f4f3f0] p-4 w-full h-full"
+      >
+        <!-- Header -->
+        <GridLayout row="0" columns="auto, *, auto" class="mt-6 mb-3">
+          <Label col="0" text="🔍" class="text-2xl mr-2" verticalAlignment="center" />
+          <Label col="1" text="Search Places" class="text-2xl font-bold text-gray-800" verticalAlignment="center" />
+          <Button col="2" text="✕" class="bg-gray-200 border-0 text-gray-600 rounded-full w-8 h-8 font-bold" @tap="closeSearch" />
+        </GridLayout>
+
+        <!-- Search Input -->
+        <TextField
+          row="1"
+          v-model="searchQuery"
+          hint="Search POIs, shops, roads..."
+          class="bg-white rounded-2xl p-4 mb-3 shadow-sm border border-gray-200 text-base"
+          @textChange="onSearchQueryChange"
+          returnKeyType="search"
+        />
+
+        <!-- Results List -->
+        <GridLayout row="2" rows="*">
+          <!-- Empty state -->
+          <StackLayout v-if="searchResults.length === 0 && searchQuery.length >= 2" class="justify-center items-center">
+            <Label text="🗺️" class="text-5xl mb-4" />
+            <Label text="No results found" class="text-gray-500 text-lg font-semibold" />
+            <Label text="Try a different search term" class="text-gray-400 text-sm mt-1" />
+          </StackLayout>
+
+          <!-- Hint state -->
+          <StackLayout v-if="searchQuery.length < 2" class="justify-center items-center">
+            <Label text="🔍" class="text-5xl mb-4" />
+            <Label text="Search for places" class="text-gray-500 text-lg font-semibold" />
+            <Label text="Type at least 2 characters to search" class="text-gray-400 text-sm mt-1" />
+          </StackLayout>
+
+          <!-- Results -->
+          <ListView v-if="searchResults.length > 0" :items="searchResults" class="bg-white rounded-2xl shadow-sm border border-gray-100">
+            <template #default="{ item }">
+              <GridLayout
+                columns="auto, *, auto"
+                :class="searchSelectedItem && searchSelectedItem.id === item.id ? 'p-4 border-b border-gray-100 bg-blue-50' : 'p-4 border-b border-gray-100 active:bg-gray-100'"
+                @tap="selectSearchResult(item)"
+              >
+                <!-- Category icon -->
+                <Label
+                  col="0"
+                  :text="item.category === 'road' ? '🛣️' : item.subcategory === 'restaurant' || item.subcategory === 'fast_food' ? '🍽️' : item.subcategory === 'hospital' || item.subcategory === 'clinic' ? '🏥' : item.subcategory === 'pharmacy' ? '💊' : item.subcategory === 'cafe' ? '☕' : item.subcategory === 'bank' ? '🏦' : item.subcategory === 'fuel' ? '⛽' : item.category === 'shop' ? '🛍️' : item.subcategory === 'school' || item.subcategory === 'college' || item.subcategory === 'university' ? '🏫' : '📍'"
+                  class="text-xl mr-3"
+                  verticalAlignment="center"
+                />
+                <!-- Name & Category -->
+                <StackLayout col="1">
+                  <Label :text="item.name" class="text-base font-semibold text-gray-800" maxLines="1" />
+                  <Label :text="`${item.category} • ${item.subcategory}`" class="text-gray-400 text-xs capitalize mt-0.5" />
+                </StackLayout>
+                <!-- Selection indicator -->
+                <Label col="2" :text="searchSelectedItem && searchSelectedItem.id === item.id ? '✓' : ''" class="text-blue-600 font-bold text-xl" verticalAlignment="center" />
+              </GridLayout>
+            </template>
+          </ListView>
+        </GridLayout>
+
+        <!-- Bottom Action Buttons -->
+        <GridLayout row="3" columns="*, *" class="mt-3 gap-3" v-if="searchSelectedItem">
+          <Button
+            col="0"
+            text="📍 View on Map"
+            class="bg-gray-200 text-gray-700 font-bold rounded-full py-3 border-0"
+            @tap="closeSearch"
+          />
+          <Button
+            col="1"
+            text="🚨 Get Directions"
+            class="bg-blue-600 text-white font-bold rounded-full py-3 border-0 shadow-lg"
+            @tap="getDirectionsToResult"
+          />
+        </GridLayout>
       </GridLayout>
     </GridLayout>
   </Page>
