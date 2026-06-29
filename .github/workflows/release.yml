@@ -92,7 +92,7 @@ jobs:
           build-tools: 35.0.0
           ndk: 27.0.12077973
           cmake: 3.22.1
-          packages: "platforms;android-27 platforms;android-28 platforms;android-29 platforms;android-30 platforms;android-31 platforms;android-33"
+          packages: "tools platform-tools emulator platforms;android-27 platforms;android-28 platforms;android-29 platforms;android-30 platforms;android-31 platforms;android-33"
 
       - name: Verify SDK and Configure Environment
         id: sdk-config
