@@ -1,243 +1,99 @@
-name: CI/CD Release
+name: CI/CD PWA
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'src/**'
-      - 'App_Resources/**'
-      - 'webpack.config.js'
-      - 'nativescript.config.ts'
-      - 'package.json'
+      - 'flutter_app/**'
+      - 'maps/**'
+      - 'scripts/**'
       - 'VERSION'
       - '.github/workflows/release.yml'
   pull_request:
     paths:
-      - 'src/**'
-      - 'App_Resources/**'
-      - 'webpack.config.js'
-      - 'nativescript.config.ts'
-      - 'package.json'
+      - 'flutter_app/**'
+      - 'maps/**'
+      - 'scripts/**'
       - '.github/workflows/release.yml'
 
 jobs:
-  build-android:
+  build-web:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - android_version: "8.1"
-            api_level: "27"
-            bit_architecture: "64-bit"
-            abi_filters: "arm64-v8a"
-          - android_version: "8.1"
-            api_level: "27"
-            bit_architecture: "32-bit"
-            abi_filters: "armeabi-v7a"
-
-          - android_version: "9"
-            api_level: "28"
-            bit_architecture: "64-bit"
-            abi_filters: "arm64-v8a"
-          - android_version: "9"
-            api_level: "28"
-            bit_architecture: "32-bit"
-            abi_filters: "armeabi-v7a"
-
-          - android_version: "10"
-            api_level: "29"
-            bit_architecture: "64-bit"
-            abi_filters: "arm64-v8a"
-          - android_version: "10"
-            api_level: "29"
-            bit_architecture: "32-bit"
-            abi_filters: "armeabi-v7a"
-
-          - android_version: "11"
-            api_level: "30"
-            bit_architecture: "64-bit"
-            abi_filters: "arm64-v8a"
-
-          - android_version: "12"
-            api_level: "31"
-            bit_architecture: "64-bit"
-            abi_filters: "arm64-v8a"
-
-          - android_version: "13"
-            api_level: "33"
-            bit_architecture: "64-bit"
-            abi_filters: "arm64-v8a"
-
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
-          distribution: 'zulu'
-          java-version: '17'
+          flutter-version: '3.29.3'
+          channel: 'stable'
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '20'
-          cache: 'npm'
+          python-version: '3.12'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-        with:
-          api-level: 35
-          build-tools: 35.0.0
-          ndk: 27.0.12077973
-          cmake: 3.22.1
-          packages: "tools platform-tools emulator platforms;android-27 platforms;android-28 platforms;android-29 platforms;android-30 platforms;android-31 platforms;android-33"
-
-      - name: Verify SDK and Configure Environment
-        id: sdk-config
+      - name: Generate places_index.json
+        working-directory: flutter_app/web
         run: |
-          echo "SDK location: $ANDROID_SDK_ROOT"
-          ls "$ANDROID_SDK_ROOT/platforms/" | head -5
-          ls "$ANDROID_SDK_ROOT/build-tools/" | head -5
-          echo "sdk-root=$ANDROID_SDK_ROOT" >> $GITHUB_OUTPUT
-          echo "ANDROID_HOME=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
-          echo "SDK configured. ANDROID_HOME=$ANDROID_SDK_ROOT"
+          python3 ../../scripts/generate_places_index.py
 
-      - name: Install NativeScript CLI
-        run: npm install -g nativescript
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Get Version
-        id: get_version
-        run: |
-          VERSION_PREFIX=$(cat VERSION | xargs)
-          FULL_VERSION="${VERSION_PREFIX}.${{ github.run_number }}"
-          echo "version=${FULL_VERSION}" >> $GITHUB_OUTPUT
-          echo "date=$(date +%Y-%m-%d)" >> $GITHUB_OUTPUT
-
-      - name: Decode Keystore
-        env:
-          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
-        run: |
-          if [ -n "$ANDROID_KEYSTORE_BASE64" ]; then
-            echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > release.keystore
-          fi
-
-      - name: Sync Map Data
+      - name: Sync map data
         run: |
           chmod +x scripts/sync-maps.sh
           ./scripts/sync-maps.sh
 
-      - name: Build Android Release APK
-        env:
-          ANDROID_HOME: ${{ steps.sdk-config.outputs.sdk-root }}
-          ANDROID_SDK_ROOT: ${{ steps.sdk-config.outputs.sdk-root }}
-          MIN_SDK_VERSION: ${{ matrix.api_level }}
-          TARGET_SDK_VERSION: ${{ matrix.api_level }}
-          NDK_ABI_FILTERS: ${{ matrix.abi_filters }}
-          API_NAME: "android-${{ matrix.android_version }}-api-${{ matrix.api_level }}-${{ matrix.bit_architecture }}"
-          VERSION_NAME: ${{ steps.get_version.outputs.version }}-${{ steps.get_version.outputs.date }}
-          BASE_VERSION_CODE: ${{ github.run_number }}
-          KEYSTORE_ALIAS: ${{ secrets.ANDROID_KEYSTORE_ALIAS }}
-          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-        run: |
-          if [ -f "release.keystore" ]; then
-            set +e
-            ns build android --release \
-              --key-store-path release.keystore \
-              --key-store-password "$KEYSTORE_PASSWORD" \
-              --key-store-alias "$KEYSTORE_ALIAS" \
-              --key-store-alias-password "$KEYSTORE_PASSWORD"
-            BUILD_EXIT=$?
-            set -e
-            if [ $BUILD_EXIT -ne 0 ]; then
-              APK_FILE=$(find platforms/android/app/build/outputs/apk/release -name "*.apk" 2>/dev/null | head -n 1)
-              if [ -z "$APK_FILE" ]; then
-                echo "Build failed and no APK produced."
-                exit $BUILD_EXIT
-              fi
-              echo "ns build exited non-zero but APK exists — continuing."
-            fi
-          else
-            echo "Keystore not found. Generating a temporary keystore for building..."
-            keytool -genkeypair -v \
-              -keystore temp.keystore \
-              -alias tempalias \
-              -keyalg RSA \
-              -keysize 2048 \
-              -validity 10000 \
-              -storepass temp-password \
-              -keypass temp-password \
-              -dname "CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, S=Unknown, C=Unknown"
-            
-            set +e
-            ns build android --release \
-              --key-store-path temp.keystore \
-              --key-store-password temp-password \
-              --key-store-alias tempalias \
-              --key-store-alias-password temp-password
-            BUILD_EXIT=$?
-            set -e
-            if [ $BUILD_EXIT -ne 0 ]; then
-              APK_FILE=$(find platforms/android/app/build/outputs/apk/release -name "*.apk" 2>/dev/null | head -n 1)
-              if [ -z "$APK_FILE" ]; then
-                echo "Build failed and no APK produced."
-                exit $BUILD_EXIT
-              fi
-              echo "ns build exited non-zero but APK exists — continuing."
-            fi
-          fi
+      - name: Install Flutter dependencies
+        working-directory: flutter_app
+        run: flutter pub get
 
-      - name: Rename and Prepare APK
-        run: |
-          mkdir -p output-apk
-          APK_FILE=$(find platforms/android/app/build/outputs/apk/release -name "*.apk" | head -n 1)
-          if [ -f "$APK_FILE" ]; then
-            cp "$APK_FILE" "output-apk/android-${{ matrix.android_version }}-api-${{ matrix.api_level }}-${{ matrix.bit_architecture }}.apk"
-          else
-            echo "Error: APK file not found!"
-            exit 1
-          fi
+      - name: Build Flutter web
+        working-directory: flutter_app
+        run: flutter build web --web-renderer html
 
-      - name: Upload Artifact
+      - name: Copy PWA assets to build output
+        run: |
+          cp flutter_app/web/map.html flutter_app/build/web/
+          cp -r flutter_app/web/leaflet flutter_app/build/web/
+          cp flutter_app/web/service_worker.js flutter_app/build/web/
+          cp flutter_app/web/manifest.json flutter_app/build/web/
+          cp flutter_app/web/places_index.json flutter_app/build/web/
+          mkdir -p flutter_app/build/web/maps
+          cp -r maps/countries flutter_app/build/web/maps/
+
+      - name: Verify offline (no external requests)
+        run: |
+          ! grep -rP 'https?://(?!www\.w3\.org)' flutter_app/build/web/ --include="*.html" --include="*.js" --include="*.dart"
+
+      - name: Get version
+        id: version
+        run: |
+          VER=$(cat VERSION | xargs).${{ github.run_number }}
+          echo "version=$VER" >> "$GITHUB_OUTPUT"
+          echo "date=$(date +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+
+      - name: Upload PWA artifact
         uses: actions/upload-artifact@v4
         with:
-          name: apk-${{ matrix.android_version }}-${{ matrix.api_level }}-${{ matrix.bit_architecture }}
-          path: output-apk/android-${{ matrix.android_version }}-api-${{ matrix.api_level }}-${{ matrix.bit_architecture }}.apk
+          name: pwa-build
+          path: flutter_app/build/web/
 
-  release:
-    needs: build-android
+  deploy:
+    needs: build-web
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Get Version
-        id: get_version
-        run: |
-          VERSION_PREFIX=$(cat VERSION | xargs)
-          FULL_VERSION="${VERSION_PREFIX}.${{ github.run_number }}"
-          echo "version=${FULL_VERSION}" >> $GITHUB_OUTPUT
-          echo "date=$(date +%Y-%m-%d)" >> $GITHUB_OUTPUT
-
-      - name: Download all artifacts
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
-          path: apks
-          merge-multiple: true
+          name: pwa-build
+          path: build-output
 
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          tag_name: v${{ steps.get_version.outputs.version }}-${{ steps.get_version.outputs.date }}
-          name: Release v${{ steps.get_version.outputs.version }}-${{ steps.get_version.outputs.date }}
-          files: apks/*.apk
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build-output
+          publish_branch: gh-pages

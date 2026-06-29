@@ -1,13 +1,26 @@
 #!/bin/bash
-# Copy generated map data files from maps/ to src/maps/ for bundling.
-# Webpack copies individual files (not a zip) so the webview can load them via XHR.
-
+# Copy map data from maps/countries/ into flutter_app/web/maps/countries/
+# Excludes the large country-level source PBFs (>10MB, depth 2 only)
+set -e
 cd "$(dirname "$0")/.."
 
-# Ensure target directories exist
-mkdir -p src/maps
+mkdir -p flutter_app/web/maps/countries
 
-# Sync generated map data into src/maps (replace if exists, skip country-level PBF)
-rsync -a --delete --exclude='*.osm.pbf' maps/countries/ src/maps/countries/
+# Copy everything - rsync will handle excludes
+rsync -a --delete \
+  --exclude='*.osm.pbf' \
+  --filter='exclude maps/countries/*/*.osm.pbf' \
+  maps/countries/ flutter_app/web/maps/countries/
 
-echo "Synced map data from maps/ to src/maps/"
+# Now copy only the deep PBF files (per-city, per-village)
+find maps/countries -name "*.osm.pbf" -type f | while read src; do
+  rel="${src#maps/countries/}"
+  depth=$(echo "$rel" | tr '/' '\n' | wc -l)
+  if [ "$depth" -gt 2 ]; then
+    dest="flutter_app/web/maps/countries/$rel"
+    mkdir -p "$(dirname "$dest")"
+    cp "$src" "$dest"
+  fi
+done
+
+echo "Synced map data to flutter_app/web/maps/"
