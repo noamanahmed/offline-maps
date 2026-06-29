@@ -518,8 +518,25 @@ function onSearchQueryChange() {
     return;
   }
 
-  // Search POIs in the WebView
-  if (!webView || !isWebViewLoaded.value) return;
+  // 1. Search global place index (cities/villages)
+  const globalResults = placesIndex.filter(p => 
+    p.name.toLowerCase().includes(query.toLowerCase()) || 
+    (p.name_ur && p.name_ur.includes(query))
+  ).map(p => ({
+    name: p.name,
+    category: 'place',
+    subcategory: p.type, // 'city' or 'village'
+    latitude: p.lat,
+    longitude: p.lon,
+    id: `global-${p.id || p.path}`,
+    placeData: p
+  })).slice(0, 5); // Limit global matches to avoid clutter
+
+  // 2. Search POIs inside WebView
+  if (!webView || !isWebViewLoaded.value) {
+    searchResults.value = globalResults;
+    return;
+  }
 
   webView.executeJavaScript(`searchPois(${JSON.stringify(query)})`)
     .then((res: any) => {
@@ -540,19 +557,25 @@ function onSearchQueryChange() {
             roadResults = parsed || [];
           } catch (e) { /* parse error */ }
 
-          // Combine: POIs first, then roads
-          searchResults.value = [...poiResults, ...roadResults].slice(0, 25);
+          // Combine results: local POIs + roads + global places
+          searchResults.value = [...poiResults, ...roadResults, ...globalResults].slice(0, 25);
         });
     })
     .catch((err: any) => {
       console.error('Search error:', err);
+      searchResults.value = globalResults;
     });
 }
 
 function selectSearchResult(item: any) {
   searchSelectedItem.value = item;
-  // Center map on the selected item
-  callWebView('focusPoi', item.latitude, item.longitude, item.name);
+  if (item.placeData) {
+    // For global place, just center view first (no local POI highlight)
+    callWebView('centerOnCoordinates', item.latitude, item.longitude, 13);
+  } else {
+    // For local POI, focus and highlight
+    callWebView('focusPoi', item.latitude, item.longitude, item.name);
+  }
 }
 
 function getDirectionsToResult() {
@@ -615,7 +638,7 @@ onUnmounted(() => {
           <GridLayout
             v-if="!isSearchExpanded"
             columns="auto"
-            class="bg-white rounded-full p-2 shadow-lg border border-gray-100"
+            class="bg-white rounded-full p-2 shadow-lg border border-gray-150"
             width="48"
             height="48"
             horizontalAlignment="left"
@@ -624,7 +647,7 @@ onUnmounted(() => {
             <Label
               col="0"
               text="🔍"
-              class="text-xl text-center"
+              class="text-xl text-center text-blue-600 font-bold"
               verticalAlignment="center"
               horizontalAlignment="center"
             />
@@ -641,7 +664,7 @@ onUnmounted(() => {
             <Label
               col="0"
               text="🔍"
-              class="text-lg align-middle px-3"
+              class="text-lg align-middle px-3 text-blue-600 font-bold"
               verticalAlignment="center"
             />
 
@@ -694,18 +717,18 @@ onUnmounted(() => {
           <!-- Change Map Area FAB -->
           <Button
             @tap="openChanger"
-            text="🗺️"
-            class="w-12 h-12 bg-white text-lg rounded-full shadow-lg border border-gray-100 mb-3"
-            style="elevation: 4;"
+            text="🌍"
+            class="w-12 h-12 bg-white text-xl rounded-full shadow-lg border border-gray-100 mb-3 active:bg-gray-100"
+            style="elevation: 5;"
             horizontalAlignment="center"
           />
 
           <!-- Toggle Orientation FAB -->
           <Button
             @tap="toggleOrientation"
-            :text="currentOrientation === 'portrait' ? '📱' : '📟'"
-            class="w-12 h-12 bg-white text-lg rounded-full shadow-lg border border-gray-100 mb-3"
-            style="elevation: 4;"
+            text="🔄"
+            class="w-12 h-12 bg-white text-lg rounded-full shadow-lg border border-gray-100 mb-3 active:bg-gray-100"
+            style="elevation: 5;"
             horizontalAlignment="center"
           />
         </StackLayout>
@@ -723,17 +746,17 @@ onUnmounted(() => {
           <Button
             @tap="toggleTheme"
             :text="activeTheme === 'light' ? '🌙' : '☀️'"
-            class="w-12 h-12 bg-white text-lg rounded-full shadow-lg border border-gray-100 mb-3"
-            style="elevation: 4;"
+            class="w-12 h-12 bg-white text-xl rounded-full shadow-lg border border-gray-100 mb-3 active:bg-gray-100"
+            style="elevation: 5;"
             horizontalAlignment="center"
           />
 
-          <!-- Re-center Location FAB -->
+          <!-- Re-center / Locate GPS FAB -->
           <Button
             @tap="reCenterGPS"
-            text="🎯"
-            :class="isLocating ? 'w-12 h-12 bg-blue-100 text-lg rounded-full shadow-lg border border-gray-100 mb-3 animate-pulse' : 'w-12 h-12 bg-white text-lg rounded-full shadow-lg border border-gray-100 mb-3'"
-            style="elevation: 4;"
+            text="🧭"
+            :class="isLocating ? 'w-12 h-12 bg-blue-50 text-xl rounded-full shadow-lg border border-blue-200 mb-3 animate-pulse' : 'w-12 h-12 bg-white text-xl rounded-full shadow-lg border border-gray-100 mb-3 active:bg-gray-100'"
+            style="elevation: 5;"
             horizontalAlignment="center"
           />
 
@@ -741,26 +764,14 @@ onUnmounted(() => {
           <Button
             @tap="showSettingsDrawer = !showSettingsDrawer"
             text="⚙️"
-            :class="showSettingsDrawer ? 'w-12 h-12 bg-blue-100 text-lg rounded-full shadow-lg border border-gray-100 mb-3' : 'w-12 h-12 bg-white text-lg rounded-full shadow-lg border border-gray-100 mb-3'"
-            style="elevation: 4;"
+            :class="showSettingsDrawer ? 'w-12 h-12 bg-blue-50 text-xl rounded-full shadow-lg border border-blue-200 mb-3' : 'w-12 h-12 bg-white text-xl rounded-full shadow-lg border border-gray-100 mb-3 active:bg-gray-100'"
+            style="elevation: 5;"
             horizontalAlignment="center"
           />
         </StackLayout>
       </GridLayout>
 
-      <!-- 5. My Location FAB (bottom-right, above zoom controls) -->
-      <GridLayout row="0" rows="*, auto" columns="*, auto" isPassThroughParentEnabled="true">
-        <Button
-          row="1"
-          col="1"
-          @tap="reCenterGPS"
-          text="📍"
-          :class="isLocating ? 'w-14 h-14 bg-white text-xl rounded-full shadow-xl border border-gray-100 mb-24 mr-3 animate-pulse' : 'w-14 h-14 bg-white text-xl rounded-full shadow-xl border border-gray-100 mb-24 mr-3'"
-          style="elevation: 6;"
-        />
-      </GridLayout>
-
-      <!-- 6. Route Info Banner (shown when route is active) -->
+      <!-- 5. Route Info Banner (shown when route is active) -->
       <GridLayout
         v-if="routeInfo"
         row="0"
@@ -1132,7 +1143,7 @@ onUnmounted(() => {
                 <!-- Category icon -->
                 <Label
                   col="0"
-                  :text="item.category === 'road' ? '🛣️' : item.subcategory === 'restaurant' || item.subcategory === 'fast_food' ? '🍽️' : item.subcategory === 'hospital' || item.subcategory === 'clinic' ? '🏥' : item.subcategory === 'pharmacy' ? '💊' : item.subcategory === 'cafe' ? '☕' : item.subcategory === 'bank' ? '🏦' : item.subcategory === 'fuel' ? '⛽' : item.category === 'shop' ? '🛍️' : item.subcategory === 'school' || item.subcategory === 'college' || item.subcategory === 'university' ? '🏫' : '📍'"
+                  :text="item.category === 'road' ? '🛣️' : item.category === 'place' ? (item.subcategory === 'city' ? '🏙️' : '🏡') : item.subcategory === 'restaurant' || item.subcategory === 'fast_food' ? '🍽️' : item.subcategory === 'hospital' || item.subcategory === 'clinic' ? '🏥' : item.subcategory === 'pharmacy' ? '💊' : item.subcategory === 'cafe' ? '☕' : item.subcategory === 'bank' ? '🏦' : item.subcategory === 'fuel' ? '⛽' : item.category === 'shop' ? '🛍️' : item.subcategory === 'school' || item.subcategory === 'college' || item.subcategory === 'university' ? '🏫' : '📍'"
                   class="text-xl mr-3"
                   verticalAlignment="center"
                 />
@@ -1157,10 +1168,18 @@ onUnmounted(() => {
             @tap="closeSearch"
           />
           <Button
+            v-if="!searchSelectedItem.placeData"
             col="1"
             text="🚨 Get Directions"
             class="bg-blue-600 text-white font-bold rounded-full py-3 border-0 shadow-lg"
             @tap="getDirectionsToResult"
+          />
+          <Button
+            v-else
+            col="1"
+            text="🔄 Load Map Area"
+            class="bg-green-600 text-white font-bold rounded-full py-3 border-0 shadow-lg"
+            @tap="loadPlace(searchSelectedItem.placeData, true); closeSearch();"
           />
         </GridLayout>
       </GridLayout>
