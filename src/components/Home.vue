@@ -71,7 +71,7 @@ const changerSelectedPlace = ref<any>(null);
 function loadPlacesIndex() {
   try {
     placesIndex = [];
-    const mapsRoot = path.join(knownFolders.currentApp().path, 'assets', 'maps', 'countries');
+    const mapsRoot = path.join(knownFolders.currentApp().path, 'maps', 'countries');
 
     if (isAndroid) {
       scanAndroidDir(new (global as any).java.io.File(mapsRoot), '', null, null);
@@ -100,12 +100,14 @@ function scanAndroidDir(dir: any, country: string, province: string | null, type
     const entryName = entry.getName();
 
     if (entry.isDirectory()) {
-      if (!province && !type) {
+      if (!country) {
         scanAndroidDir(entry, entryName, null, null);
-      } else if (!type) {
+      } else if (!province) {
         scanAndroidDir(entry, country, entryName, null);
-      } else {
+      } else if (!type) {
         scanAndroidDir(entry, country, province, entryName);
+      } else {
+        scanAndroidDir(entry, country, province, type);
       }
     } else if (type && entryName.endsWith('.json') && entryName !== 'pois.json') {
       const placeName = entryName.replace(/\.json$/, '');
@@ -117,11 +119,12 @@ function scanAndroidDir(dir: any, country: string, province: string | null, type
         try {
           const content = readJavaTextFile(entry.getAbsolutePath());
           const meta = JSON.parse(content);
+          const placeType = (type || '').replace(/ies$/, 'y').replace(/s$/, '');
           placesIndex.push({
             id: meta.id || 0,
             name: meta.name || placeName,
             name_ur: meta.name_ur || '',
-            type: type,
+            type: placeType,
             lat: meta.latitude || meta.lat || 0,
             lon: meta.longitude || meta.lon || 0,
             province: meta.province || province || '',
@@ -151,6 +154,65 @@ function readJavaTextFile(absPath: string): string {
   return sb.toString();
 }
 
+// --- Native File Reading (bypasses WebView file:// CORS restrictions) ---
+function readTextFile(absolutePath: string): string {
+  try {
+    if (isAndroid) {
+      const f = new (global as any).java.io.File(absolutePath);
+      if (!f.exists()) {
+        console.error(`[VERBOSE] readTextFile: File does not exist: ${absolutePath}`);
+        return '[]';
+      }
+      const fis = new (global as any).java.io.FileInputStream(f);
+      const ch = new (global as any).java.io.InputStreamReader(fis, "UTF-8");
+      const br = new (global as any).java.io.BufferedReader(ch);
+      const sb = new (global as any).java.lang.StringBuilder();
+      let line;
+      while ((line = br.readLine()) !== null) {
+        sb.append(line).append("\n");
+      }
+      br.close();
+      return sb.toString();
+    } else if (isIOS) {
+      const data = (global as any).NSString.stringWithContentsOfFile_encoding_error_(absolutePath, 4, null);
+      return data || '[]';
+    }
+  } catch (err) {
+    console.error(`[VERBOSE] readTextFile Error:`, err);
+  }
+  return '[]';
+}
+
+function readBinaryFileToBase64(absolutePath: string): string {
+  try {
+    if (isAndroid) {
+      const f = new (global as any).java.io.File(absolutePath);
+      if (!f.exists()) {
+        console.error(`[VERBOSE] readBinaryFileToBase64: File does not exist: ${absolutePath}`);
+        return '';
+      }
+      const length = f.length();
+      const buffer = (global as any).Array.create("byte", length);
+      const fis = new (global as any).java.io.FileInputStream(f);
+      const bis = new (global as any).java.io.BufferedInputStream(fis);
+      let totalRead = 0;
+      while (totalRead < length) {
+        const read = bis.read(buffer, totalRead, length - totalRead);
+        if (read === -1) break;
+        totalRead += read;
+      }
+      bis.close();
+      return (global as any).android.util.Base64.encodeToString(buffer, (global as any).android.util.Base64.NO_WRAP);
+    } else if (isIOS) {
+      const data = (global as any).NSData.dataWithContentsOfFile(absolutePath);
+      if (data) return data.base64EncodedStringWithOptions(0);
+    }
+  } catch (err) {
+    console.error(`[VERBOSE] readBinaryFileToBase64 Error:`, err);
+  }
+  return '';
+}
+
 function scanIOSDir(dirPath: string, country: string, province: string | null, type: string | null) {
   const fm = (global as any).NSFileManager.defaultManager;
   const entries = fm.contentsOfDirectoryAtPath_error_(dirPath, null);
@@ -165,12 +227,14 @@ function scanIOSDir(dirPath: string, country: string, province: string | null, t
     const isDirectory = isDirRef.value;
 
     if (isDirectory) {
-      if (!province && !type) {
+      if (!country) {
         scanIOSDir(fullPath, entryName, null, null);
-      } else if (!type) {
+      } else if (!province) {
         scanIOSDir(fullPath, country, entryName, null);
-      } else {
+      } else if (!type) {
         scanIOSDir(fullPath, country, province, entryName);
+      } else {
+        scanIOSDir(fullPath, country, province, type);
       }
     } else if (type && entryName.endsWith('.json') && entryName !== 'pois.json') {
       const placeName = entryName.replace(/\.json$/, '');
@@ -184,11 +248,12 @@ function scanIOSDir(dirPath: string, country: string, province: string | null, t
             fullPath, 4 /* NSUTF8StringEncoding */, null
           );
           const meta = JSON.parse(content);
+          const placeType = (type || '').replace(/ies$/, 'y').replace(/s$/, '');
           placesIndex.push({
             id: meta.id || 0,
             name: meta.name || placeName,
             name_ur: meta.name_ur || '',
-            type: type,
+            type: placeType,
             lat: meta.latitude || meta.lat || 0,
             lon: meta.longitude || meta.lon || 0,
             province: meta.province || province || '',
@@ -417,9 +482,9 @@ function startWebViewPolling() {
 }
 
 // --- Place Loading and Settings Persistence ---
-// Maps are bundled as individual files in app assets/maps (loaded by webpack copy rule)
+// Maps are bundled as individual files in the app bundle (loaded by webpack copy rule)
 function getMapFilePath(relative: string) {
-  return 'file://' + path.join(knownFolders.currentApp().path, 'assets', 'maps', relative);
+  return 'file://' + path.join(knownFolders.currentApp().path, 'maps', relative);
 }
 
 function loadPlace(place: any, centerMap: boolean = true) {
@@ -432,14 +497,13 @@ function loadPlace(place: any, centerMap: boolean = true) {
 
   console.log(`[VERBOSE] loadPlace: Initiating load for place: "${place.name}" (${place.type}), centerMap: ${centerMap}`);
 
-  // Build file:// paths to maps extracted in documents
+  // Build file:// paths to maps in the app bundle
   const relativeDir = path.join('countries', place.path);
   const pbfFileName = `${place.path.split('/').pop()}.osm.pbf`;
   const pbfUrl = getMapFilePath(path.join(relativeDir, pbfFileName));
   const poisUrl = getMapFilePath(path.join(relativeDir, 'pois.json'));
 
-  console.log(`[VERBOSE] loadPlace: PBF URL: ${pbfUrl}`);
-  console.log(`[VERBOSE] loadPlace: POI URL: ${poisUrl}`);
+  console.log(`[VERBOSE] loadPlace: "${place.name}" pbf=${pbfUrl} pois=${poisUrl}`);
 
   currentPlace.value = place;
   selectedDetails.value = null; // Reset selection panel
@@ -457,11 +521,15 @@ function loadPlace(place: any, centerMap: boolean = true) {
   
   console.log(`[VERBOSE] loadPlace: Saved state to ApplicationSettings: name="${place.name}", lat=${place.lat}, lon=${place.lon}`);
 
-  // Load map data via XHR from file:// paths (taste: avoids base64 bridge)
+  // Read PBF and POIs natively, pass to webview via base64 bridge (XHR blocked by CORS on file://)
+  const absPbfPath = pbfUrl.replace('file://', '');
+  const absPoisPath = poisUrl.replace('file://', '');
+  const pbfBase64 = readBinaryFileToBase64(absPbfPath);
+  const poisJson = readTextFile(absPoisPath);
   callWebView(
-    'loadMapDataFromFiles',
-    pbfUrl,
-    poisUrl,
+    'loadMapDataDirect',
+    pbfBase64,
+    poisJson,
     place.lat,
     place.lon,
     centerMap ? 14 : null,
