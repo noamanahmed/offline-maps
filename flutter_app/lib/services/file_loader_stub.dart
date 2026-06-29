@@ -10,7 +10,8 @@ class FileLoader {
   Future<String?> readText(String path) async {
     try {
       return await rootBundle.loadString('assets_web/$path');
-    } catch (_) {
+    } catch (e) {
+      print('[file_loader] rootBundle readText error for assets_web/$path: $e');
       return null;
     }
   }
@@ -18,8 +19,10 @@ class FileLoader {
   Future<Uint8List?> readBinary(String path) async {
     try {
       final data = await rootBundle.load('assets_web/$path');
+      print('[file_loader] Loaded assets_web/$path from rootBundle: ${data.lengthInBytes} bytes');
       return data.buffer.asUint8List();
-    } catch (_) {
+    } catch (e) {
+      print('[file_loader] rootBundle readBinary error for assets_web/$path: $e');
       return null;
     }
   }

@@ -186,10 +186,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
     try {
       final pbf = await _loader.readBinary(place.pbfPath);
-      if (pbf == null) throw Exception('Failed to load PBF file: ${place.pbfPath}');
+      if (pbf == null) throw Exception('Map data not found for ${place.name}. '
+          'Place map files in the app documents/maps directory at: '
+          '${place.pbfPath}');
 
       final pois = await _loader.readText(place.poisPath);
-      if (pois == null) throw Exception('Failed to load POIs file: ${place.poisPath}');
+      if (pois == null) throw Exception('POI data not found for ${place.name} at: '
+          '${place.poisPath}');
 
       print('[home_screen] Loading: ${place.name} (${place.type}), path: ${place.path}');
       print('[home_screen] PBF size: ${pbf.length} bytes, POIs JSON size: ${pois.length} chars');
