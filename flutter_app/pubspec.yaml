@@ -19,8 +19,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - web/places_index.json
-    - web/map.html
-    - web/leaflet/leaflet.js
-    - web/leaflet/leaflet.css
-    - web/leaflet/tiny-osmpbf.js
+    - assets_web/map.html
+    - assets_web/leaflet/leaflet.js
+    - assets_web/leaflet/leaflet.css
+    - assets_web/leaflet/tiny-osmpbf.js
+    - assets_web/places_index.json

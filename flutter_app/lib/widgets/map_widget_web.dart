@@ -45,7 +45,7 @@ class _MapWidgetState extends State<MapWidget> {
     _viewType = 'map-frame-${identityHashCode(this)}';
     ui_web.platformViewRegistry.registerViewFactory(_viewType, (int id) {
       final iframe = html.IFrameElement()
-        ..src = 'map.html'
+        ..src = 'assets_web/map.html'
         ..style.border = 'none'
         ..style.width = '100%'
         ..style.height = '100%';

@@ -69,7 +69,7 @@ class _MapWidgetState extends State<MapWidget> {
   }
 
   Future<void> _loadMapHtml() async {
-    final htmlContent = await rootBundle.loadString('web/map.html');
+    final htmlContent = await rootBundle.loadString('assets_web/map.html');
     await _webCtrl.loadHtmlString(htmlContent);
   }
 

@@ -9,7 +9,7 @@ class FileLoader {
 
   Future<String?> readText(String path) async {
     try {
-      return await rootBundle.loadString('web/$path');
+      return await rootBundle.loadString('assets_web/$path');
     } catch (_) {
       return null;
     }
@@ -17,7 +17,7 @@ class FileLoader {
 
   Future<Uint8List?> readBinary(String path) async {
     try {
-      final data = await rootBundle.load('web/$path');
+      final data = await rootBundle.load('assets_web/$path');
       return data.buffer.asUint8List();
     } catch (_) {
       return null;
