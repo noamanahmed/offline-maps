@@ -55,3 +55,6 @@ Thumbs.db
 
 # *.osm.pbf files in maps/countries/
 maps/countries/*/*.osm.pbf
+
+# Symlinked map data in src/ (bundled by NativeScript)
+src/maps

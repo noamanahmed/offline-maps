@@ -97,31 +97,7 @@ function getDistance(lat1: number, lon1: number, lat2: number, lon2: number) {
   return Math.sqrt(dLat * dLat + dLon * dLon);
 }
 
-// Check proximity and switch active city/village if needed
-function checkProximityAndSwitch(lat: number, lon: number) {
-  let closest: any = null;
-  let minDist = Infinity;
-  
-  for (const place of placesIndex) {
-    const dist = getDistance(lat, lon, place.lat, place.lon);
-    if (dist < minDist) {
-      minDist = dist;
-      closest = place;
-    }
-  }
-  
-  if (closest) {
-    // Vicinity limit: 0.08 degrees (approx 8.8km) for city, 0.015 degrees (approx 1.67km) for village
-    const limit = closest.type === 'city' ? 0.08 : 0.015;
-    if (minDist <= limit) {
-      // Compare by path to avoid issues with id=0 being falsy
-      if (currentPlace.value.path !== closest.path) {
-        console.log(`User in vicinity of new area: ${closest.name}. Automatically switching.`);
-        loadPlace(closest, false); // Switch loaded place but don't force map centering
-      }
-    }
-  }
-}
+// Proximity auto-switching disabled by user request
 
 // --- NativeScript Geolocation Controls ---
 async function requestGPSLocation() {
@@ -145,12 +121,15 @@ async function requestGPSLocation() {
 
 function startGPSTracking() {
   if (watchId !== null) {
+    console.log(`[VERBOSE] startGPSTracking: Clearing previous watch ID: ${watchId}`);
     Geolocation.clearWatch(watchId);
   }
 
+  console.log("[VERBOSE] startGPSTracking: Starting watchLocation listener...");
   watchId = Geolocation.watchLocation(
     (loc) => {
       if (loc) {
+        console.log(`[VERBOSE] GPS UPDATE: Lat: ${loc.latitude}, Lon: ${loc.longitude}, Accuracy: ${loc.horizontalAccuracy}m`);
         isGPSConnected.value = true;
         isLocating.value = false;
         gpsAccuracy.value = `${loc.horizontalAccuracy.toFixed(1)}m`;
@@ -161,19 +140,17 @@ function startGPSTracking() {
         
         // Update user pointer on webview
         callWebView('updateUserLocation', loc.latitude, loc.longitude, true);
-        
-        // Proximity detection and automatic loading of vicinity data
-        checkProximityAndSwitch(loc.latitude, loc.longitude);
       }
     },
     (err) => {
-      console.error("GPS Watch Location Error:", err);
+      console.error("[VERBOSE] GPS Watch Location Error:", err);
       isGPSConnected.value = false;
       isLocating.value = false;
       
       // Handle GPS Disconnectivity: Draw grey marker at last known coordinates
       const lastLat = ApplicationSettings.getNumber('last_lat', 0);
       const lastLon = ApplicationSettings.getNumber('last_lon', 0);
+      console.log(`[VERBOSE] GPS watchdog error/disconnection. Last known coords: (${lastLat}, ${lastLon})`);
       if (lastLat && lastLon) {
         callWebView('updateUserLocation', lastLat, lastLon, false);
       }
@@ -184,6 +161,7 @@ function startGPSTracking() {
       minimumUpdateTime: 4000 // 4 seconds
     }
   );
+  console.log(`[VERBOSE] startGPSTracking: Registered watch ID: ${watchId}`);
 }
 
 // Re-center on current GPS Location
@@ -227,6 +205,19 @@ function onWebViewLoaded(args: any) {
     });
   };
 
+  // Configure Android WebView settings to allow cross-origin requests from local files
+  if (webView.android) {
+    try {
+      console.log("[VERBOSE] onWebViewLoaded: Configuring Android WebView settings to allow local file access.");
+      const settings = webView.android.getSettings();
+      settings.setAllowFileAccess(true);
+      settings.setAllowFileAccessFromFileURLs(true);
+      settings.setAllowUniversalAccessFromFileURLs(true);
+    } catch (err) {
+      console.error("[VERBOSE] Error configuring Android WebView settings:", err);
+    }
+  }
+
   isWebViewLoaded.value = true;
   
   // Apply current theme
@@ -246,13 +237,16 @@ function onWebViewLoaded(args: any) {
 }
 
 function callWebView(fnName: string, ...args: any[]) {
-  if (!webView || !isWebViewLoaded.value) return;
+  if (!webView || !isWebViewLoaded.value) {
+    console.warn(`[VERBOSE] callWebView: ${fnName} skipped — webView not ready (loaded=${isWebViewLoaded.value})`);
+    return;
+  }
   const argsStr = args.map(a => JSON.stringify(a)).join(', ');
   const script = `${fnName}(${argsStr})`;
   
   webView.executeJavaScript(script)
     .catch((err: any) => {
-      // Ignore initial errors before page is fully set up
+      console.error(`[VERBOSE] callWebView: ${fnName} failed —`, err?.message || err);
     });
 }
 
@@ -297,6 +291,8 @@ function startWebViewPolling() {
               routeInfo.value = {
                 distance: msg.data.distance
               };
+            } else if (msg.type === 'search-results') {
+              searchResults.value = msg.data || [];
             }
           });
         }
@@ -307,16 +303,81 @@ function startWebViewPolling() {
   }, 250);
 }
 
+// --- Local File Reading Helpers to Bypassing WebView CORS Limitations ---
+function readTextFile(absolutePath: string): string {
+  try {
+    if (File.exists(absolutePath)) {
+      const file = File.fromPath(absolutePath);
+      const content = file.readTextSync();
+      console.log(`[VERBOSE] readTextFile: Successfully read ${content.length} characters from ${absolutePath}`);
+      return content;
+    } else {
+      console.error(`[VERBOSE] readTextFile: File does not exist: ${absolutePath}`);
+    }
+  } catch (err) {
+    console.error(`[VERBOSE] readTextFile Error:`, err);
+  }
+  return '[]';
+}
+
+function readBinaryFileToBase64(absolutePath: string): string {
+  if (!File.exists(absolutePath)) {
+    console.error(`[VERBOSE] readBinaryFileToBase64: File does not exist: ${absolutePath}`);
+    return '';
+  }
+  
+  try {
+    if (isAndroid) {
+      const file = new (global as any).java.io.File(absolutePath);
+      const length = file.length();
+      const fis = new (global as any).java.io.FileInputStream(file);
+      const bis = new (global as any).java.io.BufferedInputStream(fis);
+      const bytes = (global as any).Array.create("byte", length);
+      let totalRead = 0;
+      while (totalRead < length) {
+        const read = bis.read(bytes, totalRead, length - totalRead);
+        if (read === -1) break;
+        totalRead += read;
+      }
+      bis.close();
+      const base64Str = (global as any).android.util.Base64.encodeToString(bytes, (global as any).android.util.Base64.NO_WRAP);
+      console.log(`[VERBOSE] readBinaryFileToBase64: Successfully read ${length} bytes, base64 length: ${base64Str.length}`);
+      return base64Str;
+    } else if (isIOS) {
+      const data = (global as any).NSData.dataWithContentsOfFile(absolutePath);
+      if (data) {
+        const base64Str = data.base64EncodedStringWithOptions(0);
+        console.log(`[VERBOSE] readBinaryFileToBase64: Successfully read iOS file, base64 length: ${base64Str.length}`);
+        return base64Str;
+      }
+    }
+  } catch (err) {
+    console.error(`[VERBOSE] readBinaryFileToBase64 Error:`, err);
+  }
+  return '';
+}
+
 // --- Place Loading and Settings Persistence ---
 function loadPlace(place: any, centerMap: boolean = true) {
   // Guard against re-entrant calls
-  if (isLoadingPlace) return;
+  if (isLoadingPlace) {
+    console.log(`[VERBOSE] loadPlace: Re-entrant call blocked. Already loading a place.`);
+    return;
+  }
   isLoadingPlace = true;
 
-  const pbfPath = `../maps/countries/${place.path}/${place.path.split('/').pop()}.osm.pbf`;
-  const poisPath = `../maps/countries/${place.path}/pois.json`;
+  console.log(`[VERBOSE] loadPlace: Initiating load for place: "${place.name}" (${place.type}), centerMap: ${centerMap}`);
 
-  const isSameMap = (currentlyLoadedPbfPath === pbfPath);
+  // Resolve absolute paths under the app bundle's maps folder
+  const mapsDir = path.join(knownFolders.currentApp().path, 'maps', 'countries', place.path);
+  const pbfFile = path.join(mapsDir, `${place.path.split('/').pop()}.osm.pbf`);
+  const poisFile = path.join(mapsDir, 'pois.json');
+
+  console.log(`[VERBOSE] loadPlace: PBF absolute path: ${pbfFile}`);
+  console.log(`[VERBOSE] loadPlace: POI absolute path: ${poisFile}`);
+
+  const pbfBase64 = readBinaryFileToBase64(pbfFile);
+  const poisJsonStr = readTextFile(poisFile);
 
   currentPlace.value = place;
   selectedDetails.value = null; // Reset selection panel
@@ -331,31 +392,24 @@ function loadPlace(place: any, centerMap: boolean = true) {
   ApplicationSettings.setNumber('saved_lat', place.lat);
   ApplicationSettings.setNumber('saved_lon', place.lon);
   ApplicationSettings.setNumber('saved_id', place.id || 0);
+  
+  console.log(`[VERBOSE] loadPlace: Saved state to ApplicationSettings: name="${place.name}", lat=${place.lat}, lon=${place.lon}`);
 
-  if (isSameMap) {
-    console.log(`Map data for ${place.name} is already loaded. Centering map.`);
-    if (centerMap) {
-      callWebView('centerOnCoordinates', place.lat, place.lon, 14);
-    }
-  } else {
-    currentlyLoadedPbfPath = pbfPath;
-    console.log(`LOADING DATA FOR: ${place.name} (${place.type}). PBF: ${pbfPath}`);
-    
-    // Call WebView to load this data (HARD requirement: only loads this data in memory)
-    callWebView(
-      'loadMapData', 
-      pbfPath, 
-      poisPath, 
-      place.lat, 
-      place.lon, 
-      centerMap ? 14 : null, // Pass zoom level if centering
-      isGPSConnected.value
-    );
-  }
+  // Call WebView to load this data DIRECTLY, bypassing CORS and relative path scheme limitations
+  callWebView(
+    'loadMapDataDirect', 
+    pbfBase64, 
+    poisJsonStr, 
+    place.lat, 
+    place.lon, 
+    centerMap ? 14 : null, // Pass zoom level if centering
+    isGPSConnected.value
+  );
 
   // Draw last user coordinates if available
   const lastLat = ApplicationSettings.getNumber('last_lat', 0);
   const lastLon = ApplicationSettings.getNumber('last_lon', 0);
+  console.log(`[VERBOSE] loadPlace: Drawing user coordinates if available: (${lastLat}, ${lastLon}), GPS: ${isGPSConnected.value}`);
   if (lastLat && lastLon) {
     callWebView('updateUserLocation', lastLat, lastLon, isGPSConnected.value);
   }
@@ -364,7 +418,9 @@ function loadPlace(place: any, centerMap: boolean = true) {
 }
 
 function loadSavedLocation() {
+  console.log(`[VERBOSE] loadSavedLocation: Loading saved location...`);
   const wizardDone = ApplicationSettings.getBoolean('wizard_completed', false);
+  console.log(`[VERBOSE] loadSavedLocation: wizard_completed is ${wizardDone}`);
   if (wizardDone) {
     const place = {
       country: ApplicationSettings.getString('saved_country'),
@@ -376,14 +432,19 @@ function loadSavedLocation() {
       lon: ApplicationSettings.getNumber('saved_lon'),
       id: ApplicationSettings.getNumber('saved_id', 0)
     };
+    console.log(`[VERBOSE] loadSavedLocation: Restoring saved place: "${place.name}" from path "${place.path}"`);
     loadPlace(place, true);
   } else {
+    console.log(`[VERBOSE] loadSavedLocation: Wizard not completed. Attempting GPS request...`);
     // Attempt GPS first to auto-detect location
     requestGPSLocation().then(() => {
       // If GPS successfully matched vicinity, map loads automatically.
       // Otherwise, open wizard.
       setTimeout(() => {
-        if (!ApplicationSettings.getBoolean('wizard_completed', false)) {
+        const checkDone = ApplicationSettings.getBoolean('wizard_completed', false);
+        console.log(`[VERBOSE] loadSavedLocation: GPS request complete. checkDone: ${checkDone}`);
+        if (!checkDone) {
+          console.log(`[VERBOSE] loadSavedLocation: Wizard still not completed. Triggering First Time Wizard overlay.`);
           showFirstTimeWizard.value = true;
           wizardStep.value = 1;
         }
@@ -510,7 +571,7 @@ function openSearch() {
   searchSelectedItem.value = null;
   routeInfo.value = null;
   showSearchOverlay.value = true;
-  // Load nearby POIs immediately
+  // Trigger initial nearest-POIs load (debounced via onSearchQueryChange)
   onSearchQueryChange();
 }
 
@@ -526,51 +587,29 @@ function getDistanceInKm(lat1: number, lon1: number, lat2: number, lon2: number)
   return R * c;
 }
 
+// Debounce timer for search
+let searchDebounceTimer: any = null;
+const SEARCH_DEBOUNCE_MS = 300;
+
 function onSearchQueryChange() {
   const query = searchQuery.value.trim();
 
-  // Anchor coordinates: use GPS last known if available, else current place center
-  const anchorLat = ApplicationSettings.getNumber('last_lat', currentPlace.value.lat);
-  const anchorLon = ApplicationSettings.getNumber('last_lon', currentPlace.value.lon);
+  if (searchDebounceTimer) clearTimeout(searchDebounceTimer);
 
-  if (!webView || !isWebViewLoaded.value) {
-    searchResults.value = [];
-    return;
-  }
+  searchDebounceTimer = setTimeout(() => {
+    const anchorLat = ApplicationSettings.getNumber('last_lat', currentPlace.value.lat);
+    const anchorLon = ApplicationSettings.getNumber('last_lon', currentPlace.value.lon);
 
-  // 1. Search POIs inside WebView, passing anchor coordinates for distance sorting
-  webView.executeJavaScript(`searchPois(${JSON.stringify(query)}, ${anchorLat}, ${anchorLon})`)
-    .then((res: any) => {
-      let poiResults: any[] = [];
-      try {
-        let parsed = typeof res === 'string' ? JSON.parse(res) : res;
-        if (typeof parsed === 'string') parsed = JSON.parse(parsed);
-        poiResults = parsed || [];
-      } catch (e) { /* parse error */ }
-
-      // 2. Also search roads inside WebView
-      return webView.executeJavaScript(`searchRoads(${JSON.stringify(query)}, ${anchorLat}, ${anchorLon})`)
-        .then((roadRes: any) => {
-          let roadResults: any[] = [];
-          try {
-            let parsed = typeof roadRes === 'string' ? JSON.parse(roadRes) : roadRes;
-            if (typeof parsed === 'string') parsed = JSON.parse(parsed);
-            roadResults = parsed || [];
-          } catch (e) { /* parse error */ }
-
-          // Combine results: local POIs + roads (sorted inside WebView by distance)
-          let combined = [...poiResults, ...roadResults];
-          
-          // Re-sort combined by distance in case they are interleaved
-          combined.sort((a, b) => (a.distance || 0) - (b.distance || 0));
-          
-          searchResults.value = combined.slice(0, 25);
-        });
-    })
-    .catch((err: any) => {
-      console.error('Search error:', err);
+    if (!webView || !isWebViewLoaded.value) {
       searchResults.value = [];
-    });
+      return;
+    }
+
+    webView.executeJavaScript(`runSearch(${JSON.stringify(query)}, ${anchorLat}, ${anchorLon})`)
+      .catch((err: any) => {
+        console.error('[VERBOSE] Search error:', err?.message || err);
+      });
+  }, SEARCH_DEBOUNCE_MS);
 }
 
 function selectSearchResult(item: any) {
@@ -621,6 +660,9 @@ onUnmounted(() => {
   }
   if (pollingInterval) {
     clearInterval(pollingInterval);
+  }
+  if (searchDebounceTimer) {
+    clearTimeout(searchDebounceTimer);
   }
 });
 </script>

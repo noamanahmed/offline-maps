@@ -91,10 +91,8 @@ def enhance_pois(pbf_path, output_json, place_name):
             geom = feat.get("geometry") or {}
             props = feat.get("properties") or {}
             
-            # Check for a name and target tags
+            # Check for target tags (name is optional — use tag as fallback)
             name = props.get("name")
-            if not name:
-                continue
 
             category = None
             subcategory = None
@@ -108,6 +106,10 @@ def enhance_pois(pbf_path, output_json, place_name):
             
             if not category:
                 continue
+
+            # Fallback name if no name tag
+            if not name:
+                name = subcategory or category or "Point of Interest"
 
             # Calculate centroid
             centroid = calculate_centroid(geom)

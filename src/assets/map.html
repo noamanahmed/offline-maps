@@ -137,6 +137,11 @@
         var userLocationMarker = null;
         var selectedLocationMarker = null;
         
+        // Stub functions — defined early so NativeScript can call them before the full implementation loads
+        window.loadMapDataDirect = function() {};
+        window.clearSelectedPin = function() {};
+        window.updateUserLocation = function() {};
+
         // Message queue for NativeScript polling
         window.pendingMessages = [];
         window.getAndClearMessages = function() {
@@ -274,22 +279,80 @@
         var loadedNodes = {};
         var loadedWays = [];
 
-        // Main Entry point to load Map Data dynamically
-        window.loadMapData = function(pbfRelPath, poisRelPath, centerLat, centerLng, zoom, isGPSConnected) {
+        // Polyfill Buffer for tiny-osmpbf.js (Android WebView lacks Node.js Buffer)
+        if (typeof Buffer === 'undefined' || typeof Buffer.alloc !== 'function') {
+            (function() {
+                var BufPolyfill = Uint8Array;
+                if (typeof TextDecoder !== 'undefined') {
+                    BufPolyfill.prototype.toString = function(encoding) {
+                        if (encoding === 'utf8' || encoding === 'utf-8') {
+                            return new TextDecoder('utf-8').decode(this);
+                        }
+                        return '';
+                    };
+                }
+                window.Buffer = BufPolyfill;
+            })();
+        }
+
+        // Helper to convert base64 to Uint8Array inside WebView
+        function base64ToUint8Array(base64) {
+            var binaryString = atob(base64);
+            var len = binaryString.length;
+            var bytes = new Uint8Array(len);
+            for (var i = 0; i < len; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            return bytes;
+        }
+
+        // Main Entry point to load Map Data directly from strings (CORS-free)
+        window.loadMapDataDirect = function(pbfBase64, poisJsonStr, centerLat, centerLng, zoom, isGPSConnected) {
+            console.log("[VERBOSE] loadMapDataDirect: Starting direct map loading. PBF size: " + (pbfBase64 ? pbfBase64.length : 0) + ", POI JSON size: " + (poisJsonStr ? poisJsonStr.length : 0));
+            
             // Clear existing elements
             clearMapData();
             
             // Set view
             map.setView([centerLat, centerLng], zoom || 14);
 
-            // Fetch and parse PBF file
-            fetchPbfAndRender(pbfRelPath);
+            // 1. Render PBF roads
+            if (pbfBase64) {
+                try {
+                    var bytes = base64ToUint8Array(pbfBase64);
+                    var osmData = osmpbf(bytes);
+                    
+                    // Map nodes for lookup
+                    osmData.elements.forEach(function(el) {
+                        if (el.type === 'node') {
+                            loadedNodes[el.id] = [el.lat, el.lon];
+                        } else if (el.type === 'way') {
+                            loadedWays.push(el);
+                        }
+                    });
+                    
+                    renderRoads();
+                    console.log("[VERBOSE] loadMapDataDirect: Rendered roads from binary array buffer. Count: " + loadedWays.length);
+                } catch (err) {
+                    console.error('[VERBOSE] Error parsing PBF in WebView:', err);
+                }
+            }
 
-            // Fetch and parse POI JSON
-            fetchPoisAndRender(poisRelPath);
+            // 2. Render POIs
+            if (poisJsonStr) {
+                try {
+                    var pois = JSON.parse(poisJsonStr);
+                    loadedPoisData = pois || [];
+                    console.log("[VERBOSE] loadMapDataDirect: Loaded and parsed " + loadedPoisData.length + " POIs.");
+                    loadedPoisData.forEach(function(poi) {
+                        renderPoi(poi);
+                    });
+                } catch (err) {
+                    console.error('[VERBOSE] Error parsing POIs in WebView:', err);
+                }
+            }
             
             if (userLocationMarker) {
-                // Ensure user location is on top
                 userLocationMarker.addTo(map);
             }
         };
@@ -348,21 +411,36 @@
             xhr.send();
         }
 
-        // Fetch POIs JSON
+        // Fetch POIs JSON using XHR for local file:// compatibility
         function fetchPoisAndRender(poisPath) {
-            fetch(poisPath)
-                .then(function(res) { 
-                    if (!res.ok) throw new Error("Status " + res.status);
-                    return res.json(); 
-                })
-                .then(function(pois) {
-                    pois.forEach(function(poi) {
-                        renderPoi(poi);
-                    });
-                })
-                .catch(function(err) {
-                    console.error('Error loading POIs:', err);
-                });
+            console.log("[VERBOSE] fetchPoisAndRender: Initiating request for POIs at: " + poisPath);
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', poisPath, true);
+            xhr.responseType = 'text';
+            
+            xhr.onload = function() {
+                console.log("[VERBOSE] fetchPoisAndRender XHR onload status: " + xhr.status);
+                if (xhr.status == 200 || (xhr.status == 0 && xhr.responseText)) {
+                    try {
+                        var pois = JSON.parse(xhr.responseText);
+                        loadedPoisData = pois || [];
+                        console.log("[VERBOSE] fetchPoisAndRender: Loaded and parsed " + loadedPoisData.length + " POIs.");
+                        loadedPoisData.forEach(function(poi) {
+                            renderPoi(poi);
+                        });
+                    } catch (err) {
+                        console.error('[VERBOSE] fetchPoisAndRender parsing error:', err);
+                    }
+                } else {
+                    console.error('[VERBOSE] fetchPoisAndRender load failed with status: ' + xhr.status);
+                }
+            };
+            
+            xhr.onerror = function(err) {
+                console.error('[VERBOSE] fetchPoisAndRender network error:', err);
+            };
+            
+            xhr.send();
         }
 
         // Determine Road Color based on type and theme
@@ -576,15 +654,16 @@
         // Stores loaded POI data for search
         var loadedPoisData = [];
 
-        window.searchPois = function(query, anchorLat, anchorLon) {
+        window.runSearch = function(query, anchorLat, anchorLon) {
             var q = (query || "").toLowerCase().trim();
-            var results = [];
+            var poiResults = [];
+            var roadResults = [];
             
+            // ---- POI Search ----
             if (q.length === 0) {
-                // If empty search, return all POIs
                 for (var i = 0; i < loadedPoisData.length; i++) {
                     var item = loadedPoisData[i];
-                    results.push({
+                    poiResults.push({
                         name: item.name || 'Unknown',
                         category: item.category,
                         subcategory: item.subcategory,
@@ -615,11 +694,10 @@
                     }
                 }
                 
-                // Merge in order of relevance
                 var merged = exactMatches.concat(prefixMatches).concat(containsMatches);
                 for (var j = 0; j < merged.length; j++) {
                     var item = merged[j];
-                    results.push({
+                    poiResults.push({
                         name: item.name,
                         category: item.category,
                         subcategory: item.subcategory,
@@ -630,63 +708,46 @@
                 }
             }
             
-            // Calculate distance to anchor and sort
-            if (anchorLat !== undefined && anchorLon !== undefined && map) {
-                var anchor = L.latLng(anchorLat, anchorLon);
-                for (var k = 0; k < results.length; k++) {
-                    var pt = L.latLng(results[k].latitude, results[k].longitude);
-                    results[k].distance = map.distance(anchor, pt) / 1000; // convert meters to km
-                }
-                // Sort by distance if query was empty (nearest first)
-                if (q.length === 0) {
-                    results.sort(function(a, b) { return (a.distance || 0) - (b.distance || 0); });
-                }
-            }
-            
-            return JSON.stringify(results.slice(0, 50)); // Return top 50
-        };
-
-        // Also search road/way names from loaded data
-        window.searchRoads = function(query, anchorLat, anchorLon) {
-            var q = (query || "").toLowerCase().trim();
-            if (q.length === 0) return JSON.stringify([]); // Don't return all roads on empty search
-            
-            var results = [];
-            var seen = {};
-            
-            for (var i = 0; i < loadedWays.length; i++) {
-                var way = loadedWays[i];
-                if (way.tags && way.tags.name) {
-                    var name = way.tags.name;
-                    if (name.toLowerCase().indexOf(q) !== -1 && !seen[name]) {
-                        seen[name] = true;
-                        // Find the midpoint of this way for centering
-                        var midIdx = Math.floor(way.nodes.length / 2);
-                        var midNode = loadedNodes[way.nodes[midIdx]];
-                        if (midNode) {
-                            results.push({
-                                name: name,
-                                category: 'road',
-                                subcategory: way.tags.highway || 'road',
-                                latitude: midNode[0],
-                                longitude: midNode[1],
-                                id: 'road-' + i
-                            });
+            // ---- Road Search ----
+            if (q.length > 0) {
+                var seen = {};
+                for (var i = 0; i < loadedWays.length; i++) {
+                    var way = loadedWays[i];
+                    if (way.tags && way.tags.name) {
+                        var name = way.tags.name;
+                        if (name.toLowerCase().indexOf(q) !== -1 && !seen[name]) {
+                            seen[name] = true;
+                            var midIdx = Math.floor(way.nodes.length / 2);
+                            var midNode = loadedNodes[way.nodes[midIdx]];
+                            if (midNode) {
+                                roadResults.push({
+                                    name: name,
+                                    category: 'road',
+                                    subcategory: way.tags.highway || 'road',
+                                    latitude: midNode[0],
+                                    longitude: midNode[1],
+                                    id: 'road-' + i
+                                });
+                            }
                         }
                     }
                 }
             }
-
-            // Calculate distance to anchor
+            
+            // Combine and sort
+            var combined = poiResults.concat(roadResults);
+            
             if (anchorLat !== undefined && anchorLon !== undefined && map) {
                 var anchor = L.latLng(anchorLat, anchorLon);
-                for (var k = 0; k < results.length; k++) {
-                    var pt = L.latLng(results[k].latitude, results[k].longitude);
-                    results[k].distance = map.distance(anchor, pt) / 1000;
+                for (var k = 0; k < combined.length; k++) {
+                    var pt = L.latLng(combined[k].latitude, combined[k].longitude);
+                    combined[k].distance = map.distance(anchor, pt) / 1000;
+                }
+                if (q.length === 0) {
+                    combined.sort(function(a, b) { return (a.distance || 0) - (b.distance || 0); });
                 }
             }
-            
-            return JSON.stringify(results.slice(0, 25));
+            postMessage('search-results', combined.slice(0, 10));
         };
 
         // --- Route Drawing ---

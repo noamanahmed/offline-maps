@@ -6,9 +6,9 @@ module.exports = (env) => {
 
 	// Copy city/village directories but exclude the large country-level .osm.pbf files
 	webpack.Utils.addCopyRule({
-		from: "maps/countries/*/*/{cities,villages}/**/*",
+		from: "countries/*/*/{cities,villages}/**/*",
 		to: "maps",
-		context: "."
+		context: "maps"
 	});
 
 	const config = webpack.resolveConfig();
