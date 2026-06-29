@@ -3,6 +3,9 @@
   "main": "src/app.ts",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "postinstall": "node patch-vueloader.js"
+  },
   "dependencies": {
     "@nativescript/core": "~8.9.1",
     "@nativescript/geolocation": "^9.0.0",

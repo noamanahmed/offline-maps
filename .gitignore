@@ -52,5 +52,6 @@ yarn-error.log*
 ehthumbs.db
 Thumbs.db
 
-# Original map files
+
+# *.osm.pbf files in maps/countries/
 maps/countries/*/*.osm.pbf

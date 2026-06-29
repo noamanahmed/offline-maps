@@ -11,6 +11,8 @@ const isGPSConnected = ref(false);
 const gpsAccuracy = ref('');
 const isLocating = ref(false);
 const currentOrientation = ref<'portrait' | 'landscape'>('portrait');
+const showSettingsDrawer = ref(false);
+const isSearchExpanded = ref(false);
 
 // Active loaded place metadata
 const currentPlace = ref<any>({
@@ -31,6 +33,9 @@ const selectedDetails = ref<any>(null);
 let watchId: number | null = null;
 let webView: any = null;
 let pollingInterval: any = null;
+let isInitialLoad = true;
+let currentlyLoadedPbfPath = '';
+let isLoadingPlace = false;
 
 // Places Index (Loaded at runtime)
 let placesIndex: any[] = [];
@@ -101,7 +106,8 @@ function checkProximityAndSwitch(lat: number, lon: number) {
     // Vicinity limit: 0.08 degrees (approx 8.8km) for city, 0.015 degrees (approx 1.67km) for village
     const limit = closest.type === 'city' ? 0.08 : 0.015;
     if (minDist <= limit) {
-      if (!currentPlace.value.id || currentPlace.value.id !== closest.id) {
+      // Compare by path to avoid issues with id=0 being falsy
+      if (currentPlace.value.path !== closest.path) {
         console.log(`User in vicinity of new area: ${closest.name}. Automatically switching.`);
         loadPlace(closest, false); // Switch loaded place but don't force map centering
       }
@@ -218,11 +224,17 @@ function onWebViewLoaded(args: any) {
   // Apply current theme
   callWebView('setTheme', activeTheme.value);
   
-  // Start polling messages from WebView
-  startWebViewPolling();
-  
-  // Load saved location on startup
-  loadSavedLocation();
+  if (isInitialLoad) {
+    isInitialLoad = false;
+    // Start polling messages from WebView
+    startWebViewPolling();
+    
+    // Load saved location on startup
+    loadSavedLocation();
+  }
+  // Note: Do NOT reload map data on subsequent @loadFinished events.
+  // The WebView HTML page persists its state; re-calling loadMapData
+  // would trigger another @loadFinished, creating an infinite loop.
 }
 
 function callWebView(fnName: string, ...args: any[]) {
@@ -285,6 +297,15 @@ function startWebViewPolling() {
 
 // --- Place Loading and Settings Persistence ---
 function loadPlace(place: any, centerMap: boolean = true) {
+  // Guard against re-entrant calls
+  if (isLoadingPlace) return;
+  isLoadingPlace = true;
+
+  const pbfPath = `../maps/countries/${place.path}/${place.path.split('/').pop()}.osm.pbf`;
+  const poisPath = `../maps/countries/${place.path}/pois.json`;
+
+  const isSameMap = (currentlyLoadedPbfPath === pbfPath);
+
   currentPlace.value = place;
   selectedDetails.value = null; // Reset selection panel
 
@@ -297,25 +318,28 @@ function loadPlace(place: any, centerMap: boolean = true) {
   ApplicationSettings.setString('saved_name', place.name);
   ApplicationSettings.setNumber('saved_lat', place.lat);
   ApplicationSettings.setNumber('saved_lon', place.lon);
+  ApplicationSettings.setNumber('saved_id', place.id || 0);
 
-  // WebView local paths (relative to app/assets/map.html)
-  // WebView is at: app/assets/map.html
-  // Maps folder is at: app/maps/countries/...
-  const pbfPath = `../maps/countries/${place.path}/${place.path.split('/').pop()}.osm.pbf`;
-  const poisPath = `../maps/countries/${place.path}/pois.json`;
-
-  console.log(`LOADING DATA FOR: ${place.name} (${place.type}). PBF: ${pbfPath}`);
-  
-  // Call WebView to load this data (HARD requirement: only loads this data in memory)
-  callWebView(
-    'loadMapData', 
-    pbfPath, 
-    poisPath, 
-    place.lat, 
-    place.lon, 
-    centerMap ? 14 : null, // Pass zoom level if centering
-    isGPSConnected.value
-  );
+  if (isSameMap) {
+    console.log(`Map data for ${place.name} is already loaded. Centering map.`);
+    if (centerMap) {
+      callWebView('centerOnCoordinates', place.lat, place.lon, 14);
+    }
+  } else {
+    currentlyLoadedPbfPath = pbfPath;
+    console.log(`LOADING DATA FOR: ${place.name} (${place.type}). PBF: ${pbfPath}`);
+    
+    // Call WebView to load this data (HARD requirement: only loads this data in memory)
+    callWebView(
+      'loadMapData', 
+      pbfPath, 
+      poisPath, 
+      place.lat, 
+      place.lon, 
+      centerMap ? 14 : null, // Pass zoom level if centering
+      isGPSConnected.value
+    );
+  }
 
   // Draw last user coordinates if available
   const lastLat = ApplicationSettings.getNumber('last_lat', 0);
@@ -323,6 +347,8 @@ function loadPlace(place: any, centerMap: boolean = true) {
   if (lastLat && lastLon) {
     callWebView('updateUserLocation', lastLat, lastLon, isGPSConnected.value);
   }
+
+  isLoadingPlace = false;
 }
 
 function loadSavedLocation() {
@@ -336,7 +362,7 @@ function loadSavedLocation() {
       name: ApplicationSettings.getString('saved_name'),
       lat: ApplicationSettings.getNumber('saved_lat'),
       lon: ApplicationSettings.getNumber('saved_lon'),
-      id: 0
+      id: ApplicationSettings.getNumber('saved_id', 0)
     };
     loadPlace(place, true);
   } else {
@@ -493,81 +519,96 @@ onUnmounted(() => {
         class="w-full h-full"
       />
 
-      <!-- 2. Floating Top Search & Control Bar -->
-      <AbsoluteLayout row="0" class="w-full h-24 p-4">
-        <GridLayout
-          columns="auto, *, auto, auto"
-          class="w-full bg-white rounded-full p-2 shadow-lg border border-gray-100"
-          style="elevation: 5;"
-          top="10"
-          left="0"
-          width="100%"
-        >
-          <!-- Search Icon / Info -->
-          <Label
-            col="0"
-            text="📍"
-            class="text-xl align-middle px-3"
-          />
+      <!-- 2. Floating Top Search Bar -->
+      <GridLayout row="0" rows="auto, *" columns="*" isPassThroughParentEnabled="true">
+        <GridLayout row="0" class="m-3 mt-10" style="elevation: 8;" isPassThroughParentEnabled="true">
+          <!-- Collapsed: Search Icon Only -->
+          <GridLayout
+            v-if="!isSearchExpanded"
+            columns="auto"
+            class="bg-white rounded-full p-2 shadow-lg border border-gray-100"
+            width="48"
+            height="48"
+            horizontalAlignment="left"
+            @tap="isSearchExpanded = true"
+          >
+            <Label
+              col="0"
+              text="🔍"
+              class="text-xl text-center"
+              verticalAlignment="center"
+              horizontalAlignment="center"
+            />
+          </GridLayout>
 
-          <!-- Active Location Detail text -->
-          <StackLayout col="1" class="justify-center" @tap="openChanger">
+          <!-- Expanded: Full Search Bar -->
+          <GridLayout
+            v-if="isSearchExpanded"
+            columns="auto, *, auto, auto"
+            class="bg-white rounded-full p-2 shadow-lg border border-gray-100"
+            horizontalAlignment="stretch"
+          >
+            <!-- Search Icon -->
             <Label
-              :text="currentPlace.name"
-              class="font-bold text-gray-800 text-base"
-              maxLines="1"
+              col="0"
+              text="🔍"
+              class="text-lg align-middle px-3"
+              verticalAlignment="center"
             />
-            <Label
-              :text="currentPlace.province ? `${currentPlace.province}, ${currentPlace.country}` : 'Select a location'"
-              class="text-gray-500 text-xs"
-              maxLines="1"
-            />
-          </StackLayout>
 
-          <!-- GPS Connectivity Badge -->
-          <StackLayout col="2" class="justify-center px-2">
-            <Label
-              :text="isGPSConnected ? '● GPS' : '○ Offline'"
-              :class="isGPSConnected ? 'text-green-600 font-bold text-xs' : 'text-red-500 font-bold text-xs'"
-            />
-            <Label
-              v-if="isGPSConnected && gpsAccuracy"
-              :text="gpsAccuracy"
-              class="text-gray-400 text-[10px]"
-            />
-          </StackLayout>
+            <!-- Active Location Detail text -->
+            <StackLayout col="1" class="justify-center" @tap="openChanger">
+              <Label
+                :text="currentPlace.name"
+                class="font-bold text-gray-800 text-base"
+                maxLines="1"
+              />
+              <Label
+                :text="currentPlace.province ? `${currentPlace.province}, ${currentPlace.country}` : 'Select a location'"
+                class="text-gray-500 text-xs"
+                maxLines="1"
+              />
+            </StackLayout>
 
-          <!-- Change Location Button -->
-          <Button
-            col="3"
-            text="🔄"
-            class="bg-transparent border-0 text-xl font-bold p-2 mr-2"
-            @tap="openChanger"
-          />
+            <!-- GPS Connectivity Badge -->
+            <StackLayout col="2" class="justify-center px-2">
+              <Label
+                :text="isGPSConnected ? '● GPS' : '○ Offline'"
+                :class="isGPSConnected ? 'text-green-600 font-bold text-xs' : 'text-red-500 font-bold text-xs'"
+              />
+              <Label
+                v-if="isGPSConnected && gpsAccuracy"
+                :text="gpsAccuracy"
+                class="text-gray-400 text-[10px]"
+              />
+            </StackLayout>
+
+            <!-- Collapse Button -->
+            <Label
+              col="3"
+              text="✕"
+              class="text-lg text-gray-400 font-bold px-3"
+              verticalAlignment="center"
+              @tap="isSearchExpanded = false"
+            />
+          </GridLayout>
         </GridLayout>
-      </AbsoluteLayout>
+      </GridLayout>
 
-      <!-- 3. Right Side Floating Action Buttons (FABs) -->
-      <AbsoluteLayout row="0" class="w-full h-full pointer-events-none">
+      <!-- 3. Left Side Floating Action Buttons (FABs) -->
+      <AbsoluteLayout row="0" class="w-full h-full" isPassThroughParentEnabled="true">
         <StackLayout
-          top="140"
-          right="16"
-          class="pointer-events-auto items-center"
+          top="80"
+          left="12"
+          width="48"
         >
-          <!-- Theme Selector FAB -->
+          <!-- Change Map Area FAB -->
           <Button
-            @tap="toggleTheme"
-            :text="activeTheme === 'light' ? '🌙' : '☀️'"
+            @tap="openChanger"
+            text="🗺️"
             class="w-12 h-12 bg-white text-lg rounded-full shadow-lg border border-gray-100 mb-3"
             style="elevation: 4;"
-          />
-
-          <!-- Re-center Location FAB -->
-          <Button
-            @tap="reCenterGPS"
-            text="🎯"
-            :class="isLocating ? 'w-12 h-12 bg-blue-100 text-lg rounded-full shadow-lg border border-gray-100 mb-3 animate-pulse' : 'w-12 h-12 bg-white text-lg rounded-full shadow-lg border border-gray-100 mb-3'"
-            style="elevation: 4;"
+            horizontalAlignment="center"
           />
 
           <!-- Toggle Orientation FAB -->
@@ -576,12 +617,51 @@ onUnmounted(() => {
             :text="currentOrientation === 'portrait' ? '📱' : '📟'"
             class="w-12 h-12 bg-white text-lg rounded-full shadow-lg border border-gray-100 mb-3"
             style="elevation: 4;"
+            horizontalAlignment="center"
           />
         </StackLayout>
       </AbsoluteLayout>
 
-      <!-- 4. Google Maps Place Details Bottom Panel -->
+      <!-- 4. Right Side Floating Action Buttons (FABs) -->
+      <GridLayout row="0" rows="auto, *" columns="*, auto" isPassThroughParentEnabled="true">
+        <StackLayout
+          row="0"
+          col="1"
+          class="mt-20 mr-3"
+          width="48"
+        >
+          <!-- Theme Selector FAB -->
+          <Button
+            @tap="toggleTheme"
+            :text="activeTheme === 'light' ? '🌙' : '☀️'"
+            class="w-12 h-12 bg-white text-lg rounded-full shadow-lg border border-gray-100 mb-3"
+            style="elevation: 4;"
+            horizontalAlignment="center"
+          />
+
+          <!-- Re-center Location FAB -->
+          <Button
+            @tap="reCenterGPS"
+            text="🎯"
+            :class="isLocating ? 'w-12 h-12 bg-blue-100 text-lg rounded-full shadow-lg border border-gray-100 mb-3 animate-pulse' : 'w-12 h-12 bg-white text-lg rounded-full shadow-lg border border-gray-100 mb-3'"
+            style="elevation: 4;"
+            horizontalAlignment="center"
+          />
+
+          <!-- Settings FAB -->
+          <Button
+            @tap="showSettingsDrawer = !showSettingsDrawer"
+            text="⚙️"
+            :class="showSettingsDrawer ? 'w-12 h-12 bg-blue-100 text-lg rounded-full shadow-lg border border-gray-100 mb-3' : 'w-12 h-12 bg-white text-lg rounded-full shadow-lg border border-gray-100 mb-3'"
+            style="elevation: 4;"
+            horizontalAlignment="center"
+          />
+        </StackLayout>
+      </GridLayout>
+
+      <!-- 5. Google Maps Place Details Bottom Panel -->
       <StackLayout
+        v-if="selectedDetails || showSettingsDrawer"
         row="1"
         class="bg-white rounded-t-3xl shadow-2xl p-5 border-t border-gray-100"
         style="elevation: 10;"
@@ -642,7 +722,7 @@ onUnmounted(() => {
         </GridLayout>
 
         <!-- Default Place info showing active city/village details -->
-        <GridLayout v-else columns="*, auto" rows="auto, auto, auto" class="w-full">
+        <GridLayout v-else columns="*, auto, auto" rows="auto, auto, auto" class="w-full">
           <StackLayout row="0" col="0" class="justify-center">
             <Label
               :text="currentPlace.name"
@@ -654,7 +734,7 @@ onUnmounted(() => {
             />
           </StackLayout>
           
-          <StackLayout row="0" col="1" class="items-end">
+          <StackLayout row="0" col="1" class="items-end px-2">
             <!-- Dynamic vicinity indicator -->
             <Label
               text="💾 Memory Status"
@@ -666,16 +746,24 @@ onUnmounted(() => {
             />
           </StackLayout>
 
+          <Button
+            row="0"
+            col="2"
+            text="✕"
+            class="bg-gray-100 border-0 text-gray-500 rounded-full w-8 h-8 text-sm align-top font-bold"
+            @tap="showSettingsDrawer = false"
+          />
+
           <Label
             row="1"
-            colSpan="2"
+            colSpan="3"
             :text="`Coordinates: ${currentPlace.lat.toFixed(5)} , ${currentPlace.lon.toFixed(5)}`"
             class="text-gray-400 text-xs mt-3"
           />
 
           <Button
             row="2"
-            colSpan="2"
+            colSpan="3"
             text="Change Location Manually"
             class="bg-blue-600 text-white rounded-full py-3 mt-4 text-center border-0 font-bold text-base shadow-lg"
             @tap="openChanger"
@@ -683,7 +771,7 @@ onUnmounted(() => {
         </GridLayout>
       </StackLayout>
 
-      <!-- 5. First-Time Configuration Wizard Overlay (Country -> Province -> City/Village Selector) -->
+      <!-- 6. First-Time Configuration Wizard Overlay (Country -> Province -> City/Village Selector) -->
       <GridLayout
         v-if="showFirstTimeWizard"
         row="0"
@@ -782,7 +870,7 @@ onUnmounted(() => {
         </GridLayout>
       </GridLayout>
 
-      <!-- 6. Change Location Dialog - Reverse Order Overlay (Select Place -> Province -> Country) -->
+      <!-- 7. Change Location Dialog - Reverse Order Overlay (Select Place -> Province -> Country) -->
       <GridLayout
         v-if="showLocationChanger"
         row="0"

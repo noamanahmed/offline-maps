@@ -26,6 +26,10 @@
         .dark-theme .leaflet-container {
             background-color: #1a1a1a !important;
         }
+        /* Invert OSM tiles for dark mode appearance */
+        .dark-theme .leaflet-tile-pane {
+            filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(1.2);
+        }
 
         /* Hide leaflet attribution for cleaner Google Maps look */
         .leaflet-control-attribution {
@@ -145,15 +149,24 @@
             window.pendingMessages.push({ type: type, data: data });
         }
 
-        // Initialize Map
+        // Initialize Map (default view: Lahore, Pakistan)
         map = L.map('map', {
-            zoomControl: false, // We will use custom zoom or NativeScript controls, or place leaflet zoom on bottom right
+            zoomControl: false,
             attributionControl: false
-        }).setView([0, 0], 13);
+        }).setView([31.5656822, 74.3141829], 13);
 
         // Place zoom control at bottom right for Google Maps look
         L.control.zoom({
             position: 'bottomright'
+        }).addTo(map);
+
+        // --- Base Tile Layer (OpenStreetMap) ---
+        // Provides the visible map imagery. PBF roads & POIs render on top as overlays.
+        // When offline, tiles won't load but the PBF vector data still renders on the grey fallback.
+        var tileLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            crossOrigin: true,
+            errorTileUrl: '' // Silently fail for missing tiles (offline mode)
         }).addTo(map);
 
         // Map Click Listener
@@ -251,6 +264,10 @@
             if (userLocationMarker) {
                 map.setView(userLocationMarker.getLatLng(), 15);
             }
+        };
+
+        window.centerOnCoordinates = function(lat, lng, zoom) {
+            map.setView([lat, lng], zoom || map.getZoom());
         };
 
         // Master variables to hold loaded elements for redrawing
