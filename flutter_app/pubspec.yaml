@@ -7,10 +7,11 @@ environment:
   sdk: ^3.7.2
 
 dependencies:
+  dart_osmpbf: ^0.0.1
   flutter:
     sdk: flutter
-  webview_flutter: ^4.10.0
-  pointer_interceptor: ^0.10.1+2
+  flutter_map: ^8.3.0
+  latlong2: ^0.9.1
 
 dev_dependencies:
   flutter_test:
@@ -20,8 +21,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets_web/map.html
-    - assets_web/leaflet/leaflet.js
-    - assets_web/leaflet/leaflet.css
-    - assets_web/leaflet/tiny-osmpbf.js
     - assets_web/places_index.json
