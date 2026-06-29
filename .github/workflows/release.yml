@@ -157,9 +157,23 @@ jobs:
               echo "ns build exited non-zero but APK exists — continuing."
             fi
           else
-            echo "Keystore not found. Building unsigned APK..."
+            echo "Keystore not found. Generating a temporary keystore for building..."
+            keytool -genkeypair -v \
+              -keystore temp.keystore \
+              -alias tempalias \
+              -keyalg RSA \
+              -keysize 2048 \
+              -validity 10000 \
+              -storepass temp-password \
+              -keypass temp-password \
+              -dname "CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, S=Unknown, C=Unknown"
+            
             set +e
-            ns build android --release
+            ns build android --release \
+              --key-store-path temp.keystore \
+              --key-store-password temp-password \
+              --key-store-alias tempalias \
+              --key-store-alias-password temp-password
             BUILD_EXIT=$?
             set -e
             if [ $BUILD_EXIT -ne 0 ]; then
