@@ -58,3 +58,6 @@ maps/countries/*/*.osm.pbf
 
 # Symlinked map data in src/ (bundled by NativeScript)
 src/maps
+
+# Python
+__pycache__/*

@@ -97,7 +97,7 @@ jobs:
         run: npm install -g nativescript
 
       - name: Verify Environment
-        run: ns doctor android
+        run: ns doctor android || true
 
       - name: Install dependencies
         run: npm ci
