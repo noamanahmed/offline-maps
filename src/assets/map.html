@@ -306,9 +306,9 @@
             return bytes;
         }
 
-        // Main Entry point to load Map Data directly from strings (CORS-free)
-        window.loadMapDataDirect = function(pbfBase64, poisJsonStr, centerLat, centerLng, zoom, isGPSConnected) {
-            console.log("[VERBOSE] loadMapDataDirect: Starting direct map loading. PBF size: " + (pbfBase64 ? pbfBase64.length : 0) + ", POI JSON size: " + (poisJsonStr ? poisJsonStr.length : 0));
+        // Main Entry point: load map data from file:// paths using XHR (taste: avoids base64 bridge)
+        window.loadMapDataFromFiles = function(pbfPath, poisPath, centerLat, centerLng, zoom, isGPSConnected) {
+            console.log("[VERBOSE] loadMapDataFromFiles: PBF path: " + pbfPath + ", POI path: " + poisPath);
             
             // Clear existing elements
             clearMapData();
@@ -316,45 +316,64 @@
             // Set view
             map.setView([centerLat, centerLng], zoom || 14);
 
-            // 1. Render PBF roads
-            if (pbfBase64) {
-                try {
-                    var bytes = base64ToUint8Array(pbfBase64);
-                    var osmData = osmpbf(bytes);
-                    
-                    // Map nodes for lookup
-                    osmData.elements.forEach(function(el) {
-                        if (el.type === 'node') {
-                            loadedNodes[el.id] = [el.lat, el.lon];
-                        } else if (el.type === 'way') {
-                            loadedWays.push(el);
+            // 1. Load PBF roads via XHR
+            if (pbfPath) {
+                var pbfXhr = new XMLHttpRequest();
+                pbfXhr.open('GET', pbfPath, true);
+                pbfXhr.responseType = 'arraybuffer';
+                pbfXhr.onload = function(e) {
+                    if (this.status == 200 || (this.status == 0 && this.response && this.response.byteLength)) {
+                        try {
+                            var osmData = osmpbf(new Uint8Array(this.response));
+                            osmData.elements.forEach(function(el) {
+                                if (el.type === 'node') {
+                                    loadedNodes[el.id] = [el.lat, el.lon];
+                                } else if (el.type === 'way') {
+                                    loadedWays.push(el);
+                                }
+                            });
+                            renderRoads();
+                            console.log("[VERBOSE] loadMapDataFromFiles: Rendered roads. Count: " + loadedWays.length);
+                        } catch (err) {
+                            console.error('[VERBOSE] Error parsing PBF in WebView:', err);
                         }
-                    });
-                    
-                    renderRoads();
-                    console.log("[VERBOSE] loadMapDataDirect: Rendered roads from binary array buffer. Count: " + loadedWays.length);
-                } catch (err) {
-                    console.error('[VERBOSE] Error parsing PBF in WebView:', err);
-                }
+                    } else {
+                        console.error('[VERBOSE] Failed to load PBF: ' + pbfPath + ' status: ' + this.status);
+                    }
+                };
+                pbfXhr.send();
             }
 
-            // 2. Render POIs
-            if (poisJsonStr) {
-                try {
-                    var pois = JSON.parse(poisJsonStr);
-                    loadedPoisData = pois || [];
-                    console.log("[VERBOSE] loadMapDataDirect: Loaded and parsed " + loadedPoisData.length + " POIs.");
-                    loadedPoisData.forEach(function(poi) {
-                        renderPoi(poi);
-                    });
-                } catch (err) {
-                    console.error('[VERBOSE] Error parsing POIs in WebView:', err);
-                }
+            // 2. Load POIs via XHR
+            if (poisPath) {
+                var poisXhr = new XMLHttpRequest();
+                poisXhr.open('GET', poisPath, true);
+                poisXhr.responseType = 'text';
+                poisXhr.onload = function() {
+                    if (this.status == 200 || (this.status == 0 && this.responseText)) {
+                        try {
+                            var pois = JSON.parse(this.responseText);
+                            loadedPoisData = pois || [];
+                            console.log("[VERBOSE] loadMapDataFromFiles: Loaded and parsed " + loadedPoisData.length + " POIs.");
+                            loadedPoisData.forEach(function(poi) {
+                                renderPoi(poi);
+                            });
+                        } catch (err) {
+                            console.error('[VERBOSE] Error parsing POIs in WebView:', err);
+                        }
+                    } else {
+                        console.error('[VERBOSE] Failed to load POIs: ' + poisPath + ' status: ' + this.status);
+                    }
+                };
+                poisXhr.send();
             }
             
             if (userLocationMarker) {
                 userLocationMarker.addTo(map);
             }
+
+            // Notify NativeScript that map data is loaded
+            postMessage('map-data-loaded', { loaded: true });
         };
 
         function clearMapData() {

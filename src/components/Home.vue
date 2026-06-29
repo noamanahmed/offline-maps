@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted, computed } from 'nativescript-vue';
-import { File, knownFolders, path, ApplicationSettings, isAndroid, isIOS, Application } from '@nativescript/core';
+import { ref, onMounted, onUnmounted } from 'nativescript-vue';
+import { knownFolders, path, ApplicationSettings, isAndroid, isIOS, Application } from '@nativescript/core';
 import * as Geolocation from '@nativescript/geolocation';
 import { CoreTypes } from '@nativescript/core';
 
@@ -21,6 +21,7 @@ const searchQuery = ref('');
 const searchResults = ref<any[]>([]);
 const searchSelectedItem = ref<any>(null);
 const routeInfo = ref<any>(null);
+const loadedPlacePOICount = ref(0);
 
 // Active loaded place metadata
 const currentPlace = ref<any>({
@@ -52,7 +53,7 @@ const uniqueProvinces = ref<string[]>([]);
 const filteredPlaces = ref<any[]>([]);
 
 // Wizard control
-const showFirstTimeWizard = ref(false);
+const showFirstTimeWizard = ref(!ApplicationSettings.getBoolean('wizard_completed', false));
 const showLocationChanger = ref(false);
 
 // Wizard step states (First time)
@@ -66,40 +67,139 @@ const wizardSelectedPlace = ref<any>(null);
 const changerSearchQuery = ref('');
 const changerSelectedPlace = ref<any>(null);
 
-// Load Places Index from assets
+// Scan the filesystem dynamically at runtime to discover available places
 function loadPlacesIndex() {
   try {
-    const filePath = path.join(knownFolders.currentApp().path, 'assets', 'places_index.json');
-    if (File.exists(filePath)) {
-      const file = File.fromPath(filePath);
-      const content = file.readTextSync();
-      let loadedPlaces = JSON.parse(content);
+    placesIndex = [];
+    const mapsRoot = path.join(knownFolders.currentApp().path, 'assets', 'maps', 'countries');
 
-      // In preview builds, filter the index to only include places whose assets are present on the device.
-      // This prevents "file does not exist" errors in the UI.
-      const isPreview = knownFolders.currentApp().path.includes('preview');
-      if (isPreview) {
-        console.log("[VERBOSE] loadPlacesIndex: Running in preview mode, filtering places index...");
-        loadedPlaces = loadedPlaces.filter(p => {
-          const placeDir = path.join(knownFolders.currentApp().path, 'maps', 'countries', p.path);
-          return File.exists(path.join(placeDir, 'pois.json'));
-        });
-      }
-
-      placesIndex = loadedPlaces;
-      
-      // Extract unique countries
-      const countries = new Set<string>();
-      placesIndex.forEach(p => {
-        if (p.country) countries.add(p.country);
-      });
-      uniqueCountries.value = Array.from(countries).sort();
-      console.log(`Loaded ${placesIndex.length} places from index.`);
-    } else {
-      console.error("Places index file not found at: " + filePath);
+    if (isAndroid) {
+      scanAndroidDir(new (global as any).java.io.File(mapsRoot), '', null, null);
+    } else if (isIOS) {
+      scanIOSDir(mapsRoot, '', null, null);
     }
+
+    const countries = new Set<string>();
+    placesIndex.forEach(p => {
+      if (p.country) countries.add(p.country);
+    });
+    uniqueCountries.value = Array.from(countries).sort();
+    console.log(`[VERBOSE] loadPlacesIndex: Scanned ${placesIndex.length} places dynamically.`);
   } catch (err) {
-    console.error("Error loading places index:", err);
+    console.error("Error scanning places index:", err);
+  }
+}
+
+function scanAndroidDir(dir: any, country: string, province: string | null, type: string | null) {
+  if (!dir.exists() || !dir.isDirectory()) return;
+  const entries = dir.listFiles();
+  if (!entries) return;
+
+  for (let i = 0; i < entries.length; i++) {
+    const entry = entries[i];
+    const entryName = entry.getName();
+
+    if (entry.isDirectory()) {
+      if (!province && !type) {
+        scanAndroidDir(entry, entryName, null, null);
+      } else if (!type) {
+        scanAndroidDir(entry, country, entryName, null);
+      } else {
+        scanAndroidDir(entry, country, province, entryName);
+      }
+    } else if (type && entryName.endsWith('.json') && entryName !== 'pois.json') {
+      const placeName = entryName.replace(/\.json$/, '');
+      const parentDir = entry.getParentFile();
+      const poisFile = new (global as any).java.io.File(parentDir, 'pois.json');
+      const pbfFile = new (global as any).java.io.File(parentDir, `${placeName}.osm.pbf`);
+
+      if (poisFile.exists() && pbfFile.exists()) {
+        try {
+          const content = readJavaTextFile(entry.getAbsolutePath());
+          const meta = JSON.parse(content);
+          placesIndex.push({
+            id: meta.id || 0,
+            name: meta.name || placeName,
+            name_ur: meta.name_ur || '',
+            type: type,
+            lat: meta.latitude || meta.lat || 0,
+            lon: meta.longitude || meta.lon || 0,
+            province: meta.province || province || '',
+            country: meta.country || country || '',
+            path: `${country}/${province}/${type}/${placeName}`
+          });
+        } catch (e) {
+          console.error(`[VERBOSE] loadPlacesIndex: Failed to parse ${entry.getAbsolutePath()}:`, e);
+        }
+      }
+    }
+  }
+}
+
+function readJavaTextFile(absPath: string): string {
+  const br = new (global as any).java.io.BufferedReader(
+    new (global as any).java.io.InputStreamReader(
+      new (global as any).java.io.FileInputStream(new (global as any).java.io.File(absPath)), "UTF-8"
+    )
+  );
+  const sb = new (global as any).java.lang.StringBuilder();
+  let line;
+  while ((line = br.readLine()) !== null) {
+    sb.append(line).append("\n");
+  }
+  br.close();
+  return sb.toString();
+}
+
+function scanIOSDir(dirPath: string, country: string, province: string | null, type: string | null) {
+  const fm = (global as any).NSFileManager.defaultManager;
+  const entries = fm.contentsOfDirectoryAtPath_error_(dirPath, null);
+  if (!entries) return;
+
+  const count = entries.count;
+  for (let i = 0; i < count; i++) {
+    const entryName = entries.objectAtIndex(i);
+    const fullPath = path.join(dirPath, entryName);
+    const isDirRef = { value: false };
+    fm.fileExistsAtPath_isDirectory_(fullPath, isDirRef);
+    const isDirectory = isDirRef.value;
+
+    if (isDirectory) {
+      if (!province && !type) {
+        scanIOSDir(fullPath, entryName, null, null);
+      } else if (!type) {
+        scanIOSDir(fullPath, country, entryName, null);
+      } else {
+        scanIOSDir(fullPath, country, province, entryName);
+      }
+    } else if (type && entryName.endsWith('.json') && entryName !== 'pois.json') {
+      const placeName = entryName.replace(/\.json$/, '');
+      const parentDir = path.dirname(fullPath);
+      const poisPath = path.join(parentDir, 'pois.json');
+      const pbfPath = path.join(parentDir, `${placeName}.osm.pbf`);
+
+      if (fm.fileExistsAtPath(poisPath) && fm.fileExistsAtPath(pbfPath)) {
+        try {
+          const content = (global as any).NSString.stringWithContentsOfFile_encoding_error_(
+            fullPath, 4 /* NSUTF8StringEncoding */, null
+          );
+          const meta = JSON.parse(content);
+          placesIndex.push({
+            id: meta.id || 0,
+            name: meta.name || placeName,
+            name_ur: meta.name_ur || '',
+            type: type,
+            lat: meta.latitude || meta.lat || 0,
+            lon: meta.longitude || meta.lon || 0,
+            province: meta.province || province || '',
+            country: meta.country || country || '',
+            path: `${country}/${province}/${type}/${placeName}`
+          });
+        } catch (e) {
+          console.error(`[VERBOSE] loadPlacesIndex: Failed to parse ${fullPath}:`, e);
+        }
+      }
+    }
   }
 }
 
@@ -316,61 +416,12 @@ function startWebViewPolling() {
   }, 250);
 }
 
-// --- Local File Reading Helpers to Bypassing WebView CORS Limitations ---
-function readTextFile(absolutePath: string): string {
-  try {
-    if (File.exists(absolutePath)) {
-      const file = File.fromPath(absolutePath);
-      const content = file.readTextSync();
-      console.log(`[VERBOSE] readTextFile: Successfully read ${content.length} characters from ${absolutePath}`);
-      return content;
-    } else {
-      console.error(`[VERBOSE] readTextFile: File does not exist: ${absolutePath}`);
-    }
-  } catch (err) {
-    console.error(`[VERBOSE] readTextFile Error:`, err);
-  }
-  return '[]';
-}
-
-function readBinaryFileToBase64(absolutePath: string): string {
-  if (!File.exists(absolutePath)) {
-    console.error(`[VERBOSE] readBinaryFileToBase64: File does not exist: ${absolutePath}`);
-    return '';
-  }
-  
-  try {
-    if (isAndroid) {
-      const file = new (global as any).java.io.File(absolutePath);
-      const length = file.length();
-      const fis = new (global as any).java.io.FileInputStream(file);
-      const bis = new (global as any).java.io.BufferedInputStream(fis);
-      const bytes = (global as any).Array.create("byte", length);
-      let totalRead = 0;
-      while (totalRead < length) {
-        const read = bis.read(bytes, totalRead, length - totalRead);
-        if (read === -1) break;
-        totalRead += read;
-      }
-      bis.close();
-      const base64Str = (global as any).android.util.Base64.encodeToString(bytes, (global as any).android.util.Base64.NO_WRAP);
-      console.log(`[VERBOSE] readBinaryFileToBase64: Successfully read ${length} bytes, base64 length: ${base64Str.length}`);
-      return base64Str;
-    } else if (isIOS) {
-      const data = (global as any).NSData.dataWithContentsOfFile(absolutePath);
-      if (data) {
-        const base64Str = data.base64EncodedStringWithOptions(0);
-        console.log(`[VERBOSE] readBinaryFileToBase64: Successfully read iOS file, base64 length: ${base64Str.length}`);
-        return base64Str;
-      }
-    }
-  } catch (err) {
-    console.error(`[VERBOSE] readBinaryFileToBase64 Error:`, err);
-  }
-  return '';
-}
-
 // --- Place Loading and Settings Persistence ---
+// Maps are bundled as individual files in app assets/maps (loaded by webpack copy rule)
+function getMapFilePath(relative: string) {
+  return 'file://' + path.join(knownFolders.currentApp().path, 'assets', 'maps', relative);
+}
+
 function loadPlace(place: any, centerMap: boolean = true) {
   // Guard against re-entrant calls
   if (isLoadingPlace) {
@@ -381,16 +432,14 @@ function loadPlace(place: any, centerMap: boolean = true) {
 
   console.log(`[VERBOSE] loadPlace: Initiating load for place: "${place.name}" (${place.type}), centerMap: ${centerMap}`);
 
-  // Resolve absolute paths under the app bundle's maps folder
-  const mapsDir = path.join(knownFolders.currentApp().path, 'maps', 'countries', place.path);
-  const pbfFile = path.join(mapsDir, `${place.path.split('/').pop()}.osm.pbf`);
-  const poisFile = path.join(mapsDir, 'pois.json');
+  // Build file:// paths to maps extracted in documents
+  const relativeDir = path.join('countries', place.path);
+  const pbfFileName = `${place.path.split('/').pop()}.osm.pbf`;
+  const pbfUrl = getMapFilePath(path.join(relativeDir, pbfFileName));
+  const poisUrl = getMapFilePath(path.join(relativeDir, 'pois.json'));
 
-  console.log(`[VERBOSE] loadPlace: PBF absolute path: ${pbfFile}`);
-  console.log(`[VERBOSE] loadPlace: POI absolute path: ${poisFile}`);
-
-  const pbfBase64 = readBinaryFileToBase64(pbfFile);
-  const poisJsonStr = readTextFile(poisFile);
+  console.log(`[VERBOSE] loadPlace: PBF URL: ${pbfUrl}`);
+  console.log(`[VERBOSE] loadPlace: POI URL: ${poisUrl}`);
 
   currentPlace.value = place;
   selectedDetails.value = null; // Reset selection panel
@@ -408,14 +457,14 @@ function loadPlace(place: any, centerMap: boolean = true) {
   
   console.log(`[VERBOSE] loadPlace: Saved state to ApplicationSettings: name="${place.name}", lat=${place.lat}, lon=${place.lon}`);
 
-  // Call WebView to load this data DIRECTLY, bypassing CORS and relative path scheme limitations
+  // Load map data via XHR from file:// paths (taste: avoids base64 bridge)
   callWebView(
-    'loadMapDataDirect', 
-    pbfBase64, 
-    poisJsonStr, 
-    place.lat, 
-    place.lon, 
-    centerMap ? 14 : null, // Pass zoom level if centering
+    'loadMapDataFromFiles',
+    pbfUrl,
+    poisUrl,
+    place.lat,
+    place.lon,
+    centerMap ? 14 : null,
     isGPSConnected.value
   );
 
@@ -685,6 +734,7 @@ onUnmounted(() => {
     <GridLayout rows="*, auto" columns="*">
       <!-- 1. The Offline Map WebView (fills screen) -->
       <WebView
+        v-if="!showFirstTimeWizard"
         row="0"
         rowSpan="2"
         src="~/assets/map.html"
@@ -694,7 +744,7 @@ onUnmounted(() => {
 
       <!-- 2. Floating Top Search Bar -->
       <!-- 2. Floating Interface Grid (Header & Separate Control Stacks) -->
-      <GridLayout row="0" rows="auto, *, auto" columns="auto, *, auto" isPassThroughParentEnabled="true">
+      <GridLayout v-if="!showFirstTimeWizard" row="0" rows="auto, *, auto" columns="auto, *, auto" isPassThroughParentEnabled="true">
         
         <!-- ==================== TOP ROW ==================== -->
         <!-- Collapsed Search Icon (Top-Left) -->
@@ -782,7 +832,7 @@ onUnmounted(() => {
 
       <!-- 5. Route Info Banner (shown when route is active) -->
       <GridLayout
-        v-if="routeInfo"
+        v-if="!showFirstTimeWizard && routeInfo"
         row="0"
         rows="auto, *"
         columns="*"
@@ -821,7 +871,7 @@ onUnmounted(() => {
 
       <!-- 6. Google Maps Place Details Bottom Panel -->
       <StackLayout
-        v-if="selectedDetails || showSettingsDrawer"
+        v-if="!showFirstTimeWizard && (selectedDetails || showSettingsDrawer)"
         row="1"
         class="bg-white rounded-t-3xl shadow-2xl p-5 border-t border-gray-100"
         style="elevation: 10;"
@@ -1032,7 +1082,7 @@ onUnmounted(() => {
 
       <!-- 7. Change Location Dialog - Reverse Order Overlay (Select Place -> Province -> Country) -->
       <GridLayout
-        v-if="showLocationChanger"
+        v-if="!showFirstTimeWizard && showLocationChanger"
         row="0"
         rowSpan="2"
         rows="auto, auto, *, auto, auto"
@@ -1102,7 +1152,7 @@ onUnmounted(() => {
       </GridLayout>
       <!-- 9. POI Search Overlay -->
       <GridLayout
-        v-if="showSearchOverlay"
+        v-if="!showFirstTimeWizard && showSearchOverlay"
         row="0"
         rowSpan="2"
         rows="auto, auto, *, auto"
@@ -1111,7 +1161,7 @@ onUnmounted(() => {
         <!-- Header -->
         <GridLayout row="0" columns="auto, *, auto" class="mt-6 mb-3">
           <Label col="0" text="🔍" class="text-2xl mr-2" verticalAlignment="center" />
-          <Label col="1" text="Search Places" class="text-2xl font-bold text-gray-800" verticalAlignment="center" />
+          <Label col="1" :text="`Search Places (${loadedPlacePOICount} Total Places)`" class="text-2xl font-bold text-gray-800" verticalAlignment="center" />
           <Button col="2" text="✕" class="bg-gray-200 border-0 text-gray-600 rounded-full w-8 h-8 font-bold" @tap="closeSearch" />
         </GridLayout>
 
