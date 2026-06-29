@@ -6,6 +6,7 @@ import 'package:offline_maps/services/file_loader.dart';
 import 'package:offline_maps/services/gps_service.dart';
 import 'package:offline_maps/services/storage_service.dart';
 import 'package:offline_maps/widgets/map_widget.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -25,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _isMapReady = false;
   int _poiCount = 0;
   bool _isLoadingPlace = false;
+  int _mapVersion = 0;
 
   Place? _currentPlace;
   List<Place> _placesIndex = [];
@@ -59,6 +61,11 @@ class _HomeScreenState extends State<HomeScreen> {
   final _changerCtrl = TextEditingController();
   Place? _changerPlace;
   List<Place> _changerResults = [];
+  List<Place> _recentPlaces = [];
+
+  // Wizard search
+  final _wizardSearchCtrl = TextEditingController();
+  String _wizardSearchQuery = '';
 
   StreamSubscription? _gpsLocSub, _gpsErrSub;
 
@@ -69,6 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final hasWizard = _storage.getBool('wizard_completed');
     _showWizard = !hasWizard;
     _loadPlacesIndex();
+    _loadRecentPlaces();
     _startGps();
   }
 
@@ -178,6 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _currentPlace = place;
       _selectedDetails = null;
+      _mapVersion++;
     });
     _savePlace(place);
 
@@ -201,6 +210,29 @@ class _HomeScreenState extends State<HomeScreen> {
     _storage.setDouble('saved_lat', place.lat);
     _storage.setDouble('saved_lon', place.lon);
     _storage.setInt('saved_id', place.id);
+    _addRecentPlace(place);
+  }
+
+  void _addRecentPlace(Place place) {
+    final recent = _recentPlaces.where((p) => p.id != place.id).toList();
+    recent.insert(0, place);
+    if (recent.length > 3) recent.removeLast();
+    _recentPlaces = recent;
+    _storage.setString('recent_places', jsonEncode(recent.map((p) => {
+      'id': p.id, 'name': p.name, 'type': p.type,
+      'lat': p.lat, 'lon': p.lon,
+      'province': p.province, 'country': p.country,
+      'path': p.path,
+    }).toList()));
+  }
+
+  void _loadRecentPlaces() {
+    final json = _storage.getString('recent_places');
+    if (json.isEmpty) return;
+    try {
+      final List<dynamic> data = jsonDecode(json);
+      _recentPlaces = data.map((d) => Place.fromJson(d as Map<String, dynamic>, path: d['path'] as String? ?? '')).toList();
+    } catch (_) {}
   }
 
   void _toggleTheme() {
@@ -230,6 +262,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _gps.dispose();
     _searchCtrl.dispose();
     _changerCtrl.dispose();
+    _wizardSearchCtrl.dispose();
     super.dispose();
   }
 
@@ -264,10 +297,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildTopBar() {
     return Positioned(
       top: 0, left: 0, right: 0,
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: Row(
+      child: PointerInterceptor(
+        key: ValueKey('topbar_$_mapVersion'),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Row(
             children: [
               GestureDetector(
                 onTap: () => setState(() {
@@ -302,6 +337,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+      ),
     );
   }
 
@@ -309,12 +345,20 @@ class _HomeScreenState extends State<HomeScreen> {
     return Positioned(
       left: 12,
       top: MediaQuery.of(context).size.height / 2 - 56,
-      child: Column(
-        children: [
-          _fabBtn(Icons.map, const Color(0xFF1A73E8), () => setState(() => _showLocationChanger = true)),
-          const SizedBox(height: 8),
-          _fabBtn(Icons.screen_rotation, const Color(0xFF5F6368), () {}),
-        ],
+      child: PointerInterceptor(
+        key: ValueKey('fableft_$_mapVersion'),
+        child: Column(
+          children: [
+            _fabBtn(Icons.map, const Color(0xFF1A73E8), () => setState(() {
+            _showLocationChanger = true;
+            _changerCtrl.clear();
+            _changerPlace = null;
+            _changerResults = [];
+          })),
+            const SizedBox(height: 8),
+            _fabBtn(Icons.screen_rotation, const Color(0xFF5F6368), () {}),
+          ],
+        ),
       ),
     );
   }
@@ -323,20 +367,23 @@ class _HomeScreenState extends State<HomeScreen> {
     return Positioned(
       right: 12,
       top: MediaQuery.of(context).size.height / 2 - 56,
-      child: Column(
-        children: [
-          _fabBtn(
-            _theme == 'light' ? Icons.dark_mode : Icons.light_mode,
-            Colors.purple,
-            _toggleTheme,
-          ),
-          const SizedBox(height: 8),
-          _fabBtn(Icons.my_location, _isLocating ? const Color(0xFF34A853) : const Color(0xFF1A73E8), () {
-            setState(() => _isLocating = true);
-            _gps.start();
-            _mapCtrl.centerOnUser();
-          }),
-        ],
+      child: PointerInterceptor(
+        key: ValueKey('fabright_$_mapVersion'),
+        child: Column(
+          children: [
+            _fabBtn(
+              _theme == 'light' ? Icons.dark_mode : Icons.light_mode,
+              Colors.purple,
+              _toggleTheme,
+            ),
+            const SizedBox(height: 8),
+            _fabBtn(Icons.my_location, _isLocating ? const Color(0xFF34A853) : const Color(0xFF1A73E8), () {
+              setState(() => _isLocating = true);
+              _gps.start();
+              _mapCtrl.centerOnUser();
+            }),
+          ],
+        ),
       ),
     );
   }
@@ -359,14 +406,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildRouteBanner() {
     return Positioned(
       top: 70, left: 12, right: 12,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-        decoration: BoxDecoration(
-          color: const Color(0xFF1A73E8),
-          borderRadius: BorderRadius.circular(12),
-          boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 8)],
-        ),
-        child: Row(
+      child: PointerInterceptor(
+        key: ValueKey('routebanner_$_mapVersion'),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          decoration: BoxDecoration(
+            color: const Color(0xFF1A73E8),
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 8)],
+          ),
+          child: Row(
           children: [
             const Text('📡', style: TextStyle(fontSize: 16)),
             const SizedBox(width: 12),
@@ -388,20 +437,23 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      ),
     );
   }
 
   Widget _buildBottomPanel() {
     return Positioned(
       bottom: 0, left: 0, right: 0,
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(20, 12, 20, 24),
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-          boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 16, offset: Offset(0, -4))],
-        ),
-        child: Column(
+      child: PointerInterceptor(
+        key: ValueKey('bottompanel_$_mapVersion'),
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(20, 12, 20, 24),
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+            boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 16, offset: Offset(0, -4))],
+          ),
+          child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -442,6 +494,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
+      ),
       ),
     );
   }
@@ -524,7 +577,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     children: provs.map((prov) => ListTile(
                                       title: Text(prov, style: const TextStyle(fontWeight: FontWeight.w600)),
                                       trailing: const Icon(Icons.chevron_right, color: Color(0xFF1A73E8)),
-                                      onTap: () => setState(() { _wizardProvince = prov; _wizardStep = 3; }),
+                                      onTap: () => setState(() { _wizardProvince = prov; _wizardStep = 3; _wizardSearchCtrl.clear(); _wizardSearchQuery = ''; }),
                                     )).toList(),
                                   );
                                 }(),
@@ -537,6 +590,42 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               Text('Select City or Village in $_wizardProvince',
                                   style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                              const SizedBox(height: 12),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 4),
+                                child: TextField(
+                                  controller: _wizardSearchCtrl,
+                                  decoration: InputDecoration(
+                                    hintText: 'Search cities or villages...',
+                                    prefixIcon: const Icon(Icons.search, color: Color(0xFF5F6368), size: 20),
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                      borderSide: BorderSide(color: Colors.grey.shade300),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                      borderSide: BorderSide(color: Colors.grey.shade300),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                      borderSide: const BorderSide(color: Color(0xFF1A73E8)),
+                                    ),
+                                    suffixIcon: _wizardSearchQuery.isNotEmpty
+                                        ? IconButton(
+                                            icon: const Icon(Icons.clear, size: 18, color: Color(0xFF5F6368)),
+                                            onPressed: () {
+                                              _wizardSearchCtrl.clear();
+                                              setState(() => _wizardSearchQuery = '');
+                                            },
+                                          )
+                                        : null,
+                                  ),
+                                  onChanged: (q) => setState(() => _wizardSearchQuery = q.trim().toLowerCase()),
+                                ),
+                              ),
                               const SizedBox(height: 8),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -549,7 +638,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               const SizedBox(height: 12),
                               Expanded(
                                 child: ListView(
-                                  children: _filterWizardPlaces().map((p) => ListTile(
+                                  children: _filterWizardPlaces()
+                                      .where((p) => _wizardSearchQuery.isEmpty ||
+                                          p.name.toLowerCase().contains(_wizardSearchQuery) ||
+                                          p.nameUr.contains(_wizardSearchQuery))
+                                      .map((p) => ListTile(
                                     title: Text(p.name, style: const TextStyle(fontWeight: FontWeight.w600)),
                                     subtitle: p.nameUr.isNotEmpty ? Text(p.nameUr) : null,
                                     selected: _wizardPlace?.id == p.id,
@@ -619,74 +712,206 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildLocationChanger() {
-    return Container(
-      color: const Color(0xFFF4F3F0),
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
+    final hasQuery = _changerCtrl.text.trim().length >= 2;
+    List<Place> displayList;
+    if (hasQuery) {
+      final ql = _changerCtrl.text.toLowerCase();
+      displayList = _placesIndex
+          .where((p) => p.name.toLowerCase().contains(ql) || p.nameUr.contains(ql))
+          .toList()..sort((a, b) => a.name.compareTo(b.name));
+    } else {
+      final recentIds = _recentPlaces.map((p) => p.id).toSet();
+      final remaining = _placesIndex
+          .where((p) => !recentIds.contains(p.id))
+          .toList()..sort((a, b) => a.name.compareTo(b.name));
+      displayList = [..._recentPlaces, ...remaining];
+    }
+    final recentIds = _recentPlaces.map((p) => p.id).toSet();
+
+    return PointerInterceptor(
+      key: ValueKey('locationchanger_$_mapVersion'),
+      child: Container(
+        color: const Color(0xFFF4F3F0),
+        child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Row(
-                children: [
-                  const Expanded(child: Text('🔄 Change Map Area',
-                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold))),
-                  IconButton(onPressed: () => setState(() => _showLocationChanger = false),
-                      icon: const Icon(Icons.close)),
-                ],
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                controller: _changerCtrl,
-                decoration: InputDecoration(
-                  hintText: '🔍 Search city or village name...',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(24), borderSide: BorderSide.none),
+              Container(
+                padding: const EdgeInsets.fromLTRB(20, 20, 12, 12),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.08), blurRadius: 8, offset: Offset(0, 2))],
                 ),
-                onChanged: (q) {
-                  if (q.trim().length < 2) { setState(() => _changerResults = []); return; }
-                  final ql = q.toLowerCase();
-                  setState(() {
-                    _changerResults = _placesIndex
-                        .where((p) => p.name.toLowerCase().contains(ql) || p.nameUr.contains(ql))
-                        .take(15).toList();
-                  });
-                },
+                child: Row(
+                  children: [
+                    const Expanded(
+                      child: Text('Change Map Area',
+                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    ),
+                    GestureDetector(
+                      onTap: () => setState(() => _showLocationChanger = false),
+                      child: Container(
+                        width: 36, height: 36,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100, shape: BoxShape.circle,
+                        ),
+                        child: const Icon(Icons.close, size: 20, color: Color(0xFF5F6368)),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              const SizedBox(height: 12),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+                child: TextField(
+                  controller: _changerCtrl,
+                  autofocus: true,
+                  decoration: InputDecoration(
+                    hintText: 'Search city or village...',
+                    prefixIcon: const Icon(Icons.search, color: Color(0xFF5F6368), size: 20),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.grey.shade300),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.grey.shade300),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Color(0xFF1A73E8)),
+                    ),
+                  ),
+                  onChanged: (q) => setState(() {}),
+                ),
+              ),
               Expanded(
-                child: ListView(
-                  children: _changerResults.map((p) => ListTile(
-                    title: Text('${p.name} (${p.type})', style: const TextStyle(fontWeight: FontWeight.w600)),
-                    subtitle: Text(p.nameUr.isNotEmpty ? p.nameUr : '${p.province}, ${p.country}'),
-                    selected: _changerPlace?.id == p.id,
-                    trailing: _changerPlace?.id == p.id
-                        ? const Icon(Icons.check, color: Color(0xFF1A73E8))
-                        : null,
-                    onTap: () => setState(() => _changerPlace = p),
-                  )).toList(),
+                child: ListView.builder(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  itemCount: displayList.length + (hasQuery ? 0 : (_recentPlaces.isNotEmpty ? 1 : 0)),
+                  itemBuilder: (context, index) {
+                    final showRecentHeader = !hasQuery && _recentPlaces.isNotEmpty && index == 0;
+                    if (showRecentHeader) {
+                      return Padding(
+                        padding: const EdgeInsets.fromLTRB(4, 12, 0, 4),
+                        child: Row(
+                          children: [
+                            const Icon(Icons.history, size: 14, color: Color(0xFF1A73E8)),
+                            const SizedBox(width: 6),
+                            const Text('Recent',
+                                style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: Color(0xFF1A73E8), letterSpacing: 0.5)),
+                          ],
+                        ),
+                      );
+                    }
+                    final listIdx = hasQuery ? index : index - (_recentPlaces.isNotEmpty ? 1 : 0);
+                    final p = displayList[listIdx];
+                    final isRecent = recentIds.contains(p.id);
+                    final isSelected = _changerPlace?.id == p.id;
+
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 2),
+                      child: Material(
+                        color: isSelected ? const Color(0xFFE8F0FE) : Colors.transparent,
+                        borderRadius: BorderRadius.circular(12),
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(12),
+                          onTap: () => setState(() => _changerPlace = p),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: 40, height: 40,
+                                  decoration: BoxDecoration(
+                                    color: isRecent ? const Color(0xFFE8F0FE) : Colors.grey.shade100,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    isRecent ? Icons.history : Icons.place,
+                                    size: 18,
+                                    color: isRecent ? const Color(0xFF1A73E8) : const Color(0xFF5F6368),
+                                  ),
+                                ),
+                                const SizedBox(width: 12),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(p.name,
+                                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: isSelected ? const Color(0xFF1A73E8) : Colors.black87)),
+                                      const SizedBox(height: 2),
+                                      Text(
+                                        p.nameUr.isNotEmpty ? p.nameUr : '${p.province}, ${p.country}',
+                                        style: const TextStyle(fontSize: 12, color: Color(0xFF5F6368)),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                                  decoration: BoxDecoration(
+                                    color: p.type == 'city' ? const Color(0xFFE8F0FE) : const Color(0xFFFFF3E0),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Text(
+                                    p.type == 'city' ? 'City' : 'Village',
+                                    style: TextStyle(
+                                      fontSize: 10, fontWeight: FontWeight.w600,
+                                      color: p.type == 'city' ? const Color(0xFF1A73E8) : const Color(0xFFE65100),
+                                    ),
+                                  ),
+                                ),
+                                if (isSelected)
+                                  const Padding(
+                                    padding: EdgeInsets.only(left: 8),
+                                    child: Icon(Icons.check_circle, size: 20, color: Color(0xFF1A73E8)),
+                                  ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF1A73E8),
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+              Container(
+                padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.06), blurRadius: 8, offset: Offset(0, -2))],
                 ),
-                onPressed: _changerPlace != null
-                    ? () {
-                        _doLoadPlace(_changerPlace!);
-                        setState(() {
-                          _showLocationChanger = false;
-                          _changerPlace = null;
-                          _changerCtrl.clear();
-                          _changerResults = [];
-                        });
-                      }
-                    : null,
-                child: const Text('Switch Offline Map Area', style: TextStyle(fontWeight: FontWeight.bold)),
+                child: SafeArea(
+                  top: false,
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 48,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: _changerPlace != null ? const Color(0xFF1A73E8) : Colors.grey.shade300,
+                        foregroundColor: Colors.white,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      ),
+                      onPressed: _changerPlace != null
+                          ? () {
+                              _doLoadPlace(_changerPlace!);
+                              setState(() {
+                                _showLocationChanger = false;
+                                _changerPlace = null;
+                                _changerCtrl.clear();
+                                _changerResults = [];
+                              });
+                            }
+                          : null,
+                      child: const Text('Switch Map Area', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
