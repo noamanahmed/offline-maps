@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Offline Map Viewer</title>
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <script src="leaflet/leaflet.js"></script>
+    <script src="leaflet/tiny-osmpbf.js"></script>
+    <style>
+        html, body, #map {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f3f0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        /* Map theme styling */
+        .light-theme {
+            background-color: #f4f3f0 !important;
+        }
+        .dark-theme {
+            background-color: #1a1a1a !important;
+        }
+        .dark-theme .leaflet-container {
+            background-color: #1a1a1a !important;
+        }
+
+        /* Hide leaflet attribution for cleaner Google Maps look */
+        .leaflet-control-attribution {
+            display: none !important;
+        }
+        .leaflet-bar {
+            border: none !important;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
+            border-radius: 8px !important;
+            overflow: hidden;
+        }
+        .leaflet-bar a {
+            border-bottom: 1px solid #f0f0f0 !important;
+        }
+        .leaflet-bar a:last-child {
+            border-bottom: none !important;
+        }
+
+        /* Pulse Animation for GPS Location Dot */
+        @keyframes pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            70% {
+                transform: scale(2.2);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        .gps-marker-container {
+            position: relative;
+            width: 20px;
+            height: 20px;
+        }
+
+        .gps-marker-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #1a73e8;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 6px rgba(0,0,0,0.3);
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            z-index: 10;
+        }
+
+        .gps-marker-dot.disconnected {
+            background-color: #9aa0a6 !important;
+        }
+
+        .gps-marker-halo {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgba(26, 115, 232, 0.25);
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            animation: pulse 2.5s infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .gps-marker-halo.disconnected {
+            display: none !important;
+        }
+
+        /* POI Custom Markers */
+        .poi-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px !important;
+            height: 30px !important;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+            border: 2px solid #ffffff;
+            transition: all 0.2s ease;
+        }
+        .poi-icon:hover {
+            transform: scale(1.15);
+        }
+        .poi-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: #ffffff;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <div id="map"></div>
+
+    <script>
+        var map;
+        var currentTheme = 'light';
+        var roadLayers = [];
+        var poiMarkers = [];
+        var userLocationMarker = null;
+        var selectedLocationMarker = null;
+        
+        // Message queue for NativeScript polling
+        window.pendingMessages = [];
+        window.getAndClearMessages = function() {
+            var msgs = JSON.stringify(window.pendingMessages);
+            window.pendingMessages = [];
+            return msgs;
+        };
+
+        function postMessage(type, data) {
+            window.pendingMessages.push({ type: type, data: data });
+        }
+
+        // Initialize Map
+        map = L.map('map', {
+            zoomControl: false, // We will use custom zoom or NativeScript controls, or place leaflet zoom on bottom right
+            attributionControl: false
+        }).setView([0, 0], 13);
+
+        // Place zoom control at bottom right for Google Maps look
+        L.control.zoom({
+            position: 'bottomright'
+        }).addTo(map);
+
+        // Map Click Listener
+        map.on('click', function(e) {
+            var lat = e.latlng.lat;
+            var lng = e.latlng.lng;
+            
+            // Set temporary red pin
+            setSelectedPin(lat, lng, "Dropped Pin");
+            
+            postMessage('map-clicked', { lat: lat, lng: lng });
+        });
+
+        // Set Red Selection Pin
+        function setSelectedPin(lat, lng, title) {
+            if (selectedLocationMarker) {
+                map.removeLayer(selectedLocationMarker);
+            }
+            
+            var redPinSvg = '<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
+            var redIcon = L.divIcon({
+                className: 'poi-icon',
+                html: redPinSvg,
+                iconSize: [30, 30],
+                iconAnchor: [15, 30]
+            });
+            
+            // Style the SVG pin dynamically
+            setTimeout(function() {
+                var pins = document.getElementsByClassName('poi-icon');
+                for (var i = 0; i < pins.length; i++) {
+                    if (pins[i].innerHTML.indexOf('24 24') !== -1) {
+                        pins[i].style.backgroundColor = '#ea4335';
+                    }
+                }
+            }, 50);
+
+            selectedLocationMarker = L.marker([lat, lng], { icon: redIcon }).addTo(map);
+            if (title) {
+                selectedLocationMarker.bindTooltip(title, { permanent: false, direction: 'top' });
+            }
+        }
+
+        // Clear Selection Pin
+        window.clearSelectedPin = function() {
+            if (selectedLocationMarker) {
+                map.removeLayer(selectedLocationMarker);
+                selectedLocationMarker = null;
+            }
+        };
+
+        // Theme Setup
+        window.setTheme = function(theme) {
+            currentTheme = theme;
+            var body = document.body;
+            if (theme === 'dark') {
+                body.className = 'dark-theme';
+                document.getElementById('map').style.backgroundColor = '#1a1a1a';
+            } else {
+                body.className = 'light-theme';
+                document.getElementById('map').style.backgroundColor = '#f4f3f0';
+            }
+            
+            // Re-render roads with new theme colors if data is loaded
+            redrawRoads();
+        };
+
+        // GPS Location Marker Update
+        window.updateUserLocation = function(lat, lng, isGPSConnected) {
+            var gpsClass = isGPSConnected ? 'gps-marker-dot' : 'gps-marker-dot disconnected';
+            var haloClass = isGPSConnected ? 'gps-marker-halo' : 'gps-marker-halo disconnected';
+            
+            var customHtml = '<div class="gps-marker-container">' +
+                                '<div class="' + haloClass + '"></div>' +
+                                '<div class="' + gpsClass + '"></div>' +
+                             '</div>';
+
+            var gpsIcon = L.divIcon({
+                className: 'gps-custom-icon',
+                html: customHtml,
+                iconSize: [20, 20],
+                iconAnchor: [10, 10]
+            });
+
+            if (userLocationMarker) {
+                userLocationMarker.setLatLng([lat, lng]);
+                userLocationMarker.setIcon(gpsIcon);
+            } else {
+                userLocationMarker = L.marker([lat, lng], { icon: gpsIcon, zIndexOffset: 1000 }).addTo(map);
+            }
+        };
+
+        // Center map on user location
+        window.centerOnUser = function() {
+            if (userLocationMarker) {
+                map.setView(userLocationMarker.getLatLng(), 15);
+            }
+        };
+
+        // Master variables to hold loaded elements for redrawing
+        var loadedNodes = {};
+        var loadedWays = [];
+
+        // Main Entry point to load Map Data dynamically
+        window.loadMapData = function(pbfRelPath, poisRelPath, centerLat, centerLng, zoom, isGPSConnected) {
+            // Clear existing elements
+            clearMapData();
+            
+            // Set view
+            map.setView([centerLat, centerLng], zoom || 14);
+
+            // Fetch and parse PBF file
+            fetchPbfAndRender(pbfRelPath);
+
+            // Fetch and parse POI JSON
+            fetchPoisAndRender(poisRelPath);
+            
+            if (userLocationMarker) {
+                // Ensure user location is on top
+                userLocationMarker.addTo(map);
+            }
+        };
+
+        function clearMapData() {
+            roadLayers.forEach(function(l) { map.removeLayer(l); });
+            roadLayers = [];
+            
+            poiMarkers.forEach(function(m) { map.removeLayer(m); });
+            poiMarkers = [];
+            
+            loadedNodes = {};
+            loadedWays = [];
+            
+            clearSelectedPin();
+        }
+
+        // Fetch and parse binary PBF data
+        function fetchPbfAndRender(pbfPath) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', pbfPath, true);
+            xhr.responseType = 'arraybuffer';
+            
+            xhr.onload = function(e) {
+                if (this.status == 200) {
+                    var arrayBuffer = this.response;
+                    if (arrayBuffer) {
+                        try {
+                            // Parse OSM PBF using our bundled tiny-osmpbf
+                            var osmData = osmpbf(new Uint8Array(arrayBuffer));
+                            
+                            // Map nodes for rapid lookup
+                            osmData.elements.forEach(function(el) {
+                                if (el.type === 'node') {
+                                    loadedNodes[el.id] = [el.lat, el.lon];
+                                } else if (el.type === 'way') {
+                                    loadedWays.push(el);
+                                }
+                            });
+                            
+                            // Render the roads
+                            renderRoads();
+                        } catch (err) {
+                            console.error('Error parsing OSM PBF:', err);
+                        }
+                    }
+                } else {
+                    console.error('Failed to load PBF file:', pbfPath, this.status);
+                }
+            };
+            
+            xhr.onerror = function() {
+                console.error('Network error loading PBF file:', pbfPath);
+            };
+            
+            xhr.send();
+        }
+
+        // Fetch POIs JSON
+        function fetchPoisAndRender(poisPath) {
+            fetch(poisPath)
+                .then(function(res) { 
+                    if (!res.ok) throw new Error("Status " + res.status);
+                    return res.json(); 
+                })
+                .then(function(pois) {
+                    pois.forEach(function(poi) {
+                        renderPoi(poi);
+                    });
+                })
+                .catch(function(err) {
+                    console.error('Error loading POIs:', err);
+                });
+        }
+
+        // Determine Road Color based on type and theme
+        function getRoadStyle(highwayType) {
+            var isDark = (currentTheme === 'dark');
+            var style = {
+                color: isDark ? '#3a3a3a' : '#ffffff',
+                weight: 2,
+                opacity: 0.95,
+                lineCap: 'round',
+                lineJoin: 'round'
+            };
+
+            switch (highwayType) {
+                case 'motorway':
+                case 'trunk':
+                case 'primary':
+                    style.color = isDark ? '#f2a134' : '#ffe0b2'; // Orange/Yellow highway
+                    style.weight = 5;
+                    break;
+                case 'secondary':
+                    style.color = isDark ? '#d48822' : '#fff3e0'; // Light Orange
+                    style.weight = 4;
+                    break;
+                case 'tertiary':
+                    style.color = isDark ? '#4a4a4a' : '#fcfcfc';
+                    style.weight = 3.5;
+                    break;
+                case 'residential':
+                case 'unclassified':
+                    style.color = isDark ? '#333333' : '#ffffff';
+                    style.weight = 2.5;
+                    break;
+                case 'service':
+                case 'road':
+                    style.color = isDark ? '#2a2a2a' : '#eaeaea';
+                    style.weight = 2;
+                    break;
+                case 'footway':
+                case 'path':
+                case 'cycleway':
+                case 'pedestrian':
+                case 'track':
+                    style.color = isDark ? '#2e3a2e' : '#d2e4d2'; // dashed green path
+                    style.weight = 1.5;
+                    style.dashArray = '4, 4';
+                    break;
+                default:
+                    style.color = isDark ? '#333333' : '#ffffff';
+                    style.weight = 2;
+            }
+
+            return style;
+        }
+
+        // Render Roads onto the map
+        function renderRoads() {
+            loadedWays.forEach(function(way) {
+                if (way.tags && way.tags.highway) {
+                    var latlngs = [];
+                    var valid = true;
+                    
+                    for (var i = 0; i < way.nodes.length; i++) {
+                        var nodeCoords = loadedNodes[way.nodes[i]];
+                        if (nodeCoords) {
+                            latlngs.push(nodeCoords);
+                        } else {
+                            valid = false;
+                        }
+                    }
+
+                    // Only render if we matched coordinates
+                    if (latlngs.length >= 2) {
+                        var style = getRoadStyle(way.tags.highway);
+                        
+                        // Google Maps style roads have a subtle border
+                        // We can draw a slightly wider dark/grey line behind the white line
+                        var borderStyle = {
+                            color: currentTheme === 'dark' ? '#121212' : '#e0e0e0',
+                            weight: style.weight + 1.5,
+                            opacity: 0.6,
+                            lineCap: 'round',
+                            lineJoin: 'round'
+                        };
+                        
+                        if (style.dashArray) {
+                            borderStyle = null; // No borders on dashed paths
+                        }
+
+                        if (borderStyle) {
+                            var bgLine = L.polyline(latlngs, borderStyle).addTo(map);
+                            roadLayers.push(bgLine);
+                        }
+
+                        var line = L.polyline(latlngs, style).addTo(map);
+                        
+                        // Bind street name
+                        if (way.tags.name) {
+                            line.bindTooltip(way.tags.name, { sticky: true, className: 'street-label' });
+                        }
+                        
+                        roadLayers.push(line);
+                    }
+                }
+            });
+        }
+
+        // Redraw all roads (for theme changes)
+        function redrawRoads() {
+            roadLayers.forEach(function(l) { map.removeLayer(l); });
+            roadLayers = [];
+            renderRoads();
+        }
+
+        // SVG icons for POI categories
+        var svgIcons = {
+            hospital: '<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>',
+            restaurant: '<svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm8-3h-3V2h-2v11.13c0 1.44.97 2.66 2.38 2.87V22h2.5v-6c1-.22 1.76-1.1 1.95-2.16l.67-4.03C22.75 6.64 21.14 6 19 6z"/></svg>',
+            cafe: '<svg viewBox="0 0 24 24"><path d="M4 19h16v2H4zM20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.9 2-2V5c0-1.11-.89-2-2-2zm-2 10c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V5h12v8zm2-5h-2V5h2v3z"/></svg>',
+            shop: '<svg viewBox="0 0 24 24"><path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2c0 .55.45 1 1 1h1v6h10v-6h4v6h2v-6h1c.55 0 1-.45 1-1zm-9 6H6v-4h6v4z"/></svg>',
+            place_of_worship: '<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>',
+            default: '<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>'
+        };
+
+        // POI Marker Colors
+        var categoryColors = {
+            hospital: '#1a73e8', // Medical blue
+            school: '#f2a134',   // Education orange
+            restaurant: '#e52592', // Food/drink pink
+            cafe: '#e52592',
+            fast_food: '#e52592',
+            pub: '#e52592',
+            bar: '#e52592',
+            shop: '#4285f4', // Shopping light blue
+            place_of_worship: '#795548', // Religion brown
+            bank: '#0f9d58', // Money green
+            pharmacy: '#1a73e8',
+            fuel: '#0f9d58',
+            hotel: '#ab47bc', // Lodging purple
+            tourism: '#ab47bc',
+            leisure: '#0f9d58' // Parks green
+        };
+
+        // Render an individual POI
+        function renderPoi(poi) {
+            var lat = poi.latitude;
+            var lon = poi.longitude;
+            var category = poi.category || 'amenity';
+            var subcategory = poi.subcategory || 'default';
+            
+            // Select appropriate color and icon
+            var color = categoryColors[subcategory] || categoryColors[category] || '#9aa0a6'; // default grey
+            
+            var iconSvg = svgIcons[subcategory] || svgIcons[category] || svgIcons.default;
+            if (subcategory.indexOf('worship') !== -1 || category.indexOf('worship') !== -1) {
+                iconSvg = svgIcons.place_of_worship;
+                color = categoryColors.place_of_worship;
+            } else if (subcategory === 'hospital' || subcategory === 'clinic' || subcategory === 'doctors' || subcategory === 'pharmacy') {
+                iconSvg = svgIcons.hospital;
+                color = categoryColors.hospital;
+            } else if (subcategory === 'restaurant' || subcategory === 'fast_food' || subcategory === 'food_court') {
+                iconSvg = svgIcons.restaurant;
+            } else if (subcategory === 'cafe') {
+                iconSvg = svgIcons.cafe;
+            } else if (category === 'shop') {
+                iconSvg = svgIcons.shop;
+                color = categoryColors.shop;
+            }
+
+            var markerHtml = '<div class="poi-icon-wrapper">' + iconSvg + '</div>';
+
+            var customIcon = L.divIcon({
+                className: 'poi-icon',
+                html: markerHtml,
+                iconSize: [28, 28],
+                iconAnchor: [14, 14]
+            });
+
+            // Set the background color dynamically
+            setTimeout(function() {
+                var el = document.getElementById('poi-' + poi.id);
+                if (el) {
+                    el.style.backgroundColor = color;
+                }
+            }, 50);
+
+            var marker = L.marker([lat, lon], { icon: customIcon }).addTo(map);
+            
+            // Set element ID for selector styling
+            marker.on('add', function() {
+                var el = marker.getElement();
+                if (el) {
+                    el.id = 'poi-' + poi.id;
+                    el.style.backgroundColor = color;
+                }
+            });
+
+            // Handle POI Click
+            marker.on('click', function(e) {
+                // Remove dropped pin if clicking a POI
+                clearSelectedPin();
+                
+                L.DomEvent.stopPropagation(e);
+                postMessage('poi-selected', poi);
+            });
+
+            poiMarkers.push(marker);
+        }
+    </script>
+</body>
+</html>

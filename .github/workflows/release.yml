@@ -1,0 +1,180 @@
+name: CI/CD Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'App_Resources/**'
+      - 'webpack.config.js'
+      - 'nativescript.config.ts'
+      - 'package.json'
+      - 'VERSION'
+      - '.github/workflows/release.yml'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'App_Resources/**'
+      - 'webpack.config.js'
+      - 'nativescript.config.ts'
+      - 'package.json'
+      - '.github/workflows/release.yml'
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - android_version: "8.1"
+            api_level: "27"
+            bit_architecture: "64-bit"
+            abi_filters: "arm64-v8a"
+          - android_version: "8.1"
+            api_level: "27"
+            bit_architecture: "32-bit"
+            abi_filters: "armeabi-v7a"
+
+          - android_version: "9"
+            api_level: "28"
+            bit_architecture: "64-bit"
+            abi_filters: "arm64-v8a"
+          - android_version: "9"
+            api_level: "28"
+            bit_architecture: "32-bit"
+            abi_filters: "armeabi-v7a"
+
+          - android_version: "10"
+            api_level: "29"
+            bit_architecture: "64-bit"
+            abi_filters: "arm64-v8a"
+          - android_version: "10"
+            api_level: "29"
+            bit_architecture: "32-bit"
+            abi_filters: "armeabi-v7a"
+
+          - android_version: "11"
+            api_level: "30"
+            bit_architecture: "64-bit"
+            abi_filters: "arm64-v8a"
+
+          - android_version: "12"
+            api_level: "31"
+            bit_architecture: "64-bit"
+            abi_filters: "arm64-v8a"
+
+          - android_version: "13"
+            api_level: "33"
+            bit_architecture: "64-bit"
+            abi_filters: "arm64-v8a"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install NativeScript CLI
+        run: npm install -g nativescript
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get Version
+        id: get_version
+        run: |
+          VERSION_PREFIX=$(cat VERSION | xargs)
+          FULL_VERSION="${VERSION_PREFIX}.${{ github.run_number }}"
+          echo "version=${FULL_VERSION}" >> $GITHUB_OUTPUT
+          echo "date=$(date +%Y-%m-%d)" >> $GITHUB_OUTPUT
+
+      - name: Decode Keystore
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          if [ -n "$ANDROID_KEYSTORE_BASE64" ]; then
+            echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > release.keystore
+          fi
+
+      - name: Build Android Release APK
+        env:
+          MIN_SDK_VERSION: ${{ matrix.api_level }}
+          TARGET_SDK_VERSION: ${{ matrix.api_level }}
+          NDK_ABI_FILTERS: ${{ matrix.abi_filters }}
+          API_NAME: "android-${{ matrix.android_version }}-api-${{ matrix.api_level }}-${{ matrix.bit_architecture }}"
+          VERSION_NAME: ${{ steps.get_version.outputs.version }}-${{ steps.get_version.outputs.date }}
+          BASE_VERSION_CODE: ${{ github.run_number }}
+          KEYSTORE_ALIAS: ${{ secrets.ANDROID_KEYSTORE_ALIAS }}
+          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+        run: |
+          if [ -f "release.keystore" ]; then
+            ns build android --release \
+              --key-store-path release.keystore \
+              --key-store-password "$KEYSTORE_PASSWORD" \
+              --key-store-alias "$KEYSTORE_ALIAS" \
+              --key-store-alias-password "$KEYSTORE_PASSWORD"
+          else
+            echo "Keystore not found. Building unsigned APK..."
+            ns build android --release
+          fi
+
+      - name: Rename and Prepare APK
+        run: |
+          mkdir -p output-apk
+          APK_FILE=$(find platforms/android/app/build/outputs/apk/release -name "*.apk" | head -n 1)
+          if [ -f "$APK_FILE" ]; then
+            cp "$APK_FILE" "output-apk/android-${{ matrix.android_version }}-api-${{ matrix.api_level }}-${{ matrix.bit_architecture }}.apk"
+          else
+            echo "Error: APK file not found!"
+            exit 1
+          fi
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk-${{ matrix.android_version }}-${{ matrix.api_level }}-${{ matrix.bit_architecture }}
+          path: output-apk/android-${{ matrix.android_version }}-api-${{ matrix.api_level }}-${{ matrix.bit_architecture }}.apk
+
+  release:
+    needs: build-android
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get Version
+        id: get_version
+        run: |
+          VERSION_PREFIX=$(cat VERSION | xargs)
+          FULL_VERSION="${VERSION_PREFIX}.${{ github.run_number }}"
+          echo "version=${FULL_VERSION}" >> $GITHUB_OUTPUT
+          echo "date=$(date +%Y-%m-%d)" >> $GITHUB_OUTPUT
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: apks
+          merge-multiple: true
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.get_version.outputs.version }}-${{ steps.get_version.outputs.date }}
+          name: Release v${{ steps.get_version.outputs.version }}-${{ steps.get_version.outputs.date }}
+          files: apks/*.apk
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

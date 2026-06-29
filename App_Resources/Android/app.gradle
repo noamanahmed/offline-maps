@@ -1,0 +1,42 @@
+// You can add your native dependencies here
+dependencies {
+//  implementation 'androidx.multidex:multidex:2.0.1'
+}
+
+android {
+  compileSdkVersion 35
+  buildToolsVersion "35"
+  // ndkVersion ""
+
+  defaultConfig {
+    def envMinSdk = System.getenv("MIN_SDK_VERSION")
+    def envTargetSdk = System.getenv("TARGET_SDK_VERSION")
+
+    minSdkVersion envMinSdk ? envMinSdk.toInteger() : 24
+    targetSdkVersion envTargetSdk ? envTargetSdk.toInteger() : 35
+
+    // Version Information
+    def baseVersionCode = (System.getenv("BASE_VERSION_CODE") ?: "1").toInteger()
+    def isLegacy32 = (System.getenv("NDK_ABI_FILTERS") ?: "").contains("armeabi-v7a")
+
+    versionCode baseVersionCode * 100000 + (envTargetSdk ? envTargetSdk.toInteger() : 35) * 10 + (isLegacy32 ? 1 : 2)
+
+    def baseVersionName = System.getenv("VERSION_NAME") ?: "1.0.0"
+    def apiName = System.getenv("API_NAME") ?: "default"
+    versionName "${baseVersionName}-${apiName}"
+
+    generatedDensities = []
+
+    // ABI Filters configuration
+    def abiFiltersEnv = System.getenv("NDK_ABI_FILTERS")
+    if (abiFiltersEnv) {
+        ndk {
+            abiFilters abiFiltersEnv.split(",")
+        }
+    }
+  }
+
+  aaptOptions {
+    additionalParameters "--no-version-vectors"
+  }
+}
