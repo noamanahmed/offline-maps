@@ -73,7 +73,20 @@ function loadPlacesIndex() {
     if (File.exists(filePath)) {
       const file = File.fromPath(filePath);
       const content = file.readTextSync();
-      placesIndex = JSON.parse(content);
+      let loadedPlaces = JSON.parse(content);
+
+      // In preview builds, filter the index to only include places whose assets are present on the device.
+      // This prevents "file does not exist" errors in the UI.
+      const isPreview = knownFolders.currentApp().path.includes('preview');
+      if (isPreview) {
+        console.log("[VERBOSE] loadPlacesIndex: Running in preview mode, filtering places index...");
+        loadedPlaces = loadedPlaces.filter(p => {
+          const placeDir = path.join(knownFolders.currentApp().path, 'maps', 'countries', p.path);
+          return File.exists(path.join(placeDir, 'pois.json'));
+        });
+      }
+
+      placesIndex = loadedPlaces;
       
       // Extract unique countries
       const countries = new Set<string>();

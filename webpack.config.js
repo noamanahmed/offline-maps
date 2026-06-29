@@ -26,9 +26,19 @@ module.exports = (env) => {
 		}
 	};
 
+	if (env.preview) {
+		webpack.Utils.addCopyRule({
+			from: "countries/**/*",
+			to: "maps",
+			context: "src/maps"
+		});
+	}
+
 	const config = webpack.resolveConfig();
 
-	config.plugins.push(new CopyMapsPlugin());
+	if (!env.preview) {
+		config.plugins.push(new CopyMapsPlugin());
+	}
 
 	// Exclude maps directory from watch/hot-reload
 	config.watchOptions = config.watchOptions || {};
