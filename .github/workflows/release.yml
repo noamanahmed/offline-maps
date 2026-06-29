@@ -95,12 +95,14 @@ jobs:
           packages: "platforms;android-27 platforms;android-28 platforms;android-29 platforms;android-30 platforms;android-31 platforms;android-33"
 
       - name: Verify SDK and Configure Environment
+        id: sdk-config
         run: |
           echo "SDK location: $ANDROID_SDK_ROOT"
           ls "$ANDROID_SDK_ROOT/platforms/" | head -5
           ls "$ANDROID_SDK_ROOT/build-tools/" | head -5
+          echo "sdk-root=$ANDROID_SDK_ROOT" >> $GITHUB_OUTPUT
           echo "ANDROID_HOME=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
-          echo "SDK environment configured. ANDROID_HOME=$ANDROID_SDK_ROOT"
+          echo "SDK configured. ANDROID_HOME=$ANDROID_SDK_ROOT"
 
       - name: Install NativeScript CLI
         run: npm install -g nativescript
@@ -126,8 +128,8 @@ jobs:
 
       - name: Build Android Release APK
         env:
-          ANDROID_HOME: /home/runner/android-sdk
-          ANDROID_SDK_ROOT: /home/runner/android-sdk
+          ANDROID_HOME: ${{ steps.sdk-config.outputs.sdk-root }}
+          ANDROID_SDK_ROOT: ${{ steps.sdk-config.outputs.sdk-root }}
           MIN_SDK_VERSION: ${{ matrix.api_level }}
           TARGET_SDK_VERSION: ${{ matrix.api_level }}
           NDK_ABI_FILTERS: ${{ matrix.abi_filters }}
