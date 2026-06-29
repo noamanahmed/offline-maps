@@ -4,6 +4,9 @@
 
 cd "$(dirname "$0")/.."
 
+# Ensure target directories exist
+mkdir -p src/maps
+
 # Sync generated map data into src/maps (replace if exists, skip country-level PBF)
 rsync -a --delete --exclude='*.osm.pbf' maps/countries/ src/maps/countries/
 
