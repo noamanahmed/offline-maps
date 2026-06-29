@@ -126,6 +126,11 @@ jobs:
             echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > release.keystore
           fi
 
+      - name: Sync Map Data
+        run: |
+          chmod +x scripts/sync-maps.sh
+          ./scripts/sync-maps.sh
+
       - name: Build Android Release APK
         env:
           ANDROID_HOME: ${{ steps.sdk-config.outputs.sdk-root }}
