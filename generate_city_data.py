@@ -4,6 +4,7 @@ import sys
 import json
 import subprocess
 import time
+import argparse
 
 # Root directory of workspace
 WORKSPACE_DIR = "/var/www/projects/offline-apps"
@@ -133,14 +134,28 @@ def main():
         print(f"Error: Maps directory '{MAPS_DIR}' does not exist.", file=sys.stderr)
         sys.exit(1)
 
+    parser = argparse.ArgumentParser(description="OSM Extract & POI Generator")
+    parser.add_argument("--country", help="Filter by country name (case-insensitive, e.g. pakistan)")
+    parser.add_argument("--province", help="Filter by province/state name (case-insensitive, e.g. punjab)")
+    parser.add_argument("--place", "--city", dest="place", help="Filter by city/village name (case-insensitive, e.g. lahore)")
+    args = parser.parse_args()
+
     start_time = time.time()
 
     print(f"\n{Colors.BOLD}{'=' * 56}")
     print(f"  OSM Extract & POI Generator")
+    if args.country or args.province or args.place:
+        print(f"  Filters applied:")
+        if args.country: print(f"    - Country:  {args.country}")
+        if args.province: print(f"    - Province: {args.province}")
+        if args.place: print(f"    - Place:    {args.place}")
     print(f"{'=' * 56}{Colors.RESET}\n")
 
     # Walk through each country directory
     for country in sorted(os.listdir(MAPS_DIR)):
+        if args.country and country.lower() != args.country.lower():
+            continue
+
         country_dir = os.path.join(MAPS_DIR, country)
         if not os.path.isdir(country_dir):
             continue
@@ -153,6 +168,7 @@ def main():
                 break
 
         if not source_pbf:
+            # Only print warning if we're scanning this country
             print(f"{Colors.YELLOW}⚠ Country '{country}': No source .osm.pbf found — cannot generate, scanning for missing files...{Colors.RESET}")
 
         if source_pbf:
@@ -171,9 +187,7 @@ def main():
             output_pbf = os.path.join(root, f"{dir_name}.osm.pbf")
             pois_json = os.path.join(root, "pois.json")
 
-            stats["total"] += 1
-
-            # Read metadata first (needed for both skip and generate paths)
+            # Read metadata first (needed for filters and processing)
             try:
                 with open(json_path, "r", encoding="utf-8") as f:
                     meta = json.load(f)
@@ -185,6 +199,18 @@ def main():
             place_type = meta.get("type", "village")
             lat = meta.get("latitude")
             lon = meta.get("longitude")
+            province = meta.get("province", "")
+            place_name = meta.get("name", "")
+
+            # Filter by province
+            if args.province and args.province.lower() != province.lower():
+                continue
+
+            # Filter by place/city name
+            if args.place and args.place.lower() not in place_name.lower() and args.place.lower() != dir_name.lower():
+                continue
+
+            stats["total"] += 1
 
             has_pbf = os.path.exists(output_pbf)
             has_pois = os.path.exists(pois_json)
@@ -202,11 +228,9 @@ def main():
                 stats["skipped"] += 1
                 continue
 
-            # Warn and track about partially missing files
-            check_and_warn_missing(dir_name, root, has_pbf, has_pois, place_type)
-
-            # Can't generate without source PBF — only scanning
+            # Can't generate without source PBF — warn and skip
             if not source_pbf:
+                check_and_warn_missing(dir_name, root, has_pbf, has_pois, place_type)
                 if not has_pbf or not has_pois:
                     stats["failed"] += 1
                 continue
@@ -236,10 +260,12 @@ def main():
                         print(f"  {Colors.GREEN}✓ MAP{Colors.RESET}   Generated extract ({size_kb:.1f} KB)")
                     else:
                         print(f"  {Colors.RED}✗ MAP{Colors.RESET}   Extract was not created.", file=sys.stderr)
+                        check_and_warn_missing(dir_name, root, False, has_pois, place_type)
                         stats["failed"] += 1
                         continue
                 except subprocess.CalledProcessError as e:
                     print(f"  {Colors.RED}✗ MAP{Colors.RESET}   osmium extract failed: {e}", file=sys.stderr)
+                    check_and_warn_missing(dir_name, root, False, has_pois, place_type)
                     stats["failed"] += 1
                     continue
             else:
