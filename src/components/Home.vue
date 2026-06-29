@@ -13,6 +13,7 @@ const isLocating = ref(false);
 const currentOrientation = ref<'portrait' | 'landscape'>('portrait');
 const showSettingsDrawer = ref(false);
 const isSearchExpanded = ref(false);
+const showControlDrawer = ref(false);
 
 // POI Search state
 const showSearchOverlay = ref(false);
@@ -509,36 +510,36 @@ function openSearch() {
   searchSelectedItem.value = null;
   routeInfo.value = null;
   showSearchOverlay.value = true;
+  // Load nearby POIs immediately
+  onSearchQueryChange();
+}
+
+function getDistanceInKm(lat1: number, lon1: number, lat2: number, lon2: number) {
+  const R = 6371; // Radius of the earth in km
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = 
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+    Math.sin(dLon/2) * Math.sin(dLon/2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  return R * c;
 }
 
 function onSearchQueryChange() {
   const query = searchQuery.value.trim();
-  if (query.length < 2) {
+
+  // Anchor coordinates: use GPS last known if available, else current place center
+  const anchorLat = ApplicationSettings.getNumber('last_lat', currentPlace.value.lat);
+  const anchorLon = ApplicationSettings.getNumber('last_lon', currentPlace.value.lon);
+
+  if (!webView || !isWebViewLoaded.value) {
     searchResults.value = [];
     return;
   }
 
-  // 1. Search global place index (cities/villages)
-  const globalResults = placesIndex.filter(p => 
-    p.name.toLowerCase().includes(query.toLowerCase()) || 
-    (p.name_ur && p.name_ur.includes(query))
-  ).map(p => ({
-    name: p.name,
-    category: 'place',
-    subcategory: p.type, // 'city' or 'village'
-    latitude: p.lat,
-    longitude: p.lon,
-    id: `global-${p.id || p.path}`,
-    placeData: p
-  })).slice(0, 5); // Limit global matches to avoid clutter
-
-  // 2. Search POIs inside WebView
-  if (!webView || !isWebViewLoaded.value) {
-    searchResults.value = globalResults;
-    return;
-  }
-
-  webView.executeJavaScript(`searchPois(${JSON.stringify(query)})`)
+  // 1. Search POIs inside WebView, passing anchor coordinates for distance sorting
+  webView.executeJavaScript(`searchPois(${JSON.stringify(query)}, ${anchorLat}, ${anchorLon})`)
     .then((res: any) => {
       let poiResults: any[] = [];
       try {
@@ -547,8 +548,8 @@ function onSearchQueryChange() {
         poiResults = parsed || [];
       } catch (e) { /* parse error */ }
 
-      // Also search roads
-      return webView.executeJavaScript(`searchRoads(${JSON.stringify(query)})`)
+      // 2. Also search roads inside WebView
+      return webView.executeJavaScript(`searchRoads(${JSON.stringify(query)}, ${anchorLat}, ${anchorLon})`)
         .then((roadRes: any) => {
           let roadResults: any[] = [];
           try {
@@ -557,13 +558,18 @@ function onSearchQueryChange() {
             roadResults = parsed || [];
           } catch (e) { /* parse error */ }
 
-          // Combine results: local POIs + roads + global places
-          searchResults.value = [...poiResults, ...roadResults, ...globalResults].slice(0, 25);
+          // Combine results: local POIs + roads (sorted inside WebView by distance)
+          let combined = [...poiResults, ...roadResults];
+          
+          // Re-sort combined by distance in case they are interleaved
+          combined.sort((a, b) => (a.distance || 0) - (b.distance || 0));
+          
+          searchResults.value = combined.slice(0, 25);
         });
     })
     .catch((err: any) => {
       console.error('Search error:', err);
-      searchResults.value = globalResults;
+      searchResults.value = [];
     });
 }
 
@@ -632,141 +638,89 @@ onUnmounted(() => {
       />
 
       <!-- 2. Floating Top Search Bar -->
-      <GridLayout row="0" rows="auto, *" columns="*" isPassThroughParentEnabled="true">
-        <GridLayout row="0" class="m-3 mt-10" style="elevation: 8;" isPassThroughParentEnabled="true">
-          <!-- Collapsed: Search Icon Only -->
-          <GridLayout
-            v-if="!isSearchExpanded"
-            columns="auto"
-            class="bg-white rounded-full p-2 shadow-lg border border-gray-150"
-            width="48"
-            height="48"
-            horizontalAlignment="left"
-            @tap="openSearch"
-          >
-            <Label
-              col="0"
-              text="🔍"
-              class="text-xl text-center text-blue-600 font-bold"
-              verticalAlignment="center"
-              horizontalAlignment="center"
-            />
-          </GridLayout>
+      <!-- 2. Floating Interface Grid (Header & Separate Control Stacks) -->
+      <GridLayout row="0" rows="auto, *, auto" columns="auto, *, auto" isPassThroughParentEnabled="true">
+        
+        <!-- ==================== TOP ROW ==================== -->
+        <!-- Collapsed Search Icon (Top-Left) -->
+        <Button
+          row="0"
+          col="0"
+          v-if="!isSearchExpanded"
+          text="&#xebf7;"
+          class="bx w-12 h-12 bg-white text-2xl text-blue-600 font-bold rounded-full shadow-lg border border-gray-150 m-3 mt-10"
+          style="elevation: 5;"
+          @tap="openSearch"
+        />
 
-          <!-- Expanded: Full Search Bar -->
-          <GridLayout
-            v-if="isSearchExpanded"
-            columns="auto, *, auto, auto"
-            class="bg-white rounded-full p-2 shadow-lg border border-gray-100"
-            horizontalAlignment="stretch"
-          >
-            <!-- Search Icon -->
-            <Label
-              col="0"
-              text="🔍"
-              class="text-lg align-middle px-3 text-blue-600 font-bold"
-              verticalAlignment="center"
-            />
-
-            <!-- Active Location Detail text -->
-            <StackLayout col="1" class="justify-center" @tap="openChanger">
-              <Label
-                :text="currentPlace.name"
-                class="font-bold text-gray-800 text-base"
-                maxLines="1"
-              />
-              <Label
-                :text="currentPlace.province ? `${currentPlace.province}, ${currentPlace.country}` : 'Select a location'"
-                class="text-gray-500 text-xs"
-                maxLines="1"
-              />
-            </StackLayout>
-
-            <!-- GPS Connectivity Badge -->
-            <StackLayout col="2" class="justify-center px-2">
-              <Label
-                :text="isGPSConnected ? '● GPS' : '○ Offline'"
-                :class="isGPSConnected ? 'text-green-600 font-bold text-xs' : 'text-red-500 font-bold text-xs'"
-              />
-              <Label
-                v-if="isGPSConnected && gpsAccuracy"
-                :text="gpsAccuracy"
-                class="text-gray-400 text-[10px]"
-              />
-            </StackLayout>
-
-            <!-- Collapse Button -->
-            <Label
-              col="3"
-              text="✕"
-              class="text-lg text-gray-400 font-bold px-3"
-              verticalAlignment="center"
-              @tap="isSearchExpanded = false"
-            />
-          </GridLayout>
-        </GridLayout>
-      </GridLayout>
-
-      <!-- 3. Left Side Floating Action Buttons (FABs) -->
-      <AbsoluteLayout row="0" class="w-full h-full" isPassThroughParentEnabled="true">
-        <StackLayout
-          top="80"
-          left="12"
-          width="48"
+        <!-- Expanded Search Bar (Top-Left spanning columns) -->
+        <GridLayout
+          row="0"
+          col="0"
+          colSpan="2"
+          v-if="isSearchExpanded"
+          columns="auto, *, auto, auto"
+          class="bg-white rounded-full p-2 shadow-lg border border-gray-100 m-3 mt-10"
+          horizontalAlignment="stretch"
         >
+          <Label col="0" text="&#xebf7;" class="bx text-xl align-middle px-3 text-blue-600 font-bold" verticalAlignment="center" />
+          <StackLayout col="1" class="justify-center" @tap="openChanger">
+            <Label :text="currentPlace.name" class="font-bold text-gray-800 text-base" maxLines="1" />
+            <Label :text="currentPlace.province ? `${currentPlace.province}, ${currentPlace.country}` : 'Select a location'" class="text-gray-500 text-xs" maxLines="1" />
+          </StackLayout>
+          <StackLayout col="2" class="justify-center px-2">
+            <Label :text="isGPSConnected ? '● GPS' : '○ Offline'" :class="isGPSConnected ? 'text-green-600 font-bold text-xs' : 'text-red-500 font-bold text-xs'" />
+            <Label v-if="isGPSConnected && gpsAccuracy" :text="gpsAccuracy" class="text-gray-400 text-[10px]" />
+          </StackLayout>
+          <Label col="3" text="✕" class="text-lg text-gray-400 font-bold px-3" verticalAlignment="center" @tap="isSearchExpanded = false" />
+        </GridLayout>
+
+        <!-- Settings Cog Button (Top-Right) -->
+        <Button
+          row="0"
+          col="2"
+          text="&#xea6e;"
+          :class="showSettingsDrawer ? 'bx w-12 h-12 bg-blue-50 text-2xl text-blue-600 font-bold rounded-full shadow-lg border border-blue-200 m-3 mt-10' : 'bx w-12 h-12 bg-white text-2xl text-gray-700 font-bold rounded-full shadow-lg border border-gray-150 m-3 mt-10'"
+          style="elevation: 5;"
+          @tap="showSettingsDrawer = !showSettingsDrawer"
+        />
+
+        <!-- ==================== MIDDLE ROW ==================== -->
+        <!-- Left Side Stack (Change Location + Rotate Screen) -->
+        <StackLayout row="1" col="0" class="ml-3 justify-center" width="48">
           <!-- Change Map Area FAB -->
           <Button
             @tap="openChanger"
-            text="🌍"
-            class="w-12 h-12 bg-white text-xl rounded-full shadow-lg border border-gray-100 mb-3 active:bg-gray-100"
+            text="&#xeb56;"
+            class="bx w-12 h-12 bg-white text-2xl text-blue-600 font-bold rounded-full shadow-lg border border-gray-150 mb-3"
             style="elevation: 5;"
-            horizontalAlignment="center"
           />
 
           <!-- Toggle Orientation FAB -->
           <Button
             @tap="toggleOrientation"
-            text="🔄"
-            class="w-12 h-12 bg-white text-lg rounded-full shadow-lg border border-gray-100 mb-3 active:bg-gray-100"
+            text="&#xeb8f;"
+            class="bx w-12 h-12 bg-white text-2xl text-gray-700 font-bold rounded-full shadow-lg border border-gray-150"
             style="elevation: 5;"
-            horizontalAlignment="center"
           />
         </StackLayout>
-      </AbsoluteLayout>
 
-      <!-- 4. Right Side Floating Action Buttons (FABs) -->
-      <GridLayout row="0" rows="auto, *" columns="*, auto" isPassThroughParentEnabled="true">
-        <StackLayout
-          row="0"
-          col="1"
-          class="mt-20 mr-3"
-          width="48"
-        >
+        <!-- Right Side Stack (Theme + Re-center) -->
+        <StackLayout row="1" col="2" class="mr-3 justify-center" width="48">
           <!-- Theme Selector FAB -->
           <Button
             @tap="toggleTheme"
-            :text="activeTheme === 'light' ? '🌙' : '☀️'"
-            class="w-12 h-12 bg-white text-xl rounded-full shadow-lg border border-gray-100 mb-3 active:bg-gray-100"
+            :text="activeTheme === 'light' ? '&#xeb94;' : '&#xec34;'"
+            class="bx w-12 h-12 bg-white text-2xl text-purple-600 font-bold rounded-full shadow-lg border border-gray-150 mb-3"
             style="elevation: 5;"
-            horizontalAlignment="center"
           />
 
           <!-- Re-center / Locate GPS FAB -->
           <Button
             @tap="reCenterGPS"
-            text="🧭"
-            :class="isLocating ? 'w-12 h-12 bg-blue-50 text-xl rounded-full shadow-lg border border-blue-200 mb-3 animate-pulse' : 'w-12 h-12 bg-white text-xl rounded-full shadow-lg border border-gray-100 mb-3 active:bg-gray-100'"
+            text="&#xea7f;"
+            :class="isLocating ? 'bx w-12 h-12 bg-blue-50 text-2xl text-green-600 font-bold rounded-full shadow-lg border border-blue-200 mb-3 animate-pulse' : 'bx w-12 h-12 bg-white text-2xl text-green-600 font-bold rounded-full shadow-lg border border-gray-150 mb-3'"
             style="elevation: 5;"
-            horizontalAlignment="center"
-          />
-
-          <!-- Settings FAB -->
-          <Button
-            @tap="showSettingsDrawer = !showSettingsDrawer"
-            text="⚙️"
-            :class="showSettingsDrawer ? 'w-12 h-12 bg-blue-50 text-xl rounded-full shadow-lg border border-blue-200 mb-3' : 'w-12 h-12 bg-white text-xl rounded-full shadow-lg border border-gray-100 mb-3 active:bg-gray-100'"
-            style="elevation: 5;"
-            horizontalAlignment="center"
           />
         </StackLayout>
       </GridLayout>
@@ -1119,17 +1073,10 @@ onUnmounted(() => {
         <!-- Results List -->
         <GridLayout row="2" rows="*">
           <!-- Empty state -->
-          <StackLayout v-if="searchResults.length === 0 && searchQuery.length >= 2" class="justify-center items-center">
+          <StackLayout v-if="searchResults.length === 0" class="justify-center items-center">
             <Label text="🗺️" class="text-5xl mb-4" />
             <Label text="No results found" class="text-gray-500 text-lg font-semibold" />
             <Label text="Try a different search term" class="text-gray-400 text-sm mt-1" />
-          </StackLayout>
-
-          <!-- Hint state -->
-          <StackLayout v-if="searchQuery.length < 2" class="justify-center items-center">
-            <Label text="🔍" class="text-5xl mb-4" />
-            <Label text="Search for places" class="text-gray-500 text-lg font-semibold" />
-            <Label text="Type at least 2 characters to search" class="text-gray-400 text-sm mt-1" />
           </StackLayout>
 
           <!-- Results -->
@@ -1150,7 +1097,7 @@ onUnmounted(() => {
                 <!-- Name & Category -->
                 <StackLayout col="1">
                   <Label :text="item.name" class="text-base font-semibold text-gray-800" maxLines="1" />
-                  <Label :text="`${item.category} • ${item.subcategory}`" class="text-gray-400 text-xs capitalize mt-0.5" />
+                  <Label :text="item.distance !== undefined ? `${item.category} • ${item.subcategory} • ${item.distance.toFixed(1)} km away` : `${item.category} • ${item.subcategory}`" class="text-gray-400 text-xs capitalize mt-0.5" />
                 </StackLayout>
                 <!-- Selection indicator -->
                 <Label col="2" :text="searchSelectedItem && searchSelectedItem.id === item.id ? '✓' : ''" class="text-blue-600 font-bold text-xl" verticalAlignment="center" />
@@ -1191,5 +1138,10 @@ onUnmounted(() => {
 /* CSS Animations */
 .animate-pulse {
   animation: pulse 1s infinite;
+}
+
+/* Boxicons Font Face styling */
+.bx {
+  font-family: 'boxicons', 'Boxicons';
 }
 </style>

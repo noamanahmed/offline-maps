@@ -576,35 +576,81 @@
         // Stores loaded POI data for search
         var loadedPoisData = [];
 
-        window.searchPois = function(query) {
-            if (!query || query.length < 2) return JSON.stringify([]);
-            
-            var q = query.toLowerCase();
+        window.searchPois = function(query, anchorLat, anchorLon) {
+            var q = (query || "").toLowerCase().trim();
             var results = [];
             
-            for (var i = 0; i < loadedPoisData.length; i++) {
-                var poi = loadedPoisData[i];
-                if (poi.name && poi.name.toLowerCase().indexOf(q) !== -1) {
+            if (q.length === 0) {
+                // If empty search, return all POIs
+                for (var i = 0; i < loadedPoisData.length; i++) {
+                    var item = loadedPoisData[i];
                     results.push({
-                        name: poi.name,
-                        category: poi.category,
-                        subcategory: poi.subcategory,
-                        latitude: poi.latitude,
-                        longitude: poi.longitude,
-                        id: poi.id
+                        name: item.name || 'Unknown',
+                        category: item.category,
+                        subcategory: item.subcategory,
+                        latitude: item.latitude,
+                        longitude: item.longitude,
+                        id: item.id
                     });
                 }
-                if (results.length >= 20) break; // Cap results
+            } else {
+                var exactMatches = [];
+                var prefixMatches = [];
+                var containsMatches = [];
+                
+                for (var i = 0; i < loadedPoisData.length; i++) {
+                    var poi = loadedPoisData[i];
+                    if (!poi.name) continue;
+                    
+                    var nameLower = poi.name.toLowerCase();
+                    var subcatLower = (poi.subcategory || "").toLowerCase();
+                    var catLower = (poi.category || "").toLowerCase();
+                    
+                    if (nameLower === q) {
+                        exactMatches.push(poi);
+                    } else if (nameLower.indexOf(q) === 0) {
+                        prefixMatches.push(poi);
+                    } else if (nameLower.indexOf(q) !== -1 || subcatLower.indexOf(q) !== -1 || catLower.indexOf(q) !== -1) {
+                        containsMatches.push(poi);
+                    }
+                }
+                
+                // Merge in order of relevance
+                var merged = exactMatches.concat(prefixMatches).concat(containsMatches);
+                for (var j = 0; j < merged.length; j++) {
+                    var item = merged[j];
+                    results.push({
+                        name: item.name,
+                        category: item.category,
+                        subcategory: item.subcategory,
+                        latitude: item.latitude,
+                        longitude: item.longitude,
+                        id: item.id
+                    });
+                }
             }
             
-            return JSON.stringify(results);
+            // Calculate distance to anchor and sort
+            if (anchorLat !== undefined && anchorLon !== undefined && map) {
+                var anchor = L.latLng(anchorLat, anchorLon);
+                for (var k = 0; k < results.length; k++) {
+                    var pt = L.latLng(results[k].latitude, results[k].longitude);
+                    results[k].distance = map.distance(anchor, pt) / 1000; // convert meters to km
+                }
+                // Sort by distance if query was empty (nearest first)
+                if (q.length === 0) {
+                    results.sort(function(a, b) { return (a.distance || 0) - (b.distance || 0); });
+                }
+            }
+            
+            return JSON.stringify(results.slice(0, 50)); // Return top 50
         };
 
         // Also search road/way names from loaded data
-        window.searchRoads = function(query) {
-            if (!query || query.length < 2) return JSON.stringify([]);
+        window.searchRoads = function(query, anchorLat, anchorLon) {
+            var q = (query || "").toLowerCase().trim();
+            if (q.length === 0) return JSON.stringify([]); // Don't return all roads on empty search
             
-            var q = query.toLowerCase();
             var results = [];
             var seen = {};
             
@@ -629,10 +675,18 @@
                         }
                     }
                 }
-                if (results.length >= 10) break;
+            }
+
+            // Calculate distance to anchor
+            if (anchorLat !== undefined && anchorLon !== undefined && map) {
+                var anchor = L.latLng(anchorLat, anchorLon);
+                for (var k = 0; k < results.length; k++) {
+                    var pt = L.latLng(results[k].latitude, results[k].longitude);
+                    results[k].distance = map.distance(anchor, pt) / 1000;
+                }
             }
             
-            return JSON.stringify(results);
+            return JSON.stringify(results.slice(0, 25));
         };
 
         // --- Route Drawing ---

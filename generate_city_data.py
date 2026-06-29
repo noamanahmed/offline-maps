@@ -38,7 +38,7 @@ def calculate_bbox(lat, lon, place_type):
     City bbox: approx 8.8km x 8.8km (0.08 degrees total width/height)
     Village bbox: approx 1.6km x 1.6km (0.015 degrees total width/height)
     """
-    half_size = 0.04 if place_type == "city" else 0.0075
+    half_size = 0.08 if place_type == "city" else 0.0075
 
     left = lon - half_size
     bottom = lat - half_size
