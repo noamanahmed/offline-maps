@@ -141,10 +141,6 @@ jobs:
       - name: Generate places_index.json
         run: python3 scripts/generate_places_index.py
 
-      - name: Sync map data
-        run: |
-          chmod +x scripts/sync-maps.sh
-          ./scripts/sync-maps.sh
 
       - name: Install Flutter dependencies
         working-directory: flutter_app
