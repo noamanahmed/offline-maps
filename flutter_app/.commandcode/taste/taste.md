@@ -12,6 +12,7 @@
 
 # architecture
 - Load maps in a background thread/isolate to avoid blocking the main UI thread. Confidence: 0.65
+- Use per-platform symlinks (android/ios/web) for large static map assets instead of Flutter's wildcard asset bundling, which silently drops directories with many files. Confidence: 0.70
 
 # web
 - Flutter web (Chrome PWA) has no isolate support; parsing runs on the main thread. Use conditional exports to provide a web-compatible synchronous parser path. Confidence: 0.65

@@ -61,6 +61,8 @@ class _HomeScreenState extends State<HomeScreen> {
   final _wizardSearchCtrl = TextEditingController();
   String _wizardSearchQuery = '';
 
+  Set<int> _availablePlaceIds = {};
+
   StreamSubscription? _gpsLocSub, _gpsErrSub;
 
   @override
@@ -127,7 +129,16 @@ class _HomeScreenState extends State<HomeScreen> {
         _placesIndex = data.map((d) => Place.fromJson(d as Map<String, dynamic>)).toList();
         _countries = _placesIndex.map((p) => p.country).toSet().toList()..sort();
       });
+      _checkAvailablePlaces();
     } catch (_) {}
+  }
+
+  Future<void> _checkAvailablePlaces() async {
+    for (final p in _placesIndex) {
+      final exists = await _loader.checkFileExists(p.pbfPath);
+      if (exists) _availablePlaceIds.add(p.id);
+    }
+    if (mounted) setState(() {});
   }
 
   void _startGps() {
@@ -699,7 +710,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                           p.name.toLowerCase().contains(_wizardSearchQuery) ||
                                           p.nameUr.contains(_wizardSearchQuery))
                                       .map((p) => ListTile(
-                                        title: Text(p.name, style: const TextStyle(fontWeight: FontWeight.w600)),
+                                        title: Row(
+                                          children: [
+                                            if (!_availablePlaceIds.contains(p.id))
+                                              const Padding(
+                                                padding: EdgeInsets.only(right: 6),
+                                                child: Icon(Icons.warning_amber_rounded, size: 14, color: Color(0xFFEA4335)),
+                                              ),
+                                            Expanded(child: Text(p.name, style: const TextStyle(fontWeight: FontWeight.w600))),
+                                          ],
+                                        ),
                                         subtitle: p.nameUr.isNotEmpty ? Text(p.nameUr) : null,
                                         selected: _wizardPlace?.id == p.id,
                                         trailing: _wizardPlace?.id == p.id
@@ -919,6 +939,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ),
                               ),
+                              if (!_availablePlaceIds.contains(p.id))
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 6),
+                                  child: Icon(Icons.warning_amber_rounded, size: 16, color: Color(0xFFEA4335)),
+                                ),
                               if (isSelected)
                                 const Padding(
                                   padding: EdgeInsets.only(left: 8),

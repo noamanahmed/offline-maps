@@ -156,7 +156,6 @@ jobs:
 
       - name: Copy PWA assets to build output
         run: |
-          cp flutter_app/assets_web/map.html flutter_app/build/web/
           cp -r flutter_app/assets_web/leaflet flutter_app/build/web/
           cp flutter_app/assets_web/places_index.json flutter_app/build/web/
           cp flutter_app/web/service_worker.js flutter_app/build/web/ 2>/dev/null || true

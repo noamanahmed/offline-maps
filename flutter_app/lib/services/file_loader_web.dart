@@ -27,4 +27,13 @@ class FileLoader {
   }
 
   String toBase64(Uint8List bytes) => base64Encode(bytes);
+
+  Future<bool> checkFileExists(String path) async {
+    try {
+      final resp = await html.HttpRequest.request(path, method: 'HEAD');
+      return resp.status == 200;
+    } catch (_) {
+      return false;
+    }
+  }
 }
