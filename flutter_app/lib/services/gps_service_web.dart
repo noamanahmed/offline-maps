@@ -14,6 +14,12 @@ class GpsService {
       _locCtrl.stream;
   Stream<String> get onError => _errCtrl.stream;
 
+  bool get isActive => _sub != null;
+
+  Future<bool> requestPermission() async {
+    return true;
+  }
+
   void start() {
     stop();
     final geo = html.window.navigator.geolocation;

@@ -17,3 +17,7 @@
 # web
 - Flutter web (Chrome PWA) has no isolate support; parsing runs on the main thread. Use conditional exports to provide a web-compatible synchronous parser path. Confidence: 0.65
 
+# map-rendering
+- Load POI markers only at specific zoom levels (e.g., zoom ≥ 15) rather than all at once to handle thousands of points efficiently. Confidence: 0.70
+- Cap POI markers to a maximum of 20 under any condition to keep the map performant. Confidence: 0.70
+

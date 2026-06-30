@@ -36,4 +36,6 @@ class FileLoader {
       return false;
     }
   }
+
+  Future<void> dumpAvailableAssets() async {}
 }

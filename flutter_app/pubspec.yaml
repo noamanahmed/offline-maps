@@ -1,5 +1,5 @@
-name: offline_maps
-description: Offline Map Explorer - PWA
+name: pakistan_offline_map_explorer
+description: Pakistan Offline Map Explorer
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_map: ^8.3.0
+  geolocator: ^14.0.2
   latlong2: ^0.9.1
 
 dev_dependencies:

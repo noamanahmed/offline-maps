@@ -13,19 +13,19 @@ class _RoadStyle {
 _RoadStyle _roadStyle(String highway, bool isDark) {
   switch (highway) {
     case 'motorway': case 'trunk': case 'primary':
-      return _RoadStyle(isDark ? const Color(0xFFF2A134) : const Color(0xFFFFE0B2), 5);
+      return _RoadStyle(isDark ? const Color(0xFFF2A134) : const Color(0xFFE65100), 5);
     case 'secondary':
-      return _RoadStyle(isDark ? const Color(0xFFD48822) : const Color(0xFFFFF3E0), 4);
+      return _RoadStyle(isDark ? const Color(0xFFD48822) : const Color(0xFFF57C00), 4);
     case 'tertiary':
-      return _RoadStyle(isDark ? const Color(0xFF4A4A4A) : const Color(0xFFFCFCFC), 3.5);
+      return _RoadStyle(isDark ? const Color(0xFF4A4A4A) : const Color(0xFF757575), 3.5);
     case 'residential': case 'unclassified':
-      return _RoadStyle(isDark ? const Color(0xFF333333) : Colors.white, 2.5);
+      return _RoadStyle(isDark ? const Color(0xFF555555) : const Color(0xFF9E9E9E), 2.5);
     case 'service': case 'road':
-      return _RoadStyle(isDark ? const Color(0xFF2A2A2A) : const Color(0xFFEAEAEA), 2);
+      return _RoadStyle(isDark ? const Color(0xFF333333) : const Color(0xFFBDBDBD), 2);
     case 'footway': case 'path': case 'cycleway': case 'pedestrian': case 'track':
-      return _RoadStyle(isDark ? const Color(0xFF2E3A2E) : const Color(0xFFD2E4D2), 1.5, dashed: true);
+      return _RoadStyle(isDark ? const Color(0xFF2E3A2E) : const Color(0xFF81C784), 1.5, dashed: true);
     default:
-      return _RoadStyle(isDark ? const Color(0xFF333333) : Colors.white, 2);
+      return _RoadStyle(isDark ? const Color(0xFF444444) : const Color(0xFFBDBDBD), 2);
   }
 }
 
@@ -59,6 +59,7 @@ IconData _poiIconData(String category, String subcategory) {
 class MapController extends ChangeNotifier {
   fm.MapController? _fmCtrl;
   String _theme = 'light';
+  double _currentZoom = 13;
 
   Map<int, LatLng> _osmNodes = {};
   List<({String highway, String name, List<int> refs})> _wayData = [];
@@ -108,6 +109,7 @@ class MapController extends ChangeNotifier {
     _wayData = parsed.ways;
     _poiData = parsed.pois;
 
+    _currentZoom = zoom.toDouble();
     _pendingCenter = LatLng(centerLat, centerLng);
     _pendingZoom = zoom.toDouble();
     if (_fmCtrl != null) {
@@ -122,9 +124,39 @@ class MapController extends ChangeNotifier {
     }
 
     await _buildRoadsBatched();
-    await _buildPoiMarkersBatched();
+    _rebuildPoiMarkers();
 
     onMapLoaded?.call(_poiData.length);
+    notifyListeners();
+  }
+
+  void onZoomChanged(double zoom) {
+    _currentZoom = zoom;
+    _rebuildPoiMarkers();
+  }
+
+  void _rebuildPoiMarkers() {
+    _poiMarkers.clear();
+
+    const maxPois = 20;
+
+    List<({double dist, int index})> sorted;
+    if (_fmCtrl != null) {
+      sorted = [];
+      final center = _fmCtrl!.camera.center;
+      for (var i = 0; i < _poiData.length; i++) {
+        final p = _poiData[i];
+        sorted.add((dist: const Distance().distance(center, LatLng(p.lat, p.lon)), index: i));
+      }
+      sorted.sort((a, b) => a.dist.compareTo(b.dist));
+    } else {
+      sorted = List.generate(_poiData.length, (i) => (dist: 0.0, index: i));
+    }
+
+    final toRender = sorted.take(maxPois).toList();
+    for (final s in toRender) {
+      _poiMarkers.add(_buildPoiMarker(_poiData[s.index]));
+    }
     notifyListeners();
   }
 
@@ -150,19 +182,6 @@ class MapController extends ChangeNotifier {
               ? const fm.StrokePattern.dotted(spacingFactor: 2.0)
               : const fm.StrokePattern.solid(),
         ));
-      }
-      notifyListeners();
-      await Future.delayed(const Duration(milliseconds: 0));
-    }
-  }
-
-  Future<void> _buildPoiMarkersBatched() async {
-    _poiMarkers.clear();
-    const batchSize = 100;
-    for (var i = 0; i < _poiData.length; i += batchSize) {
-      final end = i + batchSize > _poiData.length ? _poiData.length : i + batchSize;
-      for (var j = i; j < end; j++) {
-        _poiMarkers.add(_buildPoiMarker(_poiData[j]));
       }
       notifyListeners();
       await Future.delayed(const Duration(milliseconds: 0));
@@ -198,22 +217,15 @@ class MapController extends ChangeNotifier {
 
   void updateUserLocation(double lat, double lng, bool connected) {
     _userMarker = fm.Marker(
-      point: LatLng(lat, lng), width: 32, height: 32,
-      child: Container(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: connected ? const Color(0xFF1A73E8).withOpacity(0.25) : Colors.transparent,
-        ),
-        child: Center(
-          child: Container(
-            width: 14, height: 14,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: connected ? const Color(0xFF1A73E8) : const Color(0xFF9AA0A6),
-              border: Border.all(color: Colors.white, width: 3),
-              boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 6)],
-            ),
-          ),
+      point: LatLng(lat, lng),
+      width: 36, height: 36,
+      child: Transform.rotate(
+        angle: 0,
+        child: Icon(
+          Icons.directions_car,
+          size: 28,
+          color: connected ? const Color(0xFF1A73E8) : const Color(0xFF9AA0A6),
+          shadows: const [Shadow(color: Colors.black26, blurRadius: 4)],
         ),
       ),
     );
@@ -222,6 +234,12 @@ class MapController extends ChangeNotifier {
 
   void centerOnUser() {
     if (_userMarker != null && _fmCtrl != null) _fmCtrl!.move(_userMarker!.point, 15);
+  }
+
+  void rotateMap() {
+    if (_fmCtrl == null) return;
+    final current = _fmCtrl!.camera.rotation;
+    _fmCtrl!.rotate(current + 45);
   }
 
   void centerOnCoords(double lat, double lng, [int? z]) {
@@ -358,6 +376,12 @@ class _MapWidgetState extends State<MapWidget> {
 
   void _onChange() { if (mounted) setState(() {}); }
 
+  void _onMapEvent(fm.MapEvent e) {
+    if (e is fm.MapEventMoveEnd || e is fm.MapEventFlingAnimationEnd) {
+      widget.controller.onZoomChanged(_fmMapCtrl.camera.zoom);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final ctrl = widget.controller;
@@ -367,6 +391,7 @@ class _MapWidgetState extends State<MapWidget> {
         initialCenter: const LatLng(31.565, 74.314),
         initialZoom: 13,
         backgroundColor: ctrl.theme == 'dark' ? const Color(0xFF1A1A1A) : const Color(0xFFF4F3F0),
+        onMapEvent: _onMapEvent,
         onTap: (tapPos, ll) {
           ctrl.setSelPin(ll.latitude, ll.longitude, 'Dropped Pin');
           ctrl.onMapTap?.call({'lat': ll.latitude, 'lng': ll.longitude});

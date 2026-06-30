@@ -434,7 +434,9 @@ class _HomeScreenState extends State<HomeScreen> {
             _changerResults = [];
           })),
           const SizedBox(height: 8),
-          _fabBtn(Icons.screen_rotation, const Color(0xFF5F6368), () {}),
+          _fabBtn(Icons.screen_rotation, const Color(0xFF5F6368), () {
+            _mapCtrl.rotateMap();
+          }),
         ],
       ),
     );
@@ -452,8 +454,18 @@ class _HomeScreenState extends State<HomeScreen> {
             _toggleTheme,
           ),
           const SizedBox(height: 8),
-          _fabBtn(Icons.my_location, _isLocating ? const Color(0xFF34A853) : const Color(0xFF1A73E8), () {
+          _fabBtn(Icons.my_location, _isLocating ? const Color(0xFF34A853) : const Color(0xFF1A73E8), () async {
             setState(() => _isLocating = true);
+            final ok = await _gps.requestPermission();
+            if (!ok) {
+              setState(() => _isLocating = false);
+              if (mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Location permission is required')),
+                );
+              }
+              return;
+            }
             _gps.start();
             _mapCtrl.centerOnUser();
           }),
