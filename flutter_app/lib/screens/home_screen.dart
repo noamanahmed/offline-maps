@@ -134,6 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _checkAvailablePlaces() async {
+    _loader.dumpAvailableAssets();
     for (final p in _placesIndex) {
       final exists = await _loader.checkFileExists(p.pbfPath);
       if (exists) _availablePlaceIds.add(p.id);
