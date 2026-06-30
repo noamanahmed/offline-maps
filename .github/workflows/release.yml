@@ -147,11 +147,11 @@ jobs:
 
       - name: Copy PWA assets to build output
         run: |
-          cp -r flutter_app/assets_web/leaflet flutter_app/build/web/
-          cp flutter_app/assets_web/places_index.json flutter_app/build/web/
+          # leaflet removed - pure Flutter map now
+          # places_index.json is bundled by flutter build web
           cp flutter_app/web/service_worker.js flutter_app/build/web/ 2>/dev/null || true
           cp flutter_app/web/manifest.json flutter_app/build/web/ 2>/dev/null || true
-          mkdir -p flutter_app/build/web/maps
+          # maps bundled by flutter build web
           rsync -a flutter_app/assets_web/maps/ flutter_app/build/web/maps/ 2>/dev/null || true
 
       - name: Get version
