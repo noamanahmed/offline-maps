@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart' as fm;
 import 'package:latlong2/latlong.dart';
-import 'package:offline_maps/services/map_parser.dart';
+import 'package:pakistan_offline_map_explorer/services/map_parser.dart';
 
 class _RoadStyle {
   final Color color;

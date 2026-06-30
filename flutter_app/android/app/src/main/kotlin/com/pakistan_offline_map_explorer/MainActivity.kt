@@ -1,14 +1,13 @@
-package com.example.offline_maps
+package com.pakistan_offline_map_explorer
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
-import java.io.FileNotFoundException
 import android.util.Log
 
 class MainActivity : FlutterActivity() {
-    private val CHANNEL = "offline_maps/assets"
-    private val TAG = "OfflineMaps"
+    private val CHANNEL = "pakistan_offline_map_explorer/assets"
+    private val TAG = "PakOfflineMaps"
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)

@@ -9,7 +9,7 @@ class FileLoader {
   static final _i = FileLoader._();
   factory FileLoader() => _i;
 
-  static const _channel = MethodChannel('offline_maps/assets');
+  static const _channel = MethodChannel('pakistan_offline_map_explorer/assets');
   bool _loggedAssets = false;
 
   Directory? _mapDir;

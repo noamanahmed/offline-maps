@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:offline_maps/models/place.dart';
-import 'package:offline_maps/services/file_loader.dart';
-import 'package:offline_maps/services/gps_service.dart';
-import 'package:offline_maps/services/storage_service.dart';
-import 'package:offline_maps/services/map_parser.dart';
-import 'package:offline_maps/widgets/map_widget.dart';
+import 'package:pakistan_offline_map_explorer/models/place.dart';
+import 'package:pakistan_offline_map_explorer/services/file_loader.dart';
+import 'package:pakistan_offline_map_explorer/services/gps_service.dart';
+import 'package:pakistan_offline_map_explorer/services/storage_service.dart';
+import 'package:pakistan_offline_map_explorer/services/map_parser.dart';
+import 'package:pakistan_offline_map_explorer/widgets/map_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -312,6 +312,7 @@ class _HomeScreenState extends State<HomeScreen> {
           if (_showWizard) _buildWizard(),
           if (_showLocationChanger) _buildLocationChanger(),
           if (_showSearch) _buildSearchOverlay(),
+          if (_showSettings) _buildSettings(),
           if (_isLoadingPlace) _buildLoadingOverlay(),
           if (_errorMsg != null) _buildErrorBanner(),
         ],
@@ -1109,6 +1110,147 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildSettings() {
+    return Container(
+      color: const Color(0xFFF4F3F0),
+      child: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              padding: const EdgeInsets.fromLTRB(20, 20, 12, 12),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.08), blurRadius: 8, offset: const Offset(0, 2))],
+              ),
+              child: Row(
+                children: [
+                  const Expanded(
+                    child: Text('Settings',
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  ),
+                  GestureDetector(
+                    onTap: () => setState(() => _showSettings = false),
+                    child: Container(
+                      width: 36, height: 36,
+                      decoration: BoxDecoration(color: Colors.grey.shade100, shape: BoxShape.circle),
+                      child: const Icon(Icons.close, size: 20, color: Color(0xFF5F6368)),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.all(16),
+                children: [
+                  _settingSection('Appearance'),
+                  _settingTile(Icons.dark_mode, 'Dark Mode',
+                    subtitle: 'Toggle dark map theme',
+                    trailing: Switch(
+                      value: _theme == 'dark',
+                      activeColor: const Color(0xFF1A73E8),
+                      onChanged: (_) => _toggleTheme(),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  _settingSection('Map Data'),
+                  _settingTile(Icons.storage, 'Cached Places',
+                    subtitle: '${_placesIndex.length} places indexed',
+                  ),
+                  _settingTile(Icons.map, 'Map Files',
+                    subtitle: '375 MB offline map data',
+                  ),
+                  const SizedBox(height: 16),
+                  _settingSection('Location'),
+                  _settingTile(
+                    Icons.gps_fixed,
+                    'GPS Status',
+                    subtitle: _gpsConnected
+                        ? 'Connected (±${_gpsAccuracy})'
+                        : 'Not connected',
+                    trailing: Icon(
+                      _gpsConnected ? Icons.check_circle : Icons.cancel,
+                      size: 20,
+                      color: _gpsConnected ? const Color(0xFF0F9D58) : Colors.grey,
+                    ),
+                  ),
+                  _settingTile(
+                    Icons.my_location,
+                    'Last Known Location',
+                    subtitle: _userLat != null
+                        ? '${_userLat!.toStringAsFixed(4)}, ${_userLng!.toStringAsFixed(4)}'
+                        : 'Unknown',
+                  ),
+                  const SizedBox(height: 16),
+                  _settingSection('Offline Areas'),
+                  _settingTile(
+                    Icons.download,
+                    'Current Map',
+                    subtitle: _currentPlace?.name ?? 'None loaded',
+                  ),
+                  _settingTile(
+                    Icons.history,
+                    'Recent Places',
+                    subtitle: '${_recentPlaces.length} places',
+                  ),
+                  const SizedBox(height: 16),
+                  _settingSection('About'),
+                  _settingTile(
+                    Icons.info_outline,
+                    'Pakistan Offline Map Explorer',
+                    subtitle: 'Version 1.0.0\nOffline map explorer using OpenStreetMap data',
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _settingSection(String title) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 4, bottom: 8),
+      child: Text(title,
+          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700,
+              color: Color(0xFF1A73E8), letterSpacing: 0.5)),
+    );
+  }
+
+  Widget _settingTile(IconData icon, String title, {String? subtitle, Widget? trailing}) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 36, height: 36,
+            decoration: BoxDecoration(color: Colors.grey.shade100, shape: BoxShape.circle),
+            child: Icon(icon, size: 18, color: const Color(0xFF5F6368)),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+                if (subtitle != null)
+                  Text(subtitle, style: const TextStyle(fontSize: 12, color: Color(0xFF5F6368))),
+              ],
+            ),
+          ),
+          if (trailing != null) trailing,
+        ],
       ),
     );
   }

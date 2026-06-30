@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:offline_maps/screens/home_screen.dart';
+import 'package:pakistan_offline_map_explorer/screens/home_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
