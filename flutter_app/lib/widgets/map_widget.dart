@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart' as fm;
 import 'package:latlong2/latlong.dart';
 import 'package:pakistan_offline_map_explorer/services/map_parser.dart';
@@ -123,8 +124,12 @@ class MapController extends ChangeNotifier {
       _osmNodes[n.id] = LatLng(n.lat, n.lon);
     }
 
+    print('[map_widget] Parsed data — nodes: ${parsed.nodes.length}, ways: ${parsed.ways.length}, pois: ${parsed.pois.length}');
+    print('[map_widget] _osmNodes built: ${_osmNodes.length} entries, _wayData: ${_wayData.length} entries');
+
     await _buildRoadsBatched();
     _rebuildPoiMarkers();
+    print('[map_widget] Roads built: ${_roads.length}, POI markers: ${_poiMarkers.length}');
 
     onMapLoaded?.call(_poiData.length);
     notifyListeners();
