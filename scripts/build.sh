@@ -6,7 +6,8 @@ echo "=== Step 1: Generate places index ==="
 python3 scripts/generate_places_index.py
 
 echo "=== Step 2: Sync map data ==="
-bash scripts/sync-maps.sh
+echo "SKIPPED"
+#bash scripts/sync-maps.sh
 
 echo "=== Step 3: Build Flutter web ==="
 cd flutter_app
