@@ -21,3 +21,6 @@
 - Load POI markers only at specific zoom levels (e.g., zoom ≥ 15) rather than all at once to handle thousands of points efficiently. Confidence: 0.70
 - Cap POI markers to a maximum of 20 under any condition to keep the map performant. Confidence: 0.70
 
+# workflow
+- Ask before making any code changes; do not modify files without user approval. Confidence: 0.60
+
