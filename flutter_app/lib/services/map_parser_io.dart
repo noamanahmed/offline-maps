@@ -37,15 +37,29 @@ ParsedMapData _parseInThread(List<dynamic> args) {
   sw.reset();
   sw.start();
   final ways = <({String highway, String name, List<int> refs})>[];
+  int withHighwayCount = 0;
+  int refMatchFailCount = 0;
+  int tooFewRefsCount = 0;
+  int prevWayLastRef = 0;
   for (final way in osmData.ways) {
     final highway = way.tags['highway'];
     if (highway == null || highway.isEmpty) continue;
-    final refs = way.refs.where((r) => nodeMap.containsKey(r)).toList();
-    if (refs.length < 2) continue;
+    withHighwayCount++;
+    // Workaround for dart_osmpbf refDelta bug: per-way delta reset
+    int cumulative = 0;
+    final refs = <int>[];
+    for (var i = 0; i < way.refs.length; i++) {
+      final rawDelta = (i == 0) ? way.refs[i] - prevWayLastRef : way.refs[i] - cumulative;
+      cumulative += rawDelta;
+      if (nodeMap.containsKey(cumulative)) refs.add(cumulative);
+    }
+    prevWayLastRef = cumulative;
+    if (refs.length < 2) { tooFewRefsCount++; continue; }
+    if (refs.length < way.refs.length) refMatchFailCount++;
     ways.add((highway: highway, name: way.tags['name'] ?? '', refs: refs));
   }
   sw.stop();
-  print('[map_parser] Ways filtered in ${sw.elapsedMilliseconds}ms, highway ways: ${ways.length}');
+  print('[map_parser] Ways filtered: total=${osmData.ways.length}, withHighway=$withHighwayCount, result=${ways.length}, refFail=$refMatchFailCount, tooFew=$tooFewRefsCount');
 
   final pois = <({String name, String category, String subcategory, double lat, double lon})>[];
   try {
