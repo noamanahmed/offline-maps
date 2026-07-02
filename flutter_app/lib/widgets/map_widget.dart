@@ -65,9 +65,12 @@ class MapController extends ChangeNotifier {
   Map<int, LatLng> _osmNodes = {};
   List<({String highway, String name, List<int> refs})> _wayData = [];
   List<({String name, String category, String subcategory, double lat, double lon})> _poiData = [];
+  List<({String name, String placeType, double lat, double lon})> _placeLabels = [];
 
   List<fm.Polyline> _roads = [];
   List<fm.Marker> _poiMarkers = [];
+  List<fm.Marker> _roadLabels = [];
+  List<fm.Marker> _placeMarkers = [];
   fm.Marker? _userMarker;
   fm.Marker? _selMarker;
   List<fm.Marker> _routeMarkers = [];
@@ -85,6 +88,8 @@ class MapController extends ChangeNotifier {
   fm.MapController? get fmCtrl => _fmCtrl;
   List<fm.Polyline> get roads => _roads;
   List<fm.Marker> get poiMarkers => _poiMarkers;
+  List<fm.Marker> get roadLabels => _roadLabels;
+  List<fm.Marker> get placeMarkers => _placeMarkers;
   fm.Marker? get userMarker => _userMarker;
   fm.Marker? get selMarker => _selMarker;
   List<fm.Marker> get routeMarkers => _routeMarkers;
@@ -104,11 +109,15 @@ class MapController extends ChangeNotifier {
     _roads.clear();
     _poiMarkers.clear();
     _poiData.clear();
+    _roadLabels.clear();
+    _placeMarkers.clear();
+    _placeLabels.clear();
     _selMarker = null;
     _routeMarkers.clear();
     _routeLine = null;
     _wayData = parsed.ways;
     _poiData = parsed.pois;
+    _placeLabels = parsed.placeLabels;
 
     _currentZoom = zoom.toDouble();
     _pendingCenter = LatLng(centerLat, centerLng);
@@ -124,12 +133,14 @@ class MapController extends ChangeNotifier {
       _osmNodes[n.id] = LatLng(n.lat, n.lon);
     }
 
-    print('[map_widget] Parsed data — nodes: ${parsed.nodes.length}, ways: ${parsed.ways.length}, pois: ${parsed.pois.length}');
+    print('[map_widget] Parsed data — nodes: ${parsed.nodes.length}, ways: ${parsed.ways.length}, pois: ${parsed.pois.length}, placeLabels: ${parsed.placeLabels.length}');
     print('[map_widget] _osmNodes built: ${_osmNodes.length} entries, _wayData: ${_wayData.length} entries');
 
     await _buildRoadsBatched();
+    _buildRoadLabels();
+    _buildPlaceMarkers();
     _rebuildPoiMarkers();
-    print('[map_widget] Roads built: ${_roads.length}, POI markers: ${_poiMarkers.length}');
+    print('[map_widget] Roads built: ${_roads.length}, Road labels: ${_roadLabels.length}, Place labels: ${_placeMarkers.length}, POI markers: ${_poiMarkers.length}');
 
     onMapLoaded?.call(_poiData.length);
     notifyListeners();
@@ -193,32 +204,160 @@ class MapController extends ChangeNotifier {
     }
   }
 
+  void _buildRoadLabels() {
+    _roadLabels.clear();
+    final isDark = _theme == 'dark';
+    final labelColor = isDark ? const Color(0xFFCCCCCC) : const Color(0xFF444444);
+    final bgColor = isDark ? const Color(0xCC1A1A1A) : const Color(0xCCFFFFFF);
+
+    // Only label major named roads to avoid clutter
+    const majorTypes = {'motorway', 'trunk', 'primary', 'secondary', 'tertiary'};
+    final seen = <String>{};
+
+    for (final way in _wayData) {
+      if (way.name.isEmpty) continue;
+      if (!majorTypes.contains(way.highway)) continue;
+      if (seen.contains(way.name)) continue;
+      seen.add(way.name);
+
+      // Find the midpoint of the road
+      final midRef = way.refs[way.refs.length ~/ 2];
+      final midPt = _osmNodes[midRef];
+      if (midPt == null) continue;
+
+      _roadLabels.add(fm.Marker(
+        point: midPt,
+        width: 120,
+        height: 20,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+          decoration: BoxDecoration(
+            color: bgColor,
+            borderRadius: BorderRadius.circular(4),
+          ),
+          child: Text(
+            way.name,
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w600,
+              color: labelColor,
+            ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ));
+    }
+  }
+
+  void _buildPlaceMarkers() {
+    _placeMarkers.clear();
+    final isDark = _theme == 'dark';
+
+    for (final p in _placeLabels) {
+      double fontSize;
+      FontWeight fontWeight;
+      Color textColor;
+
+      switch (p.placeType) {
+        case 'city':
+          fontSize = 16;
+          fontWeight = FontWeight.w800;
+          textColor = isDark ? const Color(0xFFE0E0E0) : const Color(0xFF212121);
+        case 'town':
+          fontSize = 14;
+          fontWeight = FontWeight.w700;
+          textColor = isDark ? const Color(0xFFBDBDBD) : const Color(0xFF424242);
+        case 'village':
+          fontSize = 12;
+          fontWeight = FontWeight.w600;
+          textColor = isDark ? const Color(0xFF9E9E9E) : const Color(0xFF616161);
+        case 'suburb': case 'neighbourhood': case 'quarter':
+          fontSize = 11;
+          fontWeight = FontWeight.w500;
+          textColor = isDark ? const Color(0xFF757575) : const Color(0xFF757575);
+        default:
+          fontSize = 10;
+          fontWeight = FontWeight.w500;
+          textColor = isDark ? const Color(0xFF616161) : const Color(0xFF9E9E9E);
+      }
+
+      _placeMarkers.add(fm.Marker(
+        point: LatLng(p.lat, p.lon),
+        width: 150,
+        height: 24,
+        child: Text(
+          p.name,
+          style: TextStyle(
+            fontSize: fontSize,
+            fontWeight: fontWeight,
+            color: textColor,
+            letterSpacing: 0.5,
+            shadows: [
+              Shadow(
+                color: isDark ? Colors.black54 : Colors.white,
+                blurRadius: 3,
+              ),
+            ],
+          ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
+        ),
+      ));
+    }
+  }
+
   fm.Marker _buildPoiMarker(({String name, String category, String subcategory, double lat, double lon}) p) {
     final color = _poiColor(p.category, p.subcategory);
     final icon = _poiIconData(p.category, p.subcategory);
+    final hasName = p.name.isNotEmpty;
 
     return fm.Marker(
       point: LatLng(p.lat, p.lon),
-      width: 30, height: 30,
+      width: hasName ? 120 : 30,
+      height: hasName ? 48 : 30,
       child: GestureDetector(
         onTap: () => onPoiSelected?.call({
           'name': p.name, 'category': p.category, 'subcategory': p.subcategory,
           'latitude': p.lat, 'longitude': p.lon,
         }),
-        child: Container(
-          width: 28, height: 28,
-          decoration: BoxDecoration(
-            color: color, shape: BoxShape.circle,
-            border: Border.all(color: Colors.white, width: 2),
-            boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 5)],
-          ),
-          child: Icon(icon, size: 16, color: Colors.white),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 28, height: 28,
+              decoration: BoxDecoration(
+                color: color, shape: BoxShape.circle,
+                border: Border.all(color: Colors.white, width: 2),
+                boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 5)],
+              ),
+              child: Icon(icon, size: 16, color: Colors.white),
+            ),
+            if (hasName)
+              Container(
+                margin: const EdgeInsets.only(top: 2),
+                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.9),
+                  borderRadius: BorderRadius.circular(3),
+                  boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 2)],
+                ),
+                child: Text(
+                  p.name,
+                  style: const TextStyle(fontSize: 9, fontWeight: FontWeight.w600, color: Color(0xFF333333)),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+          ],
         ),
       ),
     );
   }
 
-  void setTheme(String t) { _theme = t; _buildRoadsBatched(); }
+  void setTheme(String t) { _theme = t; _buildRoadsBatched(); _buildRoadLabels(); _buildPlaceMarkers(); }
 
   void updateUserLocation(double lat, double lng, bool connected) {
     _userMarker = fm.Marker(
@@ -340,7 +479,7 @@ class MapController extends ChangeNotifier {
 
   @override
   void dispose() {
-    _wayData.clear(); _poiData.clear(); _osmNodes.clear();
+    _wayData.clear(); _poiData.clear(); _osmNodes.clear(); _placeLabels.clear();
     super.dispose();
   }
 }
@@ -404,6 +543,8 @@ class _MapWidgetState extends State<MapWidget> {
       ),
       children: [
         fm.PolylineLayer(polylines: ctrl.roads),
+        if (ctrl.placeMarkers.isNotEmpty) fm.MarkerLayer(markers: ctrl.placeMarkers),
+        if (ctrl.roadLabels.isNotEmpty) fm.MarkerLayer(markers: ctrl.roadLabels),
         fm.MarkerLayer(markers: ctrl.poiMarkers),
         if (ctrl.selMarker != null) fm.MarkerLayer(markers: [ctrl.selMarker!]),
         if (ctrl.userMarker != null) fm.MarkerLayer(markers: [ctrl.userMarker!]),

@@ -119,4 +119,41 @@ class FileLoader {
     } catch (_) {}
     return false;
   }
+
+  Future<String> getAbsoluteFilePath(String path) async {
+    final dir = await _getMapDir();
+    final f = File('${dir.path}/$path');
+    if (await f.exists()) {
+      return f.path;
+    }
+
+    await f.parent.create(recursive: true);
+
+    try {
+      final result = await _channel.invokeMethod('readAsset', {'path': path});
+      if (result is Uint8List) {
+        await f.writeAsBytes(result);
+        print('[file_loader] Copied asset to filesystem: ${f.path}');
+        return f.path;
+      }
+      if (result is List<int>) {
+        await f.writeAsBytes(result);
+        print('[file_loader] Copied asset (List<int>) to filesystem: ${f.path}');
+        return f.path;
+      }
+    } catch (e) {
+      print('[file_loader] Failed to copy raw asset to filesystem: $e');
+    }
+
+    try {
+      final d = await rootBundle.load('assets_web/$path');
+      await f.writeAsBytes(d.buffer.asUint8List(d.offsetInBytes, d.lengthInBytes));
+      print('[file_loader] Copied assets_web asset to filesystem: ${f.path}');
+      return f.path;
+    } catch (e) {
+      print('[file_loader] Failed to copy rootBundle asset to filesystem: $e');
+    }
+
+    return f.path;
+  }
 }

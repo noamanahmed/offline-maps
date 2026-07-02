@@ -37,5 +37,9 @@ class FileLoader {
     }
   }
 
+  Future<String> getAbsoluteFilePath(String path) async {
+    return path;
+  }
+
   Future<void> dumpAvailableAssets() async {}
 }

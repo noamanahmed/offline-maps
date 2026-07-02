@@ -136,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _checkAvailablePlaces() async {
     _loader.dumpAvailableAssets();
     for (final p in _placesIndex) {
-      final exists = await _loader.checkFileExists(p.pbfPath);
+      final exists = await _loader.checkFileExists(p.mbtilesPath);
       if (exists) _availablePlaceIds.add(p.id);
     }
     if (mounted) setState(() {});
@@ -197,19 +197,18 @@ class _HomeScreenState extends State<HomeScreen> {
     _savePlace(place);
 
     try {
-      final pbf = await _loader.readBinary(place.pbfPath);
-      if (pbf == null) throw Exception('Map data not found for ${place.name}. '
-          'Place map files in the app documents/maps directory at: '
-          '${place.pbfPath}');
+      final mbtilesPath = await _loader.getAbsoluteFilePath(place.mbtilesPath);
+      final exists = await _loader.checkFileExists(place.mbtilesPath);
+      if (!exists) throw Exception('MBTiles map data not found for ${place.name} at: ${place.mbtilesPath}');
 
       final pois = await _loader.readText(place.poisPath);
       if (pois == null) throw Exception('POI data not found for ${place.name} at: '
           '${place.poisPath}');
 
       print('[home_screen] Loading: ${place.name} (${place.type}), path: ${place.path}');
-      print('[home_screen] PBF size: ${pbf.length} bytes, POIs JSON size: ${pois.length} chars');
+      print('[home_screen] MBTiles Path: $mbtilesPath, POIs JSON size: ${pois.length} chars');
 
-      final parsed = await parseMapData(pbf, pois);
+      final parsed = await parseMapData(mbtilesPath, pois);
       if (!mounted) return;
 
       print('[home_screen] Parsed — nodes: ${parsed.nodes.length}, ways: ${parsed.ways.length}, pois: ${parsed.pois.length}');

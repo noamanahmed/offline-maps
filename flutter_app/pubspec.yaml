@@ -7,12 +7,14 @@ environment:
   sdk: ^3.7.2
 
 dependencies:
-  dart_osmpbf: ^0.0.1
+  fixnum: ^1.1.0
   flutter:
     sdk: flutter
   flutter_map: ^8.3.0
   geolocator: ^14.0.2
   latlong2: ^0.9.1
+  sqlite3: ^2.9.4
+  vector_tile: ^2.0.1
 
 dev_dependencies:
   flutter_test:

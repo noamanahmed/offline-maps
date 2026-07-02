@@ -1,10 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:isolate';
+import 'dart:math';
 import 'dart:typed_data';
 
-import 'package:dart_osmpbf/proto/fileformat.pb.dart';
-import 'package:dart_osmpbf/proto/osmformat.pb.dart';
+import 'package:sqlite3/sqlite3.dart';
+import 'package:vector_tile/vector_tile.dart';
 
 class ParsedMapData {
   final List<({int id, double lat, double lon})> nodes;
@@ -17,147 +18,249 @@ class ParsedMapData {
         double lat,
         double lon,
       })> pois;
+  final List<
+      ({
+        String name,
+        String placeType,
+        double lat,
+        double lon,
+      })> placeLabels;
 
-  ParsedMapData(this.nodes, this.ways, this.pois);
+  ParsedMapData(this.nodes, this.ways, this.pois, this.placeLabels);
 }
 
 ParsedMapData _parseInThread(List<dynamic> args) {
-  final pbf = args[0] as Uint8List;
+  final mbtilesPath = args[0] as String;
   final poisJson = args[1] as String;
 
-  print('[map_parser] Starting PBF parse (${pbf.length} bytes)');
+  print('[map_parser] Opening MBTiles database at $mbtilesPath');
   final sw = Stopwatch()..start();
 
-  // ---------------------------------------------------------------------------
-  // Parse PBF manually using dart_osmpbf's protobuf definitions.
-  //
-  // We don't use OsmData.fromBytes() because it has a critical bug:
-  // dense node lat/lon are delta-encoded in the PBF spec, but dart_osmpbf
-  // (v0.0.1) does not delta-decode them — only the id is delta-decoded.
-  // Way refs and relation member IDs are also not delta-decoded.
-  // ---------------------------------------------------------------------------
+  final db = sqlite3.open(mbtilesPath);
 
-  final nodeMap = <int, ({double lat, double lon})>{};
-  final ways = <({String highway, String name, List<int> refs})>[];
+  // We query zoom level 14 because that's our design target for detailed streets and places
+  final rows = db.select(
+    'SELECT tile_column, tile_row, tile_data FROM tiles WHERE zoom_level = 14',
+  );
 
-  var data = pbf;
-  var iter = 0;
+  print('[map_parser] Query returned ${rows.length} tiles in ${sw.elapsedMilliseconds}ms');
 
-  while (data.isNotEmpty && iter++ < 500) {
-    // Read blob header length (4-byte big-endian)
-    final blobHeaderLength = ByteData.sublistView(data, 0, 4).getUint32(0);
-    data = data.sublist(4);
+  final nodeMap = <String, int>{};
+  final parsedNodes = <({int id, double lat, double lon})>[];
+  
+  final tempWays = <_TempWay>[];
+  final tempLabels = <_TempLabel>[];
+  final placeLabels = <({String name, String placeType, double lat, double lon})>[];
 
-    // Read and parse blob header
-    final blobHeaderData = data.sublist(0, blobHeaderLength);
-    data = data.sublist(blobHeaderLength);
-    final blobHeader = BlobHeader.fromBuffer(blobHeaderData);
-    final blobLength = blobHeader.datasize;
+  int nodeIdCounter = 1;
+  const extent = 4096;
+  final numTiles14 = pow(2, 14).toInt(); // 16384
 
-    // Read and parse blob
-    final blobData = data.sublist(0, blobLength);
-    data = data.sublist(blobLength);
-    final blob = Blob.fromBuffer(blobData);
-    final blobOutput = Uint8List.fromList(zlib.decode(blob.zlibData));
+  // Helper functions inside isolate scope
+  double sinh(double x) => (exp(x) - exp(-x)) / 2.0;
 
-    if (blobHeader.type != 'OSMData') {
+  for (final row in rows) {
+    final xTMS = row['tile_column'] as int;
+    final yTMS = row['tile_row'] as int;
+    final tileData = row['tile_data'] as Uint8List;
+
+    // Convert TMS coordinates to XYZ
+    final tileX = xTMS;
+    final tileY = numTiles14 - 1 - yTMS;
+
+    Uint8List decompressed;
+    try {
+      decompressed = Uint8List.fromList(gzip.decode(tileData));
+    } catch (_) {
+      try {
+        decompressed = Uint8List.fromList(zlib.decode(tileData));
+      } catch (e) {
+        print('[map_parser] Decompression failed for tile ($xTMS, $yTMS): $e');
+        continue;
+      }
+    }
+
+    VectorTile tile;
+    try {
+      tile = VectorTile.fromBytes(bytes: decompressed);
+    } catch (e) {
+      print('[map_parser] VectorTile parse failed for tile ($xTMS, $yTMS): $e');
       continue;
     }
 
-    final block = PrimitiveBlock.fromBuffer(blobOutput);
-    final stringTable =
-        block.stringtable.s.map((s) => utf8.decode(s)).toList();
-    final latOffset = block.latOffset.toInt();
-    final lonOffset = block.lonOffset.toInt();
-    final granularity = block.granularity;
+    Map<String, double> tileToLatLng(double localX, double localY) {
+      final px = (tileX + localX / extent) / numTiles14;
+      final py = (tileY + localY / extent) / numTiles14;
+      final lon = px * 360.0 - 180.0;
+      final latRad = atan(sinh(pi * (1.0 - 2.0 * py)));
+      final lat = latRad * 180.0 / pi;
+      return {'lat': lat, 'lon': lon};
+    }
 
-    for (final primitiveGroup in block.primitivegroup) {
-      // --- Regular (non-dense) nodes ---
-      for (final node in primitiveGroup.nodes) {
-        final id = node.id.toInt();
-        final lat = 1e-9 * (latOffset + granularity * node.lat.toInt());
-        final lon = 1e-9 * (lonOffset + granularity * node.lon.toInt());
-        nodeMap[id] = (lat: lat, lon: lon);
+    int getOrRegisterNode(double lat, double lon) {
+      final latR = (lat * 1e6).round();
+      final lonR = (lon * 1e6).round();
+      final key = '${latR}_${lonR}';
+      
+      final existingId = nodeMap[key];
+      if (existingId != null) {
+        return existingId;
       }
+      
+      final id = nodeIdCounter++;
+      nodeMap[key] = id;
+      parsedNodes.add((id: id, lat: lat, lon: lon));
+      return id;
+    }
 
-      // --- Dense nodes (delta-encoded id, lat, lon) ---
-      if (primitiveGroup.dense.id.isNotEmpty) {
-        final dense = primitiveGroup.dense;
-        var id = 0;
-        var rawLat = 0;
-        var rawLon = 0;
+    // Process Transportation Layer (Road Geometry)
+    final roadLayer = tile.layers.where((l) => l.name == 'transportation').firstOrNull;
+    if (roadLayer != null) {
+      for (final feature in roadLayer.features) {
+        final props = feature.decodeProperties();
+        if (props == null) continue;
+        
+        final classVal = props['class'];
+        if (classVal == null) continue;
+        final highway = classVal.value.toString();
 
-        for (var i = 0; i < dense.id.length; i++) {
-          id += dense.id[i].toInt();
-          rawLat += dense.lat[i].toInt();
-          rawLon += dense.lon[i].toInt();
+        final geom = feature.decodeGeometry();
+        if (geom == null) continue;
 
-          final lat = 1e-9 * (latOffset + granularity * rawLat);
-          final lon = 1e-9 * (lonOffset + granularity * rawLon);
+        final lines = _extractLines(geom);
+        for (final line in lines) {
+          if (line.length < 2) continue;
 
-          nodeMap[id] = (lat: lat, lon: lon);
-        }
-      }
-
-      // --- Ways (delta-encoded refs) ---
-      for (final way in primitiveGroup.ways) {
-        final tags = _parseTags(way.keys, way.vals, stringTable);
-        final highway = tags['highway'];
-
-        if (highway == null || highway.isEmpty) {
-          continue;
-        }
-
-        // Delta-decode refs
-        var cumulative = 0;
-        final refs = <int>[];
-
-        for (final delta in way.refs) {
-          cumulative += delta.toInt();
-
-          if (nodeMap.containsKey(cumulative)) {
-            refs.add(cumulative);
+          final refs = <int>[];
+          for (final pt in line) {
+            final latLng = tileToLatLng(pt[0], pt[1]);
+            final nodeId = getOrRegisterNode(latLng['lat']!, latLng['lon']!);
+            refs.add(nodeId);
           }
-        }
 
-        if (refs.length < 2) {
-          continue;
+          tempWays.add(_TempWay(
+            highway: highway,
+            refs: refs,
+          ));
         }
+      }
+    }
 
-        ways.add((
-          highway: highway,
-          name: tags['name'] ?? '',
-          refs: refs,
-        ));
+    // Process Transportation Name Layer (Road Labels/Names)
+    final nameLayer = tile.layers.where((l) => l.name == 'transportation_name').firstOrNull;
+    if (nameLayer != null) {
+      for (final feature in nameLayer.features) {
+        final props = feature.decodeProperties();
+        if (props == null) continue;
+
+        final nameVal = props['name:latin'] ?? props['name'];
+        if (nameVal == null) continue;
+        final name = nameVal.value.toString();
+        if (name.isEmpty) continue;
+
+        final geom = feature.decodeGeometry();
+        if (geom == null) continue;
+
+        final lines = _extractLines(geom);
+        for (final line in lines) {
+          if (line.length < 2) continue;
+
+          final refs = <int>[];
+          for (final pt in line) {
+            final latLng = tileToLatLng(pt[0], pt[1]);
+            final nodeId = getOrRegisterNode(latLng['lat']!, latLng['lon']!);
+            refs.add(nodeId);
+          }
+
+          tempLabels.add(_TempLabel(
+            name: name,
+            refs: refs,
+          ));
+        }
+      }
+    }
+
+    // Process Place Layer (Place Labels)
+    final placeLayer = tile.layers.where((l) => l.name == 'place').firstOrNull;
+    if (placeLayer != null) {
+      for (final feature in placeLayer.features) {
+        final props = feature.decodeProperties();
+        if (props == null) continue;
+
+        final nameVal = props['name:latin'] ?? props['name'];
+        final classVal = props['class'];
+        if (nameVal == null || classVal == null) continue;
+
+        final name = nameVal.value.toString();
+        final placeType = classVal.value.toString();
+        if (name.isEmpty) continue;
+
+        final geom = feature.decodeGeometry();
+        if (geom == null) continue;
+
+        final points = _extractPoints(geom);
+        for (final pt in points) {
+          final latLng = tileToLatLng(pt[0], pt[1]);
+          placeLabels.add((
+            name: name,
+            placeType: placeType,
+            lat: latLng['lat']!,
+            lon: latLng['lon']!,
+          ));
+        }
       }
     }
   }
 
-  sw.stop();
-  print(
-    '[map_parser] Parsed PBF in ${sw.elapsedMilliseconds}ms: '
-    '${nodeMap.length} nodes, ${ways.length} ways',
-  );
+  db.dispose();
+  print('[map_parser] Database parsing closed. Extracted ${tempWays.length} raw ways, ${tempLabels.length} raw labels in ${sw.elapsedMilliseconds}ms');
 
-  // ---------------------------------------------------------------------------
-  // Parse POIs
-  // ---------------------------------------------------------------------------
+  // Associate road names from transportation_name features to the closest/most overlapping transportation way
+  final nodeToWays = <int, List<_TempWay>>{};
+  for (final way in tempWays) {
+    for (final ref in way.refs) {
+      nodeToWays.putIfAbsent(ref, () => []).add(way);
+    }
+  }
 
-  final pois =
-      <({
-        String name,
-        String category,
-        String subcategory,
-        double lat,
-        double lon,
-      })>[];
+  for (final label in tempLabels) {
+    final wayVotes = <_TempWay, int>{};
+    for (final ref in label.refs) {
+      final waysAtNode = nodeToWays[ref];
+      if (waysAtNode != null) {
+        for (final way in waysAtNode) {
+          wayVotes[way] = (wayVotes[way] ?? 0) + 1;
+        }
+      }
+    }
 
+    if (wayVotes.isNotEmpty) {
+      _TempWay? bestWay;
+      int maxVotes = -1;
+      wayVotes.forEach((way, votes) {
+        if (votes > maxVotes) {
+          maxVotes = votes;
+          bestWay = way;
+        }
+      });
+      
+      if (bestWay != null) {
+        bestWay!.name = label.name;
+      }
+    }
+  }
+
+  final finalWays = tempWays.map((tw) => (
+    highway: tw.highway,
+    name: tw.name,
+    refs: tw.refs,
+  )).toList();
+
+  final pois = <({String name, String category, String subcategory, double lat, double lon})>[];
   try {
     final decoded = jsonDecode(poisJson) as List<dynamic>;
-
     for (final item in decoded) {
       final d = item as Map<String, dynamic>;
-
       pois.add((
         name: d['name'] ?? '',
         category: d['category'] ?? '',
@@ -166,59 +269,109 @@ ParsedMapData _parseInThread(List<dynamic> args) {
         lon: (d['longitude'] as num).toDouble(),
       ));
     }
-  } catch (e, st) {
+  } catch (e) {
     print('[map_parser] Failed to parse POIs: $e');
-    print(st);
   }
 
-  print('[map_parser] Parsed ${pois.length} POIs');
-
-  // ---------------------------------------------------------------------------
-  // Export nodes
-  // ---------------------------------------------------------------------------
-
-  final nodes = nodeMap.entries
-      .map(
-        (e) => (
-          id: e.key,
-          lat: e.value.lat,
-          lon: e.value.lon,
-        ),
-      )
-      .toList();
-
+  sw.stop();
   print(
-    '[map_parser] Finished: '
-    '${nodes.length} nodes, '
-    '${ways.length} ways, '
-    '${pois.length} POIs',
+    '[map_parser] Finished parsing in ${sw.elapsedMilliseconds}ms: '
+    '${parsedNodes.length} nodes, ${finalWays.length} ways, ${pois.length} POIs, ${placeLabels.length} placeLabels',
   );
 
-  return ParsedMapData(nodes, ways, pois);
+  return ParsedMapData(parsedNodes, finalWays, pois, placeLabels);
 }
 
-Map<String, String> _parseTags(
-  List<int> keys,
-  List<int> values,
-  List<String> stringTable,
-) {
-  final tags = <String, String>{};
-  for (var i = 0; i < keys.length; i++) {
-    if (keys[i] == 0) continue;
-    tags[stringTable[keys[i]]] = stringTable[values[i]];
+List<List<List<double>>> _extractLines(dynamic geom) {
+  if (geom == null) return [];
+  final String typeName = geom.runtimeType.toString();
+  if (typeName == 'GeometryLineString') {
+    final coords = (geom as dynamic).coordinates;
+    if (coords is List) {
+      final line = <List<double>>[];
+      for (final pt in coords) {
+        if (pt is List && pt.length >= 2) {
+          line.add([ (pt[0] as num).toDouble(), (pt[1] as num).toDouble() ]);
+        }
+      }
+      return [line];
+    }
+  } else if (typeName == 'GeometryMultiLineString') {
+    final coordsList = (geom as dynamic).coordinates;
+    if (coordsList is List) {
+      final lines = <List<List<double>>>[];
+      for (final coords in coordsList) {
+        if (coords is List) {
+          final line = <List<double>>[];
+          for (final pt in coords) {
+            if (pt is List && pt.length >= 2) {
+              line.add([ (pt[0] as num).toDouble(), (pt[1] as num).toDouble() ]);
+            }
+          }
+          if (line.isNotEmpty) lines.add(line);
+        }
+      }
+      return lines;
+    }
   }
-  return tags;
+  return [];
+}
+
+List<List<double>> _extractPoints(dynamic geom) {
+  if (geom == null) return [];
+  final String typeName = geom.runtimeType.toString();
+  if (typeName == 'GeometryPoint') {
+    final coords = (geom as dynamic).coordinates;
+    if (coords is List && coords.isNotEmpty) {
+      if (coords[0] is List) {
+        final list = <List<double>>[];
+        for (final pt in coords) {
+          if (pt is List && pt.length >= 2) {
+            list.add([(pt[0] as num).toDouble(), (pt[1] as num).toDouble()]);
+          }
+        }
+        return list;
+      } else if (coords.length >= 2) {
+        return [[(coords[0] as num).toDouble(), (coords[1] as num).toDouble()]];
+      }
+    }
+  } else if (typeName == 'GeometryMultiPoint') {
+    final coordsList = (geom as dynamic).coordinates;
+    if (coordsList is List) {
+      final list = <List<double>>[];
+      for (final pt in coordsList) {
+        if (pt is List && pt.length >= 2) {
+          list.add([(pt[0] as num).toDouble(), (pt[1] as num).toDouble()]);
+        }
+      }
+      return list;
+    }
+  }
+  return [];
+}
+
+class _TempWay {
+  final String highway;
+  final List<int> refs;
+  String name = '';
+  _TempWay({required this.highway, required this.refs});
+}
+
+class _TempLabel {
+  final String name;
+  final List<int> refs;
+  _TempLabel({required this.name, required this.refs});
 }
 
 Future<ParsedMapData> parseMapData(
-  Uint8List pbf,
+  String mbtilesPath,
   String poisJson,
 ) async {
   try {
     print('[map_parser] Launching parser isolate...');
 
     final result = await Isolate.run(
-      () => _parseInThread([pbf, poisJson]),
+      () => _parseInThread([mbtilesPath, poisJson]),
     );
 
     print('[map_parser] Parsing complete');

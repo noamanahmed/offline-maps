@@ -41,8 +41,8 @@ class Place {
     );
   }
 
-  String get pbfFileName => '${path.split('/').last}.osm.pbf';
+  String get mbtilesFileName => '${path.split('/').last}.mbtiles';
 
-  String get pbfPath => 'maps/countries/$path/$pbfFileName';
+  String get mbtilesPath => 'maps/countries/$path/$mbtilesFileName';
   String get poisPath => 'maps/countries/$path/pois.json';
 }
