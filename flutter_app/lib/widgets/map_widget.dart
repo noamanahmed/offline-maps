@@ -60,7 +60,7 @@ IconData _poiIconData(String category, String subcategory) {
 class MapController extends ChangeNotifier {
   fm.MapController? _fmCtrl;
   String _theme = 'light';
-  double _currentZoom = 13;
+  double _currentZoom = 12;
 
   Map<int, LatLng> _osmNodes = {};
   List<({String highway, String name, List<int> refs})> _wayData = [];
@@ -99,7 +99,7 @@ class MapController extends ChangeNotifier {
   void onMapReady(fm.MapController c) {
     _fmCtrl = c;
     if (_pendingCenter != null) {
-      c.move(_pendingCenter!, _pendingZoom ?? 13);
+      c.move(_pendingCenter!, _pendingZoom ?? 12);
       _pendingCenter = null;
       _pendingZoom = null;
     }
@@ -533,7 +533,7 @@ class _MapWidgetState extends State<MapWidget> {
       mapController: _fmMapCtrl,
       options: fm.MapOptions(
         initialCenter: const LatLng(31.565, 74.314),
-        initialZoom: 13,
+        initialZoom: 12,
         backgroundColor: ctrl.theme == 'dark' ? const Color(0xFF1A1A1A) : const Color(0xFFF4F3F0),
         onMapEvent: _onMapEvent,
         onTap: (tapPos, ll) {

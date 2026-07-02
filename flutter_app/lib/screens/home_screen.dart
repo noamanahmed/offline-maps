@@ -147,6 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
       _storage.setDouble('last_lat', loc.lat);
       _storage.setDouble('last_lng', loc.lng);
       _mapCtrl.updateUserLocation(loc.lat, loc.lng, true);
+      final wasLocating = _isLocating;
       if (!mounted) return;
       setState(() {
         _gpsConnected = true;
@@ -155,6 +156,9 @@ class _HomeScreenState extends State<HomeScreen> {
         _userLng = loc.lng;
         _isLocating = false;
       });
+      if (wasLocating) {
+        _mapCtrl.centerOnCoords(loc.lat, loc.lng, 15);
+      }
     });
     _gpsErrSub = _gps.onError.listen((_) {
       final lastLat = _storage.getDouble('last_lat');
@@ -213,7 +217,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       print('[home_screen] Parsed — nodes: ${parsed.nodes.length}, ways: ${parsed.ways.length}, pois: ${parsed.pois.length}');
 
-      await _mapCtrl.loadParsedData(parsed, place.lat, place.lon, 14);
+      await _mapCtrl.loadParsedData(parsed, place.lat, place.lon, 12);
     } catch (e, st) {
       print('[home_screen] ERROR loading map: $e');
       print('[home_screen] $st');
@@ -467,7 +471,10 @@ class _HomeScreenState extends State<HomeScreen> {
               return;
             }
             _gps.start();
-            _mapCtrl.centerOnUser();
+            if (_mapCtrl.userMarker != null) {
+              _mapCtrl.centerOnUser();
+              setState(() => _isLocating = false);
+            }
           }),
         ],
       ),

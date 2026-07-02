@@ -14,6 +14,7 @@ dependencies:
   geolocator: ^14.0.2
   latlong2: ^0.9.1
   sqlite3: ^2.9.4
+  sqlite3_flutter_libs: ^0.5.24
   vector_tile: ^2.0.1
 
 dev_dependencies:

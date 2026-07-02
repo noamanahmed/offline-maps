@@ -25,6 +25,10 @@ class FileLoader {
   Future<void> dumpAvailableAssets() async {
     if (_loggedAssets) return;
     _loggedAssets = true;
+    if (Platform.isLinux) {
+      print('[file_loader] Skipping listAssets on Linux desktop');
+      return;
+    }
     try {
       final files = await _channel.invokeMethod<List<dynamic>>('listAssets', {'path': 'maps'});
       print('[file_loader] === RAW ASSETS DUMP (${files?.length ?? 0} files) ===');
@@ -41,6 +45,9 @@ class FileLoader {
   }
 
   Future<bool> _tryRawExists(String path) async {
+    if (Platform.isLinux) {
+      return await File('../$path').exists() || await File(path).exists();
+    }
     try {
       final ok = await _channel.invokeMethod<bool>('assetExists', {'path': path});
       return ok ?? false;
@@ -54,6 +61,24 @@ class FileLoader {
     if (await f.exists()) {
       print('[file_loader] Read text from filesystem: $path');
       return await f.readAsString();
+    }
+
+    if (Platform.isLinux) {
+      final parentFile = File('../$path');
+      if (await parentFile.exists()) {
+        print('[file_loader] Linux: Read text from parent filesystem: $path');
+        return await parentFile.readAsString();
+      }
+      final localFile = File(path);
+      if (await localFile.exists()) {
+        print('[file_loader] Linux: Read text from local filesystem: $path');
+        return await localFile.readAsString();
+      }
+      final assetsWebFile = File('assets_web/$path');
+      if (await assetsWebFile.exists()) {
+        print('[file_loader] Linux: Read text from assets_web: $path');
+        return await assetsWebFile.readAsString();
+      }
     }
 
     try {
@@ -78,6 +103,19 @@ class FileLoader {
       final bytes = await f.readAsBytes();
       print('[file_loader] Read binary from filesystem: $path, ${bytes.length} bytes');
       return bytes;
+    }
+
+    if (Platform.isLinux) {
+      final parentFile = File('../$path');
+      if (await parentFile.exists()) {
+        print('[file_loader] Linux: Read binary from parent filesystem: $path');
+        return await parentFile.readAsBytes();
+      }
+      final localFile = File(path);
+      if (await localFile.exists()) {
+        print('[file_loader] Linux: Read binary from local filesystem: $path');
+        return await localFile.readAsBytes();
+      }
     }
 
     try {
@@ -111,6 +149,12 @@ class FileLoader {
     final f = File('${(await _getMapDir()).path}/$path');
     if (await f.exists()) return true;
 
+    if (Platform.isLinux) {
+      if (await File('../$path').exists() || await File(path).exists()) {
+        return true;
+      }
+    }
+
     if (await _tryRawExists(path)) return true;
 
     try {
@@ -125,6 +169,17 @@ class FileLoader {
     final f = File('${dir.path}/$path');
     if (await f.exists()) {
       return f.path;
+    }
+
+    if (Platform.isLinux) {
+      final parentFile = File('../$path');
+      if (await parentFile.exists()) {
+        return parentFile.absolute.path;
+      }
+      final localFile = File(path);
+      if (await localFile.exists()) {
+        return localFile.absolute.path;
+      }
     }
 
     await f.parent.create(recursive: true);
